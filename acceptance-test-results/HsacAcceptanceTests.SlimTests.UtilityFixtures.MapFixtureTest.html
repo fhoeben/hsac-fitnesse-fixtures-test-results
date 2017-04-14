@@ -1002,4 +1002,143 @@ Here we supply no map to the constructor, but pass the one to use in each script
 		<td colspan="5">copy map</td>
 	</tr>
 </table>
-</article></body></html>
+<br/><h2>Not Expanding . in Name to Nested Map</h2>
+<br/>Normally when setting values '.' in a name is interpreted to mean a nested map. But this can be disabled. <br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">map fixture</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">ensure</span></td>
+		<td colspan="3">expands periods in names to nested maps</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set value</td>
+		<td>2</td>
+		<td>for</td>
+		<td>browser.download.folderList</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set value</td>
+		<td>sheetml.sheet</td>
+		<td>for</td>
+		<td>browser.helperApps.neverAsk.saveToDisk</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>$browser&lt;-[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">download</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">folderList</td>
+		<td class="hash_value">2</td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">helperApps</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">neverAsk</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">saveToDisk</td>
+		<td class="hash_value">sheetml.sheet</td>
+	</tr>
+</table></td>
+	</tr>
+</table></td>
+	</tr>
+</table>]</td>
+		<td>value</td>
+		<td>browser</td>
+		<td></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>size of</td>
+		<td>$browser->[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">download</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">folderList</td>
+		<td class="hash_value">2</td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">helperApps</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">neverAsk</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">saveToDisk</td>
+		<td class="hash_value">sheetml.sheet</td>
+	</tr>
+</table></td>
+	</tr>
+</table></td>
+	</tr>
+</table>]</td>
+		<td><span class="pass">2</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>browser.download.folderList</td>
+		<td><span class="pass">2</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>browser.helperApps.neverAsk.saveToDisk</td>
+		<td><span class="pass">sheetml.sheet</span></td>
+	</tr>
+</table>
+<br/><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">map fixture</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>expand periods in names to nested maps</td>
+		<td colspan="3">false</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">reject</span></td>
+		<td colspan="3">expands periods in names to nested maps</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set value</td>
+		<td>2</td>
+		<td>for</td>
+		<td>browser.download.folderList</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set value</td>
+		<td>sheetml.sheet</td>
+		<td>for</td>
+		<td>browser.helperApps.neverAsk.saveToDisk</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>browser</td>
+		<td><span class="pass">null</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>browser.download.folderList</td>
+		<td><span class="pass">2</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>browser.helperApps.neverAsk.saveToDisk</td>
+		<td><span class="pass">sheetml.sheet</span></td>
+	</tr>
+</table>
+<br/><br/><br/><br/><br/></article></body></html>
