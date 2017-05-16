@@ -1,13 +1,6 @@
 <html><head><meta name="referrer" content="no-referrer"></head><body style="margin:0;"><script>
-    (function() {
-        var kuid = Krux('get', 'user');
-        if (kuid) {
-            var prefix = location.protocol == 'https:' ? "https:" : "http:";
-            var kurl_params = encodeURIComponent("_kuid=" + kuid + "&_kdpid=2dd640a6-6ebd-4d4f-af30-af8baa441a0d&dlxid=<na_id>&dlxdata=<na_da>");
-            var kurl = prefix + "//beacon.krxd.net/data.gif?" + kurl_params;
-            var dlx_url = '//r.nexac.com/e/getdata.xgi?dt=br&pkey=gpwn29rvapq62&ru=' + kurl;
-            var i = new Image();
-            i.src = dlx_url;
-        }
-    })();
+(function(){
+    var prefix = window.location.protocol == 'https:' ? 'https:' : 'http:';
+    new Image().src = prefix + '//kr.ixiaa.com/C726AB29-0470-440B-B8D2-D552CED3A3DC/a.gif';
+})();
 </script></body></html>
