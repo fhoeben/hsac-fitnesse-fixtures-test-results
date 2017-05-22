@@ -45,63 +45,71 @@
 		<td>500</td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.4:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.0.15:8000/FitNesseMock]</td>
 		<td colspan="3">get mock server url</td>
 	</tr>
 </table>
 <br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td colspan="3"><span class="pass">json http test</span></td>
+		<td colspan="5"><span class="pass">json http test</span></td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">get from</span></td>
-		<td colspan="3">$url->[http://172.17.0.4:8000/FitNesseMock]</td>
+		<td colspan="5">$url->[http://172.17.0.15:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path count</td>
 		<td>airplanes[*]</td>
-		<td><span class="pass">2</span></td>
+		<td colspan="3"><span class="pass">2</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>airplanes.length()</td>
-		<td><span class="pass">2</span></td>
+		<td colspan="3"><span class="pass">2</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td>all json path matches</td>
-		<td colspan="2">airplanes[*].airline</td>
+		<td colspan="4">airplanes[*].airline</td>
 	<td><div><ul><li>KLM</li><li>Virgin</li></ul></div></td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>all json path matches</td>
 		<td>airplanes[*].airline</td>
-		<td><span class="pass">/.*KLM.*Virgin.*/ found in: &lt;div&gt;&lt;ul&gt;&lt;li&gt;KLM&lt;/li&gt;&lt;li&gt;Virgin&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</span></td>
+		<td colspan="3"><span class="pass">/.*KLM.*Virgin.*/ found in: &lt;div&gt;&lt;ul&gt;&lt;li&gt;KLM&lt;/li&gt;&lt;li&gt;Virgin&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>airplanes[0].seats</td>
-		<td><span class="pass">400</span></td>
+		<td colspan="3"><span class="pass">400</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>element</td>
+		<td>0</td>
+		<td>of json path</td>
+		<td>airplanes[?(@.airline=='KLM')].type</td>
+		<td><span class="pass">747</span></td>
 	</tr>
 	<tr class="slimRowColor7">
 		<td>set json path</td>
 		<td>airplanes[0].seats</td>
 		<td>to</td>
-		<td>300</td>
+		<td colspan="3">300</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>airplanes[0].seats</td>
-		<td><span class="pass">300</span></td>
+		<td colspan="3"><span class="pass">300</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
-		<td colspan="3">response</td>
+		<td colspan="5">response</td>
 	<td><pre>{&quot;airplanes&quot;: [
     {
         &quot;id&quot;: &quot;001&quot;,
@@ -126,7 +134,7 @@
 	<tr class="slimRowColor7">
 		<td><span class="pass">reject</span></td>
 		<td>get from</td>
-		<td>$url->[http://172.17.0.4:8000/FitNesseMock]</td>
+		<td>$url->[http://172.17.0.15:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
