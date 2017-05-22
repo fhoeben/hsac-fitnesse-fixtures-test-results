@@ -1,11 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head>  	
-<script language="javascript" type="text/javascript"> 
-var BrandShieldTagToTag=function(){var a=this;a.bsAdEntityInfo=null;a.callbackRecieved=!1;a.timeLoaded=getCurrentTime();var b=[],d=!1;a.setBSAdEntityInformation=function(c){a.bsAdEntityInfo=c;a.callbackReceived=!0;for(c=0;c<b.length;c++)b[c](a.bsAdEntityInfo)};a.getBSAdEntityInformation=function(c){a.bsAdEntityInfo?c(a.bsAdEntityInfo):b.push(c)};a.hasTagFoundMatch=function(){return d};a.tellTagWeFoundMatch=function(){d=!0}},getCurrentTime=function(){return Date.now?Date.now():(new Date).getTime()},
-receiveMessage=function(a){try{if(window.JSON){var b=window.JSON.parse(a.data);if(b&&b.action)switch(b.action){case "notifyBrandShieldAdEntityInformation":window.bstag2tag&&!window.bstag2tag.bsAdEntityInformation&&b.hasOwnProperty("bsAdEntityInformation")&&window.bstag2tag.setBSAdEntityInformation(b.bsAdEntityInformation)}}}catch(d){}},load=function(){window.addEventListener?window.addEventListener("message",receiveMessage,!1):window.attachEvent("onmessage",receiveMessage);window.bstag2tag=new BrandShieldTagToTag};
-window.debugScript||load();
-</script> 
-</head> 
-<body> 
- 
- 
+<!DOCTYPE html><html><head>
+  <title>Proxy</title>
+  <script async="" src="//cdn.krxd.net/ctjs/controltag.js.7dbac51c9aa7b4135991e8daeb9ced57"></script><script type="text/javascript" async="" src="//cdn.krxd.net/controltag/q1jglrva2.js"></script><script data-version="2">
+    window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]),Krux("proxy"),function(){var t=function(t){for(var r=t.split("&"),e={},n=0,c=r.length;c>n;++n){var i=r[n].split("=");e[i[0]]=i[1]}return e},r=/^[a-z0-9_-]+$/i,e=window.location.hash,n=t(e.slice(e.indexOf("!")+1));if(!n.kxcid||!r.test(n.kxcid))throw new Error("Invalid confid passed to proxy");n.kxcl&&r.test(n.kxcl)||(n.kxcl="cdn"),n.kxp&&/^[0-9]{1,5}$/.test(n.kxp)||(n.kxp="");var c=document.createElement("script");c.type="text/javascript",c.async=!0,c.src="//"+n.kxcl+".krxd.net"+(n.kxp?":"+n.kxp:"")+"/controltag/"+n.kxcid+".js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(c,i)}();
+  </script>
+</head><body>
+
 </body></html>
