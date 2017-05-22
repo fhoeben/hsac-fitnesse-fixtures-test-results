@@ -89,7 +89,7 @@ json={"key":"value"}
 <br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td colspan="3"><span class="pass">json http test</span></td>
+		<td colspan="5"><span class="pass">json http test</span></td>
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">post</span></td>
@@ -97,15 +97,15 @@ json={"key":"value"}
 json={"key":"value"}
 </pre></td>
 		<td>to</td>
-		<td><a href="http://validate.jsontest.com/">http://validate.jsontest.com/</a></td>
+		<td colspan="3"><a href="http://validate.jsontest.com/">http://validate.jsontest.com/</a></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
-		<td colspan="3">response</td>
+		<td colspan="5">response</td>
 	<td><pre>{
     &quot;object_or_array&quot;: &quot;object&quot;,
     &quot;empty&quot;: false,
-    &quot;parse_time_nanoseconds&quot;: 27758,
+    &quot;parse_time_nanoseconds&quot;: 17690,
     &quot;validate&quot;: true,
     &quot;size&quot;: 1
 }</pre></td></tr>
@@ -113,32 +113,40 @@ json={"key":"value"}
 		<td>check</td>
 		<td>json path</td>
 		<td>validate</td>
-		<td><span class="pass">true</span></td>
+		<td colspan="3"><span class="pass">true</span></td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">ensure</span></td>
 		<td>json path</td>
-		<td colspan="2">validate</td>
+		<td colspan="4">validate</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>size</td>
-		<td><span class="pass">1&gt;0</span></td>
+		<td colspan="3"><span class="pass">1&gt;0</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path count</td>
 		<td>$.*</td>
-		<td><span class="pass">5&gt;=5</span></td>
+		<td colspan="3"><span class="pass">5&gt;=5</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td>all json path matches</td>
-		<td colspan="2">*</td>
-	<td><div><ul><li>object</li><li>false</li><li>27758</li><li>true</li><li>1</li></ul></div></td></tr>
+		<td colspan="4">*</td>
+	<td><div><ul><li>object</li><li>false</li><li>17690</li><li>true</li><li>1</li></ul></div></td></tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>element</td>
+		<td>1</td>
+		<td>of json path</td>
+		<td>$.*</td>
+		<td><span class="pass">false</span></td>
+	</tr>
 </table>
-<br/>Next another POST, posting of url-enoded values defined in the wiki.<br/><br/><table>
+<br/><br/>Next another POST, posting of url-enoded values defined in the wiki.<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
 		<td colspan="3"><span class="pass">json http test</span></td>
@@ -159,7 +167,7 @@ json={"key":"value"}
 	<td><pre>{
     &quot;object_or_array&quot;: &quot;object&quot;,
     &quot;empty&quot;: false,
-    &quot;parse_time_nanoseconds&quot;: 27065,
+    &quot;parse_time_nanoseconds&quot;: 25942,
     &quot;validate&quot;: true,
     &quot;size&quot;: 1
 }</pre></td></tr>
