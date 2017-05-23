@@ -105,7 +105,7 @@ json={"key":"value"}
 	<td><pre>{
     &quot;object_or_array&quot;: &quot;object&quot;,
     &quot;empty&quot;: false,
-    &quot;parse_time_nanoseconds&quot;: 18221,
+    &quot;parse_time_nanoseconds&quot;: 15587,
     &quot;validate&quot;: true,
     &quot;size&quot;: 1
 }</pre></td></tr>
@@ -136,7 +136,7 @@ json={"key":"value"}
 		<td>show</td>
 		<td>all json path matches</td>
 		<td colspan="4">*</td>
-	<td><div><ul><li>object</li><li>false</li><li>18221</li><li>true</li><li>1</li></ul></div></td></tr>
+	<td><div><ul><li>object</li><li>false</li><li>15587</li><li>true</li><li>1</li></ul></div></td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>element</td>
@@ -167,7 +167,7 @@ json={"key":"value"}
 	<td><pre>{
     &quot;object_or_array&quot;: &quot;object&quot;,
     &quot;empty&quot;: false,
-    &quot;parse_time_nanoseconds&quot;: 26149,
+    &quot;parse_time_nanoseconds&quot;: 21094,
     &quot;validate&quot;: true,
     &quot;size&quot;: 1
 }</pre></td></tr>
@@ -207,7 +207,7 @@ json={"key":"value"}
         &quot;pricing_info&quot;: {
             &quot;initial_onetime&quot;: {
                 &quot;price&quot;: &quot;0,00&quot;,
-                &quot;pricing_info&quot;: &quot;Eenmalig betaal je&quot;,
+                &quot;pricing_info&quot;: &quot;Eenmalig&quot;,
                 &quot;price_id&quot;: &quot;initial_onetime&quot;,
                 &quot;price_decimal&quot;: 0
             },
@@ -230,7 +230,7 @@ json={"key":"value"}
 		<td>check</td>
 		<td>json path</td>
 		<td>$.fields.pricing_info.initial_onetime.pricing_info</td>
-		<td><span class="pass">Eenmalig betaal je</span></td>
+		<td>[Eenmalig] <span class="fail">expected [Eenmalig</span><span class="diff"> betaal je</span><span class="fail">]</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
