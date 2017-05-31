@@ -1,8 +1,13 @@
-<html><head>
-<title></title>
-</head>
-<body marginwidth="0" marginheight="0">
-<a href="https://www.expedia.com/g/c/dailydeals" target="_top"><img src="https://a.travel-assets.com/media/meso/programmatic/Expedia/US/DailyDeals/STOR-20269_300x250.jpg"></a>
-
-
-</body></html>
+<html><head><meta name="referrer" content="no-referrer"></head><body style="margin:0;"><script>
+    (function() {
+        var kuid = Krux('get', 'user');
+        if (kuid) {
+            var prefix = location.protocol == 'https:' ? "https:" : "http:";
+            var kurl_params = encodeURIComponent("_kuid=" + kuid + "&_kdpid=2dd640a6-6ebd-4d4f-af30-af8baa441a0d&dlxid=<na_id>&dlxdata=<na_da>");
+            var kurl = prefix + "//beacon.krxd.net/data.gif?" + kurl_params;
+            var dlx_url = '//r.nexac.com/e/getdata.xgi?dt=br&pkey=gpwn29rvapq62&ru=' + kurl;
+            var i = new Image();
+            i.src = dlx_url;
+        }
+    })();
+</script></body></html>
