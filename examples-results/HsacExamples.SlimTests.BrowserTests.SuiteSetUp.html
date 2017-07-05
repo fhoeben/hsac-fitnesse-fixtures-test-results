@@ -89,6 +89,37 @@
 </table>
 </div>
 </div>
+<br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Define $chromeHeadlessProfile chrome profile</p>
+	<div><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">map fixture</span></td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set value</td>
+		<td>headless</td>
+		<td>for</td>
+		<td>args[0]</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set value</td>
+		<td>disable-gpu</td>
+		<td>for</td>
+		<td>args[1]</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>$chromeHeadlessProfile&lt;-[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">args</td>
+		<td class="hash_value">[headless, disable-gpu]</td>
+	</tr>
+</table>]</td>
+		<td colspan="3">copy map</td>
+	</tr>
+</table>
+</div>
+</div>
 <br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
@@ -141,6 +172,13 @@
 		<td>chrome mobile emulation</td>
 		<td>with profile</td>
 		<td>$mobileEmulation</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td>start driver for</td>
+		<td>chrome</td>
+		<td>with profile</td>
+		<td>$chromeHeadlessProfile</td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td>note</td>
@@ -200,6 +238,6 @@
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="4">driver description</td>
-	<td><div><pre>org.openqa.selenium.remote.RemoteWebDriver</pre> at <strong>ondemand.saucelabs.com</strong><table><tbody><tr><th>platform</th><td>XP</td></tr><tr><th>javascriptEnabled</th><td>true</td></tr><tr><th>acceptSslCerts</th><td>true</td></tr><tr><th>hasMetadata</th><td>true</td></tr><tr><th>browserName</th><td>chrome</td></tr><tr><th>chrome</th><td>{userDataDir=C:\Users\ADMINI~1\AppData\Local\Temp\scoped_dir1836_20179, chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233)}</td></tr><tr><th>networkConnectionEnabled</th><td>false</td></tr><tr><th>unexpectedAlertBehaviour</th><td></td></tr><tr><th>rotatable</th><td>false</td></tr><tr><th>mobileEmulationEnabled</th><td>false</td></tr><tr><th>locationContextEnabled</th><td>true</td></tr><tr><th>webdriver.remote.sessionid</th><td>38711fbf320040469f22b251dd569947</td></tr><tr><th>version</th><td>59.0.3071.86</td></tr><tr><th>pageLoadStrategy</th><td>normal</td></tr><tr><th>takesHeapSnapshot</th><td>true</td></tr><tr><th>databaseEnabled</th><td>false</td></tr><tr><th>cssSelectorsEnabled</th><td>true</td></tr><tr><th>handlesAlerts</th><td>true</td></tr><tr><th>browserConnectionEnabled</th><td>false</td></tr><tr><th>nativeEvents</th><td>true</td></tr><tr><th>webStorageEnabled</th><td>true</td></tr><tr><th>hasTouchScreen</th><td>false</td></tr><tr><th>applicationCacheEnabled</th><td>false</td></tr><tr><th>takesScreenshot</th><td>true</td></tr></tbody></table><a href="https://saucelabs.com/jobs/38711fbf320040469f22b251dd569947?auth=009ea63b47b0ff77619b9bdcbc98e84f" target="_blank">Job details</a></div></td></tr>
+	<td><div><pre>org.openqa.selenium.remote.RemoteWebDriver</pre> at <strong>ondemand.saucelabs.com</strong><table><tbody><tr><th>platform</th><td>XP</td></tr><tr><th>javascriptEnabled</th><td>true</td></tr><tr><th>acceptSslCerts</th><td>true</td></tr><tr><th>hasMetadata</th><td>true</td></tr><tr><th>browserName</th><td>chrome</td></tr><tr><th>chrome</th><td>{userDataDir=C:\Users\ADMINI~1\AppData\Local\Temp\scoped_dir1880_30610, chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233)}</td></tr><tr><th>networkConnectionEnabled</th><td>false</td></tr><tr><th>unexpectedAlertBehaviour</th><td></td></tr><tr><th>rotatable</th><td>false</td></tr><tr><th>mobileEmulationEnabled</th><td>false</td></tr><tr><th>locationContextEnabled</th><td>true</td></tr><tr><th>webdriver.remote.sessionid</th><td>785e2e11c2d04940b30982319c0b7fc0</td></tr><tr><th>version</th><td>59.0.3071.86</td></tr><tr><th>pageLoadStrategy</th><td>normal</td></tr><tr><th>takesHeapSnapshot</th><td>true</td></tr><tr><th>databaseEnabled</th><td>false</td></tr><tr><th>cssSelectorsEnabled</th><td>true</td></tr><tr><th>handlesAlerts</th><td>true</td></tr><tr><th>browserConnectionEnabled</th><td>false</td></tr><tr><th>nativeEvents</th><td>true</td></tr><tr><th>webStorageEnabled</th><td>true</td></tr><tr><th>hasTouchScreen</th><td>false</td></tr><tr><th>applicationCacheEnabled</th><td>false</td></tr><tr><th>takesScreenshot</th><td>true</td></tr></tbody></table><a href="https://saucelabs.com/jobs/785e2e11c2d04940b30982319c0b7fc0?auth=15b25f4f2c3323e68f3c16dab3a7eee7" target="_blank">Job details</a></div></td></tr>
 </table>
 </article></body></html>
