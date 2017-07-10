@@ -1,0 +1,16 @@
+{
+  "testId" : "3-fitnesselayouttest2",
+  "name" : "FitNesseLayoutTest2",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Layout check using: /home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/galenExamples/menuHighlight.gspec",
+      "status" : "info",
+      "time" : 1499719324607,
+      "excludedTags" : [ ],
+      "sections" : [ ],
+      "objects" : { },
+      "screenshot" : "layout-3-screenshot.png",
+      "type" : "layout"
+    } ]
+  }
+}
