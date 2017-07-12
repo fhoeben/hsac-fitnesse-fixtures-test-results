@@ -1,0 +1,106 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.FileUploadTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.FileUploadTest</h2></header><article><br/>This test ensures we can deal with file upload inputs.<br/><br/><span class="meta">variable defined: HTML= {{{
+&lt;html&gt;
+&lt;body&gt;
+Choose file:
+&lt;input name="chosenFile" type="file"&gt;
+&lt;input name="chosenFile2" type="file"&gt;
+&lt;button&gt;Upload&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+Choose file:
+&lt;input name="chosenFile" type="file"&gt;
+&lt;input name="chosenFile2" type="file"&gt;
+&lt;button&gt;Upload&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://172.17.0.16:8000/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="4"><span class="pass">file fixture</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$generated&lt;-[<a href="files/fileFixture/bye1.txt">bye1.txt</a>]</td>
+		<td>create</td>
+		<td>bye1.txt</td>
+		<td>containing</td>
+		<td>Bye Bye 1</td>
+	</tr>
+</table>
+<br/><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="3">$url->[http://172.17.0.16:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="3">Select file for first file upload on page</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">select file</span></td>
+		<td colspan="3">$generated->[<a href="files/fileFixture/bye1.txt">bye1.txt</a>]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>name=chosenFile</td>
+		<td><span class="pass">/bye1.txt/ found in: C:\fakepath\bye1.txt</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>name=chosenFile2</td>
+		<td><span class="pass">BLANK</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>note</td>
+		<td colspan="3">Select file for specific file upload on page</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">select file</span></td>
+		<td>$generated->[<a href="files/fileFixture/bye1.txt">bye1.txt</a>]</td>
+		<td>for</td>
+		<td>name=chosenFile2</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>name=chosenFile</td>
+		<td><span class="pass">/bye1.txt/ found in: C:\fakepath\bye1.txt</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>name=chosenFile2</td>
+		<td><span class="pass">/bye1.txt/ found in: C:\fakepath\bye1.txt</span></td>
+	</tr>
+</table>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop</td>
+	</tr>
+</table>
+<br/><br/></article></body></html>
