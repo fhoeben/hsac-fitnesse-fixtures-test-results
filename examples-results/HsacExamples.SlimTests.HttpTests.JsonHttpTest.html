@@ -104,7 +104,7 @@ json={"key":"value"}
 		<td colspan="5">response</td>
 	<td><pre>{
     &quot;size&quot;: 1,
-    &quot;parse_time_nanoseconds&quot;: 22737,
+    &quot;parse_time_nanoseconds&quot;: 22329,
     &quot;object_or_array&quot;: &quot;object&quot;,
     &quot;empty&quot;: false,
     &quot;validate&quot;: true
@@ -136,7 +136,7 @@ json={"key":"value"}
 		<td>show</td>
 		<td>all json path matches</td>
 		<td colspan="4">*</td>
-	<td><div><ul><li>object</li><li>false</li><li>22737</li><li>true</li><li>1</li></ul></div></td></tr>
+	<td><div><ul><li>object</li><li>false</li><li>22329</li><li>true</li><li>1</li></ul></div></td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>element</td>
@@ -166,7 +166,7 @@ json={"key":"value"}
 		<td colspan="3">response</td>
 	<td><pre>{
     &quot;size&quot;: 1,
-    &quot;parse_time_nanoseconds&quot;: 22588,
+    &quot;parse_time_nanoseconds&quot;: 31215,
     &quot;object_or_array&quot;: &quot;object&quot;,
     &quot;empty&quot;: false,
     &quot;validate&quot;: true
@@ -251,7 +251,7 @@ json={"id": 1,
 		<td colspan="3"><span class="pass">json http test</span></td>
 	</tr>
 	<tr class="slimRowColor5">
-		<td><span class="pass">put</span></td>
+		<td><span class="fail">put</span></td>
 		<td><pre>
 json={"id": 1,
     "title": "foo",
@@ -264,29 +264,34 @@ json={"id": 1,
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td><pre>{
-    &quot;json&quot;: &quot;{\&quot;id\&quot;: 1,\n    \&quot;title\&quot;: \&quot;foo\&quot;,\n    \&quot;body\&quot;: \&quot;bar\&quot;,\n    \&quot;userId\&quot;: 1}&quot;,
-    &quot;id&quot;: 1
-}</pre></td></tr>
+	<td>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;title&gt;Application Error&lt;/title&gt;
+&lt;style media="screen"&gt;html,body,iframe{margin:0;padding:0;}html,body{height:100%;overflow:hidden;}iframe{width:100%;height:100%;border:0;}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;iframe src="//www.herokucdn.com/error-pages/application-error.html"&gt;&lt;/iframe&gt;
+&lt;/body&gt;
+&lt;/html&gt;</td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>id</td>
-		<td><span class="pass">1&gt;0</span></td>
+		<td>[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">&gt;0</span><span class="fail">]</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path count</td>
 		<td>$.*</td>
-		<td><span class="pass">2&gt;=2</span></td>
+		<td><span class="fail">0&gt;=2</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td>all json path matches</td>
 		<td colspan="2">*</td>
-	<td><div><ul><li>{"id": 1,
-    "title": "foo",
-    "body": "bar",
-    "userId": 1}</li><li>1</li></ul></div></td></tr>
+	<td>null</td></tr>
 </table>
 </article></body></html>
