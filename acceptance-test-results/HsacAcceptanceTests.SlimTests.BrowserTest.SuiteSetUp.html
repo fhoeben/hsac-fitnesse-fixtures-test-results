@@ -21,14 +21,48 @@
 		<td><span class="pass">nl.hsac.fitnesse.fixture.slim.web</span></td>
 	</tr>
 </table>
-<br/><table>
+<br/><br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td><span class="pass">selenium driver setup</span></td>
+		<td colspan="3"><span class="pass">map fixture</span></td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set value</td>
+		<td>headless</td>
+		<td>for</td>
+		<td>args[0]</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set value</td>
+		<td>disable-gpu</td>
+		<td>for</td>
+		<td>args[1]</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>$chromeHeadlessProfile&lt;-[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">args</td>
+		<td class="hash_value">[headless, disable-gpu]</td>
+	</tr>
+</table>]</td>
+		<td colspan="3">copy map</td>
+	</tr>
+</table>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">selenium driver setup</span></td>
 	</tr>
 	<tr class="slimRowColor1">
 		<td><span class="pass">start driver for</span></td>
-		<td>phantomjs</td>
+		<td>chrome</td>
+		<td>with profile</td>
+		<td>$chromeHeadlessProfile->[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">args</td>
+		<td class="hash_value">[headless, disable-gpu]</td>
+	</tr>
+</table>]</td>
 	</tr>
 </table>
-</article></body></html>
+<br/><br/></article></body></html>
