@@ -5,7 +5,18 @@
 &lt;input type="date" id="dateField"&gt;
 &lt;/body&gt;
 &lt;/html&gt;}}} </span>
-<br/><br/><br/><table>
+<br/><br/><br/><span class="meta">variable defined: HTML2= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;input type="date" id="dateField" name="dateF" value="2017-10-09"&gt;
+&lt;script type="text/javascript"&gt;
+    window.onload = function() {
+		setTimeout(function() { document.getElementById("dateField").setAttribute("name", "dateField"); }, 2000);
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
 		<td><span class="pass">mock xml server setup</span></td>
@@ -20,8 +31,22 @@
 &lt;/body&gt;
 &lt;/html&gt;</pre></td>
 	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;input type="date" id="dateField" name="dateF" value="2017-10-09"&gt;
+&lt;script type="text/javascript"&gt;
+    window.onload = function() {
+		setTimeout(function() { document.getElementById("dateField").setAttribute("name", "dateField"); }, 2000);
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.3:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.0.7:8000/FitNesseMock]</td>
 		<td>get mock server url</td>
 	</tr>
 </table>
@@ -32,7 +57,7 @@
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
-		<td colspan="3">$url->[http://172.17.0.3:8000/FitNesseMock]</td>
+		<td colspan="3">$url->[http://172.17.0.7:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -77,6 +102,28 @@
 		<td><span class="pass">2017-01-31</span></td>
 	</tr>
 </table>
+<br/>Now check that we wait:<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="3">$url->[http://172.17.0.7:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">enter date</span></td>
+		<td>2018-09-08</td>
+		<td>as</td>
+		<td>name=dateField</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=dateField</td>
+		<td><span class="pass">2018-09-08</span></td>
+	</tr>
+</table>
 <br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
@@ -86,4 +133,4 @@
 		<td colspan="2">stop</td>
 	</tr>
 </table>
-<br/><br/><a href="http://localhost:9090/HsacAcceptanceTests.SlimTests.BrowserTest.EnterDateField">http://localhost:9090/HsacAcceptanceTests.SlimTests.BrowserTest.EnterDateField</a><br/></article></body></html>
+<br/><br/></article></body></html>
