@@ -1,0 +1,18 @@
+<html><head><title>Changed Page Title</title>
+</head><body>
+<input name="remove" type="button" value="Remove">
+<label>Add button<input name="add" type="button" value="Add"></label>
+<label id="addL" for="inp2">Add 2 button</label><input id="inp2" value="Toevoegen">
+<a id="link" href="#">Hallo link
+</a>
+<script type="text/javascript">
+    window.onload = function() {
+		setTimeout(function() { document.title = "Changed Page Title"; }, 500);
+		setTimeout(function() { document.getElementById("link").innerHTML = "Hallo link\n"; }, 1500);
+		setTimeout(function() { document.getElementsByName("add")[0].setAttribute("value", "Add more"); }, 2000);
+		setTimeout(function() { document.getElementById("addL").innerHTML = "Button to add more"; }, 2500);
+		setTimeout(function() { document.getElementsByName("remove")[0].setAttribute("value", "Remove more"); }, 2500);
+    }
+</script>
+
+</body></html>
