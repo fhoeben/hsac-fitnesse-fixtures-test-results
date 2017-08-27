@@ -8,9 +8,11 @@ p {
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
+&lt;a style="text-transform:uppercase" href=""&gt;somewhere else&lt;/a&gt;
 &lt;div&gt;A&lt;/div&gt;
 &lt;p&gt;&amp;nbsp&lt;/p&gt;
 &lt;div&gt;B&lt;/div&gt;
+&lt;a style="text-transform:uppercase" href=""&gt;my link&lt;/a&gt;
 &lt;/body&gt;
 &lt;/html&gt;}}} </span>
 <br/><br/><br/><table>
@@ -30,14 +32,16 @@ p {
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
+&lt;a style="text-transform:uppercase" href=""&gt;somewhere else&lt;/a&gt;
 &lt;div&gt;A&lt;/div&gt;
 &lt;p&gt;&amp;nbsp&lt;/p&gt;
 &lt;div&gt;B&lt;/div&gt;
+&lt;a style="text-transform:uppercase" href=""&gt;my link&lt;/a&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.9:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.0.6:8000/FitNesseMock]</td>
 		<td>get mock server url</td>
 	</tr>
 </table>
@@ -52,12 +56,17 @@ p {
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
-		<td colspan="2">$url->[http://172.17.0.9:8000/FitNesseMock]</td>
+		<td colspan="2">$url->[http://172.17.0.6:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">ensure</span></td>
 		<td>is Visible</td>
 		<td>A</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">ensure</span></td>
+		<td>is Visible</td>
+		<td>ELSE</td>
 	</tr>
 	<tr class="slimRowColor7">
 		<td><span class="pass">reject</span></td>
@@ -73,6 +82,11 @@ p {
 		<td><span class="pass">ensure</span></td>
 		<td>is Visible On Page</td>
 		<td>B</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">ensure</span></td>
+		<td>is Visible On Page</td>
+		<td>link</td>
 	</tr>
 </table>
 <br/><table>
