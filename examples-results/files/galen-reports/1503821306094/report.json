@@ -1,8 +1,8 @@
 {
   "tests" : [ {
     "name" : "FitNesseLayoutTest0",
-    "startedAt" : 1503814637207,
-    "endedAt" : 1503814637207,
+    "startedAt" : 1503821306104,
+    "endedAt" : 1503821306104,
     "failed" : true,
     "statistic" : {
       "passed" : 0,
@@ -15,8 +15,8 @@
     "duration" : 0
   }, {
     "name" : "Menu with usual highlight",
-    "startedAt" : 1503814640658,
-    "endedAt" : 1503814640658,
+    "startedAt" : 1503821308796,
+    "endedAt" : 1503821308796,
     "failed" : true,
     "statistic" : {
       "passed" : 0,
