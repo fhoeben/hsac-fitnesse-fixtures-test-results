@@ -1,8 +1,7 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="referrer" content="no-referrer"><script>
-(new Image).src = 'https://ib.adnxs.com/setuid?entity=258&code=WaW0qIK8UAAO7-C2';
-(new Image).src = 'https://cm.g.doubleclick.net/pixel?google_nid=infectious_idb&google_hm=WaW0qIK8UAAO7-C2';
-(new Image).src = 'https://pixel.rubiconproject.com/tap.php?v=17913&nid=2931&put=59a5b4a882bc50000eefe0b6&expires=30';
-(new Image).src = 'https://ads.yahoo.com/cms/v1?esig=1~fe1143460ab3c541a7b843d26d773750f94c6bec&nwid=10001115287&sigv=1';
-(new Image).src = 'https://tags.bluekai.com/site/26975?phint=id%3DWaW0qIK8UAAO7-C2&limit=1';
-(new Image).src = 'https://www.trvl-px.com/im.gif?imid=WaW0qIK8UAAO7-C2';
+<html><head><script>
+
+var allowedOrigins = [["^http\\:\\/\\/www\\.fundainbusiness\\.nl\\/$", ""], ["http://www.fundainbusiness.nl/*", "i"], ["funda\\.nl", ""], ["fundainbusiness\\.nl", ""]];
+var blockedOrigins = [];
+
+!function(){"use strict";function e(e){return!a||0!==e.indexOf(a.origin)}function i(e,i){return new RegExp(i[0],i[1]).test(e)}function r(i){a&&e(i.key)&&a.source.postMessage(JSON.stringify({type:"SYNC",response:{key:i.key,value:i.newValue}}),a.origin)}var n,t,o;try{n=window.localStorage}catch(s){t=s}var a,g="_",f=function(r){var s,f,d,c,u,l=!1;for(u=0;u<allowedOrigins.length;u++)if(i(r.origin,allowedOrigins[u])){l=!0;break}if(l)for(u=0;u<blockedOrigins.length;u++)if(i(r.origin,blockedOrigins[u])){l=!1;break}if(l){a=r;try{s=JSON.parse(r.data)}catch(y){return}if(d=r.origin+g+s.key,!n){if(o)return;return o=t?t.toString():"Localstorage is undefined",c={id:"iframeerror",type:"ERROR",response:"Error accessing localStorage: "+o},r.source.postMessage(JSON.stringify(c),r.origin),void 0}if("GET"===s.type)f=n.getItem(d);else if("PUT"===s.type)f=n.setItem(d,s.value);else{if("GETALL"!==s.type)return;f={};for(var p in n)e(p)&&(f[p]=n.getItem(p))}"undefined"!=typeof s.id&&(c={id:s.id,response:f},r.source.postMessage(JSON.stringify(c),r.origin))}};window.addEventListener("message",f,!0),window.addEventListener("storage",r,!0)}();
 </script></head><body></body></html>
