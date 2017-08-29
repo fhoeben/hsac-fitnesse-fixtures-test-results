@@ -99,7 +99,7 @@
 &lt;/html&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.3:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.0.12:8000/FitNesseMock]</td>
 		<td>get mock server url</td>
 	</tr>
 </table>
@@ -110,11 +110,12 @@
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
-		<td colspan="5">$url->[http://172.17.0.3:8000/FitNesseMock]</td>
+		<td colspan="5">$url->[http://172.17.0.12:8000/FitNesseMock]</td>
 	</tr>
-	<tr class="slimRowColor7">
-		<td>seconds before timeout</td>
-		<td colspan="5">1</td>
+	<tr class="slimRowColor5">
+		<td>set repeat interval to</td>
+		<td>1100</td>
+		<td colspan="4">milliseconds</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>repeat at most</td>
@@ -133,6 +134,11 @@
 		<td>check</td>
 		<td>repeat count</td>
 		<td colspan="4"><span class="pass">2</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>time spent repeating</td>
+		<td colspan="4"><span class="pass">3943&lt;10000</span></td>
 	</tr>
 </table>
 <br/><table>
