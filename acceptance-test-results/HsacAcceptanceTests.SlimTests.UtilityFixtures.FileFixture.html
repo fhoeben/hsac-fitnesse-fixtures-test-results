@@ -18,6 +18,17 @@ last one!-!</span>
 		<td>containing</td>
 		<td>Bye Bye 1</td>
 	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">poll until</span></td>
+		<td>$created->[<a href="files/fileFixture/bye1.txt">bye1.txt</a>]</td>
+		<td colspan="3">exists</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">poll until size of</span></td>
+		<td>$created->[<a href="files/fileFixture/bye1.txt">bye1.txt</a>]</td>
+		<td>exceeds</td>
+		<td colspan="2">0</td>
+	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>text in</td>
@@ -43,6 +54,39 @@ last one!-!</span>
 		<td colspan="2"><span class="pass">txt</span></td>
 	</tr>
 	<tr class="slimRowColor8">
+		<td><span class="pass">ensure</span></td>
+		<td>exists</td>
+		<td colspan="3">$created->[<a href="files/fileFixture/bye1.txt">bye1.txt</a>]</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">delete</span></td>
+		<td colspan="4">$created->[<a href="files/fileFixture/bye1.txt">bye1.txt</a>]</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">reject</span></td>
+		<td>exists</td>
+		<td colspan="3">$created->[<a href="files/fileFixture/bye1.txt">bye1.txt</a>]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td colspan="4">deleting non-existing file does not work: throws exception</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td colspan="4">but ensuring non-existing file does not exist is no problem, returns false</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">reject</span></td>
+		<td>delete</td>
+		<td>$created->[<a href="files/fileFixture/bye1.txt">bye1.txt</a>]</td>
+		<td colspan="2">if exists</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">poll until</span></td>
+		<td>$created->[<a href="files/fileFixture/bye1.txt">bye1.txt</a>]</td>
+		<td colspan="3">does not exist</td>
+	</tr>
+	<tr class="slimRowColor8">
 		<td>note</td>
 		<td colspan="4">directory to be used by the fixture can be set to inside the files section</td>
 	</tr>
@@ -62,6 +106,11 @@ last one!-!</span>
 		<td>text in</td>
 		<td>$created2->[<a href="files/test/bye2.txt">bye2.txt</a>]</td>
 		<td colspan="2"><span class="pass">Bye Bye 2</span></td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">delete</span></td>
+		<td>$created2->[<a href="files/test/bye2.txt">bye2.txt</a>]</td>
+		<td colspan="3">if exists</td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td>note</td>
