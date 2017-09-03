@@ -14,10 +14,10 @@
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>time on timer</td>
-		<td><span class="pass">5&gt;= 5</span></td>
+		<td><span class="pass">8&gt;= 5</span></td>
 	</tr>
 	<tr class="slimRowColor1">
-		<td>$elapsed&lt;-[5]</td>
+		<td>$elapsed&lt;-[8]</td>
 		<td colspan="2">time on timer</td>
 	</tr>
 	<tr class="slimRowColor7">
@@ -28,7 +28,7 @@
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>stop timer</td>
-		<td><span class="pass">7&gt;$elapsed-&gt;[5]</span></td>
+		<td><span class="pass">12&gt;$elapsed-&gt;[8]</span></td>
 	</tr>
 </table>
 <br/>We can start and use a timer with a name.<br/><br/><table>
@@ -81,10 +81,10 @@
 		<td>check</td>
 		<td>time on timer</td>
 		<td>test2</td>
-		<td><span class="pass">6&gt; 0</span></td>
+		<td><span class="pass">3&gt; 0</span></td>
 	</tr>
 	<tr class="slimRowColor1">
-		<td>$elapsed&lt;-[6]</td>
+		<td>$elapsed&lt;-[3]</td>
 		<td>time on timer</td>
 		<td colspan="2">test2</td>
 	</tr>
@@ -92,7 +92,7 @@
 		<td>check</td>
 		<td>stop timer</td>
 		<td>test2</td>
-		<td><span class="pass">6&gt;=$elapsed-&gt;[6]</span></td>
+		<td><span class="pass">3&gt;=$elapsed-&gt;[3]</span></td>
 	</tr>
 </table>
 <br/>We pause and resume timers<br/><table>
@@ -113,10 +113,10 @@
 		<td>check</td>
 		<td>pause timer</td>
 		<td>to Pause</td>
-		<td><span class="pass">1&gt;=1</span></td>
+		<td><span class="pass">2&gt;=1</span></td>
 	</tr>
 	<tr class="slimRowColor9">
-		<td>$paused&lt;-[1]</td>
+		<td>$paused&lt;-[2]</td>
 		<td>time on timer</td>
 		<td colspan="2">to Pause</td>
 	</tr>
@@ -129,7 +129,7 @@
 		<td>check</td>
 		<td>time on timer</td>
 		<td>to Pause</td>
-		<td><span class="pass">$paused-&gt;[1]</span></td>
+		<td><span class="pass">$paused-&gt;[2]</span></td>
 	</tr>
 	<tr class="slimRowColor4">
 		<td>resume timer</td>
@@ -144,7 +144,7 @@
 		<td>check</td>
 		<td>time on timer</td>
 		<td>to Pause</td>
-		<td><span class="pass">3&gt;$paused-&gt;[1]</span></td>
+		<td><span class="pass">3&gt;$paused-&gt;[2]</span></td>
 	</tr>
 </table>
 <br/><br/>We can get information on all timers.<br/><br/><table>
@@ -169,7 +169,7 @@
 	<td><table class="hash_table">
 	<tr class="hash_row">
 		<td class="hash_key">to Pause</td>
-		<td class="hash_value">6</td>
+		<td class="hash_value">7</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">default</td>
@@ -190,15 +190,15 @@
 	<td><table class="hash_table">
 	<tr class="hash_row">
 		<td class="hash_key">to Pause</td>
-		<td class="hash_value">7</td>
+		<td class="hash_value">8</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">default</td>
-		<td class="hash_value">1</td>
+		<td class="hash_value">2</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">test 8</td>
-		<td class="hash_value">1</td>
+		<td class="hash_value">2</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">test 9</td>
@@ -214,23 +214,23 @@
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="4">current system time</td>
-	<td>13:53:51.622</td></tr>
+	<td>19:28:45.770</td></tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td>current system time as</td>
 		<td colspan="3">HH:MM:ss.SSS</td>
-	<td>13:09:51.623</td></tr>
+	<td>19:09:45.771</td></tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td>current system time as</td>
 		<td colspan="3">E dd-MMM-yy HH:mm:ss.SSS</td>
-	<td>Sun 03-Sep-17 13:53:51.623</td></tr>
+	<td>Sun 03-Sep-17 19:28:45.771</td></tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td>current system time as</td>
 		<td>E dd-MMM-yy HH:mm:ss.SSS</td>
 		<td>in</td>
 		<td>ja-JP-x-lvariant-JP</td>
-	<td>日 03-9-29 13:53:51.648</td></tr>
+	<td>日 03-9-29 19:28:45.775</td></tr>
 </table>
 <br/></article></body></html>
