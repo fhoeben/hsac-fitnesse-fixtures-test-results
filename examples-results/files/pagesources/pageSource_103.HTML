@@ -1,7 +1,8 @@
-<html><head><script>
+<!DOCTYPE html><html><head>
+  <title></title>
+  <script type="text/javascript">(function(){var e=this;(function(){var a=!1;try{var c=Object.defineProperty({},"passive",{get:function(){a=!0}});e.addEventListener("test",null,c)}catch(b){}return a})();var f=null,g=null,l=function(){var a="";h(function(c){a+=String.fromCharCode(c)});return a},h=function(a){var c=q[r];function b(a){for(;m<c.length;){var b=c.charAt(m++),d=g[b];if(null!=d)return d;if(!/^[\s\xa0]*$/.test(b))throw Error("Unknown base64 encoding at char: "+b);}return a}t();for(var m=0;;){var n=b(-1),p=b(0),d=b(64),k=b(64);if(64===k&&-1===n)break;a(n<<2|p>>4);64!=d&&(a(p<<4&240|d>>2),64!=k&&a(d<<6&192|k))}},t=function(){if(!f){f={};g={};for(var a=0;65>a;a++)f[a]="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".charAt(a),
+g[f[a]]=a,62<=a&&(g["ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.".charAt(a)]=a)}};for(var q=window.location.hash.substring(1).split(","),r=0;r<q.length;r++){var u=l(),v=window,w=u;v.google_image_requests||(v.google_image_requests=[]);var x=v.document.createElement("img");x.src=w;v.google_image_requests.push(x)};}).call(this);</script>
+</head>
+<body>
 
-var allowedOrigins = [["^http\\:\\/\\/www\\.fundainbusiness\\.nl\\/$", ""], ["http://www.fundainbusiness.nl/*", "i"], ["funda\\.nl", ""], ["fundainbusiness\\.nl", ""]];
-var blockedOrigins = [];
-
-!function(){"use strict";function e(e){return!a||0!==e.indexOf(a.origin)}function i(e,i){return new RegExp(i[0],i[1]).test(e)}function r(i){a&&e(i.key)&&a.source.postMessage(JSON.stringify({type:"SYNC",response:{key:i.key,value:i.newValue}}),a.origin)}var n,t,o;try{n=window.localStorage}catch(s){t=s}var a,g="_",f=function(r){var s,f,d,c,u,l=!1;for(u=0;u<allowedOrigins.length;u++)if(i(r.origin,allowedOrigins[u])){l=!0;break}if(l)for(u=0;u<blockedOrigins.length;u++)if(i(r.origin,blockedOrigins[u])){l=!1;break}if(l){a=r;try{s=JSON.parse(r.data)}catch(y){return}if(d=r.origin+g+s.key,!n){if(o)return;return o=t?t.toString():"Localstorage is undefined",c={id:"iframeerror",type:"ERROR",response:"Error accessing localStorage: "+o},r.source.postMessage(JSON.stringify(c),r.origin),void 0}if("GET"===s.type)f=n.getItem(d);else if("PUT"===s.type)f=n.setItem(d,s.value);else{if("GETALL"!==s.type)return;f={};for(var p in n)e(p)&&(f[p]=n.getItem(p))}"undefined"!=typeof s.id&&(c={id:s.id,response:f},r.source.postMessage(JSON.stringify(c),r.origin))}};window.addEventListener("message",f,!0),window.addEventListener("storage",r,!0)}();
-</script></head><body></body></html>
+</body></html>
