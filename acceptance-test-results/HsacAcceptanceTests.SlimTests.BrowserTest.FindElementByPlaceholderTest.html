@@ -1,0 +1,113 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.FindElementByPlaceholderTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.FindElementByPlaceholderTest</h2></header><article><br/>This test ensures we can find 'input' and 'textarea' elements based on their placeholder text (which is shown before data is entered).<br/><br/><span class="meta">variable defined: HTML= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;label for="u"&gt;User&lt;/label&gt;
+&lt;textarea id="u" placeholder="Please enter your username"&gt;&lt;/textarea&gt;
+&lt;label for="p"&gt;Password&lt;/label&gt;
+&lt;input id="p" placeholder="Please enter your secret password"&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;label for="u"&gt;User&lt;/label&gt;
+&lt;textarea id="u" placeholder="Please enter your username"&gt;&lt;/textarea&gt;
+&lt;label for="p"&gt;Password&lt;/label&gt;
+&lt;input id="p" placeholder="Please enter your secret password"&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://172.17.0.8:8000/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="3">$url->[http://172.17.0.8:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>seconds before timeout</td>
+		<td colspan="3">1</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td colspan="3">partial match</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td><span class="pass">enter</span></td>
+		<td>Doe</td>
+		<td>as</td>
+		<td>your username</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>User</td>
+		<td><span class="pass">Doe</span></td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td><span class="pass">enter</span></td>
+		<td>s2</td>
+		<td>as</td>
+		<td>secret passwo</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Password</td>
+		<td><span class="pass">s2</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td colspan="3">exact match</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td><span class="pass">enter</span></td>
+		<td>John</td>
+		<td>as</td>
+		<td>Please enter your username</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>User</td>
+		<td><span class="pass">John</span></td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td><span class="pass">enter</span></td>
+		<td>s</td>
+		<td>as</td>
+		<td>Please enter your secret password</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Password</td>
+		<td><span class="pass">s</span></td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop</td>
+	</tr>
+</table>
+<br/></article></body></html>
