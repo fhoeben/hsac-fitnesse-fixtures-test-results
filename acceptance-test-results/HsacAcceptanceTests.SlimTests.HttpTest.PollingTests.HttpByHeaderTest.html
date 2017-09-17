@@ -26,7 +26,7 @@
 		<td>yet another response</td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.5:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.0.11:8000/FitNesseMock]</td>
 		<td>get mock server url</td>
 	</tr>
 </table>
@@ -56,7 +56,7 @@
 		<td><span class="pass">post</span></td>
 		<td>0 request</td>
 		<td>to</td>
-		<td colspan="2">$url->[http://172.17.0.5:8000/FitNesseMock]</td>
+		<td colspan="2">$url->[http://172.17.0.11:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">repeat until header</span></td>
@@ -74,7 +74,7 @@
 		<td><span class="pass">post</span></td>
 		<td>0 request</td>
 		<td>to</td>
-		<td colspan="2">$url->[http://172.17.0.5:8000/FitNesseMock]</td>
+		<td colspan="2">$url->[http://172.17.0.11:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">repeat until header</span></td>
@@ -133,7 +133,7 @@
 	<tr class="slimRowTitle">
 		<td><span class="pass">table: Mock Server Message Report</span></td>
 	</tr>
-<tr><td><table><tbody><tr class="scenario"><td class="fail">1 (of 7) request(s) did not match expectation</td></tr><tr class="scenario-detail"><td><table><tbody><tr><td class="pass">1</td><td><div class="collapsible closed"><p class="title">request</p><div>GET: /FitNesseMock</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>{
+<tr><td><table><tbody><tr class="scenario"><td class="diff">1 (of 7) request(s) did not match expectation</td></tr><tr class="scenario-detail"><td><table><tbody><tr><td class="green">1</td><td><div class="collapsible closed"><p class="title">request</p><div>GET: /FitNesseMock</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>{
 	"airplanes": [{
 		"id": "001",
 		"type": "747",
@@ -148,7 +148,7 @@
 		"airline": "Virgin"
 	}]
     }
-</div></div></td></tr><tr><td class="pass">2</td><td><div class="collapsible closed"><p class="title">request</p><div>GET: /FitNesseMock</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>Broken</div></div></td></tr><tr><td class="pass">3</td><td><div class="collapsible closed"><p class="title">request</p><div>0 request</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>response</div></div></td></tr><tr><td class="pass">4</td><td><div class="collapsible closed"><p class="title">request</p><div>0 request</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>1 response</div></div></td></tr><tr><td class="pass">5</td><td><div class="collapsible closed"><p class="title">request</p><div>0 request</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>11 response</div></div></td></tr><tr><td class="pass">6</td><td><div class="collapsible closed"><p class="title">request</p><div>0 request</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>another response</div></div></td></tr><tr><td class="fail">7</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div>yet another response</div></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></table>
+</div></div></td></tr><tr><td class="green">2</td><td><div class="collapsible closed"><p class="title">request</p><div>GET: /FitNesseMock</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>Broken</div></div></td></tr><tr><td class="green">3</td><td><div class="collapsible closed"><p class="title">request</p><div>0 request</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>response</div></div></td></tr><tr><td class="green">4</td><td><div class="collapsible closed"><p class="title">request</p><div>0 request</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>1 response</div></div></td></tr><tr><td class="green">5</td><td><div class="collapsible closed"><p class="title">request</p><div>0 request</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>11 response</div></div></td></tr><tr><td class="green">6</td><td><div class="collapsible closed"><p class="title">request</p><div>0 request</div></div></td><td><div class="collapsible closed"><p class="title">response</p><div>another response</div></div></td></tr><tr><td class="diff">7</td><td>No request received</td><td><div class="collapsible closed"><p class="title">response</p><div>yet another response</div></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></table>
 <br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
