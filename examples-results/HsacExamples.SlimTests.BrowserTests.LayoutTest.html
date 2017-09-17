@@ -2,10 +2,18 @@
 <br/>On this page we check whether a page, opened using BrowserTest, meets the look and feel criteria described in a 'spec file'.<br/>This is done by using LayoutTest (so not by BrowserTest itself) which enables the use of the <a href="http://galenframework.com">Galen Framework</a>.<br/>A 'spec file' is a file containing a specification, written in <a href="http://galenframework.com/docs/reference-galen-spec-language-guide/">Galen Spec Language</a>, which allows the location of objects relatively to each other on a page to be checked.<br/>This file is loaded from the wiki's files section<a title="create page" href="FitNesse.FullReferenceGuide.UserGuide.FitNesseWiki.FilesSection?edit&amp;nonExistent=true">[?]</a>.<br/><br/>Since two different fixtures are used this test page uses two separate script tables: one to open the right page, and another to perform the layout check.<br/>Depending on the focus of the test script one could consider whether it makes sense to use either BrowserTest (when the focus is no layout checking) or LayoutTest (when the focus of the script is browser actions) as a library<a title="create page" href="FitNesse.FullReferenceGuide.UserGuide.WritingAcceptanceTests.SliM.LibraryTable?edit&amp;nonExistent=true">[?]</a>. This removes the need to explicitly switch between the two fixtures.<br/>One can then just have a single script (using methods from both fixtures) manipuating the browser and checking the resulting pages' layout.<br/><br/><p class="note">The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup<a title="create page" href="HsacExamples.SlimTests.BrowserTests.SuiteSetup?edit&amp;nonExistent=true">[?]</a>. Which allows this configuration to be shared between tests. Closing the browser is done in <a href="HsacExamples.SlimTests.BrowserTests.SuiteTearDown">SuiteTearDown</a>, which happens after all tests are completed.</p><br/>We start by opening the page to be checked.<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td><span class="pass">browser test</span></td>
+		<td>browser test <span class="error">org.openqa.selenium.UnsupportedCommandException: The test with session id 0649d6980ee749118a1abd4979f1073d has already finished, and can't receive further commands.
+You can learn more at https://saucelabs.com/jobs/0649d6980ee749118a1abd4979f1073d
+For help, please check https://wiki.saucelabs.com/display/DOCS/Common+Error+Messages
+Command duration or timeout: 91 milliseconds
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'testing-docker-96f8ec51-4bb5-4440-adb1-e3bdf38462cc', ip: '172.17.0.10', os.name: 'Linux', os.arch: 'amd64', os.version: '4.11.6-041106-generic', java.version: '1.8.0_144'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=true, webStorageEnabled=true, takesScreenshot=true, browserName=chrome, javascriptEnabled=true, platformName=XP, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\ADMINI~1\AppData\Local\Temp\scoped_dir1876_12189}, takesHeapSnapshot=true, pageLoadStrategy=normal, unhandledPromptBehavior=, hasMetadata=true, handlesAlerts=true, databaseEnabled=false, version=61.0.3163.79, browserConnectionEnabled=false, nativeEvents=true, webdriver.remote.sessionid=0649d6980ee749118a1abd4979f1073d, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 0649d6980ee749118a1abd4979f1073d</span></td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td><span class="pass">open</span></td>
+		<td>open <span class="error"><div>org.openqa.selenium.UnsupportedCommandException: The test with session id 0649d6980ee749118a1abd4979f1073d has already finished, and can't receive further commands.<br/>You can learn more at https://saucelabs.com/jobs/0649d6980ee749118a1abd4979f1073d<br/>For help, please check https://wiki.saucelabs.com/display/DOCS/Common+Error+Messages<br/>Command duration or timeout: 87 milliseconds<br/>Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'<br/>System info: host: 'testing-docker-96f8ec51-4bb5-4440-adb1-e3bdf38462cc', ip: '172.17.0.10', os.name: 'Linux', os.arch: 'amd64', os.version: '4.11.6-041106-generic', java.version: '1.8.0_144'<br/>Driver info: org.openqa.selenium.remote.RemoteWebDriver<br/>Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=true, webStorageEnabled=true, takesScreenshot=true, browserName=chrome, javascriptEnabled=true, platformName=XP, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\ADMINI~1\AppData\Local\Temp\scoped_dir1876_12189}, takesHeapSnapshot=true, pageLoadStrategy=normal, unhandledPromptBehavior=, hasMetadata=true, handlesAlerts=true, databaseEnabled=false, version=61.0.3163.79, browserConnectionEnabled=false, nativeEvents=true, webdriver.remote.sessionid=0649d6980ee749118a1abd4979f1073d, locationContextEnabled=true, cssSelectorsEnabled=true}]<br/>Session ID: 0649d6980ee749118a1abd4979f1073d<br/>	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br/>	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br/>	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br/>	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)<br/>	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)<br/>	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:680)<br/>	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.defaultContent(RemoteWebDriver.java:1019)<br/>	at nl.hsac.fitnesse.fixture.util.selenium.SeleniumHelper.switchToDefaultContent(SeleniumHelper.java:914)<br/>	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.switchToDefaultContent(BrowserTest.java:399)<br/>	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.open(BrowserTest.java:187)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147)<br/>	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:51)<br/>	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.superInvoke(BrowserTest.java:111)<br/>	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invoke(BrowserTest.java:64)<br/>	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:31)<br/>	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147)<br/>	at fitnesse.slim.fixtureInteraction.DefaultInteraction.callMethod(DefaultInteraction.java:130)<br/>	at fitnesse.slim.fixtureInteraction.DefaultInteraction.invokeMethod(DefaultInteraction.java:114)<br/>	at fitnesse.slim.fixtureInteraction.DefaultInteraction.findAndInvoke(DefaultInteraction.java:92)<br/>	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18)<br/>	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18)<br/>	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:130)<br/>	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:103)<br/>	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35)<br/>	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29)<br/>	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49)<br/>	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43)<br/>	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85)<br/>	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82)<br/>	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75)<br/>	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62)<br/>	at fitnesse.slim.SlimServer.serve(SlimServer.java:47)<br/>	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:53)<br/>	at java.lang.Thread.run(Thread.java:748)<br/></div></span></td>
 		<td><a href="http://testapp.galenframework.com">http://testapp.galenframework.com</a></td>
 	</tr>
 </table>
@@ -18,15 +26,83 @@
 		<td>set included tags</td>
 		<td colspan="2">usual,hovered</td>
 	</tr>
-	<tr class="slimRowColor9">
-		<td>show</td>
-		<td>verify layout using</td>
-		<td><a href="files/galenExamples/menuHighlight.gspec">http://files/galenExamples/menuHighlight.gspec</a></td>
-	<td><a href="files/galen-reports/1505652677574/1-fitnesselayouttest0.HTML">1-fitnesselayouttest0.HTML</a></td></tr>
+	<tr class="exception closed">
+		<td class="error">show</td>
+		<td class="error">verify layout using</td>
+		<td class="error"><a href="files/galenExamples/menuHighlight.gspec">http://files/galenExamples/menuHighlight.gspec</a></td>
+	</tr><tr class="exception-detail closed-detail"><td colspan="3"><pre>__EXCEPTION__:org.openqa.selenium.UnsupportedCommandException: The test with session id 0649d6980ee749118a1abd4979f1073d has already finished, and can't receive further commands.
+You can learn more at https://saucelabs.com/jobs/0649d6980ee749118a1abd4979f1073d
+For help, please check https://wiki.saucelabs.com/display/DOCS/Common+Error+Messages
+Command duration or timeout: 85 milliseconds
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'testing-docker-96f8ec51-4bb5-4440-adb1-e3bdf38462cc', ip: '172.17.0.10', os.name: 'Linux', os.arch: 'amd64', os.version: '4.11.6-041106-generic', java.version: '1.8.0_144'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=true, webStorageEnabled=true, takesScreenshot=true, browserName=chrome, javascriptEnabled=true, platformName=XP, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\ADMINI~1\AppData\Local\Temp\scoped_dir1876_12189}, takesHeapSnapshot=true, pageLoadStrategy=normal, unhandledPromptBehavior=, hasMetadata=true, handlesAlerts=true, databaseEnabled=false, version=61.0.3163.79, browserConnectionEnabled=false, nativeEvents=true, webdriver.remote.sessionid=0649d6980ee749118a1abd4979f1073d, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 0649d6980ee749118a1abd4979f1073d
+*** Element info: {Using=css selector, value=#menu li a}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) [rt.jar:1.8.0_144]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) [rt.jar:1.8.0_144]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) [rt.jar:1.8.0_144]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) [rt.jar:1.8.0_144]
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215) [selenium-remote-driver-3.5.3.jar]
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167) [selenium-remote-driver-3.5.3.jar]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:680) [selenium-remote-driver-3.5.3.jar]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:443) [selenium-remote-driver-3.5.3.jar]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementsByCssSelector(RemoteWebDriver.java:514) [selenium-remote-driver-3.5.3.jar]
+	at org.openqa.selenium.By$ByCssSelector.findElements(By.java:441) [selenium-api-3.5.3.jar]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:404) [selenium-remote-driver-3.5.3.jar]
+	at com.galenframework.page.selenium.ByChain.findElements(ByChain.java:40) [galen-core-2.3.4.jar]
+	at com.galenframework.page.selenium.SeleniumPage.driverFindElements(SeleniumPage.java:111) [galen-core-2.3.4.jar]
+	at com.galenframework.page.selenium.SeleniumPage.getObjectCount(SeleniumPage.java:153) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.ObjectDefinitionProcessor.addMultiObjectsToSpec(ObjectDefinitionProcessor.java:145) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.ObjectDefinitionProcessor.processObject(ObjectDefinitionProcessor.java:105) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.ObjectDefinitionProcessor.parseItem(ObjectDefinitionProcessor.java:63) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.ObjectDefinitionProcessor.parseItem(ObjectDefinitionProcessor.java:59) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.ObjectDefinitionProcessor.process(ObjectDefinitionProcessor.java:52) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.MacroProcessor.processMacroStatement(MacroProcessor.java:197) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.MacroProcessor.process(MacroProcessor.java:79) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.PageSpecReader.read(PageSpecReader.java:61) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.PageSpecReader.read(PageSpecReader.java:45) [galen-core-2.3.4.jar]
+	at com.galenframework.api.Galen.checkLayout(Galen.java:68) [galen-core-2.3.4.jar]
+	at com.galenframework.api.Galen.checkLayout(Galen.java:59) [galen-core-2.3.4.jar]
+	at com.galenframework.api.Galen.checkLayout(Galen.java:52) [galen-core-2.3.4.jar]
+	at com.galenframework.api.Galen.checkLayout(Galen.java:141) [galen-core-2.3.4.jar]
+	at nl.hsac.fitnesse.fixture.slim.web.LayoutTest.checkLayout(LayoutTest.java:62) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.LayoutTest.checkLayout(LayoutTest.java:53) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.LayoutTest.verifyLayoutUsing(LayoutTest.java:45) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.8.0_144]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) [rt.jar:1.8.0_144]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_144]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147) [fitnesse-20161106.jar:20161106]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:51) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:31) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_144]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.callMethod(DefaultInteraction.java:130) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.invokeMethod(DefaultInteraction.java:114) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.findAndInvoke(DefaultInteraction.java:92) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:130) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:103) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20161106.jar:20161106]
+	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:53) [fitnesse-20161106.jar:20161106]
+	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_144]</pre></td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>verified spec count</td>
-		<td><span class="pass">2&gt;0</span></td>
+		<td><span class="fail">0&gt;0</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -36,31 +112,48 @@
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>spec error count</td>
-		<td><span class="pass">2</span></td>
+		<td>[<span class="diff">0</span>] <span class="fail">expected [</span><span class="diff">2</span><span class="fail">]</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>spec warning count</td>
 		<td><span class="pass">0</span></td>
 	</tr>
-	<tr class="slimRowColor9">
-		<td>show</td>
-		<td colspan="2">layout check messages</td>
-	<td><table class="hash_table">
-	<tr class="hash_row">
-		<td class="hash_key">[menu_item-1]</td>
-		<td class="hash_value"><table class="hash_table">
-	<tr class="hash_row">
-		<td class="hash_key">error on: color-scheme 90 to 96 % #205380, 1 to 4 % white</td>
-		<td class="hash_value">[color #205380 on "menu_item-1" is 0% which is not in range of 90 to 96%, color white on "menu_item-1" is 0% which is not in range of 1 to 4%]</td>
-	</tr>
-	<tr class="hash_row">
-		<td class="hash_key">error on: color-scheme 90 to 96 % #2d6ca2, 1 to 4 % white</td>
-		<td class="hash_value">[color #2d6ca2 on "menu_item-1" is 0% which is not in range of 90 to 96%, color white on "menu_item-1" is 0% which is not in range of 1 to 4%]</td>
-	</tr>
-</table></td>
-	</tr>
-</table></td></tr>
+	<tr class="exception closed">
+		<td class="error">show</td>
+		<td colspan="2" class="error">layout check messages</td>
+	</tr><tr class="exception-detail closed-detail"><td colspan="3"><pre>__EXCEPTION__:java.lang.NullPointerException
+	at nl.hsac.fitnesse.fixture.slim.web.LayoutTest.formatResultsForWiki(LayoutTest.java:118) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.LayoutTest.layoutCheckMessages(LayoutTest.java:113) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.8.0_144]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) [rt.jar:1.8.0_144]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_144]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147) [fitnesse-20161106.jar:20161106]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:51) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:31) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_144]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.callMethod(DefaultInteraction.java:130) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.invokeMethod(DefaultInteraction.java:114) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.findAndInvoke(DefaultInteraction.java:92) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:130) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:103) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20161106.jar:20161106]
+	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:53) [fitnesse-20161106.jar:20161106]
+	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_144]</pre></td></tr>
 	<tr class="slimRowColor7">
 		<td>set included tags</td>
 		<td colspan="2">usual</td>
@@ -69,15 +162,83 @@
 		<td>set layout check name</td>
 		<td colspan="2">Menu with usual highlight</td>
 	</tr>
-	<tr class="slimRowColor9">
-		<td>show</td>
-		<td>verify layout using</td>
-		<td><a href="files/galenExamples/menuHighlight.gspec">http://files/galenExamples/menuHighlight.gspec</a></td>
-	<td><a href="files/galen-reports/1505652677574/2-menu-with-usual-highlight.HTML">2-menu-with-usual-highlight.HTML</a></td></tr>
+	<tr class="exception closed">
+		<td class="error">show</td>
+		<td class="error">verify layout using</td>
+		<td class="error"><a href="files/galenExamples/menuHighlight.gspec">http://files/galenExamples/menuHighlight.gspec</a></td>
+	</tr><tr class="exception-detail closed-detail"><td colspan="3"><pre>__EXCEPTION__:org.openqa.selenium.UnsupportedCommandException: The test with session id 0649d6980ee749118a1abd4979f1073d has already finished, and can't receive further commands.
+You can learn more at https://saucelabs.com/jobs/0649d6980ee749118a1abd4979f1073d
+For help, please check https://wiki.saucelabs.com/display/DOCS/Common+Error+Messages
+Command duration or timeout: 92 milliseconds
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'testing-docker-96f8ec51-4bb5-4440-adb1-e3bdf38462cc', ip: '172.17.0.10', os.name: 'Linux', os.arch: 'amd64', os.version: '4.11.6-041106-generic', java.version: '1.8.0_144'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=true, webStorageEnabled=true, takesScreenshot=true, browserName=chrome, javascriptEnabled=true, platformName=XP, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\ADMINI~1\AppData\Local\Temp\scoped_dir1876_12189}, takesHeapSnapshot=true, pageLoadStrategy=normal, unhandledPromptBehavior=, hasMetadata=true, handlesAlerts=true, databaseEnabled=false, version=61.0.3163.79, browserConnectionEnabled=false, nativeEvents=true, webdriver.remote.sessionid=0649d6980ee749118a1abd4979f1073d, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 0649d6980ee749118a1abd4979f1073d
+*** Element info: {Using=css selector, value=#menu li a}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) [rt.jar:1.8.0_144]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) [rt.jar:1.8.0_144]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) [rt.jar:1.8.0_144]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) [rt.jar:1.8.0_144]
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215) [selenium-remote-driver-3.5.3.jar]
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167) [selenium-remote-driver-3.5.3.jar]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:680) [selenium-remote-driver-3.5.3.jar]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:443) [selenium-remote-driver-3.5.3.jar]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementsByCssSelector(RemoteWebDriver.java:514) [selenium-remote-driver-3.5.3.jar]
+	at org.openqa.selenium.By$ByCssSelector.findElements(By.java:441) [selenium-api-3.5.3.jar]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:404) [selenium-remote-driver-3.5.3.jar]
+	at com.galenframework.page.selenium.ByChain.findElements(ByChain.java:40) [galen-core-2.3.4.jar]
+	at com.galenframework.page.selenium.SeleniumPage.driverFindElements(SeleniumPage.java:111) [galen-core-2.3.4.jar]
+	at com.galenframework.page.selenium.SeleniumPage.getObjectCount(SeleniumPage.java:153) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.ObjectDefinitionProcessor.addMultiObjectsToSpec(ObjectDefinitionProcessor.java:145) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.ObjectDefinitionProcessor.processObject(ObjectDefinitionProcessor.java:105) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.ObjectDefinitionProcessor.parseItem(ObjectDefinitionProcessor.java:63) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.ObjectDefinitionProcessor.parseItem(ObjectDefinitionProcessor.java:59) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.ObjectDefinitionProcessor.process(ObjectDefinitionProcessor.java:52) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.MacroProcessor.processMacroStatement(MacroProcessor.java:197) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.MacroProcessor.process(MacroProcessor.java:79) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.PageSpecReader.read(PageSpecReader.java:61) [galen-core-2.3.4.jar]
+	at com.galenframework.speclang2.pagespec.PageSpecReader.read(PageSpecReader.java:45) [galen-core-2.3.4.jar]
+	at com.galenframework.api.Galen.checkLayout(Galen.java:68) [galen-core-2.3.4.jar]
+	at com.galenframework.api.Galen.checkLayout(Galen.java:59) [galen-core-2.3.4.jar]
+	at com.galenframework.api.Galen.checkLayout(Galen.java:52) [galen-core-2.3.4.jar]
+	at com.galenframework.api.Galen.checkLayout(Galen.java:141) [galen-core-2.3.4.jar]
+	at nl.hsac.fitnesse.fixture.slim.web.LayoutTest.checkLayout(LayoutTest.java:62) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.LayoutTest.checkLayout(LayoutTest.java:53) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.LayoutTest.verifyLayoutUsing(LayoutTest.java:45) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.8.0_144]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) [rt.jar:1.8.0_144]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_144]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147) [fitnesse-20161106.jar:20161106]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:51) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:31) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_144]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.callMethod(DefaultInteraction.java:130) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.invokeMethod(DefaultInteraction.java:114) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.fixtureInteraction.DefaultInteraction.findAndInvoke(DefaultInteraction.java:92) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:130) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:103) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20161106.jar:20161106]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20161106.jar:20161106]
+	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:53) [fitnesse-20161106.jar:20161106]
+	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_144]</pre></td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>spec error count</td>
-		<td><span class="pass">1</span></td>
+		<td>[<span class="diff">0</span>] <span class="fail">expected [</span><span class="diff">1</span><span class="fail">]</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
