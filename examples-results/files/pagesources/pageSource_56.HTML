@@ -1,7 +1,8 @@
-<html><head><script>
-
-var allowedOrigins = [["^http\\:\\/\\/www\\.fundainbusiness\\.nl\\/$", ""], ["http://www.fundainbusiness.nl/*", "i"], ["funda\\.nl", ""], ["fundainbusiness\\.nl", ""]];
-var blockedOrigins = [];
-
-!function(){"use strict";function e(e){return!g||0!==e.indexOf(g.origin)}function r(e,r){return new RegExp(r[0],r[1]).test(e)}function i(e){if(!s){s=e?e.toString():"Localstorage is undefined";var r={id:"iframeerror",type:"ERROR",response:"Error accessing localStorage: "+s};event.source.postMessage(JSON.stringify(r),event.origin)}}function n(r){g&&e(r.key)&&g.source.postMessage(JSON.stringify({type:"SYNC",response:{key:r.key,value:r.newValue}}),g.origin)}var t,o,s;try{t=window.localStorage}catch(a){o=a}var g,f="_",c=function(n){var s,a,c,d,u,l=!1;for(u=0;u<allowedOrigins.length;u++)if(r(n.origin,allowedOrigins[u])){l=!0;break}if(l)for(u=0;u<blockedOrigins.length;u++)if(r(n.origin,blockedOrigins[u])){l=!1;break}if(l){g=n;try{s=JSON.parse(n.data)}catch(y){return}if(c=n.origin+f+s.key,!t)return i(o);if("GET"===s.type)a=t.getItem(c);else if("PUT"===s.type)try{a=t.setItem(c,s.value)}catch(y){return i(y)}else{if("GETALL"!==s.type)return;a={};for(var p in t)t.hasOwnProperty(p)&&e(p)&&(a[p]=t.getItem(p))}"undefined"!=typeof s.id&&(d={id:s.id,response:a},n.source.postMessage(JSON.stringify(d),n.origin))}};window.addEventListener("message",c,!0),window.addEventListener("storage",n,!0)}();
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="referrer" content="no-referrer"><script>
+(new Image).src = 'https://ib.adnxs.com/setuid?entity=258&code=WcDe4IK8UAAO-4k8';
+(new Image).src = 'https://x.bidswitch.net/sync?dsp_id=25&expires=30&user_id=59c0dee082bc50000efb893c&ssp=';
+(new Image).src = 'https://cm.g.doubleclick.net/pixel?google_nid=infectious_idb&google_hm=WcDe4IK8UAAO-4k8';
+(new Image).src = 'https://pixel.rubiconproject.com/tap.php?v=17913&nid=2931&put=59c0dee082bc50000efb893c&expires=30';
+(new Image).src = 'https://tags.bluekai.com/site/26975?phint=id%3DWcDe4IK8UAAO-4k8&limit=1';
+(new Image).src = 'https://www.trvl-px.com/im.gif?imid=WcDe4IK8UAAO-4k8';
 </script></head><body></body></html>

@@ -1,7 +1,48 @@
-<html><head><script>
+<html xmlns="http://www.w3.org/1999/xhtml"><head></head><body>
+<script type="text/javascript">
+try {
+    var eventUrl = 'https://tps11017.doubleverify.com/event.gif?impid=8a6a63e049404a12a022aa2629784ec1&rtcid=-1&ifbc=0';
+    var isadid = 0;
+    var isrtc = 0;
+    var isrtexist, lsid, isfbls;
+    var hasStorage = (function(){
+		try {
+			var testStr = 'dv-lsTest';
+			localStorage.setItem(testStr, testStr);
+			localStorage.removeItem(testStr);
+			return true;
+		} catch(e) {
+			return false;
+		}
+	})();
 
-var allowedOrigins = [["^http\\:\\/\\/www\\.fundainbusiness\\.nl\\/$", ""], ["http://www.fundainbusiness.nl/*", "i"], ["funda\\.nl", ""], ["fundainbusiness\\.nl", ""]];
-var blockedOrigins = [];
+    if (navigator.cookieEnabled)
+        eventUrl += '&isce=1';           
+    
+    if (hasStorage) {
+		try{
+			lsid = (localStorage.rt || '-1');
+			isfbls = localStorage.rt ? '1': '0';
+			eventUrl += '&islse=1&rtlsid=' + lsid + '&ifbls=' + isfbls;
+		}catch(e){}
+    }
 
-!function(){"use strict";function e(e){return!g||0!==e.indexOf(g.origin)}function r(e,r){return new RegExp(r[0],r[1]).test(e)}function i(e){if(!s){s=e?e.toString():"Localstorage is undefined";var r={id:"iframeerror",type:"ERROR",response:"Error accessing localStorage: "+s};event.source.postMessage(JSON.stringify(r),event.origin)}}function n(r){g&&e(r.key)&&g.source.postMessage(JSON.stringify({type:"SYNC",response:{key:r.key,value:r.newValue}}),g.origin)}var t,o,s;try{t=window.localStorage}catch(a){o=a}var g,f="_",c=function(n){var s,a,c,d,u,l=!1;for(u=0;u<allowedOrigins.length;u++)if(r(n.origin,allowedOrigins[u])){l=!0;break}if(l)for(u=0;u<blockedOrigins.length;u++)if(r(n.origin,blockedOrigins[u])){l=!1;break}if(l){g=n;try{s=JSON.parse(n.data)}catch(y){return}if(c=n.origin+f+s.key,!t)return i(o);if("GET"===s.type)a=t.getItem(c);else if("PUT"===s.type)try{a=t.setItem(c,s.value)}catch(y){return i(y)}else{if("GETALL"!==s.type)return;a={};for(var p in t)t.hasOwnProperty(p)&&e(p)&&(a[p]=t.getItem(p))}"undefined"!=typeof s.id&&(d={id:s.id,response:a},n.source.postMessage(JSON.stringify(d),n.origin))}};window.addEventListener("message",c,!0),window.addEventListener("storage",n,!0)}();
-</script></head><body></body></html>
+    if (isrtc || isfbls == '1' || isadid) {
+        var image = document.createElement('img');
+        image.src = eventUrl;
+        image.width = 0;
+        image.height = 0;
+        image.style.display = 'none';
+        document.body.insertBefore(image, document.body.firstChild);
+    }
+}catch (e) {
+    try {
+        var errUrl = window.location.protocol + '//tps30.doubleverify.com/visit.jpg?ctx=818052&cmp=1619415&dvtagver=6.1.src&jsver=0&dvp_isCfbcRes=1&dvp_jsErrMsg=' + encodeURIComponent(e);
+        (new Image()).src = errUrl;
+    }catch (ex)
+    {}
+}
+</script>
+
+
+</body></html>
