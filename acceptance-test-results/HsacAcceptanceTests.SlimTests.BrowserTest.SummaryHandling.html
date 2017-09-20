@@ -3,7 +3,7 @@
 &lt;body&gt;
 &lt;div&gt;
 
-&lt;label for="hi"&gt;Hello4&lt;/label&gt;&lt;input id="hi" value="Shown"&gt;&lt;/label&gt;
+&lt;label for="hi"&gt;*&lt;span&gt;&amp;euro;&amp;nbsp;3&lt;/span&gt;Hello4&lt;strong&gt;!&lt;/strong&gt;&lt;/label&gt;&lt;input id="hi" value="Shown"&gt;&lt;/label&gt;
 &lt;details&gt;
 &lt;summary&gt;&lt;span&gt;Initially hidden&lt;/span&gt;&lt;/summary&gt;
 &lt;label for="hi21"&gt;Hello4&lt;/label&gt;&lt;input id="hi21" value="Hidden"&gt;&lt;/label&gt;
@@ -22,7 +22,7 @@
 &lt;body&gt;
 &lt;div&gt;
 
-&lt;label for="hi"&gt;Hello4&lt;/label&gt;&lt;input id="hi" value="Shown"&gt;&lt;/label&gt;
+&lt;label for="hi"&gt;*&lt;span&gt;&amp;euro;&amp;nbsp;3&lt;/span&gt;Hello4&lt;strong&gt;!&lt;/strong&gt;&lt;/label&gt;&lt;input id="hi" value="Shown"&gt;&lt;/label&gt;
 &lt;details&gt;
 &lt;summary&gt;&lt;span&gt;Initially hidden&lt;/span&gt;&lt;/summary&gt;
 &lt;label for="hi21"&gt;Hello4&lt;/label&gt;&lt;input id="hi21" value="Hidden"&gt;&lt;/label&gt;
@@ -31,7 +31,7 @@
 &lt;/html&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.9:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.0.15:8000/FitNesseMock]</td>
 		<td>get mock server url</td>
 	</tr>
 </table>
@@ -46,12 +46,18 @@
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
-		<td colspan="5">$url->[http://172.17.0.9:8000/FitNesseMock]</td>
+		<td colspan="5">$url->[http://172.17.0.15:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>value of</td>
 		<td>Hello4</td>
+		<td colspan="3"><span class="pass">Shown</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>€ 3</td>
 		<td colspan="3"><span class="pass">Shown</span></td>
 	</tr>
 	<tr class="slimRowColor0">
