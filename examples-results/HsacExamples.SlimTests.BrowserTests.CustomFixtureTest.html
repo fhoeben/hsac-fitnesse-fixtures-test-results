@@ -11,29 +11,29 @@ The latter two approaches both make the test (i.e. the script table containing t
 		<td colspan="3"><span class="pass">browser test</span></td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td>open <span class="fail"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout.png"><img src="files/screenshots/timeouts/BrowserTest/timeout.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout.png" height="200"/></a></div></div></span></td>
+		<td><span class="pass">open</span></td>
 		<td colspan="3"><a href="http://www.funda.nl">http://www.funda.nl</a></td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>select <span class="ignore">Test not run</span></td>
+		<td><span class="pass">select</span></td>
 		<td>€ 1.000.000</td>
 		<td>for</td>
 		<td>Van</td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>select <span class="ignore">Test not run</span></td>
+		<td><span class="pass">select</span></td>
 		<td>€ 2.000.000</td>
 		<td>for</td>
 		<td>Tot</td>
 	</tr>
 	<tr class="slimRowColor2">
-		<td>enter <span class="ignore">Test not run</span></td>
+		<td><span class="pass">enter</span></td>
 		<td>Groenedijk, Utrecht</td>
 		<td>as</td>
 		<td>Plaats, buurt, adres etc</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td>wait <span class="ignore">Test not run</span></td>
+		<td><span class="pass">wait</span></td>
 		<td>1</td>
 		<td colspan="2">seconds</td>
 	</tr>
@@ -42,19 +42,19 @@ The latter two approaches both make the test (i.e. the script table containing t
 		<td colspan="3">select option from autocomplete</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td>press <span class="ignore">Test not run</span></td>
+		<td><span class="pass">press</span></td>
 		<td colspan="3">down</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td>press <span class="ignore">Test not run</span></td>
+		<td><span class="pass">press</span></td>
 		<td colspan="3">enter</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td>click <span class="ignore">Test not run</span></td>
+		<td><span class="pass">click</span></td>
 		<td colspan="3">Zoek</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td>click <span class="ignore">Test not run</span></td>
+		<td>click <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout.png"><img src="files/screenshots/timeouts/BrowserTest/timeout.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout.png" height="200"/></a></div></div></span></td>
 		<td colspan="3">Groenedijk 57</td>
 	</tr>
 	<tr class="slimRowColor8">
@@ -65,7 +65,7 @@ The latter two approaches both make the test (i.e. the script table containing t
 		<td>check</td>
 		<td>value of</td>
 		<td>xpath=//span[@class='object-media-teaser-count']</td>
-		<td>55 <span class="ignore">Test not run</span></td>
+		<td>[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">55</span><span class="fail">]</span></td>
 	</tr>
 </table>
 <br/>Using a custom subclass, makes the script look like...<br/><br/><h2>Using FundaTest</h2>
@@ -74,32 +74,32 @@ The latter two approaches both make the test (i.e. the script table containing t
 		<td>import</td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>nl.hsac.fitnesse.sample <span class="ignore">Test not run</span></td>
+		<td><span class="pass">nl.hsac.fitnesse.sample</span></td>
 	</tr>
 </table>
 <br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td colspan="3">funda test <span class="ignore">Test not run</span></td>
+		<td colspan="3"><span class="pass">funda test</span></td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td>open <span class="ignore">Test not run</span></td>
+		<td><span class="pass">open</span></td>
 		<td colspan="3"><a href="http://www.funda.nl">http://www.funda.nl</a></td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>select <span class="ignore">Test not run</span></td>
+		<td>select <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_1.HTML">Page content</a>:<a href="files/screenshots/timeouts/FundaTest/timeout.png"><img src="files/screenshots/timeouts/FundaTest/timeout.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/FundaTest/timeout.png" height="200"/></a></div></div></span></td>
 		<td>€ 1.000.000</td>
 		<td>for</td>
 		<td>Van</td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>select <span class="ignore">Test not run</span></td>
+		<td>select <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_2.HTML">Page content</a>:<a href="files/screenshots/timeouts/FundaTest/timeout_1.png"><img src="files/screenshots/timeouts/FundaTest/timeout_1.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/FundaTest/timeout_1.png" height="200"/></a></div></div></span></td>
 		<td>€ 2.000.000</td>
 		<td>for</td>
 		<td>Tot</td>
 	</tr>
 	<tr class="slimRowColor2">
-		<td>enter <span class="ignore">Test not run</span></td>
+		<td>enter <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_3.HTML">Page content</a>:<a href="files/screenshots/timeouts/FundaTest/timeout_2.png"><img src="files/screenshots/timeouts/FundaTest/timeout_2.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/FundaTest/timeout_2.png" height="200"/></a></div></div></span></td>
 		<td>Groenedijk, Utrecht</td>
 		<td>as</td>
 		<td>Plaats, buurt, adres etc</td>
@@ -109,24 +109,24 @@ The latter two approaches both make the test (i.e. the script table containing t
 		<td colspan="3">select option from autocomplete</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td>wait <span class="ignore">Test not run</span></td>
+		<td><span class="pass">wait</span></td>
 		<td>1</td>
 		<td colspan="2">seconds</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td>press <span class="ignore">Test not run</span></td>
+		<td><span class="pass">press</span></td>
 		<td colspan="3">down</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td>press <span class="ignore">Test not run</span></td>
+		<td><span class="pass">press</span></td>
 		<td colspan="3">enter</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td>click <span class="ignore">Test not run</span></td>
+		<td><span class="pass">click</span></td>
 		<td colspan="3">Zoek</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td>click <span class="ignore">Test not run</span></td>
+		<td>click <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_4.HTML">Page content</a>:<a href="files/screenshots/timeouts/FundaTest/timeout_3.png"><img src="files/screenshots/timeouts/FundaTest/timeout_3.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/FundaTest/timeout_3.png" height="200"/></a></div></div></span></td>
 		<td colspan="3">Groenedijk 57</td>
 	</tr>
 	<tr class="slimRowColor8">
@@ -136,7 +136,7 @@ The latter two approaches both make the test (i.e. the script table containing t
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>number of photos</td>
-		<td colspan="2">55 <span class="ignore">Test not run</span></td>
+		<td colspan="2">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">55</span><span class="fail">]</span></td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td>note</td>
@@ -145,7 +145,7 @@ The latter two approaches both make the test (i.e. the script table containing t
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>classification</td>
-		<td colspan="2">Good <span class="ignore">Test not run</span></td>
+		<td colspan="2">Good <span class="error"><div><div>java.lang.NumberFormatException: null<br/>	at java.lang.Integer.parseInt(Integer.java:542)<br/>	at java.lang.Integer.parseInt(Integer.java:615)<br/>	at nl.hsac.fitnesse.sample.FundaTest.classification(FundaTest.java:21)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147)<br/>	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:51)<br/>	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.superInvoke(BrowserTest.java:118)<br/>	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.lambda$invokedWrappedInWaitUntil$0(BrowserTest.java:84)<br/>	at nl.hsac.fitnesse.fixture.util.selenium.TryAllFramesConditionDecorator.apply(TryAllFramesConditionDecorator.java:32)<br/>	at nl.hsac.fitnesse.fixture.util.selenium.TryAllFramesConditionDecorator.apply(TryAllFramesConditionDecorator.java:16)<br/>	at nl.hsac.fitnesse.fixture.util.selenium.SeleniumHelper$2.apply(SeleniumHelper.java:715)<br/>	at nl.hsac.fitnesse.fixture.util.selenium.SeleniumHelper$2.apply(SeleniumHelper.java:711)<br/>	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)<br/>	at nl.hsac.fitnesse.fixture.util.selenium.SeleniumHelper.waitUntil(SeleniumHelper.java:700)<br/>	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.waitUntilImpl(BrowserTest.java:1786)<br/>	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.waitUntilOrNull(BrowserTest.java:1779)<br/>	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invokedWrappedInWaitUntil(BrowserTest.java:104)<br/>	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invoke(BrowserTest.java:76)<br/>	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:31)<br/>	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147)<br/>	at fitnesse.slim.fixtureInteraction.DefaultInteraction.callMethod(DefaultInteraction.java:130)<br/>	at fitnesse.slim.fixtureInteraction.DefaultInteraction.invokeMethod(DefaultInteraction.java:114)<br/>	at fitnesse.slim.fixtureInteraction.DefaultInteraction.findAndInvoke(DefaultInteraction.java:92)<br/>	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18)<br/>	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18)<br/>	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:130)<br/>	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:103)<br/>	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35)<br/>	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29)<br/>	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49)<br/>	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43)<br/>	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85)<br/>	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82)<br/>	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75)<br/>	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62)<br/>	at fitnesse.slim.SlimServer.serve(SlimServer.java:47)<br/>	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:53)<br/>	at java.lang.Thread.run(Thread.java:748)<br/>.</div><div><a href="files/pagesources/java.lang.NumberFormatException.HTML">Page content</a>:<a href="files/screenshots/exception.png"><img src="files/screenshots/exception.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/exception.png" height="200"/></a></div></div></span></td>
 	</tr>
 </table>
 <br/>And using a scenario<br/><br/><h2>Using a Scenario</h2>
@@ -165,32 +165,32 @@ The latter two approaches both make the test (i.e. the script table containing t
 <br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td colspan="3">browser test <span class="ignore">Test not run</span></td>
+		<td colspan="3"><span class="pass">browser test</span></td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td>open <span class="ignore">Test not run</span></td>
+		<td><span class="pass">open</span></td>
 		<td colspan="3"><a href="http://www.funda.nl">http://www.funda.nl</a></td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>select <span class="ignore">Test not run</span></td>
+		<td>select <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_5.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_1.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_1.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_1.png" height="200"/></a></div></div></span></td>
 		<td>€ 1.000.000</td>
 		<td>for</td>
 		<td>Van</td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>select <span class="ignore">Test not run</span></td>
+		<td>select <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_6.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_2.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_2.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_2.png" height="200"/></a></div></div></span></td>
 		<td>€ 2.000.000</td>
 		<td>for</td>
 		<td>Tot</td>
 	</tr>
 	<tr class="slimRowColor2">
-		<td>enter <span class="ignore">Test not run</span></td>
+		<td>enter <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_7.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_3.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_3.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_3.png" height="200"/></a></div></div></span></td>
 		<td>Groenedijk, Utrecht</td>
 		<td>as</td>
 		<td>Plaats, buurt, adres etc</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td>wait <span class="ignore">Test not run</span></td>
+		<td><span class="pass">wait</span></td>
 		<td>1</td>
 		<td colspan="2">seconds</td>
 	</tr>
@@ -199,24 +199,24 @@ The latter two approaches both make the test (i.e. the script table containing t
 		<td colspan="3">select option from autocomplete</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td>press <span class="ignore">Test not run</span></td>
+		<td><span class="pass">press</span></td>
 		<td colspan="3">down</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td>press <span class="ignore">Test not run</span></td>
+		<td><span class="pass">press</span></td>
 		<td colspan="3">enter</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td>click <span class="ignore">Test not run</span></td>
+		<td><span class="pass">click</span></td>
 		<td colspan="3">Zoek</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td>click <span class="ignore">Test not run</span></td>
+		<td>click <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_8.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_4.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_4.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_4.png" height="200"/></a></div></div></span></td>
 		<td colspan="3">Groenedijk 57</td>
 	</tr>
 	<tr class="scenario closed">
-		<td class="ignore">check number of photos</td>
-		<td colspan="3" class="ignore">55</td>
+		<td class="fail">check number of photos</td>
+		<td colspan="3" class="fail">55</td>
 	</tr><tr class="scenario-detail closed-detail"><td colspan="4"><table>
 	<tr class="slimRowTitle">
 		<td>scenario</td>
@@ -227,7 +227,7 @@ The latter two approaches both make the test (i.e. the script table containing t
 		<td>check</td>
 		<td>value of</td>
 		<td>xpath=//span[@class='object-media-teaser-count']</td>
-		<td>55 <span class="ignore">Test not run</span></td>
+		<td>[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">55</span><span class="fail">]</span></td>
 	</tr>
 </table></td></tr>
 </table>
