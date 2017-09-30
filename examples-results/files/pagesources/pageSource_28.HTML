@@ -1,50 +1,7 @@
-<!DOCTYPE html><html><head>
-    <meta charset="UTF-8">
-    <title>SafeFrame Container</title>
-  </head>
-  <body marginwidth="0" marginheight="0">
-    <script>
-(function(){var b=this;var f=String.prototype.trim?function(a){return a.trim()}:function(a){return a.replace(/^[\s\xa0]+|[\s\xa0]+$/g,"")},g=function(a,c){return a<c?-1:a>c?1:0};var k;a:{var l=b.navigator;if(l){var m=l.userAgent;if(m){k=m;break a}}k=""};var ba=function(a,c){var h=aa;return Object.prototype.hasOwnProperty.call(h,a)?h[a]:h[a]=c(a)};var ca=-1!=k.indexOf("Opera"),n=-1!=k.indexOf("Trident")||-1!=k.indexOf("MSIE"),da=-1!=k.indexOf("Edge"),p=-1!=k.indexOf("Gecko")&&!(-1!=k.toLowerCase().indexOf("webkit")&&-1==k.indexOf("Edge"))&&!(-1!=k.indexOf("Trident")||-1!=k.indexOf("MSIE"))&&-1==k.indexOf("Edge"),q=-1!=k.toLowerCase().indexOf("webkit")&&-1==k.indexOf("Edge"),t=function(){var a=b.document;return a?a.documentMode:void 0},u;
-a:{var v="",w=function(){var a=k;if(p)return/rv\:([^\);]+)(\)|;)/.exec(a);if(da)return/Edge\/([\d\.]+)/.exec(a);if(n)return/\b(?:MSIE|rv)[: ]([^\);]+)(\)|;)/.exec(a);if(q)return/WebKit\/(\S+)/.exec(a);if(ca)return/(?:Version)[ \/]?(\S+)/.exec(a)}();w&&(v=w?w[1]:"");if(n){var x=t();if(null!=x&&x>parseFloat(v)){u=String(x);break a}}u=v}
-var y=u,aa={},z=function(a){return ba(a,function(){for(var c=0,h=f(String(y)).split("."),S=f(String(a)).split("."),fa=Math.max(h.length,S.length),r=0;0==c&&r<fa;r++){var d=h[r]||"",e=S[r]||"";do{d=/(\d*)(\D*)(.*)/.exec(d)||["","","",""];e=/(\d*)(\D*)(.*)/.exec(e)||["","","",""];if(0==d[0].length&&0==e[0].length)break;c=g(0==d[1].length?0:parseInt(d[1],10),0==e[1].length?0:parseInt(e[1],10))||g(0==d[2].length,0==e[2].length)||g(d[2],e[2]);d=d[3];e=e[3]}while(0==c)}return 0<=c})},A;var B=b.document;
-A=B&&n?t()||("CSS1Compat"==B.compatMode?parseInt(y,10):5):void 0;var C;if(!(C=!p&&!n)){var D;if(D=n)D=9<=Number(A);C=D}C||p&&z("1.9.1");n&&z("9");var ea=function(a){return/^\s*$/.test(a)?!1:/^[\],:{}\s\u2028\u2029]*$/.test(a.replace(/\\["\\\/bfnrtu]/g,"@").replace(/(?:"[^"\\\n\r\u2028\u2029\x00-\x08\x0a-\x1f]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)[\s\u2028\u2029]*(?=:|,|]|}|$)/g,"]").replace(/(?:^|:|,)(?:[\s\u2028\u2029]*\[)+/g,""))},ha=function(){var a=String(E.a);if(ea(a))try{return eval("("+a+")")}catch(c){}throw Error("Invalid JSON string: "+a);};var F=p||q||n&&z(11);var ia=/^([^;]+);(\d+);([\s\S]*)$/;try{var G=ia.exec(window.name);if(null===G)throw Error("Cannot parse serialized data");var H=+G[2],I=G[3];if(H>I.length)throw Error("Cannot parse serialized data");var E={b:G[1],content:I.substr(0,H),a:I.substr(H)},J;var K=window.location.hash;if(K){var L=K.match(/[&#]eid=([\d,]+)/);J=L?L[1].split(","):[]}else J=[];var M=J;M.indexOf&&0<=M.indexOf("21060230")||!F||(window.name="");var N=ha();N.goog_safeframe_hlt&&(b.goog_safeframe_hlt=N.goog_safeframe_hlt);N._context&&(b.AMP_CONTEXT_DATA=N._context);
-b.sf_={v:E.b,exp:M,cfg:N};var O=E.content,P=window;if(F){var Q=P.document;Q.open("text/html","replace");Q.write(O);Q.close()}else{var R=O,T;if(T=n&&z(7)&&!z(10)){var U=navigator.userAgent.match(/Trident\/([0-9]+.[0-9]+)/);T=6>(U?parseFloat(U[1]):0)}var V;if(V=T)a:{for(var W=0;W<R.length;++W)if(127<R.charCodeAt(W)){V=!0;break a}V=!1}if(V){for(var X=unescape(encodeURIComponent(R)),ja=Math.floor(X.length/2),Y=[],Z=0;Z<ja;++Z)Y[Z]=String.fromCharCode(256*X.charCodeAt(2*Z+1)+X.charCodeAt(2*Z));1==X.length%
-2&&(Y[ja]=X.charAt(X.length-1));R=Y.join("")}P.goog_content=R;P.location.replace("javascript:window.goog_content")}}catch(a){};}).call(this);
-    </script>
+<html><head><script>
 
-<script>
-var adMetrics={adconfig:{orderId:"2100458079",lineItemId:"4354414308",creativeId:"138204937601",adUnitId:"21611878959",activity:"",adlp:"",b:"",bk:"",cc:"",cmptst:"",d:"",dta:"",eapid:"",email:"",ete:"",ets:"",ff:"",ip:"",kid:"0",mc1:"10c9a9ff0e31468a98ca9c7003f7be78",numadults:"",o:"",p:"",pd:"",pn:"",regionid:"",sb:"",ssl:"",td:"",tst:"",custtype:"",pref:"",sr:"",ac:"",cd:"",width:"368",height:"301"},name:"/23171577/expedia.us_en/home/all/NT2",startTime:new Date()},markName="orderID="+adMetrics.adconfig.orderId+" lineItemID="+adMetrics.adconfig.lineItemId+" adUnitID="+adMetrics.adconfig.adUnitId+" creativeID="+adMetrics.adconfig.creativeId+" fully loaded";var getIndexExchangeCMCID=function(a){var d=function(){return NodeFilter.FILTER_ACCEPT};var g=[];try{var c=document.createNodeIterator(a,NodeFilter.SHOW_COMMENT,d,false);var b;while((b=c.nextNode())){var h=b.nodeValue;if(h.indexOf(" cmc ")>-1){g.push(b.nodeValue.trim().split(" ")[1])}}}catch(f){}return g};try{if(window&&window.performance&&typeof(window.performance.getEntriesByType)==="function"){var resourceList=window.performance.getEntriesByType("resource");if(resourceList){adMetrics.resourceList=JSON.stringify(resourceList)}}if(window&&window.addEventListener&&window.removeEventListener){var onLoadListener=function(){try{window.removeEventListener("load",onLoadListener);if(window&&window.top&&typeof(window.top.postMessage)==="function"){adMetrics.cmc=getIndexExchangeCMCID(document.body);if(typeof window.performance&&typeof window.performance.mark==="function"){window.performance.mark(markName);if(typeof window.performance.getEntriesByName==="function"){var a=window.performance.getEntriesByName(markName,"mark"),b;if(a&&a.length>0){b=a[0];if(b&&b.startTime){adMetrics.timeToLoadCreative=b.startTime}}}}window.top.postMessage(adMetrics,"*")}}catch(c){if(window&&window.top&&typeof(window.top.postMessage)==="function"){adMetrics.errorMsg=c.message;adMetrics.errorLine=c.lineNumber;adMetrics.errorUrl=c.fileName;adMetrics.error=true;window.top.postMessage(adMetrics,"*")}}};window.addEventListener("load",onLoadListener)}}catch(e){if(window&&window.top&&typeof(window.top.postMessage)==="function"){adMetrics.errorMsg=e.message;adMetrics.errorLine=e.lineNumber;adMetrics.errorUrl=e.fileName;adMetrics.error=true;window.top.postMessage(adMetrics,"*")}};
-</script><script src="https://tpc.googlesyndication.com/safeframe/1-0-10/js/ext.js"></script><script>var viewReq = new Array();function vu(u) {var i=new Image();i.src=u.replace("&amp;","&");viewReq.push(i);}</script><script>vu("https://securepubads.g.doubleclick.net/pcs/view?xai\x3dAKAOjsuttbQmdX_2kS37jrWT4oXOdNMk1jeqNuSe4VjVQQUqoJ90JXjBAGPO_YgQULZ7ZK4lke8wTC_YuI4s4RODs0HPD6AU5Mnll2NF6wcEXVJfiR06t0A_jZYlgS0cB1ltRcHhJB8WddKRHxaiaVjZmw0coHHGRzq7cGO58aHXOKJv_D6Qv6FJ2UcMGVSDx86PwgtJNocbi2uPN0xzp1bOxw3eg23QAK1gWG45KC3fD5PuX_WY0oq3lwN9eGLPA0rhAqMkvwPZ5l3d\x26sig\x3dCg0ArKJSzLm2RavD68pPEAE\x26urlfix\x3d1\x26adurl\x3d")</script><script>
-var trackers = [], 
-    trackerA = "".trim(),
-    trackerB = "".trim();
+var allowedOrigins = [["^http\\:\\/\\/www\\.fundainbusiness\\.nl\\/$", ""], ["http://www.fundainbusiness.nl/*", "i"], ["funda\\.nl", ""], ["fundainbusiness\\.nl", ""]];
+var blockedOrigins = [];
 
-if (trackerA.length > 0) {
-  trackers.push(trackerA + "43975646");
-}
-
-if (trackerB.length > 0) {
-  trackers.push(trackerB + "43975646");
-}
-
-var config = {
-    "type": "ad-native-flex",
-    "adUnit": "/23171577/expedia.us_en/home/all/NT2",
-    "description": "Eclectic, progressive, trendy, laid-back or retro, every corner of L.A. has a unique vibe",
-    "backgroundUrl": "https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKCroKjyVBABGAEyCCUSWSZfhh25",
-    "sponsoredText": "",
-    "clickThroughUrl": "https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjssHeF3q1dJlS54FPuVn0yI6wW8G_y3vfkmE2R3XdpdxLXnkyliRtq8qCWqHwrUCUCcu4-5C3gSQmFaODP31wPf6rMQBaZiBot9z_UPc1IUzjCIwX8hlQWY9TkZFsb4xyL6f9qa0a04AX8KyKaw2XpPCglGD-YetECBbNQINc9kXCtFRZrxaq1yfuSEse7m1onW6c0sc7SSLZkSEJjsm7E8lXDLwVlEYpAjjOEI12zmfp975tMVY1AkKBW7mTA%2526sig%253DCg0ArKJSzFHklVUkpDHtEAE%2526urlfix%253D1%2526adurl%253Dhttps://www.expedia.com/lp/destinations/178280?MCICID=MSNTEUSLAX",
-    "openInTab": "yes" === "yes",
-    "isHouseAd": "Revenue Ad" === "House Ad",
-    "impressionTrackers": trackers
-};
-
-if (window && window.top && typeof window.top.postMessage === "function") {
-    window.top.postMessage(config, "*");
-}
-</script>
-<script src="https://tpc.googlesyndication.com/pagead/js/r20170925/r20110914/activeview/osd_listener.js"></script><script type="text/javascript">osdlfm(-1,'','B0j1LQ0XOWdrWIYf4kwPYlKGYCwAAAAAQATgByAEJwAIC4AIA4AQBoAYf0ggFCIBhEAE','',2859815062,true,'ud\x3d1\x26la\x3d0\x26alp\x3dxai\x26alh\x3d3910346964\x26',3,'CAASEuRoZjegupI7jK4uBsbz4AHS7w','//pagead2.googlesyndication.com/activeview?avi\x3dB0j1LQ0XOWdrWIYf4kwPYlKGYCwAAAAAQATgByAEJwAIC4AIA4AQBoAYf0ggFCIBhEAE\x26cid\x3dCAASEuRoZjegupI7jK4uBsbz4AHS7w');</script><script>if (window.top && window.top.postMessage) {window.top.postMessage('{"googMsgType":"adpnt"}','*');}</script><div style="top:0;left:0;width:368px;height:301px;position:absolute;max-width:100%;max-height:100%;pointer-events:none;image-rendering:pixelated;z-index:2147483647;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAWBAMAAACrl3iAAAAABlBMVEUAAAD+AciWmZzWAAAAAnRSTlMAApidrBQAAAB4SURBVBjTbZEBDsAgDALxB/z/tdvawmhiTTSNSK4I3Ot0Ifb3BFi3HJW6UiBWdd8NydoRndVlmWp7MrxFIuchcZHc3LAW9oYA+hj737tEjSLpYPQA4x4Lw7RB/CpIRb0zK5HDcQpHc+CSoF5HgphxlzdzgPjLZH4AbzAE0xTZ1SMAAAAASUVORK5CYII=')"></div>
-
-  
-
-</body></html>
+!function(){"use strict";function e(e){return!g||0!==e.indexOf(g.origin)}function r(e,r){return new RegExp(r[0],r[1]).test(e)}function i(e){if(!s){s=e?e.toString():"Localstorage is undefined";var r={id:"iframeerror",type:"ERROR",response:"Error accessing localStorage: "+s};event.source.postMessage(JSON.stringify(r),event.origin)}}function n(r){g&&e(r.key)&&g.source.postMessage(JSON.stringify({type:"SYNC",response:{key:r.key,value:r.newValue}}),g.origin)}var t,o,s;try{t=window.localStorage}catch(a){o=a}var g,f="_",c=function(n){var s,a,c,d,u,l=!1;for(u=0;u<allowedOrigins.length;u++)if(r(n.origin,allowedOrigins[u])){l=!0;break}if(l)for(u=0;u<blockedOrigins.length;u++)if(r(n.origin,blockedOrigins[u])){l=!1;break}if(l){g=n;try{s=JSON.parse(n.data)}catch(y){return}if(c=n.origin+f+s.key,!t)return i(o);if("GET"===s.type)a=t.getItem(c);else if("PUT"===s.type)try{a=t.setItem(c,s.value)}catch(y){return i(y)}else{if("GETALL"!==s.type)return;a={};for(var p in t)t.hasOwnProperty(p)&&e(p)&&(a[p]=t.getItem(p))}"undefined"!=typeof s.id&&(d={id:s.id,response:a},n.source.postMessage(JSON.stringify(d),n.origin))}};window.addEventListener("message",c,!0),window.addEventListener("storage",n,!0)}();
+</script></head><body></body></html>
