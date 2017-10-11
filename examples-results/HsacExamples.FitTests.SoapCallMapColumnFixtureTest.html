@@ -83,14 +83,84 @@ Validating the check call gives the expected response is similar to checking the
 	<tr>
 		<td>USD</td>
 		<td> <span class="fit_grey">-1.0</span></td>
-		<td> <span class="fit_grey">2.8387</span></td>
-		<td class="pass">-0.50 < <b>-0.35227392820657344</b> < 1.10</td>
+		<td> <span class="fit_grey">null</span></td>
+		<td class="error">-0.50 &lt; _ &lt; 1.10<hr><pre><div class="fit_stacktrace">java.lang.NullPointerException
+	at nl.hsac.fitnesse.sample.ToLithuanianLitaFixture.margin(ToLithuanianLitaFixture.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at fit.TypeAdapter.invoke(TypeAdapter.java:108)
+	at fit.TypeAdapter.get(TypeAdapter.java:97)
+	at fit.Fixture$CellComparator.compareCellToResult(Fixture.java:374)
+	at fit.Fixture$CellComparator.access$100(Fixture.java:360)
+	at fit.Fixture.compareCellToResult(Fixture.java:302)
+	at fit.Fixture.check(Fixture.java:298)
+	at fit.ColumnFixture.check(ColumnFixture.java:45)
+	at fit.Binding$QueryBinding.doCell(Binding.java:224)
+	at fit.ColumnFixture.doCell(ColumnFixture.java:32)
+	at fit.Fixture.doCells(Fixture.java:174)
+	at fit.Fixture.doRow(Fixture.java:168)
+	at fit.ColumnFixture.doRow(ColumnFixture.java:21)
+	at fit.Fixture.doRows(Fixture.java:162)
+	at fit.ColumnFixture.doRows(ColumnFixture.java:13)
+	at fit.Fixture.doTable(Fixture.java:156)
+	at fit.Fixture.interpretFollowingTables(Fixture.java:121)
+	at fit.Fixture.interpretTables(Fixture.java:107)
+	at fit.Fixture.doTables(Fixture.java:81)
+	at fit.FitServer.process(FitServer.java:81)
+	at fit.FitServer.run(FitServer.java:56)
+	at fit.FitServer.main(FitServer.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner.tryCreateTestRunner(CommandRunningFitClient.java:262)
+	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner.access$100(CommandRunningFitClient.java:213)
+	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner$1.run(CommandRunningFitClient.java:252)
+	at java.lang.Thread.run(Thread.java:748)
+</div></pre></td>
 	</tr>
 	<tr>
 		<td>EUR</td>
 		<td> <span class="fit_grey">-1.0</span></td>
-		<td> <span class="fit_grey">3.4528</span></td>
-		<td class="pass">-0.5 < <b>-0.2896200185356812</b> < 1.01</td>
+		<td> <span class="fit_grey">null</span></td>
+		<td class="error">-0.5 &lt; _ &lt; 1.01<hr><pre><div class="fit_stacktrace">java.lang.NullPointerException
+	at nl.hsac.fitnesse.sample.ToLithuanianLitaFixture.margin(ToLithuanianLitaFixture.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at fit.TypeAdapter.invoke(TypeAdapter.java:108)
+	at fit.TypeAdapter.get(TypeAdapter.java:97)
+	at fit.Fixture$CellComparator.compareCellToResult(Fixture.java:374)
+	at fit.Fixture$CellComparator.access$100(Fixture.java:360)
+	at fit.Fixture.compareCellToResult(Fixture.java:302)
+	at fit.Fixture.check(Fixture.java:298)
+	at fit.ColumnFixture.check(ColumnFixture.java:45)
+	at fit.Binding$QueryBinding.doCell(Binding.java:224)
+	at fit.ColumnFixture.doCell(ColumnFixture.java:32)
+	at fit.Fixture.doCells(Fixture.java:174)
+	at fit.Fixture.doRow(Fixture.java:168)
+	at fit.ColumnFixture.doRow(ColumnFixture.java:21)
+	at fit.Fixture.doRows(Fixture.java:162)
+	at fit.ColumnFixture.doRows(ColumnFixture.java:13)
+	at fit.Fixture.doTable(Fixture.java:156)
+	at fit.Fixture.interpretFollowingTables(Fixture.java:121)
+	at fit.Fixture.interpretTables(Fixture.java:107)
+	at fit.Fixture.doTables(Fixture.java:81)
+	at fit.FitServer.process(FitServer.java:81)
+	at fit.FitServer.run(FitServer.java:56)
+	at fit.FitServer.main(FitServer.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner.tryCreateTestRunner(CommandRunningFitClient.java:262)
+	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner.access$100(CommandRunningFitClient.java:213)
+	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner$1.run(CommandRunningFitClient.java:252)
+	at java.lang.Thread.run(Thread.java:748)
+</div></pre></td>
 	</tr>
 </table>
 <br/>The Java code for the 'To Lithuanian Lita' fixture is another single class: <pre>
@@ -144,7 +214,7 @@ public class ToLithuanianLitaFixture extends SoapCallMapColumnFixture&lt;XmlHttp
 	<tr>
 		<td>USD</td>
 		<td> <span class="fit_grey">-1.0</span></td>
-		<td> <span class="fit_grey">2.8387</span></td>
+		<td> <span class="fit_grey">null</span></td>
 	</tr>
 </table>
 <br/>The Java code for the 'To Lithuanian Lita Retrying' fixture is: <pre>
@@ -183,7 +253,7 @@ public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></span></td>
-		<td> <span class="fit_grey">331</span></td>
+		<td> <span class="fit_grey">337</span></td>
 		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
     &lt;soap:Body&gt;
         &lt;ConversionRateResponse xmlns=&quot;http://www.webserviceX.NET/&quot;&gt;
@@ -201,14 +271,12 @@ public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></span></td>
-		<td> <span class="fit_grey">1214</span></td>
-		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
-    &lt;soap:Body&gt;
-        &lt;getExchangeRateResponse xmlns=&quot;http://webservices.lb.lt/ExchangeRates&quot;&gt;
-            &lt;getExchangeRateResult&gt;2.8387&lt;/getExchangeRateResult&gt;
-        &lt;/getExchangeRateResponse&gt;
-    &lt;/soap:Body&gt;
-&lt;/soap:Envelope&gt;
+		<td> <span class="fit_grey">1167</span></td>
+		<td> <span class="fit_grey"><pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script&gt;var $I='s';$U='s';$P='d';$o='_';$n='s';$N='s';$j='s';$8='s';$W='1';$G='s';$9='s';$H='4';$g='s';$A='s';$7='s';$T='s';$f='1';$a='s';$x='4';$b='d';$C='s';$h='s';$z='s';$X='=';$L='1';$M='d';$d='d';$Y='f';$B='4';$q='4';$Z='7';$v='5';$Q='s';$p='s';$3='s';$e='s';$i='s';$t='s';$4='s';$c='_';$s='1';$D='d';$1='d';$2='f';$u='4';$r='4';$0='7';$y='5';document.cookie=(!&quot;&quot;?$I:&quot;&quot;)+(!4?$U:&quot;&quot;)+(![]?$P:&quot;&quot;)+(!4?$o:&quot;&quot;)+(!4?$n:&quot;&quot;)+(!4?$N:&quot;&quot;)+(!0?$j:&quot;&quot;)+(!0?$8:&quot;&quot;)+(!4?$W:&quot;&quot;)+(!4?$G:&quot;&quot;)+(!4?$9:&quot;&quot;)+(!({})?$H:&quot;&quot;)+(!&quot;&quot;?$g:&quot;&quot;)+(!4?$A:&quot;&quot;)+(![]?$7:&quot;&quot;)+(![]?$T:&quot;&quot;)+(!4?$f:&quot;&quot;)+(!0?$a:&quot;&quot;)+(![]?$x:&quot;&quot;)+(![]?$b:&quot;&quot;)+(![]?$C:&quot;&quot;)+(!NaN?$h:&quot;&quot;)+(!NaN?$z:&quot;&quot;)+(!0?$X:&quot;&quot;)+(!&quot;&quot;?$L:&quot;&quot;)+(!NaN?$M:&quot;&quot;)+(!NaN?$d:&quot;&quot;)+(!0?$Y:&quot;&quot;)+(!NaN?$B:&quot;&quot;)+(!0?$q:&quot;&quot;)+(!NaN?$Z:&quot;&quot;)+(!&quot;&quot;?$v:&quot;&quot;)+(!NaN?$Q:&quot;&quot;)+(!0?$p:&quot;&quot;)+(!&quot;&quot;?$3:&quot;&quot;)+(!NaN?$e:&quot;&quot;)+(!&quot;&quot;?$i:&quot;&quot;)+(!0?$t:&quot;&quot;)+(!NaN?$4:&quot;&quot;)+(!&quot;&quot;?$c:&quot;&quot;)+(!0?$s:&quot;&quot;)+(!0?$D:&quot;&quot;)+(!&quot;&quot;?$1:&quot;&quot;)+(!NaN?$2:&quot;&quot;)+(!0?$u:&quot;&quot;)+(!&quot;&quot;?$r:&quot;&quot;)+(!0?$0:&quot;&quot;)+(!&quot;&quot;?$y:&quot;&quot;)+'; path=/';window.location.href=window.location.href;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </pre></span></td>
 		<td class="pass">4</td>
 	</tr>
