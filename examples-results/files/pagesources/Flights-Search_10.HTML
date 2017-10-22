@@ -1,0 +1,392 @@
+<!DOCTYPE html><html><head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+	<style type="text/css">
+	@charset "UTF-8";
+
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(spritesheet.jpg);}
+
+.card {width:92px; height:58px; background-position: -237px -0px}
+.img1 {width:235px; height:210px; background-position: -0px -0px}
+
+.card{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #FFF;
+  color: #FFF;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
+  line-height: 0;
+  letter-spacing: 0;
+  margin: 0;
+  padding: 0;
+}
+
+div{ position:absolute; }
+
+.container{
+  background-color: #5e2750;
+  border: 1px solid #000000;
+  overflow: hidden;
+  position: relative;
+  width: 160px;
+  height: 600px;
+  /*Keeps Border from expanding div*/
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+
+  line-height: 17px;
+}
+
+/*ELEMENTS*/
+
+.mask_bmp_food {
+  width: 160px;
+  height: 220px;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.bmp_food {
+  width: 235px;
+  height: 210px;
+  right: 0;
+}
+
+.bmp_goldcard {
+  left: 34px;
+  top: 184px;
+}
+
+.copy_enjoyMoreAtDinner {
+  width: 100%;
+  top: 270px;
+  left: 15px;
+}
+
+.txt_bold{
+  font-weight: 700;
+}
+.txt_light{
+  font-weight: 400;
+  top: 34px;
+}
+
+.copy_get25000points {
+
+  font-weight: 400;
+  font-size: 12px;
+  top: 350px;
+  left: 15px;
+
+  width: 100%;
+}
+
+.copy_headline1 {
+  width: 100%;
+  height: 56px;
+  font-size: 16px;
+  line-height: 16px;
+  top: 275px;
+  left: 15px;
+}
+
+.copy_headline2 {
+  width: 100%;
+  height: 42px;
+
+  font-size: 16px;
+  line-height: 16px;
+  top: 275px;
+  left: 15px;
+}
+
+.copy_headline3 {
+  width: 100%;
+  height: 44px;
+
+  font-size: 16px;
+  line-height: 16px;
+  top: 275px;
+  left: 15px;
+}
+
+.copy_receive2xPoints {
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  top: 370px;
+  left: 15px;
+}
+
+.copy_termsAndLimitations_grey {
+  font-weight: 600;
+  width: 127px;
+  height: 9px;
+  top: 53px;
+  left: 13px;
+
+  font-size: 9px;
+  line-height: 9px;
+  letter-spacing: 0;
+  color: rgba(0,0,0,0.65);
+}
+
+.copy_termsAndLimitations_white {
+  top: 518px;
+  left: 14px;
+  font-weight: 600;
+  width: 127px;
+  height: 9px;
+  font-size: 9px;
+  line-height: 9px;
+  letter-spacing: 0;
+  color: rgba(255,255,255,0.85);
+}
+
+.btn_learnMore {
+  left: 10px;
+  top: 10px;
+  width: 116px;
+  height: 35px;
+  overflow: hidden;
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#20367a+0,182b62+100 */
+  background: rgb(32,54,122); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(32,54,122,1) 0%, rgba(24,43,98,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(32,54,122,1)), color-stop(100%,rgba(24,43,98,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(32,54,122,1) 0%,rgba(24,43,98,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(32,54,122,1) 0%,rgba(24,43,98,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(32,54,122,1) 0%,rgba(24,43,98,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(32,54,122,1) 0%,rgba(24,43,98,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#20367a', endColorstr='#182b62',GradientType=0 ); /* IE6-9 */
+
+}
+
+#cta_highlight{
+  top: 0;
+  left: 125px;
+  width: 240px;
+  height: 35px;
+  opacity: 0.75;
+}
+
+.cta_highlight{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+10,ffffff+50,ffffff+90,ffffff+100&amp;0+0,0+10,0.5+50,0+90,0+100 */
+  background: -moz-linear-gradient(-45deg,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 10%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 90%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(10%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.5)), color-stop(90%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 10%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 90%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 10%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 90%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 10%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 90%,rgba(255,255,255,0) 100%); /* IE10+ */
+  background: linear-gradient(135deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 10%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 90%,rgba(255,255,255,0) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.btn_learnMore_txt{
+  font-weight: 700;
+  color: white;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  top: 8px;
+  letter-spacing: -0.25px;
+}
+
+.gfx_ctaLogoPanel {
+  width: 160px;
+  height: 137px;
+  margin: 464px 0 0 0px;
+
+  background-color: white;
+}
+
+.logo_amexBluebox {
+  width: 45px;
+  height: 45px;
+  right: 14px;
+  bottom: 8px;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MS43IDcyLjQiPgogIDxwYXRoIGZpbGw9IiMwMDdEQzMiIGQ9Ik00LjkgNzAuNWgtLjZjLS4xLS4yLS4xLS43LS4xLS44IDAtLjIgMC0uNS0uNS0uNWgtLjl2MS4zaC0uNnYtMy4yaDEuNWMuNSAwIDEuMS4yIDEuMS45IDAgLjQtLjIuNi0uMy43LjEuMS4zLjIuMy42di42YzAgLjIgMCAuMi4yLjN2LjF6bS0uNy0yLjJjMC0uNC0uMy0uNC0uNS0uNGgtMXYuOWguOWMuNC0uMS42LS4xLjYtLjV6bTIuNi43YzAtMS45LTEuNS0zLjQtMy40LTMuNFMwIDY3LjEgMCA2OXMxLjUgMy40IDMuNCAzLjQgMy40LTEuNSAzLjQtMy40em0tLjUgMGMwIDEuNi0xLjIgMi45LTIuOSAyLjlTLjUgNzAuNi41IDY5YzAtMS42IDEuMi0yLjkgMi45LTIuOXMyLjkgMS4zIDIuOSAyLjl6Ii8+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJhIiBjeD0iMjEuNTQ3IiBjeT0iMTIuNDMzIiByPSI4NS41NzQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzg0RDVGNyIvPgogICAgPHN0b3Agb2Zmc2V0PSIuMDYzIiBzdG9wLWNvbG9yPSIjN0VEMUY2Ii8+CiAgICA8c3RvcCBvZmZzZXQ9Ii4xNDYiIHN0b3AtY29sb3I9IiM2OUM5RjIiLz4KICAgIDxzdG9wIG9mZnNldD0iLjI0MiIgc3RvcC1jb2xvcj0iIzQwQkNFRCIvPgogICAgPHN0b3Agb2Zmc2V0PSIuMzQ1IiBzdG9wLWNvbG9yPSIjMDBBREU3Ii8+CiAgICA8c3RvcCBvZmZzZXQ9Ii4zNzEiIHN0b3AtY29sb3I9IiMwMEFBRTUiLz4KICAgIDxzdG9wIG9mZnNldD0iLjQ2NiIgc3RvcC1jb2xvcj0iIzAwOUNEQiIvPgogICAgPHN0b3Agb2Zmc2V0PSIuNTkxIiBzdG9wLWNvbG9yPSIjMDA4RUQwIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ii43MiIgc3RvcC1jb2xvcj0iIzAwODRDOCIvPgogICAgPHN0b3Agb2Zmc2V0PSIuODUzIiBzdG9wLWNvbG9yPSIjMDA3RkM0Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwMDdEQzMiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxwYXRoIGZpbGw9InVybCgjYSkiIGQ9Ik04MS4zIDBIOS41djcyaDcxLjhWNDguM2MuMy0uNC40LS45LjQtMS42IDAtLjctLjEtMS4yLS40LTEuNlYweiIvPgogIDxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik05LjUgMzYuNWgzLjRsLjgtMS45aDEuN2wuOCAxLjlIMjNWMzVsLjYgMS40aDMuNWwuNi0xLjV2MS41aDE2Ljl2LTMuMWguM2MuMiAwIC4zIDAgLjMuNHYyLjdoOC43di0uN2MuNy40IDEuOC43IDMuMi43aDMuN2wuOC0xLjloMS43bC44IDEuOWg3LjF2LTEuOGwxLjEgMS44SDc4VjI0LjdoLTUuNnYxLjRsLS44LTEuNGgtNS44djEuNGwtLjctMS40aC03LjhjLTEuMyAwLTIuNC4yLTMuNC43di0uN2gtNS40di43Yy0uNi0uNS0xLjQtLjctMi4zLS43SDI2LjdsLTEuMyAzLTEuMy0zaC02LjJ2MS40bC0uNy0xLjRoLTUuM2wtMi40IDUuNnY2LjJ6bTY2LjYtMS43aC0yLjlsLTMuOC02LjN2Ni4zaC00LjFsLS44LTEuOWgtNC4ybC0uOCAxLjloLTIuNGMtMSAwLTIuMi0uMi0yLjktLjktLjctLjctMS4xLTEuNy0xLjEtMy4yIDAtMS4zLjItMi40IDEuMS0zLjMuNy0uNyAxLjctMSAzLjEtMWgxLjl2MS44aC0xLjljLS43IDAtMS4yLjEtMS42LjUtLjMuNC0uNiAxLS42IDEuOSAwIC45LjIgMS41LjYgMiAuMy4zLjkuNCAxLjQuNGguOWwyLjgtNi42aDNsMy40IDh2LThoMy4xbDMuNSA1Ljl2LTUuOWgyLjF2OC40em0tMjMuOCAwaC0yLjF2LTguNGgyLjF2OC40ek00OSAyOC42YzAgMS4zLS45IDItMS40IDIuMi40LjIuOC41IDEgLjcuMy40LjMuOC4zIDEuNXYxLjdoLTJ2LTEuMWMwLS41IDAtMS4yLS4zLTEuNi0uMy0uMy0uNy0uNC0xLjUtLjRoLTIuMnYzLjFoLTJ2LTguNGg0LjZjMSAwIDEuOCAwIDIuNC40LjcuNSAxLjEgMSAxLjEgMS45em0tOS41IDYuMmgtNi43di04LjRoNi43djEuOGgtNC43djEuNWg0LjZ2MS43aC00LjZ2MS43aDQuN3YxLjd6bS04LjIgMGgtMi4xdi02LjZsLTIuOSA2LjZoLTEuOGwtMi45LTYuNnY2LjZoLTQuMWwtLjgtMS45aC00LjJsLS44IDEuOUg5LjVsMy42LTguNGgzbDMuNCA4di04aDMuM2wyLjYgNS43IDIuNC01LjdoMy40djguNHptMzIuNi0zLjZsLTEuNC0zLjQtMS40IDMuNGgyLjh6bS0xNy41LTEuNGMtLjMuMi0uNi4yLTEgLjJoLTIuNXYtMS45aDIuNWMuNCAwIC43IDAgMSAuMS4zLjEuNC40LjQuNyAwIC41LS4yLjgtLjQuOXpNMTYgMzEuMmwtMS40LTMuNC0xLjQgMy40SDE2em0zMi42IDEyLjVjMCAyLjMtMS43IDIuOC0zLjUgMi44aC0yLjV2Mi44aC0zLjlsLTIuNS0yLjgtMi42IDIuOGgtOHYtOC40aDguMWwyLjUgMi44IDIuNi0yLjhoNi40YzEuNiAwIDMuNC40IDMuNCAyLjh6bS0xNiAzLjloLTV2LTEuN0gzMnYtMS43aC00LjR2LTEuNWg1LjFsMi4yIDIuNS0yLjMgMi40em04IDFsLTMuMS0zLjQgMy4xLTMuM3Y2Ljd6bTQuNi0zLjhoLTIuNnYtMi4xaDIuNmMuNyAwIDEuMi4zIDEuMiAxcy0uNCAxLjEtMS4yIDEuMXptMTMuNi0zLjloNi43djEuN2gtNC43djEuNWg0LjZ2MS43aC00LjZ2MS43aDQuN3YxLjhoLTYuN3YtOC40em0tMi42IDQuNWMuNC4yLjguNSAxIC43LjMuNC4zLjguMyAxLjV2MS43aC0ydi0xLjFjMC0uNSAwLTEuMy0uMy0xLjYtLjMtLjMtLjctLjQtMS41LS40aC0yLjJ2My4xaC0ydi04LjRoNC43YzEgMCAxLjggMCAyLjQuNC42LjQgMSAuOSAxIDEuOS4xIDEuMy0uOCAyLTEuNCAyLjJ6bS0xLjItMWMtLjMuMi0uNi4yLTEgLjJoLTIuNXYtMS45SDU0Yy40IDAgLjcgMCAxIC4xLjMuMS40LjQuNC44IDAgLjMtLjEuNi0uNC44em0xOC4yLjVjLjQuNC42LjkuNiAxLjggMCAxLjgtMS4xIDIuNy0zLjIgMi43aC0zLjl2LTEuOGgzLjljLjQgMCAuNy0uMS44LS4yLjEtLjEuMi0uMy4yLS41cy0uMS0uNC0uMi0uNmMtLjItLjEtLjQtLjItLjctLjItMS45LS4xLTQuMi4xLTQuMi0yLjYgMC0xLjIuOC0yLjUgMi45LTIuNWg0djEuOGgtMy43Yy0uNCAwLS42IDAtLjguMi0uMi4xLS4zLjMtLjMuNnMuMi41LjQuNmMuMi4xLjQuMS44LjFoMS4xYzEuMS0uMSAxLjkuMSAyLjMuNnptOC4xIDMuNGMtLjUuNy0xLjQgMS4xLTIuNyAxLjFoLTMuOXYtMS44aDMuOWMuNCAwIC43LS4xLjgtLjIuMS0uMS4yLS4zLjItLjVzLS4xLS40LS4yLS42Yy0uMi0uMi0uNC0uMy0uOC0uMy0xLjktLjEtNC4zLjEtNC4zLTIuNiAwLTEuMi44LTIuNSAyLjktMi41aDR2LTEuN2gtMy43Yy0xLjEgMC0xLjkuMy0yLjUuN3YtLjdoLTUuNWMtLjkgMC0xLjkuMi0yLjQuN3YtLjdoLTkuOXYuN2MtLjgtLjYtMi4xLS43LTIuNy0uN0g0OHYuN2MtLjYtLjYtMi0uNy0yLjgtLjdoLTcuM0wzNi4yIDQxbC0xLjYtMS44SDIzLjhWNTFoMTAuN2wxLjctMS44IDEuNiAxLjhoNi42di0yLjhoLjZjLjkgMCAxLjkgMCAyLjgtLjRWNTFoNS40di0zLjFoLjNjLjMgMCAuNCAwIC40LjNWNTFoMTYuNWMxIDAgMi4xLS4zIDIuNy0uOHYuOGg1LjJjMS4xIDAgMi4xLS4yIDMtLjV2LTIuMnptMC01LjZoLTMuN2MtLjQgMC0uNiAwLS44LjItLjIuMS0uMy4zLS4zLjZzLjIuNS40LjZjLjIuMS40LjEuOC4xaDEuMWMxLjEgMCAxLjguMiAyLjMuN2wuMi4ydi0yLjR6Ii8+Cjwvc3ZnPg==") no-repeat;
+}
+
+#hotspot_banner
+{
+  width:160px;
+  height:600px;
+  background-color: rgba(0,0,0,0);
+  cursor: pointer;
+}
+
+#hotspot_cta
+{
+  width: 116px;
+  height: 35px;
+  top: 474px;
+  left: 10px;
+  background-color: rgba(0,0,0,0);
+  cursor: pointer;
+}	
+	</style>
+<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+
+<body>
+<div class="container" id="banner" style="visibility: inherit; opacity: 1;">
+
+	<div class="bmp_food sprite img1" style="transform: translate3d(51.5438px, 0px, 0px);"></div>
+	<div class="bmp_goldcard sprite card"></div>
+
+	<div class="copy_headline1" style="visibility: inherit; opacity: 0.388; transform: translate3d(-97.92px, 0px, 0px);">
+		<div class="txt_bold">ENJOY MORE<br>AT DINNER</div>
+		<div class="txt_light">THAN JUST<br>YOUR MEAL</div>
+	</div>
+
+	<div class="copy_headline2" style="visibility: inherit; opacity: 0.849456; transform: translate3d(24.087px, 0px, 0px);">
+		<div class="txt_bold">RECEIVE<br>2X POINTS AT</div>
+		<div class="txt_light">US RESTAURANTS</div>
+	</div>
+
+	<div class="copy_headline3" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 160, 0);">
+		<div class="txt_bold">PLUS EARN A<br>25,000 POINT</div>
+		<div class="txt_light">WELCOME OFFER</div>
+	</div>
+
+	<div class="copy_enjoyMoreAtDinner" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 0, 20);">
+		<div class="txt_bold">ENJOY MORE<br>AT DINNER</div>
+		<div class="txt_light">THAN JUST<br>YOUR MEAL</div>
+	</div>
+	<div class="copy_get25000points" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 0, 20);">Earn 25,000 Points</div>
+	<div class="copy_receive2xPoints" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 0, 20);">Receive<br>2X Points at<br>US Restaurants</div>
+
+	<div class="copy_termsAndLimitations_white" style="transform: translate3d(24.087px, 0px, 0px);">Terms and Conditions Apply.</div>
+
+	<div class="gfx_ctaLogoPanel" style="transform: matrix(1, 0, 0, 1, 0, 140);">
+		<div class="btn_learnMore">
+			<div id="cta_highlight" class="cta_highlight"></div>
+			<div class="btn_learnMore_txt">Learn More</div>
+		</div>
+		<div class="copy_termsAndLimitations_grey">Terms and Conditions Apply.</div>
+	</div>
+
+	<div class="logo_amexBluebox"></div>
+
+	<div id="hotspot_banner"></div>
+	<div id="hotspot_cta"></div>
+</div>
+
+<script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.18.5_23b0de6da0ee295131e32a500470610c_min.js"></script>
+<script>
+	var clickTag = "https://www.americanexpress.com";
+	window.onload = function ()
+	{
+		TweenMax.set('#banner', {autoAlpha:1});
+		TweenMax.from('.bmp_food', 10, {x:"+=77", ease:Linear.easeNone});
+		TweenMax.from('.copy_headline1', 0.5, {delay: 0.0, x:160, autoAlpha:0, ease:Quad.easeOut});
+		TweenMax.to('.copy_headline1',   0.5, {delay: 3.0, x:-160, autoAlpha:0, ease:Linear.easeNone});
+		TweenMax.from('.copy_headline2', 0.5, {delay: 3.0, x:160, autoAlpha:0, ease:Quad.easeOut});
+		TweenMax.from('.copy_termsAndLimitations_white', 0.5, {delay: 3.0, x:160, ease:Quad.easeOut});
+		TweenMax.to('.copy_headline2', 0.5, {delay: 6.5, x:-160, autoAlpha:0, ease:Linear.easeNone});
+		TweenMax.from('.copy_headline3', 0.5, {delay: 6.5, x:160, autoAlpha:0, ease:Quad.easeOut});
+		TweenMax.to('.copy_headline3', 0.5, {delay: 9.9, x:-160, autoAlpha:0, ease:Quad.easeOut});
+		TweenMax.from('.gfx_ctaLogoPanel', 0.5, {delay: 10, y:'+=140', ease:Quad.easeOut});
+		TweenMax.to('.copy_termsAndLimitations_white',  0.5, {delay: 10, autoAlpha:0, ease:Quad.easeOut});
+		TweenMax.staggerFrom(['.copy_enjoyMoreAtDinner', '.copy_get25000points', '.copy_receive2xPoints'], 0.5, {delay: 10.5, y:"+=20", autoAlpha:0, ease:Quad.easeOut}, 0.15);
+
+		TweenMax.delayedCall(11.25, displayCTAHighlight);
+
+		function displayCTAHighlight()
+		{
+			return TweenMax.fromTo(['#cta_highlight'],1,{left:-200},{left:120, ease:Power2.easeOut, paused:true}).restart();
+		}
+
+		var cta = document.querySelector('#hotspot_cta');
+		cta.addEventListener( 'click', ctaHandler );
+		cta.addEventListener( 'mouseenter', ctaHandler );
+
+		var banner = document.querySelector('#hotspot_banner');
+		banner.addEventListener( 'click', ctaHandler );
+
+		function ctaHandler(e)
+		{
+			switch(e.type)
+			{
+				case 'mouseenter':
+					displayCTAHighlight();
+					break;
+				case 'click':
+					window.open(clickTag);
+					break;
+			}
+		}
+
+	}
+
+</script>
+
+</body></html>
