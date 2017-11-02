@@ -1,8 +1,91 @@
 <!DOCTYPE html><html><head>
-  <title>Proxy</title>
-  <script async="" src="//cdn.krxd.net/ctjs/controltag.js.8508be838d94dc9198a6fb9a854d3e47"></script><script type="text/javascript" async="" src="//cdn.krxd.net/controltag/q1jglrva2.js"></script><script data-version="2">
-    window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]),Krux("proxy"),function(){var t=function(t){for(var r=t.split("&"),e={},n=0,c=r.length;c>n;++n){var i=r[n].split("=");e[i[0]]=i[1]}return e},r=/^[a-z0-9_-]+$/i,e=window.location.hash,n=t(e.slice(e.indexOf("!")+1));if(!n.kxcid||!r.test(n.kxcid))throw new Error("Invalid confid passed to proxy");n.kxcl&&r.test(n.kxcl)||(n.kxcl="cdn"),n.kxp&&/^[0-9]{1,5}$/.test(n.kxp)||(n.kxp="");var c=document.createElement("script");c.type="text/javascript",c.async=!0,c.src="//"+n.kxcl+".krxd.net"+(n.kxp?":"+n.kxp:"")+"/controltag/"+n.kxcid+".js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(c,i)}();
-  </script>
-</head><body>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>GSAP animation</title>
+		<style type="text/css">
+			body { font-family: "Gotham SSm A","Gotham SSm B",Arial,sans-serif; color:#ffffff; margin:0; padding:0; overflow:hidden;}
+			#Ad { width: 728px; height:90px; position:relative; overflow: hidden; opacity:0;}
+			#Ad #Ad_photo { width:inherit; height:inherit; background:url(https://d1bymfhfnmol4i.cloudfront.net/animation/Shelburne_ES/SNYC_room.jpg) no-repeat 0px -249px; top:0px; left:0px; background-repeat: repeat-x; position: absolute;}
+			#Ad #Ad_photo2 { width:inherit; height:inherit; background:url(https://d1bymfhfnmol4i.cloudfront.net/animation/Shelburne_ES/1brSNYC.jpg) no-repeat 0px -180px; top:0px; left:0px; background-repeat: repeat-x;position: absolute;}
+			#Ad .Ad_Img { position:absolute; background:url(https://denihan.s3.amazonaws.com/animation/Shelburne_ES/frame.png) no-repeat 0px 0px;}
+			#Ad #Ad_logo { width:inherit; height:100px; background-position:0px 0px; z-index: 100; position:relative; top:18px; left:-32px; background-size: 38%; z-index: 100;}
+			#Ad #Ad_text { width:inherit; height:inherit; top:-1px; text-transform: none; font-size:19px; left:-156px; line-height:12px; position: absolute; text-align:right; text-shadow:2px 2px 3px #000000; z-index: 100;}
+			#Ad #Ad_fine { width:292px; height:35px; top:54px; font-size:11px; left:622px; letter-spacing:0.5px; position: absolute; z-index: 100; text-shadow:1px 1px 4px #000000;}
+			#Ad #Ad_button { width:100px; height:28px; background-color: #b4252d; position:absolute; top:24px; right:13px; z-index: 100;}
+			#Ad #Ad_button .button {font-size: 12px; text-align:center; text-transform:uppercase; font-weight:bold; position: relative; left:12px; line-height: 28px; z-index: 100;}
+		</style>
+		<script type="text/javascript">
+		var clickTag = "https://www.affinia.com/"; 
+		</script>
+		<link rel="stylesheet" type="text/css" href="https://www.affinia.com/denihan/affinia/affiniafonts/168728/5DAFEAF9A1D923518.css" media="screen">
+	<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
 
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+	<body>
+		<div id="Ad" style="cursor: pointer; opacity: 1;" onclick="javascript:window.open(window.clickTag)">
+				<div class="Ad_Img" id="Ad_logo"></div>
+				<div id="Ad_photo"></div>
+				<div id="cta">
+					<div id="Ad_button"><span class="button">Book Now</span></div>
+					<div id="Ad_fine">at affinia.com</div>
+				</div>	
+				<div id="Ad_text" style="opacity: 1;"><p style="font-weight:400;">Kick back and stay a while.</p><p style="font-size:10px; letter-spacing: 0.8px; text-align:right;"><b style="font-size:17px;letter-spacing:-1px; line-height:12px">UP TO 30% OFF</b><br>AND MORE</p></div>
+                <div id="Ad_photo2" style="opacity: 1;"></div>
+		</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<script type="text/javascript">
+		(function(){
+			var tl1 = new TimelineMax();
+			tl1.to('#Ad', 1, { opacity:1 })
+			.from('#Ad_photo' + '#Ad_logo' + '#cta', 1, { opacity:1, ease: Power0.easeOut }, '-=.5')
+			.from('#Ad_text', 2, { opacity:0, ease: Power0.easeOut }, '-=-.5')
+			.from('#Ad_photo2', 2, { opacity:0, ease: Power0.easeOut }, '-=-.75');	
+		}());
+</script>
+	
 </body></html>
