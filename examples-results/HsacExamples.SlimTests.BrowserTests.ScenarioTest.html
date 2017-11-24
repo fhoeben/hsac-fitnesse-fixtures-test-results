@@ -66,7 +66,15 @@
 <br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td><span class="pass">browser test</span></td>
+		<td>browser test <span class="error">org.openqa.selenium.UnsupportedCommandException: ERROR The test with session id a9186d64086c47708b989861279304f9 has already finished, and can't receive further commands.
+You can learn more at https://saucelabs.com/jobs/a9186d64086c47708b989861279304f9
+For help, please check https://wiki.saucelabs.com/display/DOCS/Common+Error+Messages
+Command duration or timeout: 85 milliseconds
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'travis-job-fhoeben-hsac-fitnesse-306902257', ip: '172.17.0.10', os.name: 'Linux', os.arch: 'amd64', os.version: '4.9.6-040906-generic', java.version: '1.8.0_144'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptSslCerts: true, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.33.506120 (e3e53437346286..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasMetadata: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 62.0.3202.62, webStorageEnabled: true, webdriver.remote.sessionid: a9186d64086c47708b989861279...}
+Session ID: a9186d64086c47708b989861279304f9</span></td>
 	</tr>
 </table>
 <br/><table>
@@ -84,8 +92,8 @@
 		<td class="error">Breitnerlaan</td>
 		<td class="error">5</td>
 		<td class="error">Utrecht</td>
-		<td class="error">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">€ 1.089.000 k.k.</span><span class="fail">]</span></td>
-		<td class="error">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">Beschikbaar</span><span class="fail">]</span></td>
+		<td class="error">€ 1.089.000 k.k. <span class="ignore">Test not run</span></td>
+		<td class="error">Beschikbaar <span class="ignore">Test not run</span></td>
 	</tr><tr class="scenario-detail closed-detail"><td colspan="5"><table>
 	<tr class="slimRowTitle">
 		<td>scenario</td>
@@ -93,23 +101,23 @@
 		<td colspan="2">street, number, city</td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td><span class="pass">open</span></td>
+		<td>open <span class="error">Method open[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td colspan="3"><a href="http://www.funda.nl">http://www.funda.nl</a></td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>select <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_54.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_46.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_46.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_46.png" height="200"/></a></div></div></span></td>
+		<td>select <span class="error">Method selectFor[2] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td>€ 1.000.000</td>
 		<td>for</td>
 		<td>Van</td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>select <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_55.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_47.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_47.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_47.png" height="200"/></a></div></div></span></td>
+		<td>select <span class="error">Method selectFor[2] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td>€ 2.000.000</td>
 		<td>for</td>
 		<td>Tot</td>
 	</tr>
 	<tr class="slimRowColor2">
-		<td>enter <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_56.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_48.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_48.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_48.png" height="200"/></a></div></div></span></td>
+		<td>enter <span class="error">Method enterAs[2] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td>Breitnerlaan, Utrecht</td>
 		<td>as</td>
 		<td>Plaats, buurt, adres etc</td>
@@ -124,28 +132,28 @@
 		<td colspan="2">seconds</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td><span class="pass">press</span></td>
+		<td>press <span class="error">Method press[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td colspan="3">down</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td><span class="pass">press</span></td>
+		<td>press <span class="error">Method press[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td colspan="3">enter</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td><span class="pass">click</span></td>
+		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td colspan="3">Zoek</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td>click <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_57.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_49.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_49.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_49.png" height="200"/></a></div></div></span></td>
+		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td colspan="3">Breitnerlaan 5</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td>$price&lt;-[null]</td>
+		<td>$price= <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td>value of</td>
 		<td colspan="2">Vraagprijs</td>
 	</tr>
 	<tr class="slimRowColor2">
-		<td>$state&lt;-[null]</td>
+		<td>$state= <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td>value of</td>
 		<td colspan="2">Status</td>
 	</tr>
@@ -154,8 +162,8 @@
 		<td class="error">Groenedijk</td>
 		<td class="error">57</td>
 		<td class="error">Utrecht</td>
-		<td class="error">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">€ 1.475.000 k.k.</span><span class="fail">]</span></td>
-		<td class="error">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">Beschikbaar</span><span class="fail">]</span></td>
+		<td class="error">€ 1.475.000 k.k. <span class="ignore">Test not run</span></td>
+		<td class="error">Beschikbaar <span class="ignore">Test not run</span></td>
 	</tr><tr class="scenario-detail closed-detail"><td colspan="5"><table>
 	<tr class="slimRowTitle">
 		<td>scenario</td>
@@ -163,23 +171,23 @@
 		<td colspan="2">street, number, city</td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td><span class="pass">open</span></td>
+		<td>open <span class="error">Method open[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td colspan="3"><a href="http://www.funda.nl">http://www.funda.nl</a></td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>select <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_58.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_50.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_50.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_50.png" height="200"/></a></div></div></span></td>
+		<td>select <span class="error">Method selectFor[2] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td>€ 1.000.000</td>
 		<td>for</td>
 		<td>Van</td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>select <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_59.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_51.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_51.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_51.png" height="200"/></a></div></div></span></td>
+		<td>select <span class="error">Method selectFor[2] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td>€ 2.000.000</td>
 		<td>for</td>
 		<td>Tot</td>
 	</tr>
 	<tr class="slimRowColor2">
-		<td>enter <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_60.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_52.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_52.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_52.png" height="200"/></a></div></div></span></td>
+		<td>enter <span class="error">Method enterAs[2] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td>Groenedijk, Utrecht</td>
 		<td>as</td>
 		<td>Plaats, buurt, adres etc</td>
@@ -194,28 +202,28 @@
 		<td colspan="2">seconds</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td><span class="pass">press</span></td>
+		<td>press <span class="error">Method press[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td colspan="3">down</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td><span class="pass">press</span></td>
+		<td>press <span class="error">Method press[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td colspan="3">enter</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td><span class="pass">click</span></td>
+		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td colspan="3">Zoek</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td>click <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_61.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_53.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_53.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_53.png" height="200"/></a></div></div></span></td>
+		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td colspan="3">Groenedijk 57</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td>$price&lt;-[null]</td>
+		<td>$price= <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td>value of</td>
 		<td colspan="2">Vraagprijs</td>
 	</tr>
 	<tr class="slimRowColor2">
-		<td>$state&lt;-[null]</td>
+		<td>$state= <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
 		<td>value of</td>
 		<td colspan="2">Status</td>
 	</tr>
