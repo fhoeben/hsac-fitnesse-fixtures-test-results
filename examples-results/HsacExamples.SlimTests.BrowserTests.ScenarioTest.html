@@ -1,232 +1,139 @@
 <html><head><title>HsacExamples.SlimTests.BrowserTests.ScenarioTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.BrowserTests.ScenarioTest</h2></header><article><br/><h1>Website testing using <i>scenario</i> and BrowserTest</h1>
-<br/><br/>On this page we test whether we check the prices of a couple of houses for sale in Utrecht, The Netherlands.<br/>This test continues where <a href="HsacExamples.SlimTests.BrowserTests.ScriptTest">ScriptTest</a> left of. It uses a Slim scenario<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.ScenarioTable?edit&amp;nonExistent=true">[?]</a> to define a parameterized script.<br/>This is then invoked multiple times from a Decision table<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.DecisionTable?edit&amp;nonExistent=true">[?]</a>, once for each row.<br/><br/><br/>The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup<a title="create page" href="HsacExamples.SlimTests.BrowserTests.SuiteSetup?edit&amp;nonExistent=true">[?]</a>. Which allows this configuration to be shared between tests. Closing the browser is done in <a href="HsacExamples.SlimTests.BrowserTests.SuiteTearDown">SuiteTearDown</a>, which happens after all tests are completed.<br/><br/><table>
-	<tr class="slimRowTitle">
-		<td>scenario</td>
-		<td>check original price _</td>
-		<td colspan="2">street, number, city</td>
-	</tr>
-	<tr class="slimRowColor4">
-		<td>open</td>
-		<td colspan="3"><a href="http://www.funda.nl">http://www.funda.nl</a></td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>select</td>
-		<td>€ 1.000.000</td>
-		<td>for</td>
-		<td>Van</td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>select</td>
-		<td>€ 2.000.000</td>
-		<td>for</td>
-		<td>Tot</td>
-	</tr>
-	<tr class="slimRowColor2">
-		<td>enter</td>
-		<td>@{street}, @{city}</td>
-		<td>as</td>
-		<td>Plaats, buurt, adres etc</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td>note</td>
-		<td colspan="3">select option from autocomplete</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td>wait</td>
-		<td>1</td>
-		<td colspan="2">seconds</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td>press</td>
-		<td colspan="3">down</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td>press</td>
-		<td colspan="3">enter</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td>click</td>
-		<td colspan="3">Zoek</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td>click</td>
-		<td colspan="3">@{street} @{number}</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td>$price=</td>
-		<td>value of</td>
-		<td colspan="2">Vraagprijs</td>
-	</tr>
-	<tr class="slimRowColor2">
-		<td>$state=</td>
-		<td>value of</td>
-		<td colspan="2">Status</td>
-	</tr>
-</table>
-<br/><table>
+<br/><br/>On this page we test retrieving record details using <a href="https://www.allmusic.com">AllMusic</a>.<br/>It uses a Slim scenario<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.ScenarioTable?edit&amp;nonExistent=true">[?]</a> to define a parameterized script.<br/>This is then invoked multiple times from a Decision table<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.DecisionTable?edit&amp;nonExistent=true">[?]</a>, once for each row.<br/><br/><br/>The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup<a title="create page" href="HsacExamples.SlimTests.BrowserTests.SuiteSetup?edit&amp;nonExistent=true">[?]</a>. Which allows this configuration to be shared between tests. Closing the browser is done in <a href="HsacExamples.SlimTests.BrowserTests.SuiteTearDown">SuiteTearDown</a>, which happens after all tests are completed.<br/><br/>First we go to the Discography page for Van Morrison.<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td>browser test <span class="error">org.openqa.selenium.UnsupportedCommandException: The test with session id 0859df3d0f96458ab9d4a9fe419082ce has already finished, and can't receive further commands.
-You can learn more at https://saucelabs.com/jobs/0859df3d0f96458ab9d4a9fe419082ce
-For help, please check https://wiki.saucelabs.com/display/DOCS/Common+Error+Messages
-Command duration or timeout: 82 milliseconds
-Build info: version: '3.7.0', revision: '2321c73', time: '2017-11-02T22:22:35.584Z'
-System info: host: 'travis-job-fhoeben-hsac-fitnesse-306897997', ip: '172.17.0.14', os.name: 'Linux', os.arch: 'amd64', os.version: '4.9.6-040906-generic', java.version: '1.8.0_144'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptSslCerts: true, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.33.506120 (e3e53437346286..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasMetadata: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 62.0.3202.62, webStorageEnabled: true, webdriver.remote.sessionid: 0859df3d0f96458ab9d4a9fe419...}
-Session ID: 0859df3d0f96458ab9d4a9fe419082ce</span></td>
+		<td colspan="3"><span class="pass">browser test</span></td>
 	</tr>
-</table>
-<br/><table>
-	<tr>
-		<td colspan="5">check original price</td>
-	</tr>
-	<tr>
-		<td>street</td>
-		<td>number</td>
-		<td>city</td>
-		<td>price?</td>
-		<td>state?</td>
-	</tr>
-	<tr class="scenario closed">
-		<td class="error">Breitnerlaan</td>
-		<td class="error">5</td>
-		<td class="error">Utrecht</td>
-		<td class="error">€ 1.089.000 k.k. <span class="ignore">Test not run</span></td>
-		<td class="error">Beschikbaar <span class="ignore">Test not run</span></td>
-	</tr><tr class="scenario-detail closed-detail"><td colspan="5"><table>
-	<tr class="slimRowTitle">
-		<td>scenario</td>
-		<td>check original price _</td>
-		<td colspan="2">street, number, city</td>
+	<tr class="slimRowColor7">
+		<td>seconds before timeout</td>
+		<td colspan="3">60</td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td>open <span class="error">Method open[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
-		<td colspan="3"><a href="http://www.funda.nl">http://www.funda.nl</a></td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>select <span class="error">Method selectFor[2] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
-		<td>€ 1.000.000</td>
-		<td>for</td>
-		<td>Van</td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>select <span class="error">Method selectFor[2] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
-		<td>€ 2.000.000</td>
-		<td>for</td>
-		<td>Tot</td>
+		<td><span class="pass">open</span></td>
+		<td colspan="3"><a href="https://www.allmusic.com">https://www.allmusic.com</a></td>
 	</tr>
 	<tr class="slimRowColor2">
-		<td>enter <span class="error">Method enterAs[2] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
-		<td>Breitnerlaan, Utrecht</td>
+		<td><span class="pass">enter</span></td>
+		<td>Van Morrison</td>
 		<td>as</td>
-		<td>Plaats, buurt, adres etc</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td>note</td>
-		<td colspan="3">select option from autocomplete</td>
+		<td>Search</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td><span class="pass">wait</span></td>
-		<td>1</td>
-		<td colspan="2">seconds</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td>press <span class="error">Method press[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
-		<td colspan="3">down</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td>press <span class="error">Method press[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
+		<td><span class="pass">press</span></td>
 		<td colspan="3">enter</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
-		<td colspan="3">Zoek</td>
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Van Morrison</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
-		<td colspan="3">Breitnerlaan 5</td>
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Discography</td>
 	</tr>
-	<tr class="slimRowColor8">
-		<td>$price= <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
-		<td>value of</td>
-		<td colspan="2">Vraagprijs</td>
+</table>
+<br/>Then we check some entries.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>album details _</td>
+		<td colspan="5">album, year, label</td>
 	</tr>
-	<tr class="slimRowColor2">
-		<td>$state= <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
+	<tr class="slimRowColor4">
+		<td>scroll to</td>
+		<td colspan="6">@{album}</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$year=</td>
 		<td>value of</td>
-		<td colspan="2">Status</td>
+		<td>Year</td>
+		<td>in row where</td>
+		<td>Album</td>
+		<td>is</td>
+		<td>@{album}</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>$label=</td>
+		<td>value of</td>
+		<td>Label</td>
+		<td>in row where</td>
+		<td>Album</td>
+		<td>is</td>
+		<td>@{album}</td>
+	</tr>
+</table>
+<br/><br/><table>
+	<tr>
+		<td colspan="3">album details</td>
+	</tr>
+	<tr>
+		<td>album</td>
+		<td>year?</td>
+		<td>label?</td>
+	</tr>
+	<tr class="scenario closed">
+		<td class="pass">Astral Weeks</td>
+		<td class="pass"><span class="pass">1968</span></td>
+		<td class="pass"><span class="pass">Warner Bros.</span></td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="3"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>album details _</td>
+		<td colspan="5">album, year, label</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">scroll to</span></td>
+		<td colspan="6">Astral Weeks</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$year&lt;-[1968]</td>
+		<td>value of</td>
+		<td>Year</td>
+		<td>in row where</td>
+		<td>Album</td>
+		<td>is</td>
+		<td>Astral Weeks</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>$label&lt;-[Warner Bros.]</td>
+		<td>value of</td>
+		<td>Label</td>
+		<td>in row where</td>
+		<td>Album</td>
+		<td>is</td>
+		<td>Astral Weeks</td>
 	</tr>
 </table></td></tr>
 	<tr class="scenario closed">
-		<td class="error">Groenedijk</td>
-		<td class="error">57</td>
-		<td class="error">Utrecht</td>
-		<td class="error">€ 1.475.000 k.k. <span class="ignore">Test not run</span></td>
-		<td class="error">Beschikbaar <span class="ignore">Test not run</span></td>
-	</tr><tr class="scenario-detail closed-detail"><td colspan="5"><table>
+		<td class="pass">Moondance</td>
+		<td class="pass"><span class="pass">1970</span></td>
+		<td class="pass"><span class="pass">Rhino / Warner Bros.</span></td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="3"><table>
 	<tr class="slimRowTitle">
 		<td>scenario</td>
-		<td>check original price _</td>
-		<td colspan="2">street, number, city</td>
+		<td>album details _</td>
+		<td colspan="5">album, year, label</td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td>open <span class="error">Method open[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
-		<td colspan="3"><a href="http://www.funda.nl">http://www.funda.nl</a></td>
+		<td><span class="pass">scroll to</span></td>
+		<td colspan="6">Moondance</td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>select <span class="error">Method selectFor[2] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
-		<td>€ 1.000.000</td>
-		<td>for</td>
-		<td>Van</td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>select <span class="error">Method selectFor[2] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
-		<td>€ 2.000.000</td>
-		<td>for</td>
-		<td>Tot</td>
-	</tr>
-	<tr class="slimRowColor2">
-		<td>enter <span class="error">Method enterAs[2] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
-		<td>Groenedijk, Utrecht</td>
-		<td>as</td>
-		<td>Plaats, buurt, adres etc</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td>note</td>
-		<td colspan="3">select option from autocomplete</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td><span class="pass">wait</span></td>
-		<td>1</td>
-		<td colspan="2">seconds</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td>press <span class="error">Method press[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
-		<td colspan="3">down</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td>press <span class="error">Method press[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
-		<td colspan="3">enter</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
-		<td colspan="3">Zoek</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
-		<td colspan="3">Groenedijk 57</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td>$price= <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
+		<td>$year&lt;-[1970]</td>
 		<td>value of</td>
-		<td colspan="2">Vraagprijs</td>
+		<td>Year</td>
+		<td>in row where</td>
+		<td>Album</td>
+		<td>is</td>
+		<td>Moondance</td>
 	</tr>
-	<tr class="slimRowColor2">
-		<td>$state= <span class="error">Method valueOf[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
+	<tr class="slimRowColor9">
+		<td>$label&lt;-[Rhino / Warner Bros.]</td>
 		<td>value of</td>
-		<td colspan="2">Status</td>
+		<td>Label</td>
+		<td>in row where</td>
+		<td>Album</td>
+		<td>is</td>
+		<td>Moondance</td>
 	</tr>
 </table></td></tr>
 </table>
-<br/><br/>Writing the scenario like this can become a bit cumbersome when many parameters are needed. They are repeated in: the scenario's first row, the scenario rows where they are used and the table headers where the scenario is invoked.<br/>Repeating the parameters in the first row of the scenario definition can be omitted using a custom extension to Slim. This is shown in <a href="HsacExamples.SlimTests.BrowserTests.TableTemplateTest">TableTemplateTest</a>.<br/></article></body></html>
+<br/>Writing the scenario like this can become a bit cumbersome when many parameters are needed. They are repeated in: the scenario's first row, the scenario rows where they are used and the table headers where the scenario is invoked.<br/>Repeating the parameters in the first row of the scenario definition can be omitted using a custom extension to Slim. This is shown in <a href="HsacExamples.SlimTests.BrowserTests.TableTemplateTest">TableTemplateTest</a>.<br/></article></body></html>
