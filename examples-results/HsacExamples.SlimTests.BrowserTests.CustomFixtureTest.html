@@ -1,49 +1,28 @@
 <html><head><title>HsacExamples.SlimTests.BrowserTests.CustomFixtureTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.BrowserTests.CustomFixtureTest</h2></header><article><br/><h1>Website testing using custom subclass of BrowserTest</h1>
-<br/>On this page we test whether we can find a nice house which is for sale in Utrecht, The Netherlands and check how many photos are available. <br/><ul>
-	<li>First we do this with <i>plain BrowserTest</i>, </li>
-	<li>then with a <i>custom subclass, nl.hsac.fitnesse.sample.FundaTest</i>, and </li>
+<br/>On this page we test whether the birth date of Van Morrisson is listed correctly on <a href="https://www.allmusic.com">AllMusic</a>.<br/>We start by navigating to the artist's overview page on AllMusic and then perform the same check in different ways:<br/><ul>
+	<li>First with <i>plain BrowserTest</i>,</li>
+	<li>then with a <i>custom subclass, nl.hsac.fitnesse.sample.AllMusicTest</i>, and</li>
 	<li>finally with a Slim scenario<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.ScenarioTable?edit&amp;nonExistent=true">[?]</a>.</li>
 </ul>
-The latter two approaches both make the test (i.e. the script table containing the test) more descriptive, and less fragile to HTML changes.<br/><br/>Doing this in Java 'hides' the exact way the number of photos is determined from the test (and its result). While a scenario would have made this part of the 'test domain'.<br/>Hiding details can either be a good (e.g. more focus on what is relevant to test, smaller test report), or bad (e.g. 'what was done exactly in this method?') thing.<br/>Which approach is more suitable depends on your tests' context (and the complexity of what is to be done)...<br/><br/>There are some things a Java method can do that a scenario cannot: for instance using conditional logic (<i>if</i> statements), or looping (<i>for</i> or <i>while</i> statements).<br/><br/><h2>Using BrowserTest</h2>
-<br/><table>
+The latter two approaches both make the test (i.e. the script table containing the test) more descriptive, and less fragile to HTML changes.<br/><br/>Doing this in Java 'hides' the exact way the birth date is determined from the test (and its result). While a scenario would have made this part of the 'test domain'.<br/>Hiding details can either be a good (e.g. more focus on what is relevant to test, smaller test report), or bad (e.g. 'what was done exactly in this method?') thing.<br/>Which approach is more suitable depends on your tests' context (and the complexity of what is to be done)...<br/><br/>There are some things a Java method can do that a scenario cannot: for instance using conditional logic (<i>if</i> statements), or looping (<i>for</i> or <i>while</i> statements), or even customize the heuristic used to find places.<br/><br/><h2>Navigate to right page</h2>
+Navigating to the right page is done only once (all subsequent test approaches use the same browser window, which will be at the correct location already).<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
 		<td colspan="3"><span class="pass">browser test</span></td>
 	</tr>
+	<tr class="slimRowColor7">
+		<td>seconds before timeout</td>
+		<td colspan="3">60</td>
+	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
-		<td colspan="3"><a href="http://www.funda.nl">http://www.funda.nl</a></td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>select <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_27.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_23.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_23.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_23.png" height="200"/></a></div></div></span></td>
-		<td>€ 1.000.000</td>
-		<td>for</td>
-		<td>Van</td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>select <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_28.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_24.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_24.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_24.png" height="200"/></a></div></div></span></td>
-		<td>€ 2.000.000</td>
-		<td>for</td>
-		<td>Tot</td>
+		<td colspan="3"><a href="https://www.allmusic.com">https://www.allmusic.com</a></td>
 	</tr>
 	<tr class="slimRowColor2">
-		<td>enter <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_29.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_25.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_25.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_25.png" height="200"/></a></div></div></span></td>
-		<td>Groenedijk, Utrecht</td>
+		<td><span class="pass">enter</span></td>
+		<td>Van Morrison</td>
 		<td>as</td>
-		<td>Plaats, buurt, adres etc</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td><span class="pass">wait</span></td>
-		<td>1</td>
-		<td colspan="2">seconds</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td>note</td>
-		<td colspan="3">select option from autocomplete</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td><span class="pass">press</span></td>
-		<td colspan="3">down</td>
+		<td>Search</td>
 	</tr>
 	<tr class="slimRowColor7">
 		<td><span class="pass">press</span></td>
@@ -51,24 +30,23 @@ The latter two approaches both make the test (i.e. the script table containing t
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">click</span></td>
-		<td colspan="3">Zoek</td>
+		<td colspan="3">Van Morrison</td>
 	</tr>
-	<tr class="slimRowColor8">
-		<td>click <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_30.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_26.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_26.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_26.png" height="200"/></a></div></div></span></td>
-		<td colspan="3">Groenedijk 57</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td>note</td>
-		<td colspan="3">Check any element's text based on an xPath, makes test fragile to HTML changes</td>
+</table>
+<br/><h2>Using BrowserTest</h2>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">browser test</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>value of</td>
-		<td>xpath=//span[@class='object-media-teaser-count']</td>
-		<td>[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">55</span><span class="fail">]</span></td>
+		<td>xpath=//div[h4[contains(text(),'Born')]]/div</td>
+		<td><span class="pass">August 31, 1945 in Belfast, Northern Ireland</span></td>
 	</tr>
 </table>
-<br/>Using a custom subclass, makes the script look like...<br/><br/><h2>Using FundaTest</h2>
+<br/>Using a custom subclass, makes the check look like...<br/><br/><h2>Using AllMusicTest</h2>
 <br/><br/>We need to indicate in which package our custom class can be found.<br/><table>
 	<tr class="slimRowTitle">
 		<td>import</td>
@@ -80,85 +58,45 @@ The latter two approaches both make the test (i.e. the script table containing t
 <br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td colspan="3"><span class="pass">funda test</span></td>
-	</tr>
-	<tr class="slimRowColor4">
-		<td><span class="pass">open</span></td>
-		<td colspan="3"><a href="http://www.funda.nl">http://www.funda.nl</a></td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>select <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_31.HTML">Page content</a>:<a href="files/screenshots/timeouts/FundaTest/timeout_4.png"><img src="files/screenshots/timeouts/FundaTest/timeout_4.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/FundaTest/timeout_4.png" height="200"/></a></div></div></span></td>
-		<td>€ 1.000.000</td>
-		<td>for</td>
-		<td>Van</td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>select <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_32.HTML">Page content</a>:<a href="files/screenshots/timeouts/FundaTest/timeout_5.png"><img src="files/screenshots/timeouts/FundaTest/timeout_5.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/FundaTest/timeout_5.png" height="200"/></a></div></div></span></td>
-		<td>€ 2.000.000</td>
-		<td>for</td>
-		<td>Tot</td>
-	</tr>
-	<tr class="slimRowColor2">
-		<td>enter <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_33.HTML">Page content</a>:<a href="files/screenshots/timeouts/FundaTest/timeout_6.png"><img src="files/screenshots/timeouts/FundaTest/timeout_6.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/FundaTest/timeout_6.png" height="200"/></a></div></div></span></td>
-		<td>Groenedijk, Utrecht</td>
-		<td>as</td>
-		<td>Plaats, buurt, adres etc</td>
+		<td colspan="3"><span class="pass">all music test</span></td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td>note</td>
-		<td colspan="3">select option from autocomplete</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td><span class="pass">wait</span></td>
-		<td>1</td>
-		<td colspan="2">seconds</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td><span class="pass">press</span></td>
-		<td colspan="3">down</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td><span class="pass">press</span></td>
-		<td colspan="3">enter</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td><span class="pass">click</span></td>
-		<td colspan="3">Zoek</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td>click <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_34.HTML">Page content</a>:<a href="files/screenshots/timeouts/FundaTest/timeout_7.png"><img src="files/screenshots/timeouts/FundaTest/timeout_7.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/FundaTest/timeout_7.png" height="200"/></a></div></div></span></td>
-		<td colspan="3">Groenedijk 57</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td>note</td>
-		<td colspan="3">Use custom method to get number of photos</td>
+		<td colspan="3">Use custom method to birth date</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
-		<td>number of photos</td>
-		<td colspan="2">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">55</span><span class="fail">]</span></td>
+		<td>birth data</td>
+		<td colspan="2"><span class="pass">August 31, 1945 in Belfast, Northern Ireland</span></td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td>note</td>
-		<td colspan="3">Another custom method using 'if' to determine its result</td>
+		<td colspan="3">Using a customized heuristic, we can also retrieve similar fields</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
-		<td>classification</td>
-		<td colspan="2">Good <span class="error"><div><div>java.lang.NumberFormatException: null<br/>	at java.lang.Integer.parseInt(Integer.java:542)<br/>	at java.lang.Integer.parseInt(Integer.java:615)<br/>	at nl.hsac.fitnesse.sample.FundaTest.classification(FundaTest.java:21)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147)<br/>	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:51)<br/>	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.superInvoke(BrowserTest.java:118)<br/>	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.lambda$invokedWrappedInWaitUntil$0(BrowserTest.java:84)<br/>	at nl.hsac.fitnesse.fixture.util.selenium.TryAllFramesConditionDecorator.apply(TryAllFramesConditionDecorator.java:32)<br/>	at nl.hsac.fitnesse.fixture.util.selenium.TryAllFramesConditionDecorator.apply(TryAllFramesConditionDecorator.java:16)<br/>	at nl.hsac.fitnesse.fixture.util.selenium.SeleniumHelper$1.apply(SeleniumHelper.java:859)<br/>	at nl.hsac.fitnesse.fixture.util.selenium.SeleniumHelper$1.apply(SeleniumHelper.java:855)<br/>	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)<br/>	at nl.hsac.fitnesse.fixture.util.selenium.SeleniumHelper.waitUntil(SeleniumHelper.java:844)<br/>	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.waitUntilImpl(BrowserTest.java:1845)<br/>	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.waitUntilOrNull(BrowserTest.java:1838)<br/>	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invokedWrappedInWaitUntil(BrowserTest.java:104)<br/>	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invoke(BrowserTest.java:76)<br/>	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:31)<br/>	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:147)<br/>	at fitnesse.slim.fixtureInteraction.DefaultInteraction.callMethod(DefaultInteraction.java:130)<br/>	at fitnesse.slim.fixtureInteraction.DefaultInteraction.invokeMethod(DefaultInteraction.java:114)<br/>	at fitnesse.slim.fixtureInteraction.DefaultInteraction.findAndInvoke(DefaultInteraction.java:92)<br/>	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18)<br/>	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18)<br/>	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:130)<br/>	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:103)<br/>	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35)<br/>	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29)<br/>	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49)<br/>	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43)<br/>	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85)<br/>	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82)<br/>	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75)<br/>	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62)<br/>	at fitnesse.slim.SlimServer.serve(SlimServer.java:47)<br/>	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:53)<br/>	at java.lang.Thread.run(Thread.java:748)<br/>.</div><div><a href="files/pagesources/java.lang.NumberFormatException_1.HTML">Page content</a>:<a href="files/screenshots/exception_1.png"><img src="files/screenshots/exception_1.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/exception_1.png" height="200"/></a></div></div></span></td>
+		<td>value of</td>
+		<td>Born</td>
+		<td><span class="pass">August 31, 1945 in Belfast, Northern Ireland</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Also Known As</td>
+		<td><span class="pass">George Ivan Morrison</span></td>
 	</tr>
 </table>
 <br/>And using a scenario<br/><br/><h2>Using a Scenario</h2>
 <br/>The scenario 'hides' the xpath from the test script, but its definition can be found (and updated) in the wiki. And the test report/result will show what was done (unlike for the custom fixture).<br/>No Java knowledge or development environment is needed to create and maintain a scenario, which may also be an advantage.<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>scenario</td>
-		<td>check number of photos</td>
-		<td colspan="2">expected</td>
+		<td>check basic info value _ is _</td>
+		<td colspan="2">key, expected</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>value of</td>
-		<td>xpath=//span[@class='object-media-teaser-count']</td>
+		<td>xpath=//div[h4[contains(text(),'@{key}')]]/div</td>
 		<td>@{expected}</td>
 	</tr>
 </table>
@@ -167,67 +105,40 @@ The latter two approaches both make the test (i.e. the script table containing t
 		<td>script</td>
 		<td colspan="3"><span class="pass">browser test</span></td>
 	</tr>
-	<tr class="slimRowColor4">
-		<td><span class="pass">open</span></td>
-		<td colspan="3"><a href="http://www.funda.nl">http://www.funda.nl</a></td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>select <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_35.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_27.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_27.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_27.png" height="200"/></a></div></div></span></td>
-		<td>€ 1.000.000</td>
-		<td>for</td>
-		<td>Van</td>
-	</tr>
-	<tr class="slimRowColor0">
-		<td>select <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_36.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_28.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_28.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_28.png" height="200"/></a></div></div></span></td>
-		<td>€ 2.000.000</td>
-		<td>for</td>
-		<td>Tot</td>
-	</tr>
-	<tr class="slimRowColor2">
-		<td>enter <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_37.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_29.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_29.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_29.png" height="200"/></a></div></div></span></td>
-		<td>Groenedijk, Utrecht</td>
-		<td>as</td>
-		<td>Plaats, buurt, adres etc</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td><span class="pass">wait</span></td>
-		<td>1</td>
-		<td colspan="2">seconds</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td>note</td>
-		<td colspan="3">select option from autocomplete</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td><span class="pass">press</span></td>
-		<td colspan="3">down</td>
-	</tr>
-	<tr class="slimRowColor7">
-		<td><span class="pass">press</span></td>
-		<td colspan="3">enter</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td><span class="pass">click</span></td>
-		<td colspan="3">Zoek</td>
-	</tr>
-	<tr class="slimRowColor8">
-		<td>click <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_38.HTML">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_30.png"><img src="files/screenshots/timeouts/BrowserTest/timeout_30.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_30.png" height="200"/></a></div></div></span></td>
-		<td colspan="3">Groenedijk 57</td>
-	</tr>
 	<tr class="scenario closed">
-		<td class="fail">check number of photos</td>
-		<td colspan="3" class="fail">55</td>
+		<td class="pass">check basic info value</td>
+		<td class="pass">Born</td>
+		<td class="pass">is</td>
+		<td class="pass">August 31, 1945 in Belfast, Northern Ireland</td>
 	</tr><tr class="scenario-detail closed-detail"><td colspan="4"><table>
 	<tr class="slimRowTitle">
 		<td>scenario</td>
-		<td>check number of photos</td>
-		<td colspan="2">expected</td>
+		<td>check basic info value _ is _</td>
+		<td colspan="2">key, expected</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>value of</td>
-		<td>xpath=//span[@class='object-media-teaser-count']</td>
-		<td>[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">55</span><span class="fail">]</span></td>
+		<td>xpath=//div[h4[contains(text(),'Born')]]/div</td>
+		<td><span class="pass">August 31, 1945 in Belfast, Northern Ireland</span></td>
+	</tr>
+</table></td></tr>
+	<tr class="scenario closed">
+		<td class="pass">check basic info value</td>
+		<td class="pass">Also Known As</td>
+		<td class="pass">is</td>
+		<td class="pass">George Ivan Morrison</td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="4"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>check basic info value _ is _</td>
+		<td colspan="2">key, expected</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>xpath=//div[h4[contains(text(),'Also Known As')]]/div</td>
+		<td><span class="pass">George Ivan Morrison</span></td>
 	</tr>
 </table></td></tr>
 </table>
