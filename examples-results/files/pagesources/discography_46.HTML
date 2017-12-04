@@ -1,0 +1,77 @@
+<!DOCTYPE html><html><head>
+<meta pmgcharset="UTF-8" content="width=320,height=50">
+<meta name="ad.size" content="width=320,height=50">
+<title>BBD_B4B_Khaled_320x50</title>
+	<style>
+		body {width:320; height:50;margin:0;padding:0;}
+	</style>
+	<script type="text/javascript"> var clickTag = "{{PUB_CLICKTHROUGH}}"; </script>
+<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+
+<body>
+	<a href="javascript:window.open(window.clickTag)">
+		
+			<img width="320px" height="50px" src="BBD_B4B_Khaled_320x50@2x.jpg">
+	</a>
+<noscript>
+	&lt;a href="{{PUB_CLICKTHROUGH}}" target="_blank"&gt;
+
+
+			&lt;img width="320px" height="50px" src="BBD_B4B_Khaled_320x50@2x.jpg"&gt;
+
+	&lt;/a&gt;
+</noscript>
+
+
+
+
+
+<!-- **************** NOTE: if being produced for AdWords file name cannot have @ sybmbol, change to "at" in code and file name ***************** --></body></html>
