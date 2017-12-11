@@ -25,7 +25,7 @@
 &lt;/body&gt;&lt;/html&gt;</pre></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$url&lt;-[http://172.17.0.10:8000/FitNesseMock]</td>
+		<td>$url&lt;-[http://172.17.0.9:8000/FitNesseMock]</td>
 		<td>get mock server url</td>
 	</tr>
 </table>
@@ -36,7 +36,7 @@
 	</tr>
 	<tr class="slimRowColor4">
 		<td><span class="pass">open</span></td>
-		<td colspan="3">$url->[http://172.17.0.10:8000/FitNesseMock]</td>
+		<td colspan="3">$url->[http://172.17.0.9:8000/FitNesseMock]</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -100,6 +100,32 @@
 		<td>value of</td>
 		<td>Ik wil mijn wachtwoord wijzigen nadat ik ben aangemeld</td>
 		<td><span class="pass">true</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td colspan="3">Since there is only one checkbox we can also use the place 'checkbox'</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>checkbox</td>
+		<td><span class="pass">true</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="3">checkbox</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Ik wil mijn wachtwoord wijzigen nadat ik ben aangemeld</td>
+		<td><span class="pass">false</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>checkbox</td>
+		<td><span class="pass">false</span></td>
 	</tr>
 </table>
 <br/><br/><table>
