@@ -1003,7 +1003,7 @@ Here we supply no map to the constructor, but pass the one to use in each script
 	</tr>
 </table>
 <br/><h2>Not Expanding . in Name to Nested Map</h2>
-<br/>Normally when setting values '.' in a name is interpreted to mean a nested map. But this can be disabled. <br/><br/><table>
+<br/>Normally when setting values '.' in a name is interpreted to mean a nested map. But this can be disabled.<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
 		<td colspan="3"><span class="pass">map fixture</span></td>
@@ -1141,4 +1141,1082 @@ Here we supply no map to the constructor, but pass the one to use in each script
 		<td><span class="pass">sheetml.sheet</span></td>
 	</tr>
 </table>
-</article></body></html>
+<br/><h2>Adding elements to a list</h2>
+<br/><p class="note">We ensure we display lists numbered, because otherwise lists of maps look quite bad in wiki.</p><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">list fixture</span></td>
+	</tr>
+	<tr class="slimRowColor1">
+		<td colspan="2">display lists numbered</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">map fixture</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td colspan="3">Add to existing list</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>set values</td>
+		<td>7,8</td>
+		<td>for</td>
+		<td>a</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>add value</td>
+		<td>9</td>
+		<td>to</td>
+		<td>a</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>a[2]</td>
+		<td><span class="pass">9</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td colspan="3">Add to new list</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>add value</td>
+		<td>1</td>
+		<td>to</td>
+		<td>b</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>add value</td>
+		<td>2</td>
+		<td>to</td>
+		<td>b</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>b[1]</td>
+		<td><span class="pass">2</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td colspan="3">Add a map to an existing list</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set value</td>
+		<td>$hash1->[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>github@hsac.nl</li><li>FitNesse@hsac.nl</li></ol></td>
+	</tr>
+</table>]</td>
+		<td>for</td>
+		<td>c[0]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>add value</td>
+		<td>$hash2->[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value">&lt;xml/&gt;</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">map</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>github@hsac.nl</li><li>FitNesse@hsac.nl</li></ol></td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">url</td>
+		<td class="hash_value">https://github.com/fhoeben/hsac-fitnesse-fixtures/releases/</td>
+	</tr>
+</table>]</td>
+		<td>to</td>
+		<td>c</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>c[1].map.a</td>
+		<td><span class="pass">1</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td colspan="3">Add a map to new list</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>add value</td>
+		<td>$hash2->[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value">&lt;xml/&gt;</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">map</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>github@hsac.nl</li><li>FitNesse@hsac.nl</li></ol></td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">url</td>
+		<td class="hash_value">https://github.com/fhoeben/hsac-fitnesse-fixtures/releases/</td>
+	</tr>
+</table>]</td>
+		<td>to</td>
+		<td>d</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>add value</td>
+		<td><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">mykey</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">key2</td>
+		<td class="hash_value">2</td>
+	</tr>
+</table></td>
+		<td>to</td>
+		<td>d</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>size of</td>
+		<td>d</td>
+		<td><span class="pass">2</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>d[1].mykey</td>
+		<td><span class="pass">1</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>d[1].key2</td>
+		<td><span class="pass">2</span></td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>$hash7&lt;-[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value"><ol start="0"><li>7</li><li>8</li><li>9</li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value"><ol start="0"><li>1</li><li>2</li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value"><ol start="0"><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></li><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value">&lt;xml/&gt;</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">map</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">url</td>
+		<td class="hash_value">https://github.com/fhoeben/hsac-fitnesse-fixtures/releases/</td>
+	</tr>
+</table></li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">d</td>
+		<td class="hash_value"><ol start="0"><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value">&lt;xml/&gt;</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">map</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">url</td>
+		<td class="hash_value">https://github.com/fhoeben/hsac-fitnesse-fixtures/releases/</td>
+	</tr>
+</table></li><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">key2</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">mykey</td>
+		<td class="hash_value">1</td>
+	</tr>
+</table></li></ol></td>
+	</tr>
+</table>]</td>
+		<td colspan="3">copy map</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="5"><span class="pass">map fixture</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td colspan="5">Add to existing list</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>add value</td>
+		<td>6</td>
+		<td>to</td>
+		<td>a</td>
+		<td>in</td>
+		<td>$hash7->[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value"><ol start="0"><li>7</li><li>8</li><li>9</li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value"><ol start="0"><li>1</li><li>2</li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value"><ol start="0"><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></li><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value">&lt;xml/&gt;</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">map</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">url</td>
+		<td class="hash_value">https://github.com/fhoeben/hsac-fitnesse-fixtures/releases/</td>
+	</tr>
+</table></li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">d</td>
+		<td class="hash_value"><ol start="0"><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value">&lt;xml/&gt;</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">map</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">url</td>
+		<td class="hash_value">https://github.com/fhoeben/hsac-fitnesse-fixtures/releases/</td>
+	</tr>
+</table></li><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">key2</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">mykey</td>
+		<td class="hash_value">1</td>
+	</tr>
+</table></li></ol></td>
+	</tr>
+</table>]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>a[3]</td>
+		<td>in</td>
+		<td>$hash7->[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value"><ol start="0"><li>7</li><li>8</li><li>9</li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value"><ol start="0"><li>1</li><li>2</li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value"><ol start="0"><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></li><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value">&lt;xml/&gt;</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">map</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">url</td>
+		<td class="hash_value">https://github.com/fhoeben/hsac-fitnesse-fixtures/releases/</td>
+	</tr>
+</table></li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">d</td>
+		<td class="hash_value"><ol start="0"><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value">&lt;xml/&gt;</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">map</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">url</td>
+		<td class="hash_value">https://github.com/fhoeben/hsac-fitnesse-fixtures/releases/</td>
+	</tr>
+</table></li><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">key2</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">mykey</td>
+		<td class="hash_value">1</td>
+	</tr>
+</table></li></ol></td>
+	</tr>
+</table>]</td>
+		<td><span class="pass">6</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td colspan="5">Add to new list</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>add value</td>
+		<td>Hello</td>
+		<td>to</td>
+		<td>e</td>
+		<td>in</td>
+		<td>$hash7->[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value"><ol start="0"><li>7</li><li>8</li><li>9</li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value"><ol start="0"><li>1</li><li>2</li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value"><ol start="0"><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></li><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value">&lt;xml/&gt;</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">map</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">url</td>
+		<td class="hash_value">https://github.com/fhoeben/hsac-fitnesse-fixtures/releases/</td>
+	</tr>
+</table></li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">d</td>
+		<td class="hash_value"><ol start="0"><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value">&lt;xml/&gt;</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">map</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">url</td>
+		<td class="hash_value">https://github.com/fhoeben/hsac-fitnesse-fixtures/releases/</td>
+	</tr>
+</table></li><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">key2</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">mykey</td>
+		<td class="hash_value">1</td>
+	</tr>
+</table></li></ol></td>
+	</tr>
+</table>]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>add value</td>
+		<td>Bye</td>
+		<td>to</td>
+		<td>e</td>
+		<td>in</td>
+		<td>$hash7->[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value"><ol start="0"><li>7</li><li>8</li><li>9</li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value"><ol start="0"><li>1</li><li>2</li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value"><ol start="0"><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></li><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value">&lt;xml/&gt;</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">map</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">url</td>
+		<td class="hash_value">https://github.com/fhoeben/hsac-fitnesse-fixtures/releases/</td>
+	</tr>
+</table></li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">d</td>
+		<td class="hash_value"><ol start="0"><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value">&lt;xml/&gt;</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">map</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">url</td>
+		<td class="hash_value">https://github.com/fhoeben/hsac-fitnesse-fixtures/releases/</td>
+	</tr>
+</table></li><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">key2</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">mykey</td>
+		<td class="hash_value">1</td>
+	</tr>
+</table></li></ol></td>
+	</tr>
+</table>]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>e[1]</td>
+		<td>in</td>
+		<td>$hash7->[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value"><ol start="0"><li>7</li><li>8</li><li>9</li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value"><ol start="0"><li>1</li><li>2</li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value"><ol start="0"><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></li><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value">&lt;xml/&gt;</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">map</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">url</td>
+		<td class="hash_value">https://github.com/fhoeben/hsac-fitnesse-fixtures/releases/</td>
+	</tr>
+</table></li></ol></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">d</td>
+		<td class="hash_value"><ol start="0"><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">c</td>
+		<td class="hash_value">&lt;xml/&gt;</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">map</td>
+		<td class="hash_value"><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>mytest@hsac.nl</li></ol></td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">url</td>
+		<td class="hash_value">https://github.com/fhoeben/hsac-fitnesse-fixtures/releases/</td>
+	</tr>
+</table></li><li><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">key2</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">mykey</td>
+		<td class="hash_value">1</td>
+	</tr>
+</table></li></ol></td>
+	</tr>
+</table>]</td>
+		<td><span class="pass">Bye</span></td>
+	</tr>
+</table>
+<br/><h2>Copying of values</h2>
+<br/>Copying values is not the same as changing existing map (but nested values are shared)!<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="5"><span class="pass">map fixture</span></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>copy values from</td>
+		<td colspan="5">$hash1->[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>github@hsac.nl</li><li>FitNesse@hsac.nl</li></ol></td>
+	</tr>
+</table>]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>a</td>
+		<td colspan="3"><span class="pass">1</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>aliases[0]</td>
+		<td colspan="3"><span class="pass">mytest@hsac.nl</span></td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set value</td>
+		<td>Dag</td>
+		<td>for</td>
+		<td colspan="3">aliases[0]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>aliases[0]</td>
+		<td colspan="3"><span class="pass">Dag</span></td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set value</td>
+		<td>2</td>
+		<td>for</td>
+		<td colspan="3">a</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>a</td>
+		<td>in</td>
+		<td>$hash1->[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>github@hsac.nl</li><li>FitNesse@hsac.nl</li></ol></td>
+	</tr>
+</table>]</td>
+		<td><span class="pass">1</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>aliases[0]</td>
+		<td>in</td>
+		<td>$hash1->[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>github@hsac.nl</li><li>FitNesse@hsac.nl</li></ol></td>
+	</tr>
+</table>]</td>
+		<td><span class="pass">Dag</span></td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>$hash8&lt;-[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>Dag</li></ol></td>
+	</tr>
+</table>]</td>
+		<td colspan="5">copy map</td>
+	</tr>
+</table>
+<br/>Copy overwrites existing values.<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="5"><span class="pass">map fixture</span></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>copy values from</td>
+		<td>$hash8->[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>Dag</li></ol></td>
+	</tr>
+</table>]</td>
+		<td>to</td>
+		<td colspan="3">$hash1->[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>github@hsac.nl</li><li>FitNesse@hsac.nl</li></ol></td>
+	</tr>
+</table>]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>aliases[0]</td>
+		<td>in</td>
+		<td>$hash1->[<table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">email</td>
+		<td class="hash_value">fitnesse@hsac.nl</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">aliases</td>
+		<td class="hash_value"><ol start="0"><li>github@hsac.nl</li><li>FitNesse@hsac.nl</li></ol></td>
+	</tr>
+</table>]</td>
+		<td><span class="pass">Dag</span></td>
+	</tr>
+</table>
+<br/><br/><br/><br/><br/><br/><br/><br/></article></body></html>
