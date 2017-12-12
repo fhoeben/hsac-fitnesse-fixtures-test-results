@@ -193,7 +193,7 @@
 <br/><h2>Nested maps</h2>
 <br/>We define two maps, containing the values from the previous table. And we don't create a variable containing entire table.<br/><br/><table>
 	<tr class="slimRowTitle">
-		<td colspan="3"><span class="pass">table :map of maps fixture</span></td>
+		<td colspan="3"><span class="pass">table  :map of maps fixture</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td></td>
@@ -206,9 +206,37 @@
 		<td>$en</td>
 	</tr>
 	<tr class="slimRowColor0">
+		<td>nested2</td>
+		<td><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">2</td>
+	</tr>
+</table></td>
+		<td><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">3</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
+	</tr>
+</table></td>
+	</tr>
+	<tr class="slimRowColor1">
 		<td>duck</td>
 		<td>Eend</td>
 		<td>Duck</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>email</td>
+		<td><a href="mailto:Eend@example.com">Eend@example.com</a></td>
+		<td><a href="mailto:Duck@example.com">Duck@example.com</a></td>
 	</tr>
 	<tr class="slimRowColor1">
 		<td></td>
@@ -231,6 +259,12 @@
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>value</td>
+		<td>email</td>
+		<td><span class="pass">Eend@example.com</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
 		<td>nested.cat</td>
 		<td><span class="pass">Kat</span></td>
 	</tr>
@@ -248,6 +282,26 @@
 		<td class="hash_value">Hond</td>
 	</tr>
 </table></td></tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>nested2.b</td>
+		<td><span class="pass">2</span></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>value</td>
+		<td colspan="2">nested2</td>
+	<td><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">1</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">2</td>
+	</tr>
+</table></td></tr>
 </table>
 <br/><br/><table>
 	<tr class="slimRowTitle">
@@ -260,6 +314,12 @@
 		<td>value</td>
 		<td>duck</td>
 		<td><span class="pass">Duck</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>email</td>
+		<td><span class="pass">Duck@example.com</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -279,6 +339,26 @@
 	<tr class="hash_row">
 		<td class="hash_key">dog</td>
 		<td class="hash_value">Dog</td>
+	</tr>
+</table></td></tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>nested2.b</td>
+		<td><span class="pass">4</span></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>value</td>
+		<td colspan="2">nested2</td>
+	<td><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">a</td>
+		<td class="hash_value">3</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">b</td>
+		<td class="hash_value">4</td>
 	</tr>
 </table></td></tr>
 </table>
