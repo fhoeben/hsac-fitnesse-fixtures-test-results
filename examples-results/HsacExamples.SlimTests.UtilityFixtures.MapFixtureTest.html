@@ -1,17 +1,17 @@
-<html><head><title>HsacExamples.SlimTests.UtilityFixtures.MapFixtureTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.UtilityFixtures.MapFixtureTest</h2></header><article><br/>Map Fixture allows Maps to be defined and manipulated in the wiki. It is usable both in <a href="#scripts">script tables</a> and <a href="#ddt">dynamic decision tables</a>.<br/><br/><a name="ddt"> </a><br/><br/><h2>Dynamic Decision Table Usage</h2>
-The first examples show usage of the fixture in dynamic decision tables<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.DynamicDecisionTable?edit&amp;nonExistent=true">[?]</a>.<br/>This allows a map to be defined based on a row of a wiki table, <a href="HsacExamples.SlimTests.UtilityFixtures.MapOfMapsFixture">Map of Maps Fixture</a> allows maps to be defined based on the columns of a table.<br/><br/><h3>Define a Map</h3>
+<html><head><title>HsacExamples.SlimTests.UtilityFixtures.MapFixtureTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.UtilityFixtures.MapFixtureTest</h2></header><article><br/>Map Fixture allows Maps to be defined and manipulated in the wiki. It is usable both in <a href="#scripts">script tables</a> and <a href="#ddt">dynamic decision tables</a>.<br/><br/><a name="ddt"> </a><br/><br/><h2 id="DynamicDecisionTableUsage">Dynamic Decision Table Usage</h2>
+The first examples show usage of the fixture in dynamic decision tables<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.DynamicDecisionTable?edit&amp;nonExistent=true">[?]</a>.<br/>This allows a map to be defined based on a row of a wiki table, <a href="HsacExamples.SlimTests.UtilityFixtures.MapOfMapsFixture">Map of Maps Fixture</a> allows maps to be defined based on the columns of a table.<br/><br/><h3 id="DefineaMap">Define a Map</h3>
 Here we define a map (and store it in a Slim variable) using simple values and a list (indicated by the header name ending on '[]'), using a dynamic decision table. Any output column (header name ending on '?') will receive a copy of the map defined.<br/><br/><table>
-	<tr class="slimRowTitle">
+	<tr>
 		<td colspan="5"><span class="pass">ddt: map fixture</span></td>
 	</tr>
-	<tr class="slimRowTitle">
+	<tr>
 		<td>a</td>
 		<td>b</td>
 		<td>email</td>
 		<td>aliases[]</td>
 		<td>hash?</td>
 	</tr>
-	<tr class="slimRowColor1">
+	<tr>
 		<td>1</td>
 		<td>2</td>
 		<td><a href="mailto:fitnesse@hsac.nl">fitnesse@hsac.nl</a></td>
@@ -36,18 +36,18 @@ Here we define a map (and store it in a Slim variable) using simple values and a
 </table>]</td>
 	</tr>
 </table>
-<br/><h3>Nested maps</h3>
+<br/><h3 id="Nestedmaps">Nested maps</h3>
 Here we define a map with a nested map under the 'map' key.<br/><br/><table>
-	<tr class="slimRowTitle">
+	<tr>
 		<td colspan="4"><span class="pass">ddt: map fixture</span></td>
 	</tr>
-	<tr class="slimRowTitle">
+	<tr>
 		<td>c</td>
 		<td>map</td>
 		<td>url</td>
 		<td>map?</td>
 	</tr>
-	<tr class="slimRowColor1">
+	<tr>
 		<td><pre> &lt;xml/&gt; </pre></td>
 		<td>$hash1->[<table class="hash_table">
 	<tr class="hash_row">
@@ -100,7 +100,7 @@ Here we define a map with a nested map under the 'map' key.<br/><br/><table>
 	</tr>
 </table>]</td>
 	</tr>
-	<tr class="slimRowColor0">
+	<tr>
 		<td>3</td>
 		<td>$hash2->[<table class="hash_table">
 	<tr class="hash_row">
@@ -180,8 +180,8 @@ Here we define a map with a nested map under the 'map' key.<br/><br/><table>
 </table>]</td>
 	</tr>
 </table>
-<br/><a name="scripts"> </a><br/><br/><h2>Maps in a Script</h2>
-Here we manipulate a map using script tables<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.ScriptTable?edit&amp;nonExistent=true">[?]</a>. This can be done either with or without a map to manipulate in the script's first row.<br/><br/><h3>Map Supplied in Constructor</h3>
+<br/><a name="scripts"> </a><br/><br/><h2 id="MapsinaScript">Maps in a Script</h2>
+Here we manipulate a map using script tables<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.ScriptTable?edit&amp;nonExistent=true">[?]</a>. This can be done either with or without a map to manipulate in the script's first row.<br/><br/><h3 id="MapSuppliedinConstructor">Map Supplied in Constructor</h3>
 The map to use is supplied using a constructor argument to the fixture. First we use 'hash3' defined above and then 'hash4', created by the first script.<br/><br/>Values for lists can either be set using the 'set values' method or by specifying a key name ending on '[]'. (The '[]' will not be included in the key name. If you do want a key name ending on '[]' you have to specify '\[]', its content will not be seen as a list)<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
@@ -618,7 +618,7 @@ The map to use is supplied using a constructor argument to the fixture. First we
 </table>]</td>
 	</tr>
 </table>
-<br/><h3>Map as Argument</h3>
+<br/><h3 id="MapasArgument">Map as Argument</h3>
 Here we supply no map to the constructor, but pass the one to use in each script row or use the newly (empty) implicitly created map.<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
@@ -1002,7 +1002,7 @@ Here we supply no map to the constructor, but pass the one to use in each script
 		<td colspan="5">copy map</td>
 	</tr>
 </table>
-<br/><h2>Not Expanding . in Name to Nested Map</h2>
+<br/><h2 id="NotExpanding.inNametoNestedMap">Not Expanding . in Name to Nested Map</h2>
 <br/>Normally when setting values '.' in a name is interpreted to mean a nested map. But this can be disabled.<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
@@ -1141,7 +1141,7 @@ Here we supply no map to the constructor, but pass the one to use in each script
 		<td><span class="pass">sheetml.sheet</span></td>
 	</tr>
 </table>
-<br/><h2>Adding elements to a list</h2>
+<br/><h2 id="Addingelementstoalist">Adding elements to a list</h2>
 <br/><p class="note">We ensure we display lists numbered, because otherwise lists of maps look quite bad in wiki.</p><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
@@ -2019,7 +2019,7 @@ Here we supply no map to the constructor, but pass the one to use in each script
 		<td><span class="pass">Bye</span></td>
 	</tr>
 </table>
-<br/><h2>Copying of values</h2>
+<br/><h2 id="Copyingofvalues">Copying of values</h2>
 <br/>Copying values is not the same as changing existing map (but nested values are shared)!<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>

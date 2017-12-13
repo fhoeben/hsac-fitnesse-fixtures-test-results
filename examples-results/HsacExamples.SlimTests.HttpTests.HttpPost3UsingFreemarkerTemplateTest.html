@@ -1,7 +1,7 @@
-<html><head><title>HsacExamples.SlimTests.HttpTests.HttpPost3UsingFreemarkerTemplateTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.HttpTests.HttpPost3UsingFreemarkerTemplateTest</h2></header><article><br/><h2>Body from template</h2>
+<html><head><title>HsacExamples.SlimTests.HttpTests.HttpPost3UsingFreemarkerTemplateTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.HttpTests.HttpPost3UsingFreemarkerTemplateTest</h2></header><article><br/><h2 id="Bodyfromtemplate">Body from template</h2>
 <br/>By using a Freemarker template we can have more dynamic body content.<br/><br/><span class="meta">variable defined: GLOBAL_WEATHER_URL=http://www.webservicex.com/globalweather.asmx</span>
 <br/><span class="meta">variable defined: GLOBAL_WEATHER_TEMPLATE_NAME=samplePost.ftl.xml</span>
-<br/><br/><h3>Don't send a cityName element: error</h3>
+<br/><br/><h3 id="DontsendacityNameelementerror">Don't send a cityName element: error</h3>
 <br/>The Freemarker template will not send a cityName element if no value is supplied (the whole element will be omitted, as can be seen in the request below). The service will not like this.<br/>Omitting the element on a null value could not be done when the body was in the scenario content.<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
@@ -73,7 +73,7 @@
 &lt;/soap:Envelope&gt;
 </pre></td></tr>
 </table>
-<br/><h3>Send a cityName element: success</h3>
+<br/><h3 id="SendacityNameelementsuccess">Send a cityName element: success</h3>
 <br/>When a cityName value is set the enclosing element is sent by the Freemarker template (as visible in the shown request content below), and the SOAP call will succeed.<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
@@ -148,7 +148,7 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Date</td>
-		<td class="hash_value">Tue, 12 Dec 2017 16:37:47 GMT</td>
+		<td class="hash_value">Wed, 13 Dec 2017 12:09:02 GMT</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Content-Length</td>
