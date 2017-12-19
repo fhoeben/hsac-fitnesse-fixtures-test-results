@@ -28,7 +28,7 @@
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>stop timer</td>
-		<td><span class="pass">7&gt;$elapsed-&gt;[5]</span></td>
+		<td><span class="pass">6&gt;$elapsed-&gt;[5]</span></td>
 	</tr>
 </table>
 <br/>We can start and use a timer with a name.<br/><br/><table>
@@ -81,7 +81,7 @@
 		<td>check</td>
 		<td>time on timer</td>
 		<td>test2</td>
-		<td><span class="pass">3&gt; 0</span></td>
+		<td><span class="pass">4&gt; 0</span></td>
 	</tr>
 	<tr class="slimRowColor1">
 		<td>$elapsed&lt;-[4]</td>
@@ -169,27 +169,6 @@
 	<td><table class="hash_table">
 	<tr class="hash_row">
 		<td class="hash_key">to Pause</td>
-		<td class="hash_value">5</td>
-	</tr>
-	<tr class="hash_row">
-		<td class="hash_key">default</td>
-		<td class="hash_value">0</td>
-	</tr>
-	<tr class="hash_row">
-		<td class="hash_key">test 8</td>
-		<td class="hash_value">0</td>
-	</tr>
-	<tr class="hash_row">
-		<td class="hash_key">test 9</td>
-		<td class="hash_value">0</td>
-	</tr>
-</table></td></tr>
-	<tr class="slimRowColor9">
-		<td>show</td>
-		<td>stop all timers</td>
-	<td><table class="hash_table">
-	<tr class="hash_row">
-		<td class="hash_key">to Pause</td>
 		<td class="hash_value">6</td>
 	</tr>
 	<tr class="hash_row">
@@ -205,6 +184,27 @@
 		<td class="hash_value">1</td>
 	</tr>
 </table></td></tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>stop all timers</td>
+	<td><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">to Pause</td>
+		<td class="hash_value">7</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">default</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">test 8</td>
+		<td class="hash_value">2</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">test 9</td>
+		<td class="hash_value">2</td>
+	</tr>
+</table></td></tr>
 </table>
 <br/>We can get the current system time, possibly specifying a format (the format is the format string used by <a href="http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html">Java's SimpleDateFormat</a>, also used by '!today') to use.<br/>The difference between these methods and !today is that the latter is evaluated when the test is started, these methods return the time at the moment the test executes them.<br/><br/><table>
 	<tr class="slimRowTitle">
@@ -214,23 +214,23 @@
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="4">current system time</td>
-	<td>20:56:16.569</td></tr>
+	<td>16:11:36.302</td></tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td>current system time as</td>
 		<td colspan="3">HH:MM:ss.SSS</td>
-	<td>20:12:16.569</td></tr>
+	<td>16:12:36.302</td></tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td>current system time as</td>
 		<td colspan="3">E dd-MMM-yy HH:mm:ss.SSS</td>
-	<td>Thu 14-Dec-17 20:56:16.569</td></tr>
+	<td>Tue 19-Dec-17 16:11:36.302</td></tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td>current system time as</td>
 		<td>E dd-MMM-yy HH:mm:ss.SSS</td>
 		<td>in</td>
 		<td>ja-JP-x-lvariant-JP</td>
-	<td>木 14-12-29 20:56:16.571</td></tr>
+	<td>火 19-12-29 16:11:36.303</td></tr>
 </table>
 <br/></article></body></html>

@@ -1,0 +1,1814 @@
+<html><head>
+<meta name="viewport" content="initial-scale=1.0">
+<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+<meta name="ad.size" content="width=300,height=250">
+<link href="beats.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="beats.js"></script>
+<script>
+var clickTag = "http://www.google.com";
+
+window.requestAnimationFrame = window.requestAnimationFrame
+    || window.mozRequestAnimationFrame
+    || window.webkitRequestAnimationFrame
+    || window.msRequestAnimationFrame
+    || function(f){return setTimeout(f, 1000/60)} // simulate calling code 60 
+ 
+window.cancelAnimationFrame = window.cancelAnimationFrame
+    || window.mozCancelAnimationFrame
+    || function(requestID){clearTimeout(requestID)} //fall back
+
+
+var isIE = false;
+if (navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)))
+{
+  isIE = true;
+}
+
+var bodyLoaded = false;
+
+function imageLoaded(){
+	imgLoaded = true;
+	//console.log("IMAGE LOADED");
+}
+
+function bannerBodyLoaded(){
+//TRIGGER 01
+		init();
+}
+
+function init(){
+	<!---  PRELEM LOADING OF ELEMENTS   -->
+	//document.getElementById("threeBackground").style.opacity = "0.0";
+	
+	/// above the glow
+	var aboveTheNoiseHtml = document.getElementById("aboveTheNoise").innerHTML;
+	var aboveTheNoiseGlowDiv01 = document.getElementById("aboveTheNoiseGlow01");
+	aboveTheNoiseGlowDiv01.innerHTML = aboveTheNoiseHtml;
+	var aboveTheNoiseGlowDiv02 = document.getElementById("aboveTheNoiseGlow02");
+	aboveTheNoiseGlowDiv02.innerHTML = aboveTheNoiseHtml;
+	
+	
+	/// noise graphic glow
+	var noseGraphicHtml = document.getElementById("noiseGraphic").innerHTML;
+	var noiseGraphicGlowDiv01 = document.getElementById("noiseGraphicGlow01");
+	noiseGraphicGlowDiv01.innerHTML = noseGraphicHtml;
+	var noiseGraphicGlowDiv02 = document.getElementById("noiseGraphicGlow02");
+	noiseGraphicGlowDiv02.innerHTML = noseGraphicHtml;
+	
+	// pure anc glow
+	var pureANCNeonHTML = document.getElementById("pureANCNeon").innerHTML;
+	var pureANCNeonGlowDiv01 = document.getElementById("pureANCNeonGlow01");
+	pureANCNeonGlowDiv01.innerHTML = pureANCNeonHTML;
+	var pureANCNeonGlowDiv02 = document.getElementById("pureANCNeonGlow02");
+	pureANCNeonGlowDiv02.innerHTML = pureANCNeonHTML;
+	/*
+	
+	var pureANCNeonGlowDiv02 = document.getElementById("pureANCNeonGlow02");
+	pureANCNeonGlowDiv02.innerHTML = pureANCNeonHtml;
+	*/
+	
+	///////  STUDIO SIGN GLOW STUFF
+	var redGlowLettersHtml = document.getElementById("signBackground").innerHTML;
+
+	var signBackgroundGlow = document.getElementById("signBackgroundGlow");
+	signBackgroundGlow.innerHTML = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="600px" viewBox="0 0 300 600" enable-background="new 0 0 300 600" xml:space="preserve">' + redGlowLettersHtml + '</svg>';
+	
+	var signBackgroundGlowEmphasis = document.getElementById("signBackgroundGlowEmphasis");
+	signBackgroundGlowEmphasis.innerHTML = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="600px" viewBox="0 0 300 600" enable-background="new 0 0 300 600" xml:space="preserve">' + redGlowLettersHtml + '</svg>';
+	
+
+//TRIGGER 02
+	turnOnRedBeatsLogo();
+}
+
+</script>
+
+<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+<body onload="bannerBodyLoaded()">
+
+<!-- BLUR 22  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+    <filter id="blurr22" x="-75%" y="-75%" width="400%" height="400%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="22"></feGaussianBlur>
+    </filter>
+  </defs>
+</svg>
+ <!-- BLUR 22 -->
+
+
+<!-- BACKGROUND SOLID COLOR  -->
+<div id="backgroundSolid">
+
+
+
+<!-- SCENE 03 - STUDIO GLOW  FRAME  -->
+
+<!-- BACKGROUND COLOR GLOW GRADIENT  -->
+<div class="backgroundGradient" style="opacity: 0.9;">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+
+<radialGradient id="SVGID_1_" cx="151.4999" cy="104.0011" r="240.9715" gradientTransform="matrix(1 0 0 0.5773 0 43.9603)" gradientUnits="userSpaceOnUse">
+		<stop offset="0" style="stop-color:#EE080A"></stop>
+		<stop offset="0.332" style="stop-color:#A20607"></stop>
+		<stop offset="0.6946" style="stop-color:#550504"></stop>
+		<stop offset="0.8618" style="stop-color:#360403"></stop>
+	</radialGradient>
+	<rect fill="url(#SVGID_1_)" width="300" height="250"></rect>
+
+
+</svg>
+</div>
+
+
+
+<!---   FPOOOOOOOOOO    
+
+<div class = "fpo">
+	<img src = "graphics/03Temp.jpg"/>
+</div>
+-->
+
+
+
+<!--  SIGN BACKS  GLOW  EMPHASIS  -->
+<div id="signBackgroundGlowEmphasis" class="signBackgroundGlow"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="600px" viewBox="0 0 300 600" enable-background="new 0 0 300 600" xml:space="preserve">
+ <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="600px" viewBox="0 0 300 600" enable-background="new 0 0 300 600" xml:space="preserve">
+         
+    <g id="signBackground" class="signBackgroundFilter">
+        <g>	
+	
+	<linearGradient id="graidentStudioO" gradientUnits="userSpaceOnUse" x1="459.0278" y1="236.2172" x2="494.2752" y2="200.9699" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioO" opacity="0.25" fill="#FFFFFF" stroke="url(#graidentStudioO)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M206.1,99.7c0.1-0.2,0.1-0.4,0.1-0.5c0.1-0.6,0.1-1.1,0.2-1.7c0.2-2.1,0.7-4,1.5-6c2.8-7.2,8.7-12.5,16.1-14.6
+		c1.6-0.4,3.1-0.7,4.8-0.9c1.3-0.1,2.7-0.1,4,0c4.2,0.3,8,1.6,11.5,3.9c3.4,2.2,6.1,5.1,7.9,8.7c1,1.9,1.7,4,2.2,6.1
+		c0.5,2.5,0.7,5.1,0.5,7.7c-0.3,4.8-1.9,9.1-4.8,12.9c-3.4,4.5-7.8,7.5-13.3,8.9c-1.3,0.3-2.5,0.6-3.8,0.6c-0.5,0-1,0.1-1.4,0.1
+		c-0.1,0-0.2,0-0.3,0.1c-0.3,0-0.6,0-0.8,0c-0.2,0-0.3-0.1-0.5-0.1c-0.9,0-1.8-0.1-2.7-0.2c-1.6-0.2-3.1-0.6-4.6-1.1
+		c-6.8-2.3-12.1-7.4-14.7-13.9c-0.7-1.9-1.2-3.8-1.5-5.8c-0.1-0.6-0.1-1.1-0.2-1.7c0-0.2,0-0.4-0.1-0.5
+		C206.1,101,206.1,100.3,206.1,99.7z M221.7,100.6c0,4.7,3.8,8.8,8.7,8.8c4.9,0,8.8-3.9,8.8-8.8c0-5-4.1-8.8-8.8-8.8
+		C225.7,91.8,221.7,95.8,221.7,100.6z" style="opacity: 0.95;"></path>
+	
+		<linearGradient id="gradientStudioS" gradientUnits="userSpaceOnUse" x1="265.894" y1="235.1566" x2="299.9973" y2="201.0534" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioS" opacity="0.25" fill="#FFFFFF" stroke="url(#gradientStudioS)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M36.9,75.9c0.2,0,0.4,0.1,0.6,0.1c1.7,0.1,3.3,0.3,4.9,0.8c2.2,0.7,4.2,1.7,5.9,3.2c1.8,1.6,3.2,3.5,4.1,5.7
+		c0.6,1.5,1.1,3.1,1.3,4.7c0.1,0.9,0.2,1.9,0.3,2.9c0.1,0.7,0.1,1.3,0.2,2c0,0.1,0,0.1,0,0.2c-0.1,0.1-0.3,0.1-0.4,0.1
+		c-0.7,0-1.3,0-2,0c-2.8,0-5.6,0-8.5,0c-0.1,0-0.3,0-0.4,0c0.1,0.1,0.1,0.1,0.2,0.2c1,0.4,2,0.9,3,1.4c1.4,0.8,2.8,1.8,3.9,2.9
+		c1.9,1.9,3.1,4.2,3.7,6.8c0.4,1.7,0.5,3.4,0.3,5.1c-0.2,2.1-0.7,4.1-1.7,6c-1.4,2.6-3.4,4.6-5.9,6.1c-1.7,1-3.4,1.6-5.3,2
+		c-1.5,0.3-2.9,0.5-4.4,0.5c-2.5,0.1-4.9-0.5-7.1-1.8c-1.5-0.8-2.8-1.9-4-3.1c-0.9-0.9-1.8-1.9-2.6-3c-1.5-2-2.8-4.2-3.8-6.5
+		c-0.2-0.4-0.3-0.8-0.4-1.3c-0.2-1.7,0.8-3.6,2.8-4.1c0.4-0.1,0.8-0.1,1.2-0.1c2,0,4,0,5.9,0c0.1,0,0.3,0,0.4,0
+		c0-0.1-0.1-0.1-0.1-0.1c-0.5-0.3-1.1-0.6-1.6-0.8c-1.3-0.7-2.6-1.5-3.7-2.5c-1.4-1.2-2.6-2.7-3.4-4.4c-0.6-1.2-1-2.5-1.2-3.9
+		C19,93.8,19,92.6,19,91.4c0.1-2.3,0.6-4.5,1.6-6.6c1.5-3,3.8-5.3,6.8-6.8c1.6-0.8,3.3-1.4,5.1-1.7c1-0.2,1.9-0.3,2.9-0.3
+		c0.1,0,0.2,0,0.4-0.1C36.1,75.9,36.5,75.9,36.9,75.9z M33,108.3c0,0.1,0,0.1,0.1,0.1c0.3,0.4,0.5,0.8,0.6,1.3
+		c0,0.1,0.1,0.2,0.1,0.3c0.4,0.6,0.8,1.2,1.3,1.7c0.2,0.2,0.4,0.3,0.6,0.5c0.1,0.1,0.3,0.1,0.5,0.1c0.6,0,1.2-0.1,1.7-0.4
+		c0.1-0.1,0.3-0.2,0.4-0.3c0.2-0.3,0.2-0.6,0-0.9c-0.1-0.1-0.2-0.2-0.3-0.3c-0.4-0.3-0.8-0.5-1.2-0.7c-1.2-0.5-2.4-0.9-3.6-1.4
+		C33.1,108.3,33.1,108.3,33,108.3z M39.4,94.2C39.4,94.2,39.4,94.2,39.4,94.2c-0.5-0.5-0.8-1.1-1-1.6c-0.3-0.6-0.6-1.1-1-1.6
+		c-0.2-0.2-0.4-0.4-0.6-0.6c-0.1-0.1-0.2-0.1-0.4-0.2c-0.5,0-1,0-1.5,0.3c-0.6,0.3-0.7,1-0.2,1.5c0.2,0.2,0.4,0.3,0.6,0.4
+		c0.5,0.3,1,0.5,1.5,0.8c0.8,0.3,1.6,0.6,2.5,1C39.3,94.2,39.4,94.3,39.4,94.2z" style="opacity: 0.95;"></path>
+	
+		<linearGradient id="gradientStudioU" gradientUnits="userSpaceOnUse" x1="343.4426" y1="241.1244" x2="381.2867" y2="203.2803" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioU" opacity="0.25" fill="#FFFFFF" stroke="url(#gradientStudioU)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M113.3,92.7c0,0.4,0,0.8,0,1.2c0,3.1,0,6.1-0.1,9.2c0,0.8,0,1.6,0,2.4c0,0.6,0.1,1.1,0.2,1.7c0.1,0.6,0.4,1.2,0.8,1.7
+		c0.3,0.4,0.7,0.7,1.3,0.8c0.6,0.1,1.3,0.2,1.9,0c0.5-0.1,0.8-0.3,1.1-0.7c0.5-0.7,0.9-1.4,1-2.2c0.1-0.7,0.2-1.5,0.2-2.2
+		c0.1-1.8,0-3.5,0-5.3c0-6.5,0-13,0-19.4c0-0.3,0-0.6,0.1-0.9c0.3-0.9,1-1.5,2-1.6c0.2,0,0.4,0,0.5,0c3.5,0,7,0,10.5,0
+		c0.3,0,0.6,0,0.9,0.1c1,0.3,1.7,1.2,1.8,2.2c0,0.2,0,0.3,0,0.5c0,7.6,0,15.2,0,22.8c0,1.2-0.1,2.3-0.3,3.5
+		c-0.3,1.9-0.7,3.7-1.2,5.6c-0.4,1.6-0.9,3.1-1.5,4.5c-0.3,0.6-0.6,1.2-0.9,1.8c-0.4,0.6-0.8,1.2-1.4,1.8c-1.7,1.7-3.7,3-6,3.9
+		c-1.5,0.6-3.1,1-4.7,1.2c-1.3,0.2-2.7,0.3-4,0.2c-3.2-0.1-6.2-0.8-9.1-2.3c-1.7-0.9-3.3-2-4.6-3.4c-1.9-1.9-3.2-4.2-3.9-6.8
+		c-0.3-1.3-0.6-2.5-0.7-3.8c-0.2-1.5-0.2-3-0.2-4.5c0-8.2,0-16.5,0-24.7c0-0.3,0-0.5,0.1-0.7c0.3-1.1,1.2-1.7,2-1.8
+		c0.2,0,0.3,0,0.5,0c3.7,0,7.3,0,11,0c0.3,0,0.6,0,0.9,0.1c0.9,0.3,1.5,1,1.6,2c0,0.2,0,0.4,0,0.6C113.3,84.2,113.3,88.5,113.3,92.7
+		z" style="opacity: 0.95;"></path>
+	
+		<linearGradient id="gradientStudioD" gradientUnits="userSpaceOnUse" x1="382.3201" y1="236.9973" x2="418.3344" y2="200.9831" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioD" opacity="0.25" fill="#FFFFFF" stroke="url(#gradientStudioD)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M140,100c0-6.5,0-13,0-19.4c0-0.4,0-0.8,0.1-1.1c0.4-1.6,1.7-2.6,3.2-2.7c0.2,0,0.4,0,0.6,0c3.5,0,6.9,0,10.4,0
+		c1,0,2.7,0.2,3.9,0.2c2,0.2,3.4,0.4,5,0.8c1.9,0.4,2.6,0.9,4.4,1.6c0.9,0.4,2,1.2,2.8,1.7c0.5,0.3,1.1,0.7,1.5,1.1
+		c2.9,2.6,4.9,5.7,6.1,9.3c0.5,1.6,0.9,3.3,1.1,4.9c0.2,1.8,0.2,3.5,0.1,5.3c-0.2,3.6-1.1,7-2.7,10.2c-1.3,2.6-3.1,4.8-5.3,6.7
+		c-1.9,1.6-4,2.7-6.3,3.5c-1.6,0.6-3.2,0.9-4.9,1.2c-1.4,0.2-2.9,0.3-4.3,0.3c-4,0-7.9,0-11.9,0c-0.4,0-0.9,0-1.3-0.2
+		c-1.3-0.4-2.4-1.6-2.5-3.4c0-0.1,0-0.3,0-0.4C140,113,140,106.5,140,100z M156,110.6c0.1,0,0.2,0,0.2,0c0.7-0.2,1.4-0.3,2.2-0.5
+		c0.7-0.2,1.4-0.5,2.1-0.8c0.5-0.2,0.9-0.5,1.3-0.9c0.7-0.7,1.3-1.5,1.8-2.4c0.8-1.5,1.2-3.2,1.4-4.9c0.1-0.8,0.1-1.6,0-2.3
+		c-0.1-1.1-0.2-2.1-0.5-3.2c-0.3-1-0.6-1.9-1.1-2.8c-0.9-1.4-2.1-2.4-3.7-3c-1.2-0.4-2.4-0.6-3.6-0.5c0,0-0.1,0-0.1,0
+		c-0.1,0.4-0.1,17,0,21C155.9,110.3,155.9,110.4,156,110.6z" style="opacity: 0.95;"></path>
+	
+		<linearGradient id="gradientStudioT" gradientUnits="userSpaceOnUse" x1="303.6227" y1="240.7952" x2="338.5305" y2="205.8873" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioT" opacity="0.25" fill="#FFFFFF" stroke="url(#gradientStudioT)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M82.9,91.7c-0.1,0.1,0,0.3,0,0.4c0,0.7,0,1.5,0,2.2c0,8.7,0,17.4,0,26.1c0,0.4,0,0.8-0.1,1.2c-0.4,1.6-1.7,2.7-3.2,2.9
+		c-0.2,0-0.4,0-0.6,0c-2.5,0-5.1,0-7.6,0c-1.4,0-2.5-0.6-3.3-1.8c-0.4-0.6-0.6-1.2-0.6-2c0-0.2,0-0.3,0-0.5c0-9.4,0-18.7,0-28.1
+		c0-0.2,0-0.3,0-0.5c-0.1,0-0.2,0-0.2-0.1c-0.1,0-0.2,0-0.3,0c-1.8,0-3.6,0-5.4,0c-0.4,0-0.9,0-1.3-0.2c-1.4-0.4-2.7-1.7-2.8-3.7
+		c0-0.1,0-0.2,0-0.2c0-2.3,0-4.6,0-6.8c0-0.5,0.1-1,0.2-1.5c0.5-1.5,2-2.6,3.6-2.6c0.1,0,0.2,0,0.3,0c9,0,17.9,0,26.9,0
+		c0.4,0,0.9,0,1.3,0.2c1.6,0.5,2.6,1.9,2.8,3.3c0,0.2,0,0.4,0,0.6c0,2.3,0,4.6,0,6.8c0,0.5,0,0.9-0.2,1.4c-0.5,1.6-2,2.6-3.4,2.6
+		c-0.2,0-0.4,0-0.6,0c-1.7,0-3.4,0-5.1,0C83.2,91.6,83.1,91.6,82.9,91.7z" style="opacity: 0.95;"></path>
+	
+		<linearGradient id="gradientStudioI" gradientUnits="userSpaceOnUse" x1="424.798" y1="233.7099" x2="454.9554" y2="203.5525" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioI" opacity="0.25" fill="#FFFFFF" stroke="url(#gradientStudioI)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M202.1,100.4c0,6.5,0,13,0,19.5c0,0.4,0,0.8-0.1,1.1c-0.4,1.8-2,3-3.6,3c-0.1,0-0.2,0-0.3,0c-2.8,0-5.6,0-8.4,0
+		c-0.4,0-0.8,0-1.2-0.1c-1.5-0.4-2.6-1.8-2.8-3.3c0-0.2,0-0.4,0-0.6c0-13.1,0-26.1,0-39.2c0-1,0.2-1.8,0.8-2.6
+		c0.8-1,1.8-1.5,3.1-1.5c1.8,0,3.7,0,5.5,0c1.1,0,2.1,0,3.2,0c1.5,0,2.6,0.7,3.4,2c0.3,0.5,0.5,1.1,0.5,1.8c0,0.2,0,0.4,0,0.6
+		C202.1,87.5,202.1,93.9,202.1,100.4z" style="opacity: 0.95;"></path>
+       
+        </g>
+		
+		<!--   3  BACKGROUND   -->
+        <g class="threeBackground" id="threeBackground" style="opacity: 1;">
+            
+            <linearGradient id="gradient3" gradientUnits="userSpaceOnUse" x1="505.9377" y1="241.538" x2="524.9621" y2="222.5135" gradientTransform="matrix(1 0 0 -1 -246 319)">
+			<stop offset="0" style="stop-color:#FFFFFF"></stop>
+			<stop offset="1" style="stop-color:#000000"></stop>
+		</linearGradient>
+		
+			<path opacity="0.25" fill="#FFFFFF" stroke="url(#gradient3)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+			M265.6,91.4c-0.2-0.1-0.2-0.2-0.3-0.3c-0.6-0.5-1.2-1-1.8-1.5c-0.4-0.3-0.6-0.7-0.8-1.2c-0.2-0.7-0.1-1.3,0.3-1.8
+			c0.1-0.1,0.2-0.2,0.3-0.4c0.7-0.9,1.4-1.8,2.1-2.8c0.1-0.1,0.1-0.2,0.2-0.3c-0.1-0.1-0.1-0.1-0.2-0.1c-0.6,0-1.3,0-1.9,0
+			c-1,0-1.9-0.7-2.2-1.7c-0.1-0.2-0.1-0.5-0.1-0.7c0-0.9,0-1.9,0-2.8c0-0.4,0.1-0.8,0.3-1.2c0.4-0.8,1.1-1.2,2-1.2
+			c0.1,0,0.2,0,0.3,0c4.1,0,8.3,0,12.4,0c0.3,0,0.5,0,0.8,0.1c1.4,0.3,2,1.9,1.3,3.1c-0.1,0.1-0.2,0.3-0.3,0.4
+			c-1.4,1.9-2.8,3.8-4.2,5.7c-0.1,0.1-0.2,0.2-0.3,0.4c0.1,0.1,0.2,0.2,0.3,0.2c0.8,0.6,1.6,1.2,2.3,1.9c0.6,0.6,1.2,1.3,1.6,2.1
+			c0.7,1.2,0.9,2.5,0.8,3.9c-0.1,1-0.3,1.9-0.7,2.9c-1.3,3.1-3.6,4.9-6.9,5.6c-2,0.4-4,0.2-5.8-0.7c-2.6-1.2-4.1-3.2-4.7-6
+			c-0.1-0.7-0.2-1.3-0.3-2c0-0.3-0.1-0.7-0.1-1.1c0-0.1,0-0.3,0-0.4c0.3-0.1,0.6,0,1-0.1c0.3,0,0.6,0,0.9,0c0.3,0,0.6,0,0.9,0
+			c0.3,0,0.6,0,0.9,0c0.3,0,0.6,0,0.9,0C264.8,91.4,265.2,91.4,265.6,91.4z M267.2,92c0.2,0.2,0.3,0.3,0.4,0.5
+			c0.1,0.2,0.2,0.3,0.3,0.5c0.2,0.2,0.3,0.5,0.5,0.7c0.1,0.1,0.2,0.2,0.3,0.3c0.1,0.1,0.3,0.1,0.5,0.1c1.3-0.2,1.4-1.6,0.9-2.3
+			c-0.1-0.2-0.3-0.3-0.5-0.4c-0.5-0.2-1-0.2-1.5,0.1C267.7,91.6,267.5,91.8,267.2,92z"></path>
+        </g>
+        <g>
+		
+			<!-- BEATS B -->
+            <linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="21.4274" y1="67.9703" x2="31.6248" y2="67.9703">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="beatsB" opacity="0.25" fill="#FFFFFF" stroke="url(#SVGID_9_)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M26.2,61.3c1.7,0,2.7,0.2,3.4,0.8c0.8,0.6,1.3,1.6,1.3,2.8c0,0.9-0.3,1.7-0.9,2.3c-0.4,0.4-0.7,0.6-1.4,0.8
+		c0.8,0.2,1.2,0.3,1.6,0.7c0.6,0.6,1,1.4,1,2.4c0,1.2-0.5,2.3-1.4,2.9c-0.7,0.5-1.5,0.6-3,0.6h-5V61.3H26.2z M24.6,67h1.1
+		c1.6,0,2.4-0.6,2.4-1.8c0-0.7-0.3-1.3-0.8-1.5c-0.4-0.2-1-0.3-1.7-0.3h-1L24.6,67L24.6,67z M24.6,72.6H26c1,0,1.4-0.1,1.8-0.4
+		c0.4-0.3,0.7-0.8,0.7-1.4c0-0.7-0.3-1.2-0.8-1.5c-0.4-0.2-0.9-0.3-1.9-0.3h-1.2V72.6z" style="opacity: 1;"></path>
+	
+	
+	<linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="32.1397" y1="67.8151" x2="40.9422" y2="67.8151">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="beatsE" opacity="0.25" fill="#FFFFFF" stroke="url(#SVGID_10_)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M36.2,65.8h4.3v3.5h-4.3v1.4h4.3v3.6h-8V61.4h8v3.2h-4.3V65.8z" style="opacity: 1;"></path>
+	
+	<linearGradient id="SVGID_11_" gradientUnits="userSpaceOnUse" x1="40.7591" y1="67.7869" x2="54.6925" y2="67.7869">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="beatsA" opacity="0.25" fill="#FFFFFF" stroke="url(#SVGID_11_)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M46,72.6l-0.7,1.7h-4l4.6-13.1h3.7l4.5,13.1h-4.2l-0.6-1.7L46,72.6z M47.5,64.5L45.7,70h3.7L47.5,64.5z" style="opacity: 1;"></path>
+	<linearGradient id="SVGID_12_" gradientUnits="userSpaceOnUse" x1="52.3911" y1="67.7863" x2="62.5947" y2="67.7863">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="beatsT" opacity="0.25" fill="#FFFFFF" stroke="url(#SVGID_12_)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M59.4,74.2h-3.8v-9.4h-2.8v-3.4h9.4v3.4h-2.8L59.4,74.2L59.4,74.2z" style="opacity: 1;"></path>
+	<linearGradient id="SVGID_13_" gradientUnits="userSpaceOnUse" x1="62.188" y1="67.8417" x2="72.6199" y2="67.8417">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="beatsS" opacity="0.25" fill="#000000" stroke="url(#SVGID_13_)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M66.4,69.5c-3.1-1-3.7-2.5-3.7-4.4c0-2.2,1.9-3.8,4.7-3.8c3.6,0,4.5,2.3,4.8,4.7h-2.9l-1,0c0.4,0.2,0.6,0.2,1.6,0.7
+		c0.5,0.2,0.9,0.6,1.5,1.2c0.7,0.7,1,1.6,1,2.5c0,2.3-1.9,4-4.9,4c-3.9,0-4.8-2.6-4.8-4.9h2.8L66.4,69.5z" style="opacity: 1;"></path>
+        </g>
+    </g>	    
+    </svg>
+</svg></div>
+
+<!--  SIGN BACKS  GLOW  -->
+<div id="signBackgroundGlow" class="signBackgroundGlow"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="600px" viewBox="0 0 300 600" enable-background="new 0 0 300 600" xml:space="preserve">
+ <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="600px" viewBox="0 0 300 600" enable-background="new 0 0 300 600" xml:space="preserve">
+         
+    <g id="signBackground" class="signBackgroundFilter">
+        <g>	
+	
+	<linearGradient id="graidentStudioO" gradientUnits="userSpaceOnUse" x1="459.0278" y1="236.2172" x2="494.2752" y2="200.9699" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioO" opacity="0.25" fill="#FFFFFF" stroke="url(#graidentStudioO)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M206.1,99.7c0.1-0.2,0.1-0.4,0.1-0.5c0.1-0.6,0.1-1.1,0.2-1.7c0.2-2.1,0.7-4,1.5-6c2.8-7.2,8.7-12.5,16.1-14.6
+		c1.6-0.4,3.1-0.7,4.8-0.9c1.3-0.1,2.7-0.1,4,0c4.2,0.3,8,1.6,11.5,3.9c3.4,2.2,6.1,5.1,7.9,8.7c1,1.9,1.7,4,2.2,6.1
+		c0.5,2.5,0.7,5.1,0.5,7.7c-0.3,4.8-1.9,9.1-4.8,12.9c-3.4,4.5-7.8,7.5-13.3,8.9c-1.3,0.3-2.5,0.6-3.8,0.6c-0.5,0-1,0.1-1.4,0.1
+		c-0.1,0-0.2,0-0.3,0.1c-0.3,0-0.6,0-0.8,0c-0.2,0-0.3-0.1-0.5-0.1c-0.9,0-1.8-0.1-2.7-0.2c-1.6-0.2-3.1-0.6-4.6-1.1
+		c-6.8-2.3-12.1-7.4-14.7-13.9c-0.7-1.9-1.2-3.8-1.5-5.8c-0.1-0.6-0.1-1.1-0.2-1.7c0-0.2,0-0.4-0.1-0.5
+		C206.1,101,206.1,100.3,206.1,99.7z M221.7,100.6c0,4.7,3.8,8.8,8.7,8.8c4.9,0,8.8-3.9,8.8-8.8c0-5-4.1-8.8-8.8-8.8
+		C225.7,91.8,221.7,95.8,221.7,100.6z" style="opacity: 1;"></path>
+	
+		<linearGradient id="gradientStudioS" gradientUnits="userSpaceOnUse" x1="265.894" y1="235.1566" x2="299.9973" y2="201.0534" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioS" opacity="0.25" fill="#FFFFFF" stroke="url(#gradientStudioS)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M36.9,75.9c0.2,0,0.4,0.1,0.6,0.1c1.7,0.1,3.3,0.3,4.9,0.8c2.2,0.7,4.2,1.7,5.9,3.2c1.8,1.6,3.2,3.5,4.1,5.7
+		c0.6,1.5,1.1,3.1,1.3,4.7c0.1,0.9,0.2,1.9,0.3,2.9c0.1,0.7,0.1,1.3,0.2,2c0,0.1,0,0.1,0,0.2c-0.1,0.1-0.3,0.1-0.4,0.1
+		c-0.7,0-1.3,0-2,0c-2.8,0-5.6,0-8.5,0c-0.1,0-0.3,0-0.4,0c0.1,0.1,0.1,0.1,0.2,0.2c1,0.4,2,0.9,3,1.4c1.4,0.8,2.8,1.8,3.9,2.9
+		c1.9,1.9,3.1,4.2,3.7,6.8c0.4,1.7,0.5,3.4,0.3,5.1c-0.2,2.1-0.7,4.1-1.7,6c-1.4,2.6-3.4,4.6-5.9,6.1c-1.7,1-3.4,1.6-5.3,2
+		c-1.5,0.3-2.9,0.5-4.4,0.5c-2.5,0.1-4.9-0.5-7.1-1.8c-1.5-0.8-2.8-1.9-4-3.1c-0.9-0.9-1.8-1.9-2.6-3c-1.5-2-2.8-4.2-3.8-6.5
+		c-0.2-0.4-0.3-0.8-0.4-1.3c-0.2-1.7,0.8-3.6,2.8-4.1c0.4-0.1,0.8-0.1,1.2-0.1c2,0,4,0,5.9,0c0.1,0,0.3,0,0.4,0
+		c0-0.1-0.1-0.1-0.1-0.1c-0.5-0.3-1.1-0.6-1.6-0.8c-1.3-0.7-2.6-1.5-3.7-2.5c-1.4-1.2-2.6-2.7-3.4-4.4c-0.6-1.2-1-2.5-1.2-3.9
+		C19,93.8,19,92.6,19,91.4c0.1-2.3,0.6-4.5,1.6-6.6c1.5-3,3.8-5.3,6.8-6.8c1.6-0.8,3.3-1.4,5.1-1.7c1-0.2,1.9-0.3,2.9-0.3
+		c0.1,0,0.2,0,0.4-0.1C36.1,75.9,36.5,75.9,36.9,75.9z M33,108.3c0,0.1,0,0.1,0.1,0.1c0.3,0.4,0.5,0.8,0.6,1.3
+		c0,0.1,0.1,0.2,0.1,0.3c0.4,0.6,0.8,1.2,1.3,1.7c0.2,0.2,0.4,0.3,0.6,0.5c0.1,0.1,0.3,0.1,0.5,0.1c0.6,0,1.2-0.1,1.7-0.4
+		c0.1-0.1,0.3-0.2,0.4-0.3c0.2-0.3,0.2-0.6,0-0.9c-0.1-0.1-0.2-0.2-0.3-0.3c-0.4-0.3-0.8-0.5-1.2-0.7c-1.2-0.5-2.4-0.9-3.6-1.4
+		C33.1,108.3,33.1,108.3,33,108.3z M39.4,94.2C39.4,94.2,39.4,94.2,39.4,94.2c-0.5-0.5-0.8-1.1-1-1.6c-0.3-0.6-0.6-1.1-1-1.6
+		c-0.2-0.2-0.4-0.4-0.6-0.6c-0.1-0.1-0.2-0.1-0.4-0.2c-0.5,0-1,0-1.5,0.3c-0.6,0.3-0.7,1-0.2,1.5c0.2,0.2,0.4,0.3,0.6,0.4
+		c0.5,0.3,1,0.5,1.5,0.8c0.8,0.3,1.6,0.6,2.5,1C39.3,94.2,39.4,94.3,39.4,94.2z" style="opacity: 1;"></path>
+	
+		<linearGradient id="gradientStudioU" gradientUnits="userSpaceOnUse" x1="343.4426" y1="241.1244" x2="381.2867" y2="203.2803" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioU" opacity="0.25" fill="#FFFFFF" stroke="url(#gradientStudioU)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M113.3,92.7c0,0.4,0,0.8,0,1.2c0,3.1,0,6.1-0.1,9.2c0,0.8,0,1.6,0,2.4c0,0.6,0.1,1.1,0.2,1.7c0.1,0.6,0.4,1.2,0.8,1.7
+		c0.3,0.4,0.7,0.7,1.3,0.8c0.6,0.1,1.3,0.2,1.9,0c0.5-0.1,0.8-0.3,1.1-0.7c0.5-0.7,0.9-1.4,1-2.2c0.1-0.7,0.2-1.5,0.2-2.2
+		c0.1-1.8,0-3.5,0-5.3c0-6.5,0-13,0-19.4c0-0.3,0-0.6,0.1-0.9c0.3-0.9,1-1.5,2-1.6c0.2,0,0.4,0,0.5,0c3.5,0,7,0,10.5,0
+		c0.3,0,0.6,0,0.9,0.1c1,0.3,1.7,1.2,1.8,2.2c0,0.2,0,0.3,0,0.5c0,7.6,0,15.2,0,22.8c0,1.2-0.1,2.3-0.3,3.5
+		c-0.3,1.9-0.7,3.7-1.2,5.6c-0.4,1.6-0.9,3.1-1.5,4.5c-0.3,0.6-0.6,1.2-0.9,1.8c-0.4,0.6-0.8,1.2-1.4,1.8c-1.7,1.7-3.7,3-6,3.9
+		c-1.5,0.6-3.1,1-4.7,1.2c-1.3,0.2-2.7,0.3-4,0.2c-3.2-0.1-6.2-0.8-9.1-2.3c-1.7-0.9-3.3-2-4.6-3.4c-1.9-1.9-3.2-4.2-3.9-6.8
+		c-0.3-1.3-0.6-2.5-0.7-3.8c-0.2-1.5-0.2-3-0.2-4.5c0-8.2,0-16.5,0-24.7c0-0.3,0-0.5,0.1-0.7c0.3-1.1,1.2-1.7,2-1.8
+		c0.2,0,0.3,0,0.5,0c3.7,0,7.3,0,11,0c0.3,0,0.6,0,0.9,0.1c0.9,0.3,1.5,1,1.6,2c0,0.2,0,0.4,0,0.6C113.3,84.2,113.3,88.5,113.3,92.7
+		z" style="opacity: 1;"></path>
+	
+		<linearGradient id="gradientStudioD" gradientUnits="userSpaceOnUse" x1="382.3201" y1="236.9973" x2="418.3344" y2="200.9831" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioD" opacity="0.25" fill="#FFFFFF" stroke="url(#gradientStudioD)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M140,100c0-6.5,0-13,0-19.4c0-0.4,0-0.8,0.1-1.1c0.4-1.6,1.7-2.6,3.2-2.7c0.2,0,0.4,0,0.6,0c3.5,0,6.9,0,10.4,0
+		c1,0,2.7,0.2,3.9,0.2c2,0.2,3.4,0.4,5,0.8c1.9,0.4,2.6,0.9,4.4,1.6c0.9,0.4,2,1.2,2.8,1.7c0.5,0.3,1.1,0.7,1.5,1.1
+		c2.9,2.6,4.9,5.7,6.1,9.3c0.5,1.6,0.9,3.3,1.1,4.9c0.2,1.8,0.2,3.5,0.1,5.3c-0.2,3.6-1.1,7-2.7,10.2c-1.3,2.6-3.1,4.8-5.3,6.7
+		c-1.9,1.6-4,2.7-6.3,3.5c-1.6,0.6-3.2,0.9-4.9,1.2c-1.4,0.2-2.9,0.3-4.3,0.3c-4,0-7.9,0-11.9,0c-0.4,0-0.9,0-1.3-0.2
+		c-1.3-0.4-2.4-1.6-2.5-3.4c0-0.1,0-0.3,0-0.4C140,113,140,106.5,140,100z M156,110.6c0.1,0,0.2,0,0.2,0c0.7-0.2,1.4-0.3,2.2-0.5
+		c0.7-0.2,1.4-0.5,2.1-0.8c0.5-0.2,0.9-0.5,1.3-0.9c0.7-0.7,1.3-1.5,1.8-2.4c0.8-1.5,1.2-3.2,1.4-4.9c0.1-0.8,0.1-1.6,0-2.3
+		c-0.1-1.1-0.2-2.1-0.5-3.2c-0.3-1-0.6-1.9-1.1-2.8c-0.9-1.4-2.1-2.4-3.7-3c-1.2-0.4-2.4-0.6-3.6-0.5c0,0-0.1,0-0.1,0
+		c-0.1,0.4-0.1,17,0,21C155.9,110.3,155.9,110.4,156,110.6z" style="opacity: 1;"></path>
+	
+		<linearGradient id="gradientStudioT" gradientUnits="userSpaceOnUse" x1="303.6227" y1="240.7952" x2="338.5305" y2="205.8873" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioT" opacity="0.25" fill="#FFFFFF" stroke="url(#gradientStudioT)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M82.9,91.7c-0.1,0.1,0,0.3,0,0.4c0,0.7,0,1.5,0,2.2c0,8.7,0,17.4,0,26.1c0,0.4,0,0.8-0.1,1.2c-0.4,1.6-1.7,2.7-3.2,2.9
+		c-0.2,0-0.4,0-0.6,0c-2.5,0-5.1,0-7.6,0c-1.4,0-2.5-0.6-3.3-1.8c-0.4-0.6-0.6-1.2-0.6-2c0-0.2,0-0.3,0-0.5c0-9.4,0-18.7,0-28.1
+		c0-0.2,0-0.3,0-0.5c-0.1,0-0.2,0-0.2-0.1c-0.1,0-0.2,0-0.3,0c-1.8,0-3.6,0-5.4,0c-0.4,0-0.9,0-1.3-0.2c-1.4-0.4-2.7-1.7-2.8-3.7
+		c0-0.1,0-0.2,0-0.2c0-2.3,0-4.6,0-6.8c0-0.5,0.1-1,0.2-1.5c0.5-1.5,2-2.6,3.6-2.6c0.1,0,0.2,0,0.3,0c9,0,17.9,0,26.9,0
+		c0.4,0,0.9,0,1.3,0.2c1.6,0.5,2.6,1.9,2.8,3.3c0,0.2,0,0.4,0,0.6c0,2.3,0,4.6,0,6.8c0,0.5,0,0.9-0.2,1.4c-0.5,1.6-2,2.6-3.4,2.6
+		c-0.2,0-0.4,0-0.6,0c-1.7,0-3.4,0-5.1,0C83.2,91.6,83.1,91.6,82.9,91.7z" style="opacity: 1;"></path>
+	
+		<linearGradient id="gradientStudioI" gradientUnits="userSpaceOnUse" x1="424.798" y1="233.7099" x2="454.9554" y2="203.5525" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioI" opacity="0.25" fill="#FFFFFF" stroke="url(#gradientStudioI)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M202.1,100.4c0,6.5,0,13,0,19.5c0,0.4,0,0.8-0.1,1.1c-0.4,1.8-2,3-3.6,3c-0.1,0-0.2,0-0.3,0c-2.8,0-5.6,0-8.4,0
+		c-0.4,0-0.8,0-1.2-0.1c-1.5-0.4-2.6-1.8-2.8-3.3c0-0.2,0-0.4,0-0.6c0-13.1,0-26.1,0-39.2c0-1,0.2-1.8,0.8-2.6
+		c0.8-1,1.8-1.5,3.1-1.5c1.8,0,3.7,0,5.5,0c1.1,0,2.1,0,3.2,0c1.5,0,2.6,0.7,3.4,2c0.3,0.5,0.5,1.1,0.5,1.8c0,0.2,0,0.4,0,0.6
+		C202.1,87.5,202.1,93.9,202.1,100.4z" style="opacity: 1;"></path>
+       
+        </g>
+		
+		<!--   3  BACKGROUND   -->
+        <g class="threeBackground" id="threeBackground" style="opacity: 1;">
+            
+            <linearGradient id="gradient3" gradientUnits="userSpaceOnUse" x1="505.9377" y1="241.538" x2="524.9621" y2="222.5135" gradientTransform="matrix(1 0 0 -1 -246 319)">
+			<stop offset="0" style="stop-color:#FFFFFF"></stop>
+			<stop offset="1" style="stop-color:#000000"></stop>
+		</linearGradient>
+		
+			<path opacity="0.25" fill="#FFFFFF" stroke="url(#gradient3)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+			M265.6,91.4c-0.2-0.1-0.2-0.2-0.3-0.3c-0.6-0.5-1.2-1-1.8-1.5c-0.4-0.3-0.6-0.7-0.8-1.2c-0.2-0.7-0.1-1.3,0.3-1.8
+			c0.1-0.1,0.2-0.2,0.3-0.4c0.7-0.9,1.4-1.8,2.1-2.8c0.1-0.1,0.1-0.2,0.2-0.3c-0.1-0.1-0.1-0.1-0.2-0.1c-0.6,0-1.3,0-1.9,0
+			c-1,0-1.9-0.7-2.2-1.7c-0.1-0.2-0.1-0.5-0.1-0.7c0-0.9,0-1.9,0-2.8c0-0.4,0.1-0.8,0.3-1.2c0.4-0.8,1.1-1.2,2-1.2
+			c0.1,0,0.2,0,0.3,0c4.1,0,8.3,0,12.4,0c0.3,0,0.5,0,0.8,0.1c1.4,0.3,2,1.9,1.3,3.1c-0.1,0.1-0.2,0.3-0.3,0.4
+			c-1.4,1.9-2.8,3.8-4.2,5.7c-0.1,0.1-0.2,0.2-0.3,0.4c0.1,0.1,0.2,0.2,0.3,0.2c0.8,0.6,1.6,1.2,2.3,1.9c0.6,0.6,1.2,1.3,1.6,2.1
+			c0.7,1.2,0.9,2.5,0.8,3.9c-0.1,1-0.3,1.9-0.7,2.9c-1.3,3.1-3.6,4.9-6.9,5.6c-2,0.4-4,0.2-5.8-0.7c-2.6-1.2-4.1-3.2-4.7-6
+			c-0.1-0.7-0.2-1.3-0.3-2c0-0.3-0.1-0.7-0.1-1.1c0-0.1,0-0.3,0-0.4c0.3-0.1,0.6,0,1-0.1c0.3,0,0.6,0,0.9,0c0.3,0,0.6,0,0.9,0
+			c0.3,0,0.6,0,0.9,0c0.3,0,0.6,0,0.9,0C264.8,91.4,265.2,91.4,265.6,91.4z M267.2,92c0.2,0.2,0.3,0.3,0.4,0.5
+			c0.1,0.2,0.2,0.3,0.3,0.5c0.2,0.2,0.3,0.5,0.5,0.7c0.1,0.1,0.2,0.2,0.3,0.3c0.1,0.1,0.3,0.1,0.5,0.1c1.3-0.2,1.4-1.6,0.9-2.3
+			c-0.1-0.2-0.3-0.3-0.5-0.4c-0.5-0.2-1-0.2-1.5,0.1C267.7,91.6,267.5,91.8,267.2,92z"></path>
+        </g>
+        <g>
+		
+			<!-- BEATS B -->
+            <linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="21.4274" y1="67.9703" x2="31.6248" y2="67.9703">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="beatsB" opacity="0.25" fill="#FFFFFF" stroke="url(#SVGID_9_)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M26.2,61.3c1.7,0,2.7,0.2,3.4,0.8c0.8,0.6,1.3,1.6,1.3,2.8c0,0.9-0.3,1.7-0.9,2.3c-0.4,0.4-0.7,0.6-1.4,0.8
+		c0.8,0.2,1.2,0.3,1.6,0.7c0.6,0.6,1,1.4,1,2.4c0,1.2-0.5,2.3-1.4,2.9c-0.7,0.5-1.5,0.6-3,0.6h-5V61.3H26.2z M24.6,67h1.1
+		c1.6,0,2.4-0.6,2.4-1.8c0-0.7-0.3-1.3-0.8-1.5c-0.4-0.2-1-0.3-1.7-0.3h-1L24.6,67L24.6,67z M24.6,72.6H26c1,0,1.4-0.1,1.8-0.4
+		c0.4-0.3,0.7-0.8,0.7-1.4c0-0.7-0.3-1.2-0.8-1.5c-0.4-0.2-0.9-0.3-1.9-0.3h-1.2V72.6z" style="opacity: 1;"></path>
+	
+	
+	<linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="32.1397" y1="67.8151" x2="40.9422" y2="67.8151">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="beatsE" opacity="0.25" fill="#FFFFFF" stroke="url(#SVGID_10_)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M36.2,65.8h4.3v3.5h-4.3v1.4h4.3v3.6h-8V61.4h8v3.2h-4.3V65.8z" style="opacity: 1;"></path>
+	
+	<linearGradient id="SVGID_11_" gradientUnits="userSpaceOnUse" x1="40.7591" y1="67.7869" x2="54.6925" y2="67.7869">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="beatsA" opacity="0.25" fill="#FFFFFF" stroke="url(#SVGID_11_)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M46,72.6l-0.7,1.7h-4l4.6-13.1h3.7l4.5,13.1h-4.2l-0.6-1.7L46,72.6z M47.5,64.5L45.7,70h3.7L47.5,64.5z" style="opacity: 1;"></path>
+	<linearGradient id="SVGID_12_" gradientUnits="userSpaceOnUse" x1="52.3911" y1="67.7863" x2="62.5947" y2="67.7863">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="beatsT" opacity="0.25" fill="#FFFFFF" stroke="url(#SVGID_12_)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M59.4,74.2h-3.8v-9.4h-2.8v-3.4h9.4v3.4h-2.8L59.4,74.2L59.4,74.2z" style="opacity: 1;"></path>
+	<linearGradient id="SVGID_13_" gradientUnits="userSpaceOnUse" x1="62.188" y1="67.8417" x2="72.6199" y2="67.8417">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="beatsS" opacity="0.25" fill="#000000" stroke="url(#SVGID_13_)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M66.4,69.5c-3.1-1-3.7-2.5-3.7-4.4c0-2.2,1.9-3.8,4.7-3.8c3.6,0,4.5,2.3,4.8,4.7h-2.9l-1,0c0.4,0.2,0.6,0.2,1.6,0.7
+		c0.5,0.2,0.9,0.6,1.5,1.2c0.7,0.7,1,1.6,1,2.5c0,2.3-1.9,4-4.9,4c-3.9,0-4.8-2.6-4.8-4.9h2.8L66.4,69.5z" style="opacity: 1;"></path>
+        </g>
+    </g>	    
+    </svg>
+</svg></div>
+
+
+
+<!-- HEADPHONES  -->
+<!--<div class = "headPhonesContainer"><div class="headPhones"><div class="headPhonesPos">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+
+	 width="300px" height="250px" viewBox="-149.5 125.5 300 250" enable-background="new -149.5 125.5 300 250" xml:space="preserve">
+<defs>
+<clipPath id = "headPhoneBackGroundMask">
+	<path fill="none" d="M-84.4,278.2c0,0-0.1-6.3,1.3-10.3s2.6-6.9,3.2-8.2c0.6-1.2,1.8-2.8,2.3-3.4c0.5-0.6,0.5-1.1,0.5-1.1
+			s1.1-6.3,2.7-11.2c1.6-4.8,8.5-20.7,11.4-25.4c2.9-4.7,11.1-17.5,14.9-21.5s13.2-13.4,15.9-15.7c2.7-2.2,5.5-5.6,19.2-14.5
+			c14.2-6.8,20.1-8.6,22.2-8.9s3.7-1.1,11.8-1.2c8.1-0.1,17.2,4.8,18.2,5.7c1,0.8,11.6,10.2,13.3,12.2c1.8,1.9,7.3,7.8,8.9,11.2
+			c1.6,3.4,5.5,15.8,4.3,26.4s-4.8,25.4-5.1,28.2s-0.6,14.2-0.7,18.9c-0.1,4.7-0.6,14-3.8,21.4s-6.8,13.4-16.2,20.9
+			s-13.2,10.1-16.8,10.9s-8.9,1.2-11,1.2s-8.4-0.3-11.4-1.6c-3-1.3-8-4.5-9.6-5.9c-1.6-1.4-3.8-3.5-3.8-3.5s0.3,2.2,0.2,4.3
+			c-0.2,2.1-0.4,3.2-1.3,4.8c-0.9,1.6-7.2,8-10.1,10.3c-2.8,2.3-5.2,4.2-6.4,4.4s-5.1,0-8.6-0.8c-3.5-0.8-5.6-1.8-6.8-1.8
+			s-2.4,0.5-3.5,0.5s-6.3-1.9-7.8-2.5s-9.8-4.4-16.8-12.2c-7-7.8-9.2-12.9-10.3-16.5c-1.2-3.6-1.2-5.9-1.4-6.7s-1-3.5-0.8-4.8
+			C-86.2,280.9-85.3,278.8-84.4,278.2z M-44.8,252.4c1.6,1.2,7.2,7,9.5,9.2c2.2,2.2,7.2,9.9,8.8,11.8c1.5,1.9,5.1,7.2,5.1,7.2
+			s-0.1-1.5,0.1-3.8c0.2-2.2,0.2-10.8,0.3-14.1c0.2-3.3,2.6-11.8,3-13.8s3.8-9.3,4.8-11.8s6.2-9.2,8.9-12s7.2-7.1,13.1-8.8
+			s10-2.4,12.4-2.4s9.3,1.6,11,2.2c1.7,0.7,7.6,4.5,7.6,4.5s1.2-2.3,1.8-3.8c0.6-1.4,2.4-6.6,3.1-9.1c0.7-2.5,1.3-12.1,1.3-15.6
+			s-0.4-7.2-0.5-8.2s-1.2-3-1.5-4s-0.4-1.8-0.4-1.8s-0.7-0.4-1.5-0.6s-3.9-0.8-6.3-1c-2.4-0.2-9.5,0.1-12,0.5s-7.8,2.1-10.7,3.2
+			c-2.9,1.2-11.1,5.6-13.8,7.1s-11.9,8.2-14.4,10.2s-8.4,8.2-11.2,11.1c-2.8,2.9-9.1,11.3-11,13.8c-1.9,2.4-8.2,12.8-9.9,16
+			c-1.8,3.2-4.5,8.6-4.5,8.6C-50.3,248-46.4,251.3-44.8,252.4z"/>
+	</clipPath>	
+  </defs>
+  <image xlink:href="graphics/beatsHeadphones300X250tnypng.jpg" clip-path="url(#headPhoneBackGroundMask)" x="-149.5" y="125.5" width="300" height="250"></image>
+</svg>
+</div></div></div>-->
+
+<img id="headphones_back" src="graphics/headphones_back.png" style="opacity: 1;">
+
+
+<!--  SIGN BACKS  -->
+<div id="signBackground" class="signBackground">
+ <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="600px" viewBox="0 0 300 600" enable-background="new 0 0 300 600" xml:space="preserve">
+         
+    <g id="signBackground" class="signBackgroundFilter">
+        <g>	
+	
+	<linearGradient id="graidentStudioO" gradientUnits="userSpaceOnUse" x1="459.0278" y1="236.2172" x2="494.2752" y2="200.9699" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioO" opacity="0.25" fill="#FFFFFF" stroke="url(#graidentStudioO)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M206.1,99.7c0.1-0.2,0.1-0.4,0.1-0.5c0.1-0.6,0.1-1.1,0.2-1.7c0.2-2.1,0.7-4,1.5-6c2.8-7.2,8.7-12.5,16.1-14.6
+		c1.6-0.4,3.1-0.7,4.8-0.9c1.3-0.1,2.7-0.1,4,0c4.2,0.3,8,1.6,11.5,3.9c3.4,2.2,6.1,5.1,7.9,8.7c1,1.9,1.7,4,2.2,6.1
+		c0.5,2.5,0.7,5.1,0.5,7.7c-0.3,4.8-1.9,9.1-4.8,12.9c-3.4,4.5-7.8,7.5-13.3,8.9c-1.3,0.3-2.5,0.6-3.8,0.6c-0.5,0-1,0.1-1.4,0.1
+		c-0.1,0-0.2,0-0.3,0.1c-0.3,0-0.6,0-0.8,0c-0.2,0-0.3-0.1-0.5-0.1c-0.9,0-1.8-0.1-2.7-0.2c-1.6-0.2-3.1-0.6-4.6-1.1
+		c-6.8-2.3-12.1-7.4-14.7-13.9c-0.7-1.9-1.2-3.8-1.5-5.8c-0.1-0.6-0.1-1.1-0.2-1.7c0-0.2,0-0.4-0.1-0.5
+		C206.1,101,206.1,100.3,206.1,99.7z M221.7,100.6c0,4.7,3.8,8.8,8.7,8.8c4.9,0,8.8-3.9,8.8-8.8c0-5-4.1-8.8-8.8-8.8
+		C225.7,91.8,221.7,95.8,221.7,100.6z" style="opacity: 0.25;"></path>
+	
+		<linearGradient id="gradientStudioS" gradientUnits="userSpaceOnUse" x1="265.894" y1="235.1566" x2="299.9973" y2="201.0534" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioS" opacity="0.25" fill="#FFFFFF" stroke="url(#gradientStudioS)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M36.9,75.9c0.2,0,0.4,0.1,0.6,0.1c1.7,0.1,3.3,0.3,4.9,0.8c2.2,0.7,4.2,1.7,5.9,3.2c1.8,1.6,3.2,3.5,4.1,5.7
+		c0.6,1.5,1.1,3.1,1.3,4.7c0.1,0.9,0.2,1.9,0.3,2.9c0.1,0.7,0.1,1.3,0.2,2c0,0.1,0,0.1,0,0.2c-0.1,0.1-0.3,0.1-0.4,0.1
+		c-0.7,0-1.3,0-2,0c-2.8,0-5.6,0-8.5,0c-0.1,0-0.3,0-0.4,0c0.1,0.1,0.1,0.1,0.2,0.2c1,0.4,2,0.9,3,1.4c1.4,0.8,2.8,1.8,3.9,2.9
+		c1.9,1.9,3.1,4.2,3.7,6.8c0.4,1.7,0.5,3.4,0.3,5.1c-0.2,2.1-0.7,4.1-1.7,6c-1.4,2.6-3.4,4.6-5.9,6.1c-1.7,1-3.4,1.6-5.3,2
+		c-1.5,0.3-2.9,0.5-4.4,0.5c-2.5,0.1-4.9-0.5-7.1-1.8c-1.5-0.8-2.8-1.9-4-3.1c-0.9-0.9-1.8-1.9-2.6-3c-1.5-2-2.8-4.2-3.8-6.5
+		c-0.2-0.4-0.3-0.8-0.4-1.3c-0.2-1.7,0.8-3.6,2.8-4.1c0.4-0.1,0.8-0.1,1.2-0.1c2,0,4,0,5.9,0c0.1,0,0.3,0,0.4,0
+		c0-0.1-0.1-0.1-0.1-0.1c-0.5-0.3-1.1-0.6-1.6-0.8c-1.3-0.7-2.6-1.5-3.7-2.5c-1.4-1.2-2.6-2.7-3.4-4.4c-0.6-1.2-1-2.5-1.2-3.9
+		C19,93.8,19,92.6,19,91.4c0.1-2.3,0.6-4.5,1.6-6.6c1.5-3,3.8-5.3,6.8-6.8c1.6-0.8,3.3-1.4,5.1-1.7c1-0.2,1.9-0.3,2.9-0.3
+		c0.1,0,0.2,0,0.4-0.1C36.1,75.9,36.5,75.9,36.9,75.9z M33,108.3c0,0.1,0,0.1,0.1,0.1c0.3,0.4,0.5,0.8,0.6,1.3
+		c0,0.1,0.1,0.2,0.1,0.3c0.4,0.6,0.8,1.2,1.3,1.7c0.2,0.2,0.4,0.3,0.6,0.5c0.1,0.1,0.3,0.1,0.5,0.1c0.6,0,1.2-0.1,1.7-0.4
+		c0.1-0.1,0.3-0.2,0.4-0.3c0.2-0.3,0.2-0.6,0-0.9c-0.1-0.1-0.2-0.2-0.3-0.3c-0.4-0.3-0.8-0.5-1.2-0.7c-1.2-0.5-2.4-0.9-3.6-1.4
+		C33.1,108.3,33.1,108.3,33,108.3z M39.4,94.2C39.4,94.2,39.4,94.2,39.4,94.2c-0.5-0.5-0.8-1.1-1-1.6c-0.3-0.6-0.6-1.1-1-1.6
+		c-0.2-0.2-0.4-0.4-0.6-0.6c-0.1-0.1-0.2-0.1-0.4-0.2c-0.5,0-1,0-1.5,0.3c-0.6,0.3-0.7,1-0.2,1.5c0.2,0.2,0.4,0.3,0.6,0.4
+		c0.5,0.3,1,0.5,1.5,0.8c0.8,0.3,1.6,0.6,2.5,1C39.3,94.2,39.4,94.3,39.4,94.2z" style="opacity: 0.25;"></path>
+	
+		<linearGradient id="gradientStudioU" gradientUnits="userSpaceOnUse" x1="343.4426" y1="241.1244" x2="381.2867" y2="203.2803" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioU" opacity="0.25" fill="#FFFFFF" stroke="url(#gradientStudioU)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M113.3,92.7c0,0.4,0,0.8,0,1.2c0,3.1,0,6.1-0.1,9.2c0,0.8,0,1.6,0,2.4c0,0.6,0.1,1.1,0.2,1.7c0.1,0.6,0.4,1.2,0.8,1.7
+		c0.3,0.4,0.7,0.7,1.3,0.8c0.6,0.1,1.3,0.2,1.9,0c0.5-0.1,0.8-0.3,1.1-0.7c0.5-0.7,0.9-1.4,1-2.2c0.1-0.7,0.2-1.5,0.2-2.2
+		c0.1-1.8,0-3.5,0-5.3c0-6.5,0-13,0-19.4c0-0.3,0-0.6,0.1-0.9c0.3-0.9,1-1.5,2-1.6c0.2,0,0.4,0,0.5,0c3.5,0,7,0,10.5,0
+		c0.3,0,0.6,0,0.9,0.1c1,0.3,1.7,1.2,1.8,2.2c0,0.2,0,0.3,0,0.5c0,7.6,0,15.2,0,22.8c0,1.2-0.1,2.3-0.3,3.5
+		c-0.3,1.9-0.7,3.7-1.2,5.6c-0.4,1.6-0.9,3.1-1.5,4.5c-0.3,0.6-0.6,1.2-0.9,1.8c-0.4,0.6-0.8,1.2-1.4,1.8c-1.7,1.7-3.7,3-6,3.9
+		c-1.5,0.6-3.1,1-4.7,1.2c-1.3,0.2-2.7,0.3-4,0.2c-3.2-0.1-6.2-0.8-9.1-2.3c-1.7-0.9-3.3-2-4.6-3.4c-1.9-1.9-3.2-4.2-3.9-6.8
+		c-0.3-1.3-0.6-2.5-0.7-3.8c-0.2-1.5-0.2-3-0.2-4.5c0-8.2,0-16.5,0-24.7c0-0.3,0-0.5,0.1-0.7c0.3-1.1,1.2-1.7,2-1.8
+		c0.2,0,0.3,0,0.5,0c3.7,0,7.3,0,11,0c0.3,0,0.6,0,0.9,0.1c0.9,0.3,1.5,1,1.6,2c0,0.2,0,0.4,0,0.6C113.3,84.2,113.3,88.5,113.3,92.7
+		z" style="opacity: 0.25;"></path>
+	
+		<linearGradient id="gradientStudioD" gradientUnits="userSpaceOnUse" x1="382.3201" y1="236.9973" x2="418.3344" y2="200.9831" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioD" opacity="0.25" fill="#FFFFFF" stroke="url(#gradientStudioD)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M140,100c0-6.5,0-13,0-19.4c0-0.4,0-0.8,0.1-1.1c0.4-1.6,1.7-2.6,3.2-2.7c0.2,0,0.4,0,0.6,0c3.5,0,6.9,0,10.4,0
+		c1,0,2.7,0.2,3.9,0.2c2,0.2,3.4,0.4,5,0.8c1.9,0.4,2.6,0.9,4.4,1.6c0.9,0.4,2,1.2,2.8,1.7c0.5,0.3,1.1,0.7,1.5,1.1
+		c2.9,2.6,4.9,5.7,6.1,9.3c0.5,1.6,0.9,3.3,1.1,4.9c0.2,1.8,0.2,3.5,0.1,5.3c-0.2,3.6-1.1,7-2.7,10.2c-1.3,2.6-3.1,4.8-5.3,6.7
+		c-1.9,1.6-4,2.7-6.3,3.5c-1.6,0.6-3.2,0.9-4.9,1.2c-1.4,0.2-2.9,0.3-4.3,0.3c-4,0-7.9,0-11.9,0c-0.4,0-0.9,0-1.3-0.2
+		c-1.3-0.4-2.4-1.6-2.5-3.4c0-0.1,0-0.3,0-0.4C140,113,140,106.5,140,100z M156,110.6c0.1,0,0.2,0,0.2,0c0.7-0.2,1.4-0.3,2.2-0.5
+		c0.7-0.2,1.4-0.5,2.1-0.8c0.5-0.2,0.9-0.5,1.3-0.9c0.7-0.7,1.3-1.5,1.8-2.4c0.8-1.5,1.2-3.2,1.4-4.9c0.1-0.8,0.1-1.6,0-2.3
+		c-0.1-1.1-0.2-2.1-0.5-3.2c-0.3-1-0.6-1.9-1.1-2.8c-0.9-1.4-2.1-2.4-3.7-3c-1.2-0.4-2.4-0.6-3.6-0.5c0,0-0.1,0-0.1,0
+		c-0.1,0.4-0.1,17,0,21C155.9,110.3,155.9,110.4,156,110.6z" style="opacity: 0.25;"></path>
+	
+		<linearGradient id="gradientStudioT" gradientUnits="userSpaceOnUse" x1="303.6227" y1="240.7952" x2="338.5305" y2="205.8873" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioT" opacity="0.25" fill="#FFFFFF" stroke="url(#gradientStudioT)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M82.9,91.7c-0.1,0.1,0,0.3,0,0.4c0,0.7,0,1.5,0,2.2c0,8.7,0,17.4,0,26.1c0,0.4,0,0.8-0.1,1.2c-0.4,1.6-1.7,2.7-3.2,2.9
+		c-0.2,0-0.4,0-0.6,0c-2.5,0-5.1,0-7.6,0c-1.4,0-2.5-0.6-3.3-1.8c-0.4-0.6-0.6-1.2-0.6-2c0-0.2,0-0.3,0-0.5c0-9.4,0-18.7,0-28.1
+		c0-0.2,0-0.3,0-0.5c-0.1,0-0.2,0-0.2-0.1c-0.1,0-0.2,0-0.3,0c-1.8,0-3.6,0-5.4,0c-0.4,0-0.9,0-1.3-0.2c-1.4-0.4-2.7-1.7-2.8-3.7
+		c0-0.1,0-0.2,0-0.2c0-2.3,0-4.6,0-6.8c0-0.5,0.1-1,0.2-1.5c0.5-1.5,2-2.6,3.6-2.6c0.1,0,0.2,0,0.3,0c9,0,17.9,0,26.9,0
+		c0.4,0,0.9,0,1.3,0.2c1.6,0.5,2.6,1.9,2.8,3.3c0,0.2,0,0.4,0,0.6c0,2.3,0,4.6,0,6.8c0,0.5,0,0.9-0.2,1.4c-0.5,1.6-2,2.6-3.4,2.6
+		c-0.2,0-0.4,0-0.6,0c-1.7,0-3.4,0-5.1,0C83.2,91.6,83.1,91.6,82.9,91.7z" style="opacity: 0.25;"></path>
+	
+		<linearGradient id="gradientStudioI" gradientUnits="userSpaceOnUse" x1="424.798" y1="233.7099" x2="454.9554" y2="203.5525" gradientTransform="matrix(1 0 0 -1 -246 319)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="studioI" opacity="0.25" fill="#FFFFFF" stroke="url(#gradientStudioI)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M202.1,100.4c0,6.5,0,13,0,19.5c0,0.4,0,0.8-0.1,1.1c-0.4,1.8-2,3-3.6,3c-0.1,0-0.2,0-0.3,0c-2.8,0-5.6,0-8.4,0
+		c-0.4,0-0.8,0-1.2-0.1c-1.5-0.4-2.6-1.8-2.8-3.3c0-0.2,0-0.4,0-0.6c0-13.1,0-26.1,0-39.2c0-1,0.2-1.8,0.8-2.6
+		c0.8-1,1.8-1.5,3.1-1.5c1.8,0,3.7,0,5.5,0c1.1,0,2.1,0,3.2,0c1.5,0,2.6,0.7,3.4,2c0.3,0.5,0.5,1.1,0.5,1.8c0,0.2,0,0.4,0,0.6
+		C202.1,87.5,202.1,93.9,202.1,100.4z" style="opacity: 0.25;"></path>
+       
+        </g>
+		
+		<!--   3  BACKGROUND   -->
+        <g class="threeBackground" id="threeBackground" style="opacity: 0.75;">
+            
+            <linearGradient id="gradient3" gradientUnits="userSpaceOnUse" x1="505.9377" y1="241.538" x2="524.9621" y2="222.5135" gradientTransform="matrix(1 0 0 -1 -246 319)">
+			<stop offset="0" style="stop-color:#FFFFFF"></stop>
+			<stop offset="1" style="stop-color:#000000"></stop>
+		</linearGradient>
+		
+			<path opacity="0.25" fill="#FFFFFF" stroke="url(#gradient3)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+			M265.6,91.4c-0.2-0.1-0.2-0.2-0.3-0.3c-0.6-0.5-1.2-1-1.8-1.5c-0.4-0.3-0.6-0.7-0.8-1.2c-0.2-0.7-0.1-1.3,0.3-1.8
+			c0.1-0.1,0.2-0.2,0.3-0.4c0.7-0.9,1.4-1.8,2.1-2.8c0.1-0.1,0.1-0.2,0.2-0.3c-0.1-0.1-0.1-0.1-0.2-0.1c-0.6,0-1.3,0-1.9,0
+			c-1,0-1.9-0.7-2.2-1.7c-0.1-0.2-0.1-0.5-0.1-0.7c0-0.9,0-1.9,0-2.8c0-0.4,0.1-0.8,0.3-1.2c0.4-0.8,1.1-1.2,2-1.2
+			c0.1,0,0.2,0,0.3,0c4.1,0,8.3,0,12.4,0c0.3,0,0.5,0,0.8,0.1c1.4,0.3,2,1.9,1.3,3.1c-0.1,0.1-0.2,0.3-0.3,0.4
+			c-1.4,1.9-2.8,3.8-4.2,5.7c-0.1,0.1-0.2,0.2-0.3,0.4c0.1,0.1,0.2,0.2,0.3,0.2c0.8,0.6,1.6,1.2,2.3,1.9c0.6,0.6,1.2,1.3,1.6,2.1
+			c0.7,1.2,0.9,2.5,0.8,3.9c-0.1,1-0.3,1.9-0.7,2.9c-1.3,3.1-3.6,4.9-6.9,5.6c-2,0.4-4,0.2-5.8-0.7c-2.6-1.2-4.1-3.2-4.7-6
+			c-0.1-0.7-0.2-1.3-0.3-2c0-0.3-0.1-0.7-0.1-1.1c0-0.1,0-0.3,0-0.4c0.3-0.1,0.6,0,1-0.1c0.3,0,0.6,0,0.9,0c0.3,0,0.6,0,0.9,0
+			c0.3,0,0.6,0,0.9,0c0.3,0,0.6,0,0.9,0C264.8,91.4,265.2,91.4,265.6,91.4z M267.2,92c0.2,0.2,0.3,0.3,0.4,0.5
+			c0.1,0.2,0.2,0.3,0.3,0.5c0.2,0.2,0.3,0.5,0.5,0.7c0.1,0.1,0.2,0.2,0.3,0.3c0.1,0.1,0.3,0.1,0.5,0.1c1.3-0.2,1.4-1.6,0.9-2.3
+			c-0.1-0.2-0.3-0.3-0.5-0.4c-0.5-0.2-1-0.2-1.5,0.1C267.7,91.6,267.5,91.8,267.2,92z"></path>
+        </g>
+        <g>
+		
+			<!-- BEATS B -->
+            <linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="21.4274" y1="67.9703" x2="31.6248" y2="67.9703">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="beatsB" opacity="0.25" fill="#FFFFFF" stroke="url(#SVGID_9_)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M26.2,61.3c1.7,0,2.7,0.2,3.4,0.8c0.8,0.6,1.3,1.6,1.3,2.8c0,0.9-0.3,1.7-0.9,2.3c-0.4,0.4-0.7,0.6-1.4,0.8
+		c0.8,0.2,1.2,0.3,1.6,0.7c0.6,0.6,1,1.4,1,2.4c0,1.2-0.5,2.3-1.4,2.9c-0.7,0.5-1.5,0.6-3,0.6h-5V61.3H26.2z M24.6,67h1.1
+		c1.6,0,2.4-0.6,2.4-1.8c0-0.7-0.3-1.3-0.8-1.5c-0.4-0.2-1-0.3-1.7-0.3h-1L24.6,67L24.6,67z M24.6,72.6H26c1,0,1.4-0.1,1.8-0.4
+		c0.4-0.3,0.7-0.8,0.7-1.4c0-0.7-0.3-1.2-0.8-1.5c-0.4-0.2-0.9-0.3-1.9-0.3h-1.2V72.6z" style="opacity: 0.25;"></path>
+	
+	
+	<linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="32.1397" y1="67.8151" x2="40.9422" y2="67.8151">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="beatsE" opacity="0.25" fill="#FFFFFF" stroke="url(#SVGID_10_)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M36.2,65.8h4.3v3.5h-4.3v1.4h4.3v3.6h-8V61.4h8v3.2h-4.3V65.8z" style="opacity: 0.25;"></path>
+	
+	<linearGradient id="SVGID_11_" gradientUnits="userSpaceOnUse" x1="40.7591" y1="67.7869" x2="54.6925" y2="67.7869">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="beatsA" opacity="0.25" fill="#FFFFFF" stroke="url(#SVGID_11_)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M46,72.6l-0.7,1.7h-4l4.6-13.1h3.7l4.5,13.1h-4.2l-0.6-1.7L46,72.6z M47.5,64.5L45.7,70h3.7L47.5,64.5z" style="opacity: 0.25;"></path>
+	<linearGradient id="SVGID_12_" gradientUnits="userSpaceOnUse" x1="52.3911" y1="67.7863" x2="62.5947" y2="67.7863">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="beatsT" opacity="0.25" fill="#FFFFFF" stroke="url(#SVGID_12_)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M59.4,74.2h-3.8v-9.4h-2.8v-3.4h9.4v3.4h-2.8L59.4,74.2L59.4,74.2z" style="opacity: 0.25;"></path>
+	<linearGradient id="SVGID_13_" gradientUnits="userSpaceOnUse" x1="62.188" y1="67.8417" x2="72.6199" y2="67.8417">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#000000"></stop>
+	</linearGradient>
+	
+		<path class="beatsS" opacity="0.25" fill="#000000" stroke="url(#SVGID_13_)" stroke-width="0.788" stroke-miterlimit="10" enable-background="new    " d="
+		M66.4,69.5c-3.1-1-3.7-2.5-3.7-4.4c0-2.2,1.9-3.8,4.7-3.8c3.6,0,4.5,2.3,4.8,4.7h-2.9l-1,0c0.4,0.2,0.6,0.2,1.6,0.7
+		c0.5,0.2,0.9,0.6,1.5,1.2c0.7,0.7,1,1.6,1,2.5c0,2.3-1.9,4-4.9,4c-3.9,0-4.8-2.6-4.8-4.9h2.8L66.4,69.5z" style="opacity: 0.25;"></path>
+        </g>
+    </g>	    
+    </svg>
+</div>
+
+<!--  NEON REFLECTION  -->
+<div class="neonReflection">
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+
+	 
+	 	 
+	 	 	 	 
+<g id="neonReflection">
+	<g>
+		<g>
+		<g>
+			<g>
+				<path class="studioS" fill="none" stroke="#FFFFFF" stroke-width="2.3641" stroke-linecap="round" stroke-miterlimit="10" d="M49.1,118.3
+					c-2.5,2.7-6.1,4-11,4.1c-9.8-0.7-13.4-4.3-14.8-9.3 M51.7,92.2h-7.4c-0.4,0-1.4-0.1-1.5-0.5c0,0-1.7-3.9-5.1-3.9
+					c-3,0-4.6,1-4.6,3.6c0,1.7,1.3,2.7,3,3.6c1.1,0.6,1.8,0.9,4.8,2c4.5,1.7,6.3,3.1,8.1,4.8c2.2,2,3.3,4.8,3.3,7.9
+					c0,1.6-0.3,3.2-0.8,4.6 M23.5,109.1h8c0.4,0,0.8,0.1,0.8,0.3s0.5,1.3,0.8,1.7c0,0,1.2,1.9,5.1,2.3c2.3-0.2,3.9-0.8,4.1-3.2
+					c0.1-1-0.2-2.1-1.1-2.9c-1-0.9-1.8-1.1-5-2.3c-9-3.2-13.2-6.6-13.2-12.9c0-7.4,6.2-12.4,14.3-12.4c6.7,0,12.5,3.3,14.2,9" style="opacity: 0.85; stroke: rgb(255, 255, 255);"></path>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<g>
+				<path class="studioT" fill="none" stroke="#FFFFFF" stroke-width="2.3641" stroke-linecap="round" stroke-miterlimit="10" d="M80.7,100.5v19.9
+					c0,0.4-0.4,0.8-0.8,0.8h-8.2c-0.4,0-0.8-0.4-0.8-0.8V88.9c0-0.4-0.4-0.8-0.8-0.8h-8.2c-0.4,0-0.8-0.4-0.8-0.8v-6.4
+					c0-0.4,0.4-0.8,0.8-0.8h27.7c0.4,0,0.8,0.4,0.8,0.8v6.4c0,0.4-0.4,0.8-0.8,0.8h-8.1c-0.4,0-0.8,0.4-0.8,0.8v7.4" style="opacity: 0.85; stroke: rgb(255, 255, 255);"></path>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<g>
+				<path class="studioU" fill="none" stroke="#FFFFFF" stroke-width="2.3641" stroke-linecap="round" stroke-miterlimit="10" d="M109.8,92.4v11.4
+					c0,3.8,0.5,5.9,1.8,7.5c1.2,1.5,2.8,2.1,5,2.1c2.4,0,4.1-0.6,5.3-2.4c1.2-1.7,1.6-3.4,1.6-7.3V81c0-0.4,0.4-0.8,0.8-0.8h7.8
+					c0.4,0,0.8,0.4,0.8,0.8v22.2c0,0.4-0.1,2.3,0,2.9c0,0,0.1,5.9-4.3,11.2c-2.6,3.2-7.1,4.8-11.9,4.8c-5,0-9.5-1.8-12.4-5.1
+					c-2.6-3-3.7-6.6-3.7-13V81c0-0.4,0.4-0.8,0.8-0.8h7.5c0.4,0,0.8,0.4,0.8,0.8v7" style="opacity: 0.85; stroke: rgb(255, 255, 255);"></path>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<g>
+				<path class="studioD" fill="none" stroke="#FFFFFF" stroke-width="2.3641" stroke-linecap="round" stroke-miterlimit="10" d="M143.4,92V81.1
+					c0-0.4,0.4-0.8,0.8-0.8h10.1c0.4,0,1.1,0,1.6,0.1c0,0,9.1-0.2,14,4.5c4.2,3.7,6.5,9,6.5,15.5c0,6.6-2.3,12.5-6.5,16.2
+					c-3.4,3.1-8.3,4.7-14.2,4.7h-11.3c-0.4,0-0.8-0.4-0.8-0.8V96.1 M153.5,113.9c4.5,0,7.3-0.3,9.7-2.3c3-2.5,4.6-6.4,4.6-11
+					c0-7.5-4.2-12.2-11-12.9 M151.9,87.6v21.2" style="opacity: 0.85; stroke: rgb(255, 255, 255);"></path>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<g>
+				<path class="studioI" fill="none" stroke="#FFFFFF" stroke-width="2.3641" stroke-linecap="round" stroke-miterlimit="10" d="M188.3,110.5v-29
+					c0-0.4,0.4-0.8,0.8-0.8h6.9c0.4,0,0.8,0.4,0.8,0.8v38.8c0,0.4-0.4,0.8-0.8,0.8H189c-0.4,0-0.8-0.4-0.8-0.8v-5.2" style="opacity: 0.85; stroke: rgb(255, 255, 255);"></path>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<g>
+				<path class="studioO" fill="none" stroke="#FFFFFF" stroke-width="2.3641" stroke-linecap="round" stroke-miterlimit="10" d="M245.4,115.7
+					c-3.8,4-9.2,6.5-15.2,6.5c-12,0-21.4-9.3-21.4-21.1c0-12.2,9.4-21.5,21.5-21.5c6,0,11.6,2.5,15.6,6.9c3.5,3.9,5.2,8.7,5.2,14.6
+					c0,3.9-1,7.6-2.9,10.7 M223.2,112.5c1.9,1.3,4.2,2,6.7,2c7.1,0,12.6-5.8,12.6-13.3c0-7.9-5.3-13.8-12.6-13.8
+					s-12.7,5.8-12.7,13.6c0,2.8,0.7,5.3,2,7.4" style="opacity: 0.85; stroke: rgb(255, 255, 255);"></path>
+			</g>
+		</g>
+	</g>
+	</g>
+	<g>
+		
+		<!--  ????????  -->
+		<g id="threeReflection" style="opacity: 1;">
+			<line fill="none" stroke="#EF060A" stroke-width="1.5456" stroke-linecap="round" stroke-miterlimit="10" x1="263.9" y1="78.8" x2="273.2" y2="78.8"></line>
+		
+			<line fill="none" stroke="#EF060A" stroke-width="1.9614" stroke-linecap="round" stroke-miterlimit="10" x1="266.4" y1="87.6" x2="270.4" y2="82.3"></line>
+		<path fill="none" stroke="#EF060A" stroke-width="1.9614" stroke-linecap="round" stroke-miterlimit="10" d="M270.2,87.9
+			c2.6,0.5,4.6,2.8,4.6,5.4c0,3.1-2.6,5.6-5.9,5.6c-2.6,0-4.8-1.6-5.6-3.8"></path>
+		</g>
+	</g>
+</g>
+</svg>
+</div>
+
+<!--  BLACK BEVEL  -->
+<div class="blackBevel" style="opacity: 0.65;">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="600px" viewBox="0 0 300 600" enable-background="new 0 0 300 600" xml:space="preserve">
+<g id="blackBevel">
+	<g>
+		<g opacity="0.75">
+			<g>
+				<g>
+					<path fill="none" stroke="#000000" stroke-width="2.75" stroke-linecap="round" stroke-miterlimit="10" d="M47.3,117.8
+					c-2.5,2.7-6.1,4-11,4.1c-9.8-0.7-13.4-4.3-14.8-9.3 M49.9,91.8h-7.4c-0.4,0-1.4-0.1-1.5-0.5c0,0-1.7-3.9-5.1-3.9
+					c-3,0-4.6,1-4.6,3.6c0,1.7,1.3,2.7,3,3.6c1.1,0.6,1.8,0.9,4.8,2c4.5,1.7,6.3,3.1,8.1,4.8c2.2,2,3.3,4.8,3.3,7.9
+					c0,1.6-0.3,3.2-0.8,4.6 M21.7,108.6h8c0.4,0,0.8,0.1,0.8,0.3s0.5,1.3,0.8,1.7c0,0,1.2,1.9,5.1,2.3c2.3-0.2,3.9-0.8,4.1-3.2
+					c0.1-1-0.2-2.1-1.1-2.9c-1-0.9-1.8-1.1-5-2.3c-9-3.2-13.2-6.6-13.2-12.9c0-7.4,6.2-12.4,14.3-12.4c6.7,0,12.5,3.3,14.2,9"></path>
+				</g>
+			</g>
+		</g>
+		<g opacity="0.75">
+			<g>
+				<g>
+					<path fill="none" stroke="#000000" stroke-width="2.75" stroke-linecap="round" stroke-miterlimit="10" d="M79.5,100.2V120
+					c0,0.4-0.4,0.8-0.8,0.8h-8.2c-0.4,0-0.8-0.4-0.8-0.8V88.5c0-0.4-0.4-0.8-0.8-0.8h-8.2c-0.4,0-0.8-0.4-0.8-0.8v-6.4
+					c0-0.4,0.4-0.8,0.8-0.8h27.7c0.4,0,0.8,0.4,0.8,0.8V87c0,0.4-0.4,0.8-0.8,0.8h-8.1c-0.4,0-0.8,0.4-0.8,0.8v7.4"></path>
+				</g>
+			</g>
+		</g>
+		<g opacity="0.75">
+			<g>
+				<g>
+					<path fill="none" stroke="#000000" stroke-width="2.75" stroke-linecap="round" stroke-miterlimit="10" d="M109.2,92v11.4
+					c0,3.8,0.5,5.9,1.8,7.5c1.2,1.5,2.8,2.1,5,2.1c2.4,0,4.1-0.6,5.3-2.4c1.2-1.7,1.6-3.4,1.6-7.3V80.5c0-0.4,0.4-0.8,0.8-0.8h7.8
+					c0.4,0,0.8,0.4,0.8,0.8v22.2c0,0.4-0.1,2.3,0,2.9c0,0,0.1,5.9-4.3,11.2c-2.6,3.2-7.1,4.8-11.9,4.8c-5,0-9.5-1.8-12.4-5.1
+					c-2.6-3-3.7-6.6-3.7-13v-23c0-0.4,0.4-0.8,0.8-0.8h7.5c0.4,0,0.8,0.4,0.8,0.8v7"></path>
+				</g>
+			</g>
+		</g>
+		<g opacity="0.75">
+			<g>
+				<g>
+					<path fill="none" stroke="#000000" stroke-width="2.75" stroke-linecap="round" stroke-miterlimit="10" d="M143.5,91.5V80.6
+					c0-0.4,0.4-0.8,0.8-0.8h10.1c0.4,0,1.1,0,1.6,0.1c0,0,9.1-0.2,14,4.5c4.2,3.7,6.5,9,6.5,15.5c0,6.6-2.3,12.5-6.5,16.2
+					c-3.4,3.1-8.3,4.7-14.2,4.7h-11.3c-0.4,0-0.8-0.4-0.8-0.8V95.7 M153.6,113.4c4.5,0,7.3-0.3,9.7-2.3c3-2.5,4.6-6.4,4.6-11
+					c0-7.5-4.2-12.2-11-12.9 M152,87.2v21.2"></path>
+				</g>
+			</g>
+		</g>
+		<g opacity="0.75">
+			<g>
+				<g>
+					<path fill="none" stroke="#000000" stroke-width="2.75" stroke-linecap="round" stroke-miterlimit="10" d="M189.4,110.1V81
+					c0-0.4,0.4-0.8,0.8-0.8h6.9c0.4,0,0.8,0.4,0.8,0.8v38.8c0,0.4-0.4,0.8-0.8,0.8h-6.9c-0.4,0-0.8-0.4-0.8-0.8v-5.2"></path>
+				</g>
+			</g>
+		</g>
+		<g opacity="0.75">
+			<g>
+				<g>
+					<path fill="none" stroke="#000000" stroke-width="2.75" stroke-linecap="round" stroke-miterlimit="10" d="M246.9,115.2
+					c-3.8,4-9.2,6.5-15.2,6.5c-12,0-21.4-9.3-21.4-21.1c0-12.2,9.4-21.5,21.5-21.5c6,0,11.6,2.5,15.6,6.9c3.5,3.9,5.2,8.7,5.2,14.6
+					c0,3.9-1,7.6-2.9,10.7 M224.8,112c1.9,1.3,4.2,2,6.7,2c7.1,0,12.6-5.8,12.6-13.3c0-7.9-5.3-13.8-12.6-13.8s-12.7,5.8-12.7,13.6
+					c0,2.8,0.7,5.3,2,7.4"></path>
+				</g>
+			</g>
+		</g>
+	</g>
+	
+	<g class="threeRedGlow" style="opacity: 1;">
+		<line fill="none" stroke="#000000" stroke-width="1.5456" stroke-linecap="round" stroke-miterlimit="10" x1="265.3" y1="78.3" x2="274.6" y2="78.3"></line>
+		
+			<line fill="none" stroke="#000000" stroke-width="1.9614" stroke-linecap="round" stroke-miterlimit="10" x1="267.8" y1="87.2" x2="271.8" y2="81.9"></line>
+		<path fill="none" stroke="#000000" stroke-width="1.9614" stroke-linecap="round" stroke-miterlimit="10" d="M271.6,87.4
+			c2.6,0.5,4.6,2.8,4.6,5.4c0,3.1-2.6,5.6-5.9,5.6c-2.6,0-4.8-1.6-5.6-3.8"></path>
+	</g>
+</g>
+</svg>
+</div>
+
+<!--  NEON LIGHTS  -->
+<div class="neonStudioOutlines">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="600px" viewBox="0 0 300 600" enable-background="new 0 0 300 600" xml:space="preserve">
+	 
+<g id="NEON_STUDIO_OUTLINES">
+	<g>
+		<g>
+		<g>
+			<g>
+				<path class="studioS" fill="none" stroke="#ffffff" stroke-width="2.3641" stroke-linecap="round" stroke-miterlimit="10" d="M47,118
+					c-2.5,2.7-6.1,4-11,4.1c-9.8-0.7-13.4-4.3-14.8-9.3 M49.6,92h-7.4c-0.4,0-1.4-0.1-1.5-0.5c0,0-1.7-3.9-5.1-3.9
+					c-3,0-4.6,1-4.6,3.6c0,1.7,1.3,2.7,3,3.6c1.1,0.6,1.8,0.9,4.8,2c4.5,1.7,6.3,3.1,8.1,4.8c2.2,2,3.3,4.8,3.3,7.9
+					c0,1.6-0.3,3.2-0.8,4.6 M21.4,108.8h8c0.4,0,0.8,0.1,0.8,0.3s0.5,1.3,0.8,1.7c0,0,1.2,1.9,5.1,2.3c2.3-0.2,3.9-0.8,4.1-3.2
+					c0.1-1-0.2-2.1-1.1-2.9c-1-0.9-1.8-1.1-5-2.3c-9-3.2-13.2-6.6-13.2-12.9c0-7.4,6.2-12.4,14.3-12.4c6.7,0,12.5,3.3,14.2,9" style="opacity: 1; stroke: rgb(255, 255, 255);"></path>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<g>
+				<path class="studioT" fill="none" stroke="#FFFFFF" stroke-width="2.3641" stroke-linecap="round" stroke-miterlimit="10" d="M79.1,100.3v19.9
+					c0,0.4-0.4,0.8-0.8,0.8h-8.2c-0.4,0-0.8-0.4-0.8-0.8V88.7c0-0.4-0.4-0.8-0.8-0.8h-8.2c-0.4,0-0.8-0.4-0.8-0.8v-6.4
+					c0-0.4,0.4-0.8,0.8-0.8h27.7c0.4,0,0.8,0.4,0.8,0.8v6.4c0,0.4-0.4,0.8-0.8,0.8h-8.1c-0.4,0-0.8,0.4-0.8,0.8v7.4" style="opacity: 1; stroke: rgb(255, 255, 255);"></path>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<g>
+				<path class="studioU" fill="none" stroke="#FFFFFF" stroke-width="2.3641" stroke-linecap="round" stroke-miterlimit="10" d="M109,92.2v11.4
+					c0,3.8,0.5,5.9,1.8,7.5c1.2,1.5,2.8,2.1,5,2.1c2.4,0,4.1-0.6,5.3-2.4c1.2-1.7,1.6-3.4,1.6-7.3V80.7c0-0.4,0.4-0.8,0.8-0.8h7.8
+					c0.4,0,0.8,0.4,0.8,0.8v22.2c0,0.4-0.1,2.3,0,2.9c0,0,0.1,5.9-4.3,11.2c-2.6,3.2-7.1,4.8-11.9,4.8c-5,0-9.5-1.8-12.4-5.1
+					c-2.6-3-3.7-6.6-3.7-13v-23c0-0.4,0.4-0.8,0.8-0.8h7.5c0.4,0,0.8,0.4,0.8,0.8v7" style="opacity: 1; stroke: rgb(255, 255, 255);"></path>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<g>
+				<path class="studioD" fill="none" stroke="#FFFFFF" stroke-width="2.3641" stroke-linecap="round" stroke-miterlimit="10" d="M143.9,91.8V80.9
+					c0-0.4,0.4-0.8,0.8-0.8h10.1c0.4,0,1.1,0,1.6,0.1c0,0,9.1-0.2,14,4.5c4.2,3.7,6.5,9,6.5,15.5c0,6.6-2.3,12.5-6.5,16.2
+					c-3.4,3.1-8.3,4.7-14.2,4.7h-11.3c-0.4,0-0.8-0.4-0.8-0.8V95.9 M153.9,113.6c4.5,0,7.3-0.3,9.7-2.3c3-2.5,4.6-6.4,4.6-11
+					c0-7.5-4.2-12.2-11-12.9 M152.3,87.4v21.2" style="opacity: 1; stroke: rgb(255, 255, 255);"></path>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<g>
+				<path class="studioI" fill="none" stroke="#FFFFFF" stroke-width="2.3641" stroke-linecap="round" stroke-miterlimit="10" d="M189.5,110.3v-29
+					c0-0.4,0.4-0.8,0.8-0.8h6.9c0.4,0,0.8,0.4,0.8,0.8v38.8c0,0.4-0.4,0.8-0.8,0.8h-6.9c-0.4,0-0.8-0.4-0.8-0.8v-5.2" style="opacity: 1; stroke: rgb(255, 255, 255);"></path>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<g>
+				<path class="studioO" fill="none" stroke="#FFFFFF" stroke-width="2.3641" stroke-linecap="round" stroke-miterlimit="10" d="M247.6,115.4
+					c-3.8,4-9.2,6.5-15.2,6.5c-12,0-21.4-9.3-21.4-21.1c0-12.2,9.4-21.5,21.5-21.5c6,0,11.6,2.5,15.6,6.9c3.5,3.9,5.2,8.7,5.2,14.6
+					c0,3.9-1,7.6-2.9,10.7 M225.4,112.2c1.9,1.3,4.2,2,6.7,2c7.1,0,12.6-5.8,12.6-13.3c0-7.9-5.3-13.8-12.6-13.8
+					s-12.7,5.8-12.7,13.6c0,2.8,0.7,5.3,2,7.4" style="opacity: 1; stroke: rgb(255, 255, 255);"></path>
+			</g>
+		</g>
+	</g>
+	</g>
+	<g>
+		
+		
+		<!--3  -->
+		<g id="threeNeon" style="opacity: 1;">
+			<line fill="none" stroke="#fd5658" stroke-width="1.5456" stroke-linecap="round" stroke-miterlimit="10" x1="265.7" y1="78.5" x2="275" y2="78.5"></line>
+		
+			<line fill="none" stroke="#fd5658" stroke-width="1.9614" stroke-linecap="round" stroke-miterlimit="10" x1="268.2" y1="87.4" x2="272.2" y2="82.1"></line>
+		<path fill="none" stroke="#fd5658" stroke-width="1.9614" stroke-linecap="round" stroke-miterlimit="10" d="M272,87.7
+			c2.6,0.5,4.6,2.8,4.6,5.4c0,3.1-2.6,5.6-5.9,5.6c-2.6,0-4.8-1.6-5.6-3.8"></path>
+		</g>
+	</g>
+	
+	
+	<!--   BEATS   -->
+	<g id="beatsNeon" style="opacity: 1;">
+	<path fill="#FFFFFF" d="M44.4,72c0,0-0.1,0-0.1,0c0.2-0.5,0.3-0.9,0.5-1.4c0.7-2.2,1.4-4.4,2.2-6.6c0-0.1,0.2-0.2,0.3-0.3
+		c0.1,0.1,0.3,0.2,0.3,0.3c0.3,0.8,0.6,1.6,0.8,2.4c0.6,1.7,1.1,3.4,1.7,5.1c0.1,0.2,0.1,0.4,0.1,0.6c0,0.2,0,0.5,0.1,0.7
+		c0.2,0.6,0.8,0.9,1.4,0.8c0.7-0.2,1.1-0.8,0.9-1.4c-0.1-0.4-0.4-0.8-0.6-1.2c-0.3-0.8-0.5-1.5-0.8-2.3c-0.6-1.8-1.2-3.6-1.8-5.5
+		c-0.3-0.9-1.2-1.5-2.2-1.4c-0.9,0-1.8,0.6-2.1,1.5c-0.7,2.1-1.4,4.2-2.1,6.4c-0.2,0.6-0.4,1.2-0.6,1.8c-0.1,0.3-0.3,0.5-0.4,0.8
+		c-0.2,0.6,0.3,1.2,0.9,1.4c0.5,0.2,1.2-0.2,1.4-0.7C44.3,72.6,44.3,72.3,44.4,72z"></path>
+	<path fill="#FFFFFF" d="M66.8,61.4c-0.6,0.1-1.3,0.3-2,0.6c-1.6,0.9-2.1,3.3-0.9,4.7c0.5,0.6,1.2,1,1.9,1.3
+		c0.6,0.3,1.3,0.5,1.9,0.9c0.8,0.4,0.9,1.3,0.2,1.8c-0.3,0.2-0.6,0.3-0.9,0.4c-0.8,0.2-1.4-0.1-1.9-0.8c-0.3-0.4-0.7-0.7-1.2-0.7
+		c-0.5,0-0.9,0.3-1,0.8c-0.2,0.5,0,1.3,0.6,1.6c0.6,0.3,1.2,0.7,1.8,0.8c1.3,0.4,2.5,0.3,3.7-0.6c1.2-0.9,1.6-2.6,0.9-3.9
+		c-0.4-0.8-1.1-1.2-1.9-1.6c-0.8-0.4-1.6-0.7-2.3-1.1c-0.8-0.4-0.8-1.5-0.1-2c0.6-0.5,1.3-0.4,2-0.2c0.1,0.1,0.2,0.3,0.3,0.5
+		c0,0,0,0.1,0,0.1c0.4,0.6,1,1,1.7,0.6c0.6-0.3,0.8-1,0.4-1.6c-0.3-0.5-0.9-0.9-1.3-1.3c-0.1-0.1-0.3,0-0.4-0.1
+		C68,61.7,67.4,61.5,66.8,61.4z"></path>
+	<path fill="#FFFFFF" d="M23.9,67.7C23.9,67.7,23.9,67.7,23.9,67.7c0-1.2,0-2.3,0-3.5c0-0.4,0.1-0.5,0.5-0.5c0.6,0,1.2,0,1.8,0
+		c0.4,0,0.8,0.1,1,0.5c0.3,0.5,0.3,1-0.1,1.5c-0.4,0.5-0.9,0.7-1.5,0.5c-0.7-0.1-1.6,0.7-1.5,1.4c0.1,0.6,0.7,1.2,1.5,1
+		c0.4-0.1,0.8-0.4,1.3-0.5c1.2-0.4,1.9-1.1,2.3-2.3c0.6-2-0.9-4.1-2.9-4c-0.6,0-1.2,0-1.8,0c-1.5-0.1-2.5,1.1-2.5,2.5
+		c0,2.4,0,4.8,0,7.1c0,0.2-0.1,0.4-0.1,0.6c-0.1,0.4,0,1.1,0.3,1.4c0.4,0.3,0.9,0.4,1.4,0.2c0.5-0.3,0.8-1.1,0.6-1.7
+		c-0.1-0.2-0.2-0.5-0.2-0.7C23.9,70,23.9,68.8,23.9,67.7z"></path>
+	<path fill="#FFFFFF" d="M33.2,67.6C33.2,67.6,33.2,67.6,33.2,67.6c-0.1,1.1-0.1,2.2-0.1,3.3c0,1.3,0.6,2.2,1.8,2.5
+		c0.5,0.1,1,0.1,1.5,0.1c0.5,0,1-0.1,1.4,0.2c0.4,0.3,1.1,0,1.4-0.3c0.3-0.4,0.4-1,0.1-1.4c-0.3-0.5-0.9-0.7-1.4-0.7
+		c-0.8,0.1-1.6,0.1-2.4,0.1c-0.3,0-0.5-0.2-0.5-0.5c0-2.2,0-4.3,0-6.5c0-0.4,0.1-0.6,0.6-0.6c0.8,0,1.6-0.1,2.4,0.3
+		c0.6,0.3,1.4-0.3,1.5-1c0.1-0.6-0.4-1.3-1-1.4c-0.4,0-0.7,0-1.1,0.1c-0.7,0-1.3,0.1-2,0c-1-0.1-2.3,1-2.3,2.2
+		C33.2,65.3,33.2,66.4,33.2,67.6z"></path>
+	<path fill="#FFFFFF" d="M55.9,69c0,0.8,0,1.6,0,2.4c0,0.1,0,0.3-0.1,0.4c-0.2,0.3-0.1,0.6-0.1,0.9c0.1,0.5,0.4,0.8,0.8,0.9
+		c0.4,0.1,0.9,0,1.2-0.3c0.3-0.4,0.4-0.8,0.3-1.3c0-0.3-0.2-0.6-0.2-0.9c0-0.6,0-1.3,0-1.9c0-1.3-0.1-2.5,0.2-3.8
+		c0.1-0.5-0.1-0.9-0.5-1.1c-0.4-0.2-1-0.1-1.4,0.2c-0.3,0.3-0.5,1-0.4,1.4c0.1,0.3,0.2,0.7,0.2,1.1C55.9,67.7,55.9,68.3,55.9,69z"></path>
+	<path fill="#FFFFFF" d="M55.5,63.7C55.5,63.8,55.5,63.8,55.5,63.7c1,0.1,1.9,0.1,2.9,0.1c0.4,0,0.8,0,1.1,0.2
+		c0.3,0.1,0.7,0.1,1-0.1c0.6-0.2,0.8-0.9,0.6-1.5c-0.2-0.6-1-0.9-1.6-0.8c-0.3,0.1-0.6,0.1-0.8,0.1c-1.1,0-2.1,0-3.2,0
+		c-0.3,0-0.5-0.1-0.8-0.1c-0.4,0-0.7,0-1.1,0.1c-0.6,0.2-0.9,0.9-0.7,1.4c0.2,0.5,0.8,0.9,1.3,0.8C54.6,64,55,63.8,55.5,63.7z"></path>
+	<path fill="#FFFFFF" d="M25.6,73.7c0.3-0.1,0.9-0.3,1.4-0.5c0.9-0.3,1.7-0.8,2.2-1.8c0.3-0.6,0.4-1.3,0.5-1.9
+		c0-0.8-0.5-1.5-1.2-1.5c-0.4,0-1,0.3-1.2,0.7c-0.2,0.4-0.1,0.9,0.1,1.2c0.1,0.1,0.1,0.2,0.1,0.4c-0.1,0.6-1.1,1.3-1.7,1.1
+		c-0.5-0.1-0.9,0.1-1.2,0.4c-0.3,0.4-0.4,0.8-0.2,1.2C24.6,73.4,25,73.7,25.6,73.7z"></path>
+	<path fill="#FFFFFF" d="M35.3,67.5c0,0.8,0.3,1.2,1,1.2c0.1,0,0.3,0,0.3-0.1c0.3-0.2,0.9-0.3,1.2-0.1c0.5,0.3,1.1,0.2,1.4-0.1
+		c0.4-0.4,0.6-1,0.3-1.5c-0.3-0.5-1-0.8-1.5-0.7c-0.4,0.1-0.9,0.1-1.3,0.1c-0.2,0-0.3-0.1-0.5-0.1C35.6,66.4,35.3,66.7,35.3,67.5z"></path>
+	<path fill="#FFFFFF" d="M49.2,70.4c0-0.1-0.1-0.3-0.2-0.5c-0.2-0.5-0.9-0.7-1.3-0.6c-0.3,0.1-0.7,0.2-1.1,0.1c-0.3-0.1-0.6,0-0.9,0
+		c-0.7,0-1.1,1.3-0.8,1.8c0.3,0.5,1.2,0.8,1.6,0.5c0.4-0.3,0.7-0.4,1.1,0c0.1,0.1,0.2,0.1,0.3,0.1C48.6,71.7,49.2,71.1,49.2,70.4z"></path>
+		</g>
+		<!--  END BEATS NEON  -->
+		
+	<!-- ????????  -->
+	<path fill="#FFFFFF" d="M112.409,94.014c-0.652-0.029-1.304-0.058-1.955-0.087c0-0.026-0.001-0.053-0.001-0.079
+		c0.653,0,1.306,0,1.959,0C112.411,93.903,112.41,93.959,112.409,94.014z"></path>
+</g>
+</svg>
+</div>
+
+
+
+
+<!--  LOGOS ETC  -->
+<div class="beatsLogos">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+	
+<g id="LOGOS">
+	<g>
+		<g class="redBeatsLogo" style="opacity: 1;">
+			<circle fill="#E01E3C" cx="27.3" cy="25.8" r="4.1"></circle>
+		<path fill="#E01E3C" d="M27.3,12c-1.4,0-2.7,0.2-4,0.6v7.2c1.1-0.8,2.5-1.2,4-1.2c4,0,7.2,3.2,7.2,7.2c0,4-3.2,7.2-7.2,7.2
+			c-4,0-7.2-3.2-7.2-7.2c0-0.1,0-0.4,0-0.4V14.1c-3.9,2.4-6.5,6.8-6.5,11.7c0,7.6,6.2,13.8,13.8,13.8s13.8-6.2,13.8-13.8
+			C41.1,18.2,34.9,12,27.3,12z"></path>
+		</g>
+		<g class="ANCBeatsLogo" style="opacity: 1;">
+			<circle fill="#FFFFFF" cx="26.4" cy="216.4" r="1.5"></circle>
+		<path fill="#FFFFFF" d="M26.4,211.3c-0.5,0-1.1,0.1-1.5,0.2v2.9l0,0c0.5-0.4,1-0.6,1.6-0.6c0.6,0,1.2,0.3,1.6,0.7
+			c0.8,0.7,1.1,1.8,0.7,2.8s-1.3,1.6-2.4,1.6c-0.8,0-1.6-0.4-2-1c-0.2-0.3-0.4-0.7-0.5-1.1c-0.1-0.4-0.1-0.8-0.1-1.2v-3.7
+			c-1.5,0.9-2.5,2.5-2.5,4.4c0,2.8,2.3,5.1,5.1,5.1s5.1-2.3,5.1-5.1C31.5,213.6,29.2,211.3,26.4,211.3z"></path>
+		</g>
+	</g>
+</g>
+
+</svg>
+</div>
+
+<!-- HEADPHONES FOREGROUND  -->
+<!--<div class = "headPhonesContainer"><div class="headPhones"><div class="headPhonesPos">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+
+	 width="300px" height="250px" viewBox="-149.5 125.5 300 250" enable-background="new -149.5 125.5 300 250" xml:space="preserve">
+<defs>
+<clipPath id = "headPhoneForeGroundMask">
+	<path fill="none" d="M39.2,162.5c1,0.8,11.6,10.2,13.3,12.2c1.8,1.9,7.3,7.8,8.9,11.2c1.6,3.4,5.5,15.8,4.3,26.4
+			s-4.8,25.4-5.1,28.2s-0.6,14.2-0.7,18.9c-0.1,4.7-0.6,14-3.8,21.4s-6.8,13.4-16.2,20.9s-13.2,10.1-16.8,10.9s-8.9,1.2-11,1.2
+			s-8.4-0.3-11.4-1.6c-3-1.3-8-4.5-9.6-5.9c-1.6-1.4-3.8-3.5-3.8-3.5s-6.8-8.3-8.7-22.2c0,0-0.1-1.5,0.1-3.8
+			c0.2-2.2,0.2-10.8,0.3-14.1c0.2-3.3,2.6-11.8,3-13.8s3.8-9.3,4.8-11.8s6.2-9.2,8.9-12s7.2-7.1,13.1-8.8s10-2.4,12.4-2.4
+			s9.3,1.6,11,2.2c1.7,0.7,7.6,4.5,7.6,4.5s1.2-2.3,1.8-3.8c0.6-1.4,2.4-6.6,3.1-9.1c0.7-2.5,1.3-12.1,1.3-15.6s-0.4-7.2-0.5-8.2
+			s-1.2-3-1.5-4s-0.4-1.8-0.4-1.8L39.2,162.5z"/>
+	</clipPath>	
+  </defs>
+  <image xlink:href="graphics/beatsHeadphones300X250tnypng.jpg" clip-path="url(#headPhoneForeGroundMask)" x="-149.5" y="125.5" width="300" height="250"></image>
+</svg>
+</div></div></div>-->
+
+<img id="headphones_front" src="graphics/headphones_front.png" style="opacity: 1;">
+
+
+<!--   WIRELESS TEXT   -->
+<div class="wirelessContainer">
+
+ <div class="wirelessText" style="transform: translate(0px, 20px);">
+ 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+	 
+<g id="WIRELESS">
+		<path fill="#FFFFFF" d="M227.7,137.1h1.7l-2.3,8.2h-1.7l-1.3-5.3l-1.3,5.3h-1.7l-2.2-8.2h1.8l1.3,5.1l1.3-5.1h1.7l1.3,5.2
+			L227.7,137.1z"></path>
+		<path fill="#FFFFFF" d="M233.4,145.2h-1.7v-8.2h1.7V145.2z"></path>
+		<path fill="#FFFFFF" d="M238.1,145.2h-1.7v-8.2h2.5c2,0,3.1,0.9,3.1,2.6c0,1.3-0.7,2.1-1.9,2.5l2.3,3.1h-2l-2.2-3.2V145.2z
+			 M238.9,141c1,0,1.5-0.5,1.5-1.3c0-0.8-0.5-1.3-1.3-1.3h-0.9v2.6H238.9z"></path>
+		<path fill="#FFFFFF" d="M246.4,140.5h2.9v1.4h-2.9v2h2.9v1.4h-4.5v-8.2h4.5v1.4h-2.9V140.5z"></path>
+		<path fill="#FFFFFF" d="M256.5,143.9v1.4h-4.4v-8.2h1.7v6.8H256.5z"></path>
+		<path fill="#FFFFFF" d="M260.3,140.5h2.9v1.4h-2.9v2h2.9v1.4h-4.5v-8.2h4.5v1.4h-2.9V140.5z"></path>
+		<path fill="#FFFFFF" d="M267.2,142.9v0.1c0,0.6,0.5,1,1.1,1c0.6,0,1.1-0.4,1.1-0.9c0-0.3-0.1-0.5-0.3-0.6c-0.2-0.2-0.4-0.2-1-0.5
+			c-1.8-0.6-2.4-1.3-2.4-2.6c0-1.5,1.1-2.5,2.7-2.5c1.6,0,2.6,0.9,2.8,2.5h-1.7c-0.1-0.7-0.4-1-1.1-1c-0.6,0-1,0.3-1,0.9
+			c0,0.3,0.2,0.6,0.5,0.8c0.2,0.1,0.4,0.2,1,0.4c0.9,0.3,1.3,0.6,1.7,0.9c0.4,0.4,0.6,1,0.6,1.6c0,1.5-1.1,2.5-2.8,2.5
+			c-1.7,0-2.8-1-2.8-2.5H267.2z"></path>
+		<path fill="#FFFFFF" d="M275.1,142.9v0.1c0,0.6,0.5,1,1.1,1c0.6,0,1.1-0.4,1.1-0.9c0-0.3-0.1-0.5-0.3-0.6c-0.2-0.2-0.4-0.2-1-0.5
+			c-1.8-0.6-2.4-1.3-2.4-2.6c0-1.5,1.1-2.5,2.7-2.5c1.6,0,2.6,0.9,2.8,2.5h-1.7c-0.1-0.7-0.4-1-1.1-1c-0.6,0-1,0.3-1,0.9
+			c0,0.3,0.2,0.6,0.5,0.8c0.2,0.1,0.4,0.2,1,0.4c0.9,0.3,1.3,0.6,1.7,0.9c0.4,0.4,0.6,1,0.6,1.6c0,1.5-1.1,2.5-2.8,2.5
+			c-1.7,0-2.8-1-2.8-2.5H275.1z"></path>
+	</g>
+</svg>
+
+ 
+ 
+ </div> 
+</div>
+
+<!--   PURE ANC TEXT   -->
+<div class="pureANCContainer">
+	<div class="pureTextContainer">
+		<div class="pureText" style="transform: translate(68px, 0px);">
+        
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+        
+        <g id="PURE">
+		<path fill="#FFFFFF" d="M38.3,221.1H36v-9.4h3.2c2.2,0,3.5,1.1,3.5,3.1s-1.3,3.3-3.4,3.3h-1.1v3H38.3z M38.9,216.2
+			c0.9,0,1.5-0.5,1.5-1.3s-0.5-1.3-1.3-1.3h-0.8v2.6H38.9z"></path>
+		<path fill="#FFFFFF" d="M47.3,217.2c0,0.7,0.1,1.1,0.3,1.5c0.2,0.3,0.7,0.5,1.2,0.5s1-0.3,1.2-0.6s0.2-0.7,0.2-1.4v-5.5h2.3v5.4
+			c0,1.4-0.3,2.4-1,3.1c-0.6,0.7-1.6,1.1-2.8,1.1c-1.2,0-2.2-0.4-2.9-1.2c-0.6-0.7-0.9-1.6-0.9-3.1v-5.4h2.3v5.6H47.3z"></path>
+		<path fill="#FFFFFF" d="M57.7,221.1h-2.3v-9.4h3.1c1.2,0,2.2,0.2,2.8,0.7c0.7,0.5,1,1.4,1,2.4c0,1.4-0.6,2.4-1.8,2.9l2.1,3.5h-2.7
+			l-2.1-3.6L57.7,221.1L57.7,221.1z M58.4,216.2c0.9,0,1.5-0.5,1.5-1.3s-0.5-1.3-1.4-1.3h-0.9v2.6H58.4z"></path>
+		<path fill="#FFFFFF" d="M67.2,215.5h3.1v1.9h-3.1v2h3.1v1.9h-5.4v-9.4h5.4v1.9h-3.1V215.5z"></path>
+	</g>
+	
+	
+		
+        </svg>
+        
+        
+        
+        </div> <!-- PURE -->
+    </div>
+    <div class="ANCTextContainer">
+    	<div class="ANCText" style="transform: translate(80px, 0px);">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+	 
+            <g id="ADAPTIVE_1_">
+		<path fill="#FFFFFF" d="M80.5,219.8l-0.4,1.4h-2.4l3.1-9.4h2.9l3.1,9.4h-2.5l-0.4-1.4H80.5z M82.1,214.4l-1.1,3.5h2.2L82.1,214.4z
+			"></path>
+		<path fill="#FFFFFF" d="M88.8,211.7h2.8c1.6,0,2.6,0.3,3.5,1c1,0.8,1.5,2.1,1.5,3.6s-0.6,2.9-1.5,3.7c-0.8,0.7-1.9,1.1-3.3,1.1h-3
+			V211.7z M91.1,219.2h0.4c1.7,0,2.8-1.2,2.8-2.9c0-0.8-0.3-1.7-0.9-2.2c-0.5-0.4-1.2-0.7-1.9-0.7h-0.4L91.1,219.2L91.1,219.2z"></path>
+		<path fill="#FFFFFF" d="M100.9,219.8l-0.4,1.4h-2.4l3.1-9.4h2.9l3.1,9.4h-2.5l-0.4-1.4H100.9z M102.6,214.4l-1.1,3.5h2.2
+			L102.6,214.4z"></path>
+		<path fill="#FFFFFF" d="M111.6,221.1h-2.3v-9.4h3.2c2.2,0,3.5,1.1,3.5,3.1s-1.3,3.3-3.4,3.3h-1.1v3H111.6z M112.2,216.2
+			c0.9,0,1.5-0.5,1.5-1.3s-0.5-1.3-1.3-1.3h-0.8v2.6H112.2z"></path>
+		<path fill="#FFFFFF" d="M122.3,221.1H120v-7.6h-2.2v-1.9h6.6v1.9h-2.2L122.3,221.1L122.3,221.1z"></path>
+		<path fill="#FFFFFF" d="M128.8,221.1h-2.3v-9.4h2.3V221.1z"></path>
+		<path fill="#FFFFFF" d="M136.7,211.7h2.4l-2.8,9.4h-2.5l-2.7-9.4h2.4l1.6,5.8L136.7,211.7z"></path>
+		<path fill="#FFFFFF" d="M143.3,215.5h3.1v1.9h-3.1v2h3.1v1.9H141v-9.4h5.4v1.9h-3.1L143.3,215.5L143.3,215.5z"></path>
+	</g>
+			</svg>
+        </div> <!-- ANC -->
+    </div>
+</div>
+
+
+
+
+<!-- NOISE CANCELLING FRAME 3  -->
+<div class="ANCTextSpelledOutContainer">
+	<div class="ANCTextSpelledOut" style="transform: translate(0px, 24px);">
+    
+     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+    
+	<path fill="#FFFFFF" d="M24,235h-2.3v-9.4H24l3.4,5.3v-5.3h2.3v9.4h-2.3l-3.4-5.4V235z"></path>
+		<path fill="#FFFFFF" d="M41.8,230.3c0,2.7-2.2,4.9-4.9,4.9c-2.8,0-5.1-2.2-5.1-4.9c0-1.4,0.6-2.6,1.6-3.6c0.9-0.8,2.1-1.3,3.5-1.3
+			C39.7,225.4,41.8,227.5,41.8,230.3z M34.1,230.3c0,1.6,1.2,2.8,2.7,2.8s2.7-1.2,2.7-2.7c0-1.6-1.1-2.8-2.6-2.8
+			C35.3,227.5,34.1,228.7,34.1,230.3z"></path>
+		<path fill="#FFFFFF" d="M46,235h-2.3v-9.4H46V235z"></path>
+		<path fill="#FFFFFF" d="M50.1,232.1c0,0.1,0,0.1,0,0.2c0,0.5,0.5,0.9,1.1,0.9s1-0.3,1-0.7s-0.3-0.6-1.4-1c-2.1-0.7-2.9-1.6-2.9-3
+			c0-1.8,1.3-3,3.3-3c1.3,0,2.3,0.5,2.9,1.5c0.3,0.4,0.4,0.8,0.5,1.5h-2.3c-0.1-0.7-0.4-0.9-1-0.9s-0.9,0.3-0.9,0.7
+			c0,0.3,0.1,0.5,0.4,0.7c0.2,0.1,0.4,0.2,1.1,0.5c1.1,0.4,1.6,0.7,2,1.1c0.5,0.5,0.8,1.1,0.8,1.9c0,1.8-1.4,2.9-3.4,2.9
+			c-2.1,0-3.4-1.2-3.4-3h2.2V232.1z"></path>
+		<path fill="#FFFFFF" d="M58.4,229.3h3.1v1.9h-3.1v2h3.1v1.9h-5.4v-9.4h5.4v1.9h-3.1V229.3z"></path>
+		<path fill="#FFFFFF" d="M76.3,233.8c-1.1,1-2.1,1.3-3.5,1.3s-2.6-0.5-3.5-1.4c-0.8-0.9-1.3-2.2-1.3-3.5c0-1.5,0.6-3,1.7-3.9
+			c0.8-0.7,1.9-1.1,3.1-1.1c0.8,0,1.6,0.2,2.2,0.5c0.5,0.2,0.8,0.4,1.3,1l-1.5,1.5c-0.7-0.6-1.3-0.8-2-0.8c-1.5,0-2.6,1.1-2.6,2.7
+			c0,1.7,1.1,2.8,2.7,2.8c0.8,0,1.4-0.3,1.9-0.8L76.3,233.8z"></path>
+		<path fill="#FFFFFF" d="M80.1,233.6l-0.4,1.4h-2.4l3.1-9.4h2.9l3.1,9.4h-2.5l-0.4-1.4H80.1z M81.8,228.3l-1.1,3.5h2.2L81.8,228.3z
+			"></path>
+		<path fill="#FFFFFF" d="M90.1,235h-2.3v-9.4h2.3l3.4,5.3v-5.3h2.3v9.4h-2.3l-3.4-5.4V235z"></path>
+		<path fill="#FFFFFF" d="M106.2,233.8c-1.1,1-2.1,1.3-3.5,1.3s-2.6-0.5-3.5-1.4c-0.8-0.9-1.3-2.2-1.3-3.5c0-1.5,0.6-3,1.7-3.9
+			c0.8-0.7,1.9-1.1,3.1-1.1c0.8,0,1.6,0.2,2.2,0.5c0.5,0.2,0.8,0.4,1.3,1l-1.5,1.5c-0.7-0.6-1.3-0.8-2-0.8c-1.5,0-2.6,1.1-2.6,2.7
+			c0,1.7,1.1,2.8,2.7,2.8c0.8,0,1.4-0.3,1.9-0.8L106.2,233.8z"></path>
+		<path fill="#FFFFFF" d="M109.8,229.3h3.1v1.9h-3.1v2h3.1v1.9h-5.4v-9.4h5.4v1.9h-3.1V229.3z"></path>
+		<path fill="#FFFFFF" d="M120.4,233.1v1.9H115v-9.4h2.3v7.6L120.4,233.1L120.4,233.1z"></path>
+		<path fill="#FFFFFF" d="M124.4,235h-2.3v-9.4h2.3V235z"></path>
+		<path fill="#FFFFFF" d="M129,235h-2.3v-9.4h2.3l3.4,5.3v-5.3h2.3v9.4h-2.3l-3.4-5.4V235z"></path>
+		<path fill="#FFFFFF" d="M146.8,229.6c0,0.2,0,0.4,0,0.5c0,1.6-0.5,2.8-1.6,3.7c-0.9,0.8-2.2,1.3-3.5,1.3c-2.8,0-4.9-2.1-4.9-4.9
+			c0-2.8,2.1-4.9,4.9-4.9c1.6,0,3,0.7,4,1.9l-1.7,1.3c-0.6-0.7-1.3-1.1-2.2-1.1c-1.5,0-2.7,1.2-2.7,2.8s1.2,2.8,2.8,2.8
+			c1.1,0,2-0.6,2.4-1.6H142v-1.9h4.8V229.6z"></path>
+			</svg>
+    </div>
+</div>
+
+
+
+
+
+<!-- SCENE 01  -->
+<!-- ABOVE THE NOISE  -->
+<div id="aboveTheNoiseGlow01" class="aboveTheNoiseGlow">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+<g id="ABOVE-THE-NOISE">
+	<g class="NOISE" style="opacity: 0;">
+		<g class="NOISE-E" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				260.9,148.8 260.9,154.8 246.6,154.8 246.6,163.6 260.9,163.6 260.9,172.1 246.6,172.1 246.6,181 260.9,181 260.9,189.5 
+				236.1,189.5 236.1,169.3 		"></polyline>
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				236.1,166 236.1,146.3 260.9,146.3 		"></polyline>
+		</g>
+		<g class="NOISE-S" opacity="0.0" style="opacity: 1;">
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M185,176.4h10.3c-0.1,0.3-0.1,0.6-0.1,0.7c0,2.1,2.3,4,5.1,4c2.5,0,4.5-1.5,4.5-3.4c0-2-1.2-2.9-6.2-4.7
+				c-9.5-3.4-13.2-7.3-13.2-13.9c0-8.1,6-13.6,15-13.6c5.8,0,10.6,2.5,13.2,6.7c1.2,2,1.8,3.9,2.3,6.9"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M213.3,159.1h-8.1c-0.3-3-1.8-4.3-4.8-4.3c-2.6,0-4.3,1.4-4.3,3.4c0,1.3,0.6,2.3,2,3.1c0.8,0.5,1.6,0.9,4.9,2.1
+				c4.9,1.9,7.3,3.1,9.2,4.9c2.4,2.2,3.6,5.2,3.6,8.7c0,8-6.2,13.4-15.5,13.4c-8.6,0-14.2-4.4-15.2-11.6"></path>
+		</g>
+		<g class="NOISE-I" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				158.7,189.5 156.4,189.5 154.9,189.5 154.9,146.3 165.4,146.3 165.4,189.5 161.7,189.5 		"></polyline>
+		</g>
+		<g class="NOISE-O" opacity="0.0" style="opacity: 1;">
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M114.8,190.3c-12.3-0.6-21.9-10.2-21.9-22.3c0-6.3,2.5-12.1,7.3-16.6c4.2-3.9,9.8-6,16.1-6c12.8,0,22.4,9.7,22.4,22.6
+				c0,11.7-9.1,21.3-20.7,22.3"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M117.4,180.5c6-0.8,10.6-6,10.6-12.4c0-7.4-5.2-13-12.1-13c-7.1,0-12.3,5.4-12.3,12.8c0,6.7,4.7,12,11,12.6"></path>
+		</g>
+		<g class="NOISE-N" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				44,189.5 40.5,189.5 40.5,146.3 51,146.3 66.7,170.6 66.7,146.3 77.2,146.3 77.2,189.5 66.7,189.5 51,164.9 51,189.5 47,189.5 		
+				"></polyline>
+		</g>
+	</g>
+	<g class="THE" style="opacity: 0;">
+		<g class="THE-E" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#ED223E" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				207.6,138.3 207.6,140.5 182.8,140.5 182.8,104.3 			"></polyline>
+			
+				<polyline fill="none" stroke="#ED223E" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				182.8,100.9 182.8,97.3 207.6,97.3 207.6,105.8 193.3,105.8 193.3,114.6 207.6,114.6 207.6,123.1 193.3,123.1 193.3,132 
+				207.6,132 207.6,135.2 			"></polyline>
+		</g>
+		<g class="THE-H" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#ED223E" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				150.6,123.5 145.3,123.5 145.3,140.5 134.8,140.5 134.8,97.3 145.3,97.3 145.3,115 159.5,115 159.5,97.3 170,97.3 170,140.5 
+				159.5,140.5 159.5,123.5 154.3,123.5 			"></polyline>
+		</g>
+		<g class="THE-T" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#ED223E" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				103.7,136.3 103.7,105.8 93.7,105.8 93.7,97.3 124.1,97.3 124.1,103.4 			"></polyline>
+			
+				<polyline fill="none" stroke="#ED223E" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				124.1,105.8 114.2,105.8 114.2,140.5 103.7,140.5 103.7,139.2 			"></polyline>
+		</g>
+	</g>
+	
+	<g class="ABOVE" style="opacity: 0;">
+		<g class="ABOVE-E" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				260.9,74.1 246.6,74.1 246.6,83.1 260.9,83.1 260.9,91.5 236.1,91.5 236.1,89.2 		"></polyline>
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				236.1,85.2 236.1,48.3 260.9,48.3 260.9,56.8 246.6,56.8 246.6,65.6 260.9,65.6 260.9,71.1 		"></polyline>
+		</g>
+		<g class="ABOVE-V" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				212,91.5 200.5,91.5 188.2,48.3 199,48.3 206.3,74.7 214.2,48.3 225,48.3 212.8,88.8 		"></polyline>
+		</g>
+		<g class="ABOVE-O" opacity="0.0" style="opacity: 1;">
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M157.4,92.4c-12.3-0.6-21.9-10.2-21.9-22.3c0-6.3,2.5-12.1,7.3-16.6c4.2-3.9,9.8-6,16.1-6c12.8,0,22.4,9.7,22.4,22.6
+				c0,11.7-9.1,21.3-20.7,22.3"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M160,82.6c6-0.8,10.6-6,10.6-12.4c0-7.4-5.2-13-12.1-13c-7.1,0-12.3,5.4-12.3,12.8c0,6.7,4.7,12,11,12.6"></path>
+		</g>
+		<g class="ABOVE-B" opacity="0.0" style="opacity: 1;">
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M121.6,53.1c1.3,1.9,2,4.3,2,6.9c0,3-1,5.6-2.9,7.5c-1.2,1.3-2.2,1.8-4.5,2.5c2.7,0.6,3.8,1.2,5.2,2.5c1.9,1.8,2.9,4.3,2.9,7.5
+				c0,4-1.6,7.6-4.4,9.5c-2.1,1.4-4.7,2-9.1,2H99.9"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M92.9,91.5V48.3h14.8c5.4,0,8.7,0.6,11,2.1"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M105.3,66.2h0.7c4.7,0,6.8-1.6,6.8-5.1c0-3.5-2.1-5-6.9-5h-2.5v10.1"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M105.3,84h1.9c4.5,0,6.3-1.4,6.3-5c0-2.1-0.8-3.6-2.3-4.4c-1.2-0.6-2.2-0.8-5.4-0.8h-2.4V84"></path>
+		</g>
+		<g class="ABOVE-A" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				68.1,48.3 82.3,91.5 70.7,91.5 68.9,85.3 53.6,85.3 51.7,91.5 		"></polyline>
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				47.4,91.5 40.5,91.5 54.7,48.3 64,48.3 		"></polyline>
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				63,76.8 66.3,76.8 61.2,60.7 56.2,76.8 59.7,76.8 		"></polyline>
+		</g>
+	</g>
+</g>
+</svg>
+</div>
+<div id="aboveTheNoiseGlow02" class="aboveTheNoiseGlow">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+<g id="ABOVE-THE-NOISE">
+	<g class="NOISE" style="opacity: 0;">
+		<g class="NOISE-E" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				260.9,148.8 260.9,154.8 246.6,154.8 246.6,163.6 260.9,163.6 260.9,172.1 246.6,172.1 246.6,181 260.9,181 260.9,189.5 
+				236.1,189.5 236.1,169.3 		"></polyline>
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				236.1,166 236.1,146.3 260.9,146.3 		"></polyline>
+		</g>
+		<g class="NOISE-S" opacity="0.0" style="opacity: 1;">
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M185,176.4h10.3c-0.1,0.3-0.1,0.6-0.1,0.7c0,2.1,2.3,4,5.1,4c2.5,0,4.5-1.5,4.5-3.4c0-2-1.2-2.9-6.2-4.7
+				c-9.5-3.4-13.2-7.3-13.2-13.9c0-8.1,6-13.6,15-13.6c5.8,0,10.6,2.5,13.2,6.7c1.2,2,1.8,3.9,2.3,6.9"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M213.3,159.1h-8.1c-0.3-3-1.8-4.3-4.8-4.3c-2.6,0-4.3,1.4-4.3,3.4c0,1.3,0.6,2.3,2,3.1c0.8,0.5,1.6,0.9,4.9,2.1
+				c4.9,1.9,7.3,3.1,9.2,4.9c2.4,2.2,3.6,5.2,3.6,8.7c0,8-6.2,13.4-15.5,13.4c-8.6,0-14.2-4.4-15.2-11.6"></path>
+		</g>
+		<g class="NOISE-I" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				158.7,189.5 156.4,189.5 154.9,189.5 154.9,146.3 165.4,146.3 165.4,189.5 161.7,189.5 		"></polyline>
+		</g>
+		<g class="NOISE-O" opacity="0.0" style="opacity: 1;">
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M114.8,190.3c-12.3-0.6-21.9-10.2-21.9-22.3c0-6.3,2.5-12.1,7.3-16.6c4.2-3.9,9.8-6,16.1-6c12.8,0,22.4,9.7,22.4,22.6
+				c0,11.7-9.1,21.3-20.7,22.3"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M117.4,180.5c6-0.8,10.6-6,10.6-12.4c0-7.4-5.2-13-12.1-13c-7.1,0-12.3,5.4-12.3,12.8c0,6.7,4.7,12,11,12.6"></path>
+		</g>
+		<g class="NOISE-N" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				44,189.5 40.5,189.5 40.5,146.3 51,146.3 66.7,170.6 66.7,146.3 77.2,146.3 77.2,189.5 66.7,189.5 51,164.9 51,189.5 47,189.5 		
+				"></polyline>
+		</g>
+	</g>
+	<g class="THE" style="opacity: 0;">
+		<g class="THE-E" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#ED223E" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				207.6,138.3 207.6,140.5 182.8,140.5 182.8,104.3 			"></polyline>
+			
+				<polyline fill="none" stroke="#ED223E" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				182.8,100.9 182.8,97.3 207.6,97.3 207.6,105.8 193.3,105.8 193.3,114.6 207.6,114.6 207.6,123.1 193.3,123.1 193.3,132 
+				207.6,132 207.6,135.2 			"></polyline>
+		</g>
+		<g class="THE-H" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#ED223E" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				150.6,123.5 145.3,123.5 145.3,140.5 134.8,140.5 134.8,97.3 145.3,97.3 145.3,115 159.5,115 159.5,97.3 170,97.3 170,140.5 
+				159.5,140.5 159.5,123.5 154.3,123.5 			"></polyline>
+		</g>
+		<g class="THE-T" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#ED223E" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				103.7,136.3 103.7,105.8 93.7,105.8 93.7,97.3 124.1,97.3 124.1,103.4 			"></polyline>
+			
+				<polyline fill="none" stroke="#ED223E" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				124.1,105.8 114.2,105.8 114.2,140.5 103.7,140.5 103.7,139.2 			"></polyline>
+		</g>
+	</g>
+	
+	<g class="ABOVE" style="opacity: 0;">
+		<g class="ABOVE-E" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				260.9,74.1 246.6,74.1 246.6,83.1 260.9,83.1 260.9,91.5 236.1,91.5 236.1,89.2 		"></polyline>
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				236.1,85.2 236.1,48.3 260.9,48.3 260.9,56.8 246.6,56.8 246.6,65.6 260.9,65.6 260.9,71.1 		"></polyline>
+		</g>
+		<g class="ABOVE-V" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				212,91.5 200.5,91.5 188.2,48.3 199,48.3 206.3,74.7 214.2,48.3 225,48.3 212.8,88.8 		"></polyline>
+		</g>
+		<g class="ABOVE-O" opacity="0.0" style="opacity: 1;">
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M157.4,92.4c-12.3-0.6-21.9-10.2-21.9-22.3c0-6.3,2.5-12.1,7.3-16.6c4.2-3.9,9.8-6,16.1-6c12.8,0,22.4,9.7,22.4,22.6
+				c0,11.7-9.1,21.3-20.7,22.3"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M160,82.6c6-0.8,10.6-6,10.6-12.4c0-7.4-5.2-13-12.1-13c-7.1,0-12.3,5.4-12.3,12.8c0,6.7,4.7,12,11,12.6"></path>
+		</g>
+		<g class="ABOVE-B" opacity="0.0" style="opacity: 1;">
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M121.6,53.1c1.3,1.9,2,4.3,2,6.9c0,3-1,5.6-2.9,7.5c-1.2,1.3-2.2,1.8-4.5,2.5c2.7,0.6,3.8,1.2,5.2,2.5c1.9,1.8,2.9,4.3,2.9,7.5
+				c0,4-1.6,7.6-4.4,9.5c-2.1,1.4-4.7,2-9.1,2H99.9"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M92.9,91.5V48.3h14.8c5.4,0,8.7,0.6,11,2.1"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M105.3,66.2h0.7c4.7,0,6.8-1.6,6.8-5.1c0-3.5-2.1-5-6.9-5h-2.5v10.1"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M105.3,84h1.9c4.5,0,6.3-1.4,6.3-5c0-2.1-0.8-3.6-2.3-4.4c-1.2-0.6-2.2-0.8-5.4-0.8h-2.4V84"></path>
+		</g>
+		<g class="ABOVE-A" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				68.1,48.3 82.3,91.5 70.7,91.5 68.9,85.3 53.6,85.3 51.7,91.5 		"></polyline>
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				47.4,91.5 40.5,91.5 54.7,48.3 64,48.3 		"></polyline>
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				63,76.8 66.3,76.8 61.2,60.7 56.2,76.8 59.7,76.8 		"></polyline>
+		</g>
+	</g>
+</g>
+</svg>
+</div>
+<div id="aboveTheNoise" class="aboveTheNoise">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+<g id="ABOVE-THE-NOISE">
+	<g class="NOISE" style="opacity: 0;">
+		<g class="NOISE-E" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				260.9,148.8 260.9,154.8 246.6,154.8 246.6,163.6 260.9,163.6 260.9,172.1 246.6,172.1 246.6,181 260.9,181 260.9,189.5 
+				236.1,189.5 236.1,169.3 		"></polyline>
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				236.1,166 236.1,146.3 260.9,146.3 		"></polyline>
+		</g>
+		<g class="NOISE-S" opacity="0.0" style="opacity: 1;">
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M185,176.4h10.3c-0.1,0.3-0.1,0.6-0.1,0.7c0,2.1,2.3,4,5.1,4c2.5,0,4.5-1.5,4.5-3.4c0-2-1.2-2.9-6.2-4.7
+				c-9.5-3.4-13.2-7.3-13.2-13.9c0-8.1,6-13.6,15-13.6c5.8,0,10.6,2.5,13.2,6.7c1.2,2,1.8,3.9,2.3,6.9"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M213.3,159.1h-8.1c-0.3-3-1.8-4.3-4.8-4.3c-2.6,0-4.3,1.4-4.3,3.4c0,1.3,0.6,2.3,2,3.1c0.8,0.5,1.6,0.9,4.9,2.1
+				c4.9,1.9,7.3,3.1,9.2,4.9c2.4,2.2,3.6,5.2,3.6,8.7c0,8-6.2,13.4-15.5,13.4c-8.6,0-14.2-4.4-15.2-11.6"></path>
+		</g>
+		<g class="NOISE-I" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				158.7,189.5 156.4,189.5 154.9,189.5 154.9,146.3 165.4,146.3 165.4,189.5 161.7,189.5 		"></polyline>
+		</g>
+		<g class="NOISE-O" opacity="0.0" style="opacity: 1;">
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M114.8,190.3c-12.3-0.6-21.9-10.2-21.9-22.3c0-6.3,2.5-12.1,7.3-16.6c4.2-3.9,9.8-6,16.1-6c12.8,0,22.4,9.7,22.4,22.6
+				c0,11.7-9.1,21.3-20.7,22.3"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M117.4,180.5c6-0.8,10.6-6,10.6-12.4c0-7.4-5.2-13-12.1-13c-7.1,0-12.3,5.4-12.3,12.8c0,6.7,4.7,12,11,12.6"></path>
+		</g>
+		<g class="NOISE-N" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				44,189.5 40.5,189.5 40.5,146.3 51,146.3 66.7,170.6 66.7,146.3 77.2,146.3 77.2,189.5 66.7,189.5 51,164.9 51,189.5 47,189.5 		
+				"></polyline>
+		</g>
+	</g>
+	<g class="THE" style="opacity: 0;">
+		<g class="THE-E" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#ED223E" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				207.6,138.3 207.6,140.5 182.8,140.5 182.8,104.3 			"></polyline>
+			
+				<polyline fill="none" stroke="#ED223E" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				182.8,100.9 182.8,97.3 207.6,97.3 207.6,105.8 193.3,105.8 193.3,114.6 207.6,114.6 207.6,123.1 193.3,123.1 193.3,132 
+				207.6,132 207.6,135.2 			"></polyline>
+		</g>
+		<g class="THE-H" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#ED223E" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				150.6,123.5 145.3,123.5 145.3,140.5 134.8,140.5 134.8,97.3 145.3,97.3 145.3,115 159.5,115 159.5,97.3 170,97.3 170,140.5 
+				159.5,140.5 159.5,123.5 154.3,123.5 			"></polyline>
+		</g>
+		<g class="THE-T" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#ED223E" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				103.7,136.3 103.7,105.8 93.7,105.8 93.7,97.3 124.1,97.3 124.1,103.4 			"></polyline>
+			
+				<polyline fill="none" stroke="#ED223E" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				124.1,105.8 114.2,105.8 114.2,140.5 103.7,140.5 103.7,139.2 			"></polyline>
+		</g>
+	</g>
+	
+	<g class="ABOVE" style="opacity: 0;">
+		<g class="ABOVE-E" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				260.9,74.1 246.6,74.1 246.6,83.1 260.9,83.1 260.9,91.5 236.1,91.5 236.1,89.2 		"></polyline>
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				236.1,85.2 236.1,48.3 260.9,48.3 260.9,56.8 246.6,56.8 246.6,65.6 260.9,65.6 260.9,71.1 		"></polyline>
+		</g>
+		<g class="ABOVE-V" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				212,91.5 200.5,91.5 188.2,48.3 199,48.3 206.3,74.7 214.2,48.3 225,48.3 212.8,88.8 		"></polyline>
+		</g>
+		<g class="ABOVE-O" opacity="0.0" style="opacity: 1;">
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M157.4,92.4c-12.3-0.6-21.9-10.2-21.9-22.3c0-6.3,2.5-12.1,7.3-16.6c4.2-3.9,9.8-6,16.1-6c12.8,0,22.4,9.7,22.4,22.6
+				c0,11.7-9.1,21.3-20.7,22.3"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M160,82.6c6-0.8,10.6-6,10.6-12.4c0-7.4-5.2-13-12.1-13c-7.1,0-12.3,5.4-12.3,12.8c0,6.7,4.7,12,11,12.6"></path>
+		</g>
+		<g class="ABOVE-B" opacity="0.0" style="opacity: 1;">
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M121.6,53.1c1.3,1.9,2,4.3,2,6.9c0,3-1,5.6-2.9,7.5c-1.2,1.3-2.2,1.8-4.5,2.5c2.7,0.6,3.8,1.2,5.2,2.5c1.9,1.8,2.9,4.3,2.9,7.5
+				c0,4-1.6,7.6-4.4,9.5c-2.1,1.4-4.7,2-9.1,2H99.9"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M92.9,91.5V48.3h14.8c5.4,0,8.7,0.6,11,2.1"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M105.3,66.2h0.7c4.7,0,6.8-1.6,6.8-5.1c0-3.5-2.1-5-6.9-5h-2.5v10.1"></path>
+			
+				<path fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M105.3,84h1.9c4.5,0,6.3-1.4,6.3-5c0-2.1-0.8-3.6-2.3-4.4c-1.2-0.6-2.2-0.8-5.4-0.8h-2.4V84"></path>
+		</g>
+		<g class="ABOVE-A" opacity="0.0" style="opacity: 1;">
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				68.1,48.3 82.3,91.5 70.7,91.5 68.9,85.3 53.6,85.3 51.7,91.5 		"></polyline>
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				47.4,91.5 40.5,91.5 54.7,48.3 64,48.3 		"></polyline>
+			
+				<polyline fill="none" stroke="#FFFDFD" stroke-width="1.1834" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				63,76.8 66.3,76.8 61.2,60.7 56.2,76.8 59.7,76.8 		"></polyline>
+		</g>
+	</g>
+</g>
+</svg>
+</div>
+
+
+
+
+
+<!-- SCENE 02  -->
+<!-- ANC GRAPHIC  -->
+<div class="scene02" style="opacity: 0;">
+<div id="noiseGraphicGlow01" class="noiseGraphicGlow">
+<div class="WHITE-NOISE" style="opacity: 1;">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+	 <g id="WHITE-NOISE">
+			
+				<polyline fill="none" stroke="#FFFFFF" stroke-width="3.0842" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				120.8,44.5 124.9,102.4 129.1,59.4 133.2,102.4 137.4,44.5 141.5,102.4 145.6,37.1 149.8,115 153.9,37.1 158.1,95 162.2,44.5 
+				166.4,107.6 170.5,59.4 174.7,91.2 178.8,52 183,95 			"></polyline>
+		</g>
+     </svg>     
+</div>
+	
+<div class="NO-NOISE-GRAPHIC" style="opacity: 1;">		
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+	 <g id="NO-NOISE-GRAPHIC">
+			
+				<line fill="none" stroke="#E11D39" stroke-width="3.0842" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="111.3" y1="113.3" x2="189.6" y2="34.9"></line>
+			
+				<circle fill="none" stroke="#E11D39" stroke-width="3.0842" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="151.9" cy="75.5" r="55.4"></circle>
+		</g>
+	 </svg><!--E01D39-->
+</div>
+</div>
+<div id="noiseGraphicGlow02" class="noiseGraphicGlow">
+<div class="WHITE-NOISE" style="opacity: 1;">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+	 <g id="WHITE-NOISE">
+			
+				<polyline fill="none" stroke="#FFFFFF" stroke-width="3.0842" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				120.8,44.5 124.9,102.4 129.1,59.4 133.2,102.4 137.4,44.5 141.5,102.4 145.6,37.1 149.8,115 153.9,37.1 158.1,95 162.2,44.5 
+				166.4,107.6 170.5,59.4 174.7,91.2 178.8,52 183,95 			"></polyline>
+		</g>
+     </svg>     
+</div>
+	
+<div class="NO-NOISE-GRAPHIC" style="opacity: 1;">		
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+	 <g id="NO-NOISE-GRAPHIC">
+			
+				<line fill="none" stroke="#E11D39" stroke-width="3.0842" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="111.3" y1="113.3" x2="189.6" y2="34.9"></line>
+			
+				<circle fill="none" stroke="#E11D39" stroke-width="3.0842" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="151.9" cy="75.5" r="55.4"></circle>
+		</g>
+	 </svg><!--E01D39-->
+</div>
+</div>
+<div id="noiseGraphic" class="noiseGraphic">
+<div class="WHITE-NOISE" style="opacity: 1;">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+	 <g id="WHITE-NOISE">
+			
+				<polyline fill="none" stroke="#FFFFFF" stroke-width="3.0842" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				120.8,44.5 124.9,102.4 129.1,59.4 133.2,102.4 137.4,44.5 141.5,102.4 145.6,37.1 149.8,115 153.9,37.1 158.1,95 162.2,44.5 
+				166.4,107.6 170.5,59.4 174.7,91.2 178.8,52 183,95 			"></polyline>
+		</g>
+     </svg>     
+</div>
+	
+<div class="NO-NOISE-GRAPHIC" style="opacity: 1;">		
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+	 <g id="NO-NOISE-GRAPHIC">
+			
+				<line fill="none" stroke="#E11D39" stroke-width="3.0842" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="111.3" y1="113.3" x2="189.6" y2="34.9"></line>
+			
+				<circle fill="none" stroke="#E11D39" stroke-width="3.0842" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="151.9" cy="75.5" r="55.4"></circle>
+		</g>
+	 </svg><!--E01D39-->
+</div>
+</div>
+
+
+
+<!-- ANC NEON -->
+<div id="pureANCNeonGlow01" class="pureANCNeonGlow" style="opacity: 1;">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+<g id="PURE-ANC">
+	<g>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M67.7,175.4h-6.2v-25.8h8.9
+			c6.1,0,9.6,3.1,9.6,8.5c0,5.4-3.6,9-9.2,9h-3L67.7,175.4L67.7,175.4z M69.4,161.9c2.6,0,4.1-1.3,4.1-3.6c0-2.1-1.5-3.6-3.7-3.6
+			h-2.2v7.1L69.4,161.9L69.4,161.9z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M89.5,164.6c0,1.9,0.2,3.1,0.9,4.1
+			c0.6,0.9,1.9,1.5,3.2,1.5c1.4,0,2.8-0.7,3.4-1.7c0.5-0.9,0.6-1.9,0.6-3.8v-15h6.2v14.7c0,3.8-0.9,6.6-2.7,8.6
+			c-1.7,1.9-4.5,3-7.6,3c-3.2,0-6.1-1.2-8-3.2c-1.6-1.9-2.4-4.4-2.4-8.3v-14.7h6.2L89.5,164.6L89.5,164.6z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M115.2,175.4h-6.2v-25.8h8.3
+			c3.4,0,5.8,0.6,7.6,1.9c1.8,1.4,2.8,3.7,2.8,6.5c0,3.9-1.6,6.5-5,7.9l5.7,9.5h-7.5l-5.6-10L115.2,175.4L115.2,175.4z M117.2,161.9
+			c2.6,0,4.1-1.3,4.1-3.6c0-2.2-1.5-3.6-3.7-3.6h-2.4v7.2H117.2z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M138.4,159.9h8.5v5.1h-8.5v5.3h8.5v5.1
+			h-14.8v-25.8h14.8v5.1h-8.5V159.9z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M169,171.7l-1.1,3.7h-6.7l8.5-25.8h8
+			l8.5,25.8h-6.9l-1.1-3.7H169z M173.6,157l-3,9.7h6L173.6,157z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M195.3,175.4h-6.2v-25.8h6.2l9.4,14.5
+			v-14.5h6.2v25.8h-6.2l-9.4-14.7V175.4z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M238.3,172.2c-3.1,2.7-5.8,3.7-9.7,3.7
+			c-4,0-7.1-1.2-9.4-3.9c-2.2-2.4-3.5-5.8-3.5-9.4c0-4.2,1.7-8.1,4.6-10.5c2.3-1.9,5.1-2.9,8.6-2.9c2.2,0,4.3,0.5,6.1,1.2
+			c1.3,0.6,2.1,1.2,3.7,2.7l-4.1,4.2c-1.8-1.6-3.6-2.3-5.5-2.3c-4.1,0-7,3-7,7.5c0,4.6,3,7.7,7.4,7.7c2.2,0,3.8-0.7,5.1-2.2
+			L238.3,172.2z"></path>
+	</g>
+</g>
+</svg>
+</div>
+<div id="pureANCNeonGlow02" class="pureANCNeonGlow" style="opacity: 1;">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+<g id="PURE-ANC">
+	<g>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M67.7,175.4h-6.2v-25.8h8.9
+			c6.1,0,9.6,3.1,9.6,8.5c0,5.4-3.6,9-9.2,9h-3L67.7,175.4L67.7,175.4z M69.4,161.9c2.6,0,4.1-1.3,4.1-3.6c0-2.1-1.5-3.6-3.7-3.6
+			h-2.2v7.1L69.4,161.9L69.4,161.9z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M89.5,164.6c0,1.9,0.2,3.1,0.9,4.1
+			c0.6,0.9,1.9,1.5,3.2,1.5c1.4,0,2.8-0.7,3.4-1.7c0.5-0.9,0.6-1.9,0.6-3.8v-15h6.2v14.7c0,3.8-0.9,6.6-2.7,8.6
+			c-1.7,1.9-4.5,3-7.6,3c-3.2,0-6.1-1.2-8-3.2c-1.6-1.9-2.4-4.4-2.4-8.3v-14.7h6.2L89.5,164.6L89.5,164.6z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M115.2,175.4h-6.2v-25.8h8.3
+			c3.4,0,5.8,0.6,7.6,1.9c1.8,1.4,2.8,3.7,2.8,6.5c0,3.9-1.6,6.5-5,7.9l5.7,9.5h-7.5l-5.6-10L115.2,175.4L115.2,175.4z M117.2,161.9
+			c2.6,0,4.1-1.3,4.1-3.6c0-2.2-1.5-3.6-3.7-3.6h-2.4v7.2H117.2z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M138.4,159.9h8.5v5.1h-8.5v5.3h8.5v5.1
+			h-14.8v-25.8h14.8v5.1h-8.5V159.9z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M169,171.7l-1.1,3.7h-6.7l8.5-25.8h8
+			l8.5,25.8h-6.9l-1.1-3.7H169z M173.6,157l-3,9.7h6L173.6,157z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M195.3,175.4h-6.2v-25.8h6.2l9.4,14.5
+			v-14.5h6.2v25.8h-6.2l-9.4-14.7V175.4z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M238.3,172.2c-3.1,2.7-5.8,3.7-9.7,3.7
+			c-4,0-7.1-1.2-9.4-3.9c-2.2-2.4-3.5-5.8-3.5-9.4c0-4.2,1.7-8.1,4.6-10.5c2.3-1.9,5.1-2.9,8.6-2.9c2.2,0,4.3,0.5,6.1,1.2
+			c1.3,0.6,2.1,1.2,3.7,2.7l-4.1,4.2c-1.8-1.6-3.6-2.3-5.5-2.3c-4.1,0-7,3-7,7.5c0,4.6,3,7.7,7.4,7.7c2.2,0,3.8-0.7,5.1-2.2
+			L238.3,172.2z"></path>
+	</g>
+</g>
+</svg>
+</div>
+<div id="pureANCNeon" class="pureANCNeon" style="opacity: 1;">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+<g id="PURE-ANC">
+	<g>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M67.7,175.4h-6.2v-25.8h8.9
+			c6.1,0,9.6,3.1,9.6,8.5c0,5.4-3.6,9-9.2,9h-3L67.7,175.4L67.7,175.4z M69.4,161.9c2.6,0,4.1-1.3,4.1-3.6c0-2.1-1.5-3.6-3.7-3.6
+			h-2.2v7.1L69.4,161.9L69.4,161.9z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M89.5,164.6c0,1.9,0.2,3.1,0.9,4.1
+			c0.6,0.9,1.9,1.5,3.2,1.5c1.4,0,2.8-0.7,3.4-1.7c0.5-0.9,0.6-1.9,0.6-3.8v-15h6.2v14.7c0,3.8-0.9,6.6-2.7,8.6
+			c-1.7,1.9-4.5,3-7.6,3c-3.2,0-6.1-1.2-8-3.2c-1.6-1.9-2.4-4.4-2.4-8.3v-14.7h6.2L89.5,164.6L89.5,164.6z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M115.2,175.4h-6.2v-25.8h8.3
+			c3.4,0,5.8,0.6,7.6,1.9c1.8,1.4,2.8,3.7,2.8,6.5c0,3.9-1.6,6.5-5,7.9l5.7,9.5h-7.5l-5.6-10L115.2,175.4L115.2,175.4z M117.2,161.9
+			c2.6,0,4.1-1.3,4.1-3.6c0-2.2-1.5-3.6-3.7-3.6h-2.4v7.2H117.2z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M138.4,159.9h8.5v5.1h-8.5v5.3h8.5v5.1
+			h-14.8v-25.8h14.8v5.1h-8.5V159.9z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M169,171.7l-1.1,3.7h-6.7l8.5-25.8h8
+			l8.5,25.8h-6.9l-1.1-3.7H169z M173.6,157l-3,9.7h6L173.6,157z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M195.3,175.4h-6.2v-25.8h6.2l9.4,14.5
+			v-14.5h6.2v25.8h-6.2l-9.4-14.7V175.4z"></path>
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.7795" stroke-miterlimit="10" d="M238.3,172.2c-3.1,2.7-5.8,3.7-9.7,3.7
+			c-4,0-7.1-1.2-9.4-3.9c-2.2-2.4-3.5-5.8-3.5-9.4c0-4.2,1.7-8.1,4.6-10.5c2.3-1.9,5.1-2.9,8.6-2.9c2.2,0,4.3,0.5,6.1,1.2
+			c1.3,0.6,2.1,1.2,3.7,2.7l-4.1,4.2c-1.8-1.6-3.6-2.3-5.5-2.3c-4.1,0-7,3-7,7.5c0,4.6,3,7.7,7.4,7.7c2.2,0,3.8-0.7,5.1-2.2
+			L238.3,172.2z"></path>
+	</g>
+</g>
+</svg>
+</div>
+
+
+<div class="pureANCCopy">
+    <div class="pureANCCopyContainer01">
+        <div class="pureANCCopy01" style="transform: translate(0px, 20px);">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+<g id="PURE-ANC-COPY">
+	<g>
+		<path fill="#FFFFFF" d="M62.3,191.9h-1.5v-7.1h2.3c1.7,0,2.7,0.9,2.7,2.3c0,1.5-0.9,2.4-2.5,2.4h-0.9V191.9z M62.9,188.2
+			c0.9,0,1.3-0.4,1.3-1.1c0-0.7-0.5-1.2-1.3-1.2h-0.6v2.3H62.9z"></path>
+		<path fill="#FFFFFF" d="M68.7,188.9c0,0.6,0.1,1,0.3,1.3c0.2,0.2,0.6,0.5,1,0.5c0.4,0,0.9-0.2,1-0.5c0.2-0.3,0.3-0.6,0.3-1.3v-4.2
+			h1.5v4.2c0,1-0.2,1.8-0.7,2.3c-0.5,0.5-1.3,0.9-2,0.9c-0.9,0-1.6-0.3-2.2-0.9c-0.5-0.5-0.6-1.2-0.6-2.3v-4.2h1.4V188.9z"></path>
+		<path fill="#FFFFFF" d="M76.2,191.9h-1.5v-7.1h2.2c1.8,0,2.7,0.8,2.7,2.3c0,1.1-0.6,1.9-1.7,2.1l2,2.7h-1.8l-2-2.8L76.2,191.9
+			L76.2,191.9z M76.8,188.2c0.9,0,1.3-0.4,1.3-1.1c0-0.7-0.5-1.1-1.2-1.1h-0.8v2.3L76.8,188.2L76.8,188.2z"></path>
+		<path fill="#FFFFFF" d="M82.8,187.7h2.5v1.2h-2.5v1.8h2.5v1.2h-4v-7.1h4v1.2h-2.5V187.7z"></path>
+		<path fill="#FFFFFF" d="M92.2,190.6l-0.4,1.3h-1.6l2.4-7.1h1.9l2.4,7.1h-1.6l-0.4-1.3H92.2z M93.6,186.5l-1,3h2L93.6,186.5z"></path>
+		<path fill="#FFFFFF" d="M98.3,184.8h2c1.2,0,2,0.2,2.6,0.8c0.7,0.6,1.1,1.6,1.1,2.7c0,1.2-0.4,2.2-1.1,2.8
+			c-0.6,0.5-1.4,0.9-2.5,0.9h-2.1L98.3,184.8z M99.8,190.6h0.2c0.8,0,1.3-0.2,1.6-0.5c0.5-0.5,0.8-1.1,0.8-1.9
+			c0-1.4-0.9-2.3-2.2-2.3h-0.5L99.8,190.6L99.8,190.6z"></path>
+		<path fill="#FFFFFF" d="M106.7,190.6l-0.4,1.3h-1.6l2.4-7.1h1.8l2.4,7.1h-1.6l-0.4-1.3H106.7z M108.1,186.5l-1,3h2L108.1,186.5z"></path>
+		<path fill="#FFFFFF" d="M114.2,191.9h-1.5v-7.1h2.3c1.7,0,2.7,0.9,2.7,2.3c0,1.5-0.9,2.4-2.5,2.4h-0.9L114.2,191.9z M114.9,188.2
+			c0.9,0,1.3-0.4,1.3-1.1c0-0.7-0.5-1.2-1.3-1.2h-0.6v2.3H114.9z"></path>
+		<path fill="#FFFFFF" d="M121.8,191.9h-1.5v-6h-1.7v-1.2h4.9v1.2h-1.7L121.8,191.9L121.8,191.9z"></path>
+		<path fill="#FFFFFF" d="M126.4,191.9h-1.5v-7.1h1.5V191.9z"></path>
+		<path fill="#FFFFFF" d="M132.2,184.8h1.5l-2.3,7.1h-1.6l-2.2-7.1h1.5l1.4,4.8L132.2,184.8z"></path>
+		<path fill="#FFFFFF" d="M136.4,187.7h2.5v1.2h-2.5v1.8h2.5v1.2h-4v-7.1h4v1.2h-2.5V187.7z"></path>
+		<path fill="#FFFFFF" d="M145.9,191.9h-1.5v-7.1h1.4l3,4.5v-4.5h1.5v7.1h-1.4l-3-4.5V191.9z"></path>
+		<path fill="#FFFFFF" d="M158.6,185.8c0.6,0.7,0.9,1.5,0.9,2.5c0,2-1.6,3.7-3.7,3.7c-2.1,0-3.8-1.6-3.8-3.7c0-2.1,1.6-3.8,3.8-3.8
+			C156.8,184.6,157.9,185,158.6,185.8z M153.6,188.3c0,1.3,0.9,2.3,2.2,2.3s2.2-1,2.2-2.3c0-1.4-0.9-2.4-2.2-2.4
+			S153.6,187,153.6,188.3z"></path>
+		<path fill="#FFFFFF" d="M162.6,191.9h-1.5v-7.1h1.5V191.9z"></path>
+		<path fill="#FFFFFF" d="M165.7,189.8L165.7,189.8c0,0.5,0.4,0.9,0.9,0.9c0.5,0,0.9-0.3,0.9-0.8c0-0.2-0.1-0.4-0.3-0.5
+			c-0.2-0.2-0.3-0.2-0.9-0.4c-1.6-0.5-2.1-1.2-2.1-2.3c0-1.3,0.9-2.2,2.3-2.2c1.4,0,2.3,0.8,2.4,2.2h-1.5c-0.1-0.6-0.4-0.9-0.9-0.9
+			c-0.5,0-0.9,0.3-0.9,0.8c0,0.3,0.2,0.5,0.5,0.7c0.2,0.1,0.3,0.2,0.9,0.4c0.8,0.3,1.2,0.5,1.5,0.8c0.4,0.4,0.5,0.9,0.5,1.4
+			c0,1.3-1,2.2-2.4,2.2c-1.5,0-2.4-0.9-2.4-2.2h1.4V189.8z"></path>
+		<path fill="#FFFFFF" d="M172,187.7h2.5v1.2H172v1.8h2.5v1.2h-4v-7.1h4v1.2H172V187.7z"></path>
+		<path fill="#FFFFFF" d="M186,191c-0.9,0.8-1.6,1.1-2.7,1.1s-2-0.4-2.6-1.1c-0.6-0.7-0.9-1.6-0.9-2.6c0-2.2,1.5-3.8,3.5-3.8
+			c1.1,0,1.9,0.3,2.7,1.1l-0.9,0.9c-0.5-0.5-1.1-0.7-1.6-0.7c-1.3,0-2.1,0.9-2.1,2.3s0.9,2.3,2.2,2.3c0.6,0,1.2-0.2,1.6-0.7L186,191
+			z"></path>
+		<path fill="#FFFFFF" d="M188.9,190.6l-0.4,1.3h-1.6l2.4-7.1h1.8l2.4,7.1H192l-0.4-1.3H188.9z M190.2,186.5l-1,3h2L190.2,186.5z"></path>
+		<path fill="#FFFFFF" d="M196.4,191.9h-1.5v-7.1h1.4l3,4.5v-4.5h1.5v7.1h-1.4l-3-4.5V191.9z"></path>
+		<path fill="#FFFFFF" d="M208.8,191c-0.9,0.8-1.6,1.1-2.7,1.1c-1.1,0-2-0.4-2.6-1.1c-0.6-0.7-0.9-1.6-0.9-2.6
+			c0-2.2,1.5-3.8,3.5-3.8c1.1,0,1.9,0.3,2.7,1.1l-0.9,0.9c-0.5-0.5-1.1-0.7-1.6-0.7c-1.3,0-2.1,0.9-2.1,2.3s0.9,2.3,2.2,2.3
+			c0.6,0,1.2-0.2,1.6-0.7L208.8,191z"></path>
+		<path fill="#FFFFFF" d="M211.5,187.7h2.5v1.2h-2.5v1.8h2.5v1.2h-4v-7.1h4v1.2h-2.5V187.7z"></path>
+		<path fill="#FFFFFF" d="M219.7,190.6v1.2h-3.8v-7.1h1.5v6H219.7z"></path>
+		<path fill="#FFFFFF" d="M222.7,191.9h-1.5v-7.1h1.5V191.9z"></path>
+		<path fill="#FFFFFF" d="M226.2,191.9h-1.5v-7.1h1.4l3,4.5v-4.5h1.5v7.1h-1.4l-3-4.5V191.9z"></path>
+		<path fill="#FFFFFF" d="M239.8,187.9v0.4c0,1.1-0.3,2-1,2.7c-0.7,0.7-1.6,1.1-2.7,1.1c-2.1,0-3.7-1.6-3.7-3.7s1.6-3.8,3.7-3.8
+			c1.2,0,2.2,0.5,2.9,1.3l-1.1,0.9c-0.5-0.6-1-0.9-1.7-0.9c-1.3,0-2.2,1-2.2,2.3c0,1.3,1,2.3,2.3,2.3c0.6,0,1.3-0.2,1.6-0.7
+			c0.2-0.2,0.3-0.5,0.5-0.9h-2v-1.2H239.8z"></path>
+	</g>
+</g>
+
+</svg>
+        
+        </div>
+    </div>
+</div>
+
+
+</div><!-- END SCENE 02 GRAPHICS  -->
+
+
+<!--  BUY NOW  -->
+<div class="buyNowContainer">
+	<div class="buyNowFrame" style="opacity: 1; transform: translate(74px, 0px);"><div class="buyNowText">
+    
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="250px" viewBox="0 0 300 250" enable-background="new 0 0 300 250" xml:space="preserve">
+	 <path fill="none" stroke="#EC1439" stroke-width="0.862" stroke-miterlimit="10" d="M278.4,233.2c0,1.4-1.2,2.6-2.6,2.6H172
+			c-1.4,0-2.6-1.2-2.6-2.6v-20.7c0-1.4,1.2-2.6,2.6-2.6h103.8c1.4,0,2.6,1.2,2.6,2.6V233.2z"></path>
+   <path fill="#EC1439" d="M190.3,217.4c1.3,0,2.2,0.2,2.8,0.6c0.7,0.5,1,1.3,1,2.3c0,0.8-0.2,1.4-0.7,1.9c-0.3,0.3-0.6,0.5-1.1,0.7
+				c0.7,0.1,0.9,0.3,1.3,0.6c0.5,0.5,0.8,1.1,0.8,2c0,1-0.4,1.9-1.1,2.4c-0.6,0.4-1.2,0.5-2.4,0.5h-4v-10.9H190.3z M189,222.1h0.9
+				c1.3,0,1.9-0.5,1.9-1.5c0-0.6-0.3-1-0.7-1.2c-0.3-0.1-0.8-0.2-1.4-0.2H189L189,222.1L189,222.1z M189,226.7h1.1
+				c0.8,0,1.1-0.1,1.5-0.3c0.4-0.2,0.5-0.6,0.5-1.2c0-0.6-0.2-1-0.6-1.2c-0.3-0.2-0.7-0.3-1.5-0.3h-1L189,226.7L189,226.7z"></path>
+			<path fill="#EC1439" d="M199.2,223.8c0,1,0.1,1.6,0.5,2c0.3,0.4,0.9,0.7,1.5,0.7c0.6,0,1.3-0.3,1.6-0.8c0.3-0.4,0.4-0.9,0.4-1.9
+				v-6.4h2.3v6.3c0,1.6-0.3,2.7-1.1,3.5c-0.7,0.8-1.9,1.3-3.2,1.3c-1.3,0-2.5-0.5-3.3-1.4c-0.7-0.8-1-1.8-1-3.5v-6.3h2.2
+				L199.2,223.8L199.2,223.8z"></path>
+			<path fill="#EC1439" d="M213.3,228.4H211v-4.8l-3.7-6.1h2.7l2.1,3.8l2.1-3.8h2.6l-3.6,6.1L213.3,228.4L213.3,228.4z"></path>
+			<path fill="#EC1439" d="M227,228.4h-2.2v-10.9h2.2l4.6,6.8v-6.8h2.2v10.9h-2.2l-4.6-6.9L227,228.4L227,228.4z"></path>
+			<path fill="#EC1439" d="M246.4,219.1c0.9,1,1.4,2.3,1.4,3.9c0,3.1-2.5,5.6-5.6,5.6c-3.2,0-5.7-2.5-5.7-5.6c0-3.2,2.5-5.7,5.7-5.7
+				C243.9,217.2,245.3,217.9,246.4,219.1z M238.8,222.9c0,2,1.5,3.6,3.4,3.6c1.9,0,3.4-1.6,3.4-3.5c0-2.1-1.4-3.7-3.3-3.7
+				C240.3,219.3,238.8,220.8,238.8,222.9z"></path>
+			<path fill="#EC1439" d="M260.9,217.4h2.3l-3,10.9H258l-1.7-7.2l-1.7,7.2h-2.3l-3-10.9h2.4l1.8,6.9l1.8-6.9h2.2l1.7,7L260.9,217.4
+				z"></path>
+				
+				</svg>
+                
+                
+    
+    </div></div>
+</div>
+
+<!-- NEW BORDER -->
+<a href="javascript:window.open(window.clickTag)">
+<div class="beatsBorder" style="border-color: rgb(255, 0, 0);">
+</div>
+</a>
+<!-- NEW BORDER -->
+
+
+
+</div>
+
+
+</body></html>
