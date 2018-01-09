@@ -1,1 +1,79 @@
-<html><head></head><body></body></html>
+<!DOCTYPE html><html><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>GSAP animation</title>
+		<style type="text/css">
+			body { font-family: "Gotham SSm A","Gotham SSm B",Arial,sans-serif; color:#ffffff; margin:0; padding:0; overflow:hidden;}
+			#Ad { width: 728px; height:90px; position:relative; overflow: hidden; opacity:0;}
+			#Ad #Ad_photo { position:absolute; height: inherit; width:inherit; background:url(https://acronymreports.s3.amazonaws.com/bannerads/jameshotels/BRAND/Annual/JamesBrand_Annual_728x90_banner.jpg) no-repeat 0px 0px; top: 0px; background-repeat: no-repeat; background-size: 100%;}
+			#Ad #Ad_photo2 { height:inherit; width:inherit; background:url(https://acronymreports.s3.amazonaws.com/bannerads/jameshotels/BRAND/Annual/JamesBrand_Annual_728x90_bannerv2.jpg) no-repeat 0px 0px; top:0px; position:absolute; left:0px; background-repeat: no-repeat; background-size: 100%;} 
+		</style>
+		<script type="text/javascript">
+		var clickTag = "https://www.google.com"; 
+		</script>
+		<link rel="stylesheet" type="text/css" href="https://www.affinia.com/denihan/affinia/affiniafonts/168728/5DAFEAF9A1D923518.css" media="screen">
+	<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+	<body>
+		<div id="Ad" style="cursor: pointer; opacity: 1;" onclick="javascript:window.open(window.clickTag)">
+				<div id="Ad_photo" style="opacity: 1;"></div>
+                <div id="Ad_photo2" style="opacity: 0;"></div>	
+				
+		</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<script type="text/javascript">
+		(function(){
+			var tl1 = new TimelineMax();
+			tl1.to('#Ad', 1, { opacity:1 })
+		    .from('#Ad_photo', 1, { opacity:0, ease: Power0.easeIn }, '-=.0')
+			.from('#Ad_photo2', 3, { opacity:0, ease: Power0.easeIn }, '+=1');
+		}());
+</script>
+	
+</body></html>
