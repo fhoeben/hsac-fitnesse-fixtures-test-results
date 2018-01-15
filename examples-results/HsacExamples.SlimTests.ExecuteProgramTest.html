@@ -30,9 +30,9 @@
 	<td><pre>total 92
 drwxr-xr-x   2 root   root    4096 Aug 29 02:38 bin
 drwxr-xr-x   3 root   root    4096 Aug 29 02:38 boot
-drwxr-xr-x  15 root   root    3660 Jan 13 10:46 dev
-drwxr-xr-x 125 root   root   12288 Jan 13 10:46 etc
-drwxr-xr-x  15 root   root    4096 Jan 13 10:46 home
+drwxr-xr-x  15 root   root    3660 Jan 15 08:46 dev
+drwxr-xr-x 125 root   root   12288 Jan 15 08:47 etc
+drwxr-xr-x   8 root   root    4096 Jan 15 08:46 home
 lrwxrwxrwx   1 root   root      32 Aug 29 02:36 initrd.img -&gt; boot/initrd.img-4.4.0-93-generic
 lrwxrwxrwx   1 root   root      32 Jun 19  2017 initrd.img.old -&gt; boot/initrd.img-4.4.0-81-generic
 drwxr-xr-x  21 root   root    4096 Aug 29 02:54 lib
@@ -41,13 +41,13 @@ drwx------   2 root   root   16384 Jun 19  2017 lost+found
 drwxr-xr-x   2 root   root    4096 Jun 19  2017 media
 drwxr-xr-x   2 root   root    4096 Apr 10  2014 mnt
 drwxr-xr-x   6 travis travis  4096 Aug 29 02:54 opt
-dr-xr-xr-x 118 root   root       0 Jan 13 10:45 proc
+dr-xr-xr-x 117 root   root       0 Jan 15 08:45 proc
 drwx------   6 root   root    4096 Aug 29 02:49 root
-drwxr-xr-x  20 root   root     800 Jan 13 10:46 run
+drwxr-xr-x  20 root   root     800 Jan 15 08:46 run
 drwxr-xr-x   2 root   root   12288 Aug 29 02:38 sbin
 drwxr-xr-x   2 root   root    4096 Jun 19  2017 srv
-dr-xr-xr-x  13 root   root       0 Jan 13 11:01 sys
-drwxrwxrwt   8 root   root    4096 Jan 13 11:19 tmp
+dr-xr-xr-x  13 root   root       0 Jan 15 09:03 sys
+drwxrwxrwt   8 root   root    4096 Jan 15 09:17 tmp
 drwxr-xr-x  13 root   root    4096 Aug 29 02:21 usr
 drwxr-xr-x  13 root   root    4096 Aug 29 02:38 var
 lrwxrwxrwx   1 root   root      29 Aug 29 02:36 vmlinuz -&gt; boot/vmlinuz-4.4.0-93-generic
@@ -95,32 +95,7 @@ lrwxrwxrwx   1 root   root      29 Jun 19  2017 vmlinuz.old -&gt; boot/vmlinuz-4
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="2">raw standard out</td>
-	<td>total 92
-drwxr-xr-x   2 root   root    4096 Aug 29 02:38 bin
-drwxr-xr-x   3 root   root    4096 Aug 29 02:38 boot
-drwxr-xr-x  15 root   root    3660 Jan 13 10:46 dev
-drwxr-xr-x 125 root   root   12288 Jan 13 10:46 etc
-drwxr-xr-x  15 root   root    4096 Jan 13 10:46 home
-lrwxrwxrwx   1 root   root      32 Aug 29 02:36 initrd.img -&gt; boot/initrd.img-4.4.0-93-generic
-lrwxrwxrwx   1 root   root      32 Jun 19  2017 initrd.img.old -&gt; boot/initrd.img-4.4.0-81-generic
-drwxr-xr-x  21 root   root    4096 Aug 29 02:54 lib
-drwxr-xr-x   2 root   root    4096 Jun 19  2017 lib64
-drwx------   2 root   root   16384 Jun 19  2017 lost+found
-drwxr-xr-x   2 root   root    4096 Jun 19  2017 media
-drwxr-xr-x   2 root   root    4096 Apr 10  2014 mnt
-drwxr-xr-x   6 travis travis  4096 Aug 29 02:54 opt
-dr-xr-xr-x 118 root   root       0 Jan 13 10:45 proc
-drwx------   6 root   root    4096 Aug 29 02:49 root
-drwxr-xr-x  20 root   root     800 Jan 13 10:46 run
-drwxr-xr-x   2 root   root   12288 Aug 29 02:38 sbin
-drwxr-xr-x   2 root   root    4096 Jun 19  2017 srv
-dr-xr-xr-x  13 root   root       0 Jan 13 11:01 sys
-drwxrwxrwt   8 root   root    4096 Jan 13 11:19 tmp
-drwxr-xr-x  13 root   root    4096 Aug 29 02:21 usr
-drwxr-xr-x  13 root   root    4096 Aug 29 02:38 var
-lrwxrwxrwx   1 root   root      29 Aug 29 02:36 vmlinuz -&gt; boot/vmlinuz-4.4.0-93-generic
-lrwxrwxrwx   1 root   root      29 Jun 19  2017 vmlinuz.old -&gt; boot/vmlinuz-4.4.0-81-generic
-</td></tr>
+	<td></td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>raw standard error</td>
@@ -167,14 +142,14 @@ lrwxrwxrwx   1 root   root      29 Jun 19  2017 vmlinuz.old -&gt; boot/vmlinuz-4
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>raw standard out</td>
-		<td colspan="2">[] <span class="fail">expected [</span><span class="diff">Hi &lt;there&gt;
-</span><span class="fail">]</span></td>
+		<td colspan="2"><span class="pass">Hi &lt;there&gt;
+</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>standard out</td>
-		<td colspan="2">[] <span class="fail">expected [<pre>Hi &lt;there&gt;
-</pre>]</span></td>
+		<td colspan="2"><span class="pass"><pre>Hi &lt;there&gt;
+</pre></span></td>
 	</tr>
 </table>
 <br/></article></body></html>
