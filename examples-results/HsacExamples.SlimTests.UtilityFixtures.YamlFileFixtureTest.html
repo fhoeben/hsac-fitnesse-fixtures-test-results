@@ -338,4 +338,119 @@ The top level of a YAML file can be an array instead of a set of properties. In 
 		<td colspan="3">$sample4->[<a href="files/test/sample4.yml">sample4.yml</a>]</td>
 	</tr>
 </table>
+<br/><h2 id="Readingbinarycontent">Reading binary content</h2>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="4"><span class="pass">file fixture</span></td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set directory</td>
+		<td colspan="4"><a href="files/test">http://files/test</a></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$bin&lt;-[<a href="files/test/sample-bin.yml">sample-bin.yml</a>]</td>
+		<td>create</td>
+		<td>sample-bin.yml</td>
+		<td>containing</td>
+		<td>canonical: !!binary "\
+ R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\
+ OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\
+ +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\
+ AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs="
+description:
+ The binary value above is a tiny arrow encoded as a gif image.</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="4"><span class="pass">yaml file fixture</span></td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td><span class="pass">load values from</span></td>
+		<td colspan="4">$bin->[<a href="files/test/sample-bin.yml">sample-bin.yml</a>]</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td colspan="4">values</td>
+	<td><table class="hash_table">
+	<tr class="hash_row">
+		<td class="hash_key">canonical</td>
+		<td class="hash_value">[71, 73, 70, 56, 57, 97, 12, 0, 12, 0, -124, 0, 0, -1, -1, -9, -11, -11, -18, -23, -23, -27, 102, 102, 102, 0, 0, 0, -25, -25, -25, 94, 94, 94, -13, -13, -19, -114, -114, -114, -32, -32, -32, -97, -97, -97, -109, -109, -109, -89, -89, -89, -98, -98, -98, 105, 105, 105, 99, 99, 99, -93, -93, -93, -124, -124, -124, -1, -2, -7, -1, -2, -7, -1, -2, -7, -1, -2, -7, -1, -2, -7, -1, -2, -7, -1, -2, -7, -1, -2, -7, -1, -2, -7, -1, -2, -7, -1, -2, -7, -1, -2, -7, -1, -2, -7, -1, -2, -7, 33, -2, 14, 77, 97, 100, 101, 32, 119, 105, 116, 104, 32, 71, 73, 77, 80, 0, 44, 0, 0, 0, 0, 12, 0, 12, 0, 0, 5, 44, 32, 32, -114, -127, 48, -98, -29, 64, 20, -24, 105, 16, -60, -47, -118, 8, 28, -49, -128, 77, 36, 122, -17, -1, 48, -123, 112, -72, -80, 49, 102, 13, 27, -50, 1, -61, 1, 30, 16, 39, 32, -126, 10, 1, 0, 59]</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">description</td>
+		<td class="hash_value">The binary value above is a tiny arrow encoded as a gif image.</td>
+	</tr>
+</table></td></tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value</td>
+		<td>description</td>
+		<td colspan="2"><span class="pass">The binary value above is a tiny arrow encoded as a gif image.</span></td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>$img1&lt;-[<a href="files/fileFixture/arrow1_1.gif">arrow1_1.gif</a>]</td>
+		<td>create</td>
+		<td>arrow1.gif</td>
+		<td>containing base64 value</td>
+		<td>canonical</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>$img2&lt;-[<a href="files/fileFixture/arrow2_1.gif">arrow2_1.gif</a>]</td>
+		<td>create</td>
+		<td>arrow2.gif</td>
+		<td>containing value</td>
+		<td>canonical</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">delete</span></td>
+		<td colspan="4">$bin->[<a href="files/test/sample-bin.yml">sample-bin.yml</a>]</td>
+	</tr>
+</table>
+<br/><h2 id="Writingbinarycontent">Writing binary content</h2>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">yaml file fixture</span></td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>set content of</td>
+		<td>$img2->[<a href="files/fileFixture/arrow2_1.gif">arrow2_1.gif</a>]</td>
+		<td>as value for</td>
+		<td>gif</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set base64 encoded content of</td>
+		<td>$img2->[<a href="files/fileFixture/arrow2_1.gif">arrow2_1.gif</a>]</td>
+		<td>as value for</td>
+		<td>encoded-gif</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set value</td>
+		<td>A small arrow image</td>
+		<td>for</td>
+		<td>description</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>$sample5&lt;-[<a href="files/fileFixture/sample5.yml">sample5.yml</a>]</td>
+		<td>create</td>
+		<td>sample5.yml</td>
+		<td>containing values</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>show</td>
+		<td>content of</td>
+		<td colspan="2">$sample5->[<a href="files/fileFixture/sample5.yml">sample5.yml</a>]</td>
+	<td><pre>gif: !!binary |-
+  R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=
+encoded-gif: R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=
+description: A small arrow image
+</pre></td></tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">delete</span></td>
+		<td colspan="3">$sample5->[<a href="files/fileFixture/sample5.yml">sample5.yml</a>]</td>
+	</tr>
+</table>
 </article></body></html>
