@@ -1,91 +1,42 @@
-<!DOCTYPE html><html><head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>GSAP animation</title>
-		<style type="text/css">
-			body { font-family: "Gotham SSm A","Gotham SSm B",Arial,sans-serif; color:#ffffff; margin:0; padding:0; overflow:hidden;}
-			#Ad { width: 728px; height:90px; position:relative; overflow: hidden; opacity:0;}
-			#Ad #Ad_photo { width:inherit; height:inherit; background:url(https://d1bymfhfnmol4i.cloudfront.net/animation/Shelburne_ES/SNYC_room.jpg) no-repeat 0px -249px; top:0px; left:0px; background-repeat: repeat-x; position: absolute;}
-			#Ad #Ad_photo2 { width:inherit; height:inherit; background:url(https://d1bymfhfnmol4i.cloudfront.net/animation/Shelburne_ES/1brSNYC.jpg) no-repeat 0px -180px; top:0px; left:0px; background-repeat: repeat-x;position: absolute;}
-			#Ad .Ad_Img { position:absolute; background:url(https://denihan.s3.amazonaws.com/animation/Shelburne_ES/frame.png) no-repeat 0px 0px;}
-			#Ad #Ad_logo { width:inherit; height:100px; background-position:0px 0px; z-index: 100; position:relative; top:18px; left:-32px; background-size: 38%; z-index: 100;}
-			#Ad #Ad_text { width:inherit; height:inherit; top:-1px; text-transform: none; font-size:19px; left:-156px; line-height:12px; position: absolute; text-align:right; text-shadow:2px 2px 3px #000000; z-index: 100;}
-			#Ad #Ad_fine { width:292px; height:35px; top:54px; font-size:11px; left:622px; letter-spacing:0.5px; position: absolute; z-index: 100; text-shadow:1px 1px 4px #000000;}
-			#Ad #Ad_button { width:100px; height:28px; background-color: #b4252d; position:absolute; top:24px; right:13px; z-index: 100;}
-			#Ad #Ad_button .button {font-size: 12px; text-align:center; text-transform:uppercase; font-weight:bold; position: relative; left:12px; line-height: 28px; z-index: 100;}
-		</style>
-		<script type="text/javascript">
-		var clickTag = "https://www.affinia.com/"; 
-		</script>
-		<link rel="stylesheet" type="text/css" href="https://www.affinia.com/denihan/affinia/affiniafonts/168728/5DAFEAF9A1D923518.css" media="screen">
-	<script type="text/javascript">
-    
-      (function() {
-        var relegateNavigation = '';
-        var handleClickTagMessage = function(e) {
-          try {
-            var eventData = JSON.parse(e.data);
-          } catch (err) {
-            return;
-          }
-          if (eventData.isInitClickTag) {
-            if (eventData.clickTags) {
-              for (var i = 0; i < eventData.clickTags.length; i++) {
-                var clkTag = eventData.clickTags[i];
-                window[clkTag.name] = clkTag.url;
-              }
-            } else if (eventData.clickTag) {
-              window.clickTag = eventData.clickTag;
+<html><head>
+<script>var inDapIF=true;</script>
+</head><body marginwidth="0" marginheight="0"><script>
+var adMetrics={adconfig:{orderId:"2161509539",lineItemId:"4564950602",creativeId:"138224080293",adUnitId:"56864537",activity:"",adlp:"",b:"",bk:"",cc:"",cmptst:"",d:"NYC",dta:"181",eapid:"",email:"",ete:"12-15-2018",ets:"12-08-2018",ff:"",ip:"",kid:"0",mc1:"5563c87c7e924c55972c48f67948ac25",numadults:"2",o:"AMS",p:"",pd:"NYC",pn:"",regionid:"",sb:"",ssl:"",td:"",tst:"",custtype:"",pref:"",sr:"",ac:"econ",cd:"",width:"728",height:"90"},name:"/23171577/expedia.us_en/packages/results/CM1",startTime:new Date()},markName="orderID="+adMetrics.adconfig.orderId+" lineItemID="+adMetrics.adconfig.lineItemId+" adUnitID="+adMetrics.adconfig.adUnitId+" creativeID="+adMetrics.adconfig.creativeId+" fully loaded";var getIndexExchangeCMCID=function(a){var d=function(){return NodeFilter.FILTER_ACCEPT};var g=[];try{var c=document.createNodeIterator(a,NodeFilter.SHOW_COMMENT,d,false);var b;while((b=c.nextNode())){var h=b.nodeValue;if(h.indexOf(" cmc ")>-1){g.push(b.nodeValue.trim().split(" ")[1])}}}catch(f){}return g};try{if(window&&window.performance&&typeof(window.performance.getEntriesByType)==="function"){var resourceList=window.performance.getEntriesByType("resource");if(resourceList){adMetrics.resourceList=JSON.stringify(resourceList)}}if(window&&window.addEventListener&&window.removeEventListener){var onLoadListener=function(){try{window.removeEventListener("load",onLoadListener);if(window&&window.top&&typeof(window.top.postMessage)==="function"){adMetrics.cmc=getIndexExchangeCMCID(document.body);if(typeof window.performance&&typeof window.performance.mark==="function"){window.performance.mark(markName);if(typeof window.performance.getEntriesByName==="function"){var a=window.performance.getEntriesByName(markName,"mark"),b;if(a&&a.length>0){b=a[0];if(b&&b.startTime){adMetrics.timeToLoadCreative=b.startTime}}}}window.top.postMessage(adMetrics,"*")}}catch(c){if(window&&window.top&&typeof(window.top.postMessage)==="function"){adMetrics.errorMsg=c.message;adMetrics.errorLine=c.lineNumber;adMetrics.errorUrl=c.fileName;adMetrics.error=true;window.top.postMessage(adMetrics,"*")}}};window.addEventListener("load",onLoadListener)}}catch(e){if(window&&window.top&&typeof(window.top.postMessage)==="function"){adMetrics.errorMsg=e.message;adMetrics.errorLine=e.lineNumber;adMetrics.errorUrl=e.fileName;adMetrics.error=true;window.top.postMessage(adMetrics,"*")}};
+</script><script>var viewReq = new Array();function vu(u) {var i=new Image();i.src=u.replace("&amp;","&");viewReq.push(i);}</script><script>vu("https://securepubads.g.doubleclick.net/pcs/view?xai\x3dAKAOjsvd4_enuHUa6bozrnk2L72rfyvebU5Ocue_OGMv93Eqb0suKT64tIPMVW8bTz5N5j93itRipBFiIWIX2wpEgn7gWI0k2kdBRWR9aO2SpTCBwVL1MQclbocVH1VvzRhJt4a1YaVgi411yimiqnFyWEied0JstVN6MU9JZN5KFFdJFHB2BPS_90nxFUOm_bDjFOZtz0WJddW419AOzAGGrhn-ZRhRtQYTO2kx2XHqyQI3uDha_5BIb2PaXd1ckDUHH6xxDWSg8nFLUoCECNGTAJBZo7oMtQVm\x26sig\x3dCg0ArKJSzKVwf_sdMxTvEAE\x26urlfix\x3d1\x26adurl\x3d")</script><script type="text/javascript">
+    var sitePath="/23171577/expedia.us_en/packages/results/CM1";
+    var clickThroughUrl = "https://www.expedia.com/New-York-Hotels-Hotel-Pennsylvania.h12887.Hotel-Information"
+    var site=["expedia.us_en","hotels.us_en","travelocity.us_en","hotwire.us_en","orbitz.us_en","cheaptickets.us_en","","","","","","","","",""];
+    var url=["https://www.expedia.com/New-York-Hotels-Hotel-Pennsylvania.h12887.Hotel-Information","https://www.hotels.com/ho142043/hotel-pennsylvania-new-york-united-states-of-america/","https://www.travelocity.com/New-York-Hotels-Hotel-Pennsylvania.h12887.Hotel-Information","https://www.hotwire.com/New-York-Hotels-Hotel-Pennsylvania.h12887.Hotel-Information","https://www.orbitz.com/New-York-Hotels-Hotel-Pennsylvania.h12887.Hotel-Information","https://www.cheaptickets.com/New-York-Hotels-Hotel-Pennsylvania.h12887.Hotel-Information","","","","","","","","",""];
+    for(var i=0; i<15; i++) {
+        if(site[i] !== "") {
+            var regex = new RegExp(site[i]);
+            if(regex.test(sitePath))
+            {
+                clickThroughUrl = url[i];
+                break;
             }
-            relegateNavigation = eventData.relegateNavigation;
-          }
-        };
-
-        if (open.call) {
-          window.open = function(open) {
-            return function(url, name, features) {
-              if (relegateNavigation === 'parent') {
-                var message = {'clickTag': url, 'isPostClickTag': true};
-                parent.postMessage(JSON.stringify(message), '*');
-              } else {
-                var args = [url, name];
-                if (features) {
-                  args.push(features);
-                }
-                open.apply(window, args);
-              }
-            };
-          }(window.open);
         }
+    }
 
-        if (window.addEventListener) {
-          window.addEventListener(
-              'message', handleClickTagMessage, false);
-        } else {
-          window.attachEvent('onmessage', handleClickTagMessage);
-        }
-      })();
-    
-  </script></head>
-	<body>
-		<div id="Ad" style="cursor: pointer; opacity: 1;" onclick="javascript:window.open(window.clickTag)">
-				<div class="Ad_Img" id="Ad_logo"></div>
-				<div id="Ad_photo"></div>
-				<div id="cta">
-					<div id="Ad_button"><span class="button">Book Now</span></div>
-					<div id="Ad_fine">at affinia.com</div>
-				</div>	
-				<div id="Ad_text" style="opacity: 0.308;"><p style="font-weight:400;">Kick back and stay a while.</p><p style="font-size:10px; letter-spacing: 0.8px; text-align:right;"><b style="font-size:17px;letter-spacing:-1px; line-height:12px">UP TO 30% OFF</b><br>AND MORE</p></div>
-                <div id="Ad_photo2" style="opacity: 0;"></div>
-		</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-<script type="text/javascript">
-		(function(){
-			var tl1 = new TimelineMax();
-			tl1.to('#Ad', 1, { opacity:1 })
-			.from('#Ad_photo' + '#Ad_logo' + '#cta', 1, { opacity:1, ease: Power0.easeOut }, '-=.5')
-			.from('#Ad_text', 2, { opacity:0, ease: Power0.easeOut }, '-=-.5')
-			.from('#Ad_photo2', 2, { opacity:0, ease: Power0.easeOut }, '-=-.75');	
-		}());
-</script>
-	
+var conversionClickTrackingURL =  "";
+var advertiserClickTrackingURL = "" ;
+
+if(advertiserClickTrackingURL !== undefined && advertiserClickTrackingURL.indexOf("_topargetURL%") > 0) {
+clickThroughUrl = advertiserClickTrackingURL.replace("_topargetURL%", clickThroughUrl);
+}
+if(conversionClickTrackingURL !== undefined && conversionClickTrackingURL.indexOf("_topargetURL%") > 0) {
+clickThroughUrl = conversionClickTrackingURL.replace("_topargetURL%", clickThroughUrl );
+}
+
+    var linkCode = '<a href="https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjsvQue94r9AoZ3vHaLz7yWD1vsw-c3yGbYufw8bbzah4NudIhYqg05PjwqLMZuznqBA8hnd0SES3OGtt5ZaypK0ga-VRbMTyLfp8ogIupb2UB7Qpl_pFxPwYWkz-41h-XwZEl80AW8fVybwwbYb2qk0skg8NHix8YpifW01PFdHhfjK0PVDqGtcbCe6xWinBqYOefIOk1b2TXRQazjZgEY7oMcVJ2j6vz4FERzo3umV7GPlcwWeZhc3mbhadn1FB8qbmJz5-EkH6BV2v3L-CVXF5%2526sig%253DCg0ArKJSzDhosaAwQEG-EAE%2526urlfix%253D1%2526adurl%253D' + clickThroughUrl + '" target="_top"><img width="728" height="90" border="0" src="https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKDrte688QEQARgBMghisvTlpCsuwQ"></a>';
+    document.write(linkCode);
+</script><a href="https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjsvQue94r9AoZ3vHaLz7yWD1vsw-c3yGbYufw8bbzah4NudIhYqg05PjwqLMZuznqBA8hnd0SES3OGtt5ZaypK0ga-VRbMTyLfp8ogIupb2UB7Qpl_pFxPwYWkz-41h-XwZEl80AW8fVybwwbYb2qk0skg8NHix8YpifW01PFdHhfjK0PVDqGtcbCe6xWinBqYOefIOk1b2TXRQazjZgEY7oMcVJ2j6vz4FERzo3umV7GPlcwWeZhc3mbhadn1FB8qbmJz5-EkH6BV2v3L-CVXF5%2526sig%253DCg0ArKJSzDhosaAwQEG-EAE%2526urlfix%253D1%2526adurl%253Dhttps://www.expedia.com/New-York-Hotels-Hotel-Pennsylvania.h12887.Hotel-Information" target="_top"><img width="728" height="90" border="0" src="https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKDrte688QEQARgBMghisvTlpCsuwQ"></a>
+<noscript>&lt;a href="https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjsvQue94r9AoZ3vHaLz7yWD1vsw-c3yGbYufw8bbzah4NudIhYqg05PjwqLMZuznqBA8hnd0SES3OGtt5ZaypK0ga-VRbMTyLfp8ogIupb2UB7Qpl_pFxPwYWkz-41h-XwZEl80AW8fVybwwbYb2qk0skg8NHix8YpifW01PFdHhfjK0PVDqGtcbCe6xWinBqYOefIOk1b2TXRQazjZgEY7oMcVJ2j6vz4FERzo3umV7GPlcwWeZhc3mbhadn1FB8qbmJz5-EkH6BV2v3L-CVXF5%2526sig%253DCg0ArKJSzDhosaAwQEG-EAE%2526urlfix%253D1%2526adurl%253Dhttps://www.expedia.com/New-York-Hotels-Hotel-Pennsylvania.h12887.Hotel-Information" target="_top"&gt;&lt;img width="728" height="90" border="0" src="https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKDrte688QEQARgBMghisvTlpCsuwQ"&gt;&lt;/a&gt;</noscript>
+<div style="position:absolute;top:0px;right:0px;width:1px;height:1px;visibility:hidden;border:none;"><script type="text/javascript">
+var trackingPixel="";if(trackingPixel.indexOf("http")==0)document.write('<iframe src="'+trackingPixel+'" height="1" width="1" style="width:1px !important;height 1px !important"></iframe>');
+var trackingPixel="";if(trackingPixel.indexOf("http")==0)document.write('<iframe src="'+trackingPixel+'" height="1" width="1" style="width:1px !important;height 1px !important"></iframe>');
+if("".indexOf("http")==0)document.write('<script type="text/javascript" src=""></scr'+'ipt>');
+if("none" && "none" !== "none")document.write('<script type="text/javascript" src="https://c.betrad.com/durly.js#;ad_w=728;ad_h=90;coid=510;nid=7888;position=none"></scr'+'ipt>');
+</script></div>
+<script src="https://tpc.googlesyndication.com/pagead/js/r20180214/r20110914/activeview/osd_listener.js"></script><script type="text/javascript">osdlfm(-1,'','BqQHwqNWJWtjLDMeTkwOU-5cIAAAAABABOAHIAQnAAgLgAgDgBAGgBh_SCAUIgGEQAQ','',95414731,true,'ud\x3d1\x26la\x3d0\x26alp\x3dxai\x26alh\x3d2037259798\x26',3,'CAASEuRoLl4-TIumYDouEkMZXQmJ9Q','https://pagead2.googlesyndication.com/pcs/activeview?xai\x3dAKAOjsuvJGknZSDBeseLe4-U1PChAPqm9LGcWbC__zBJYmdJHZ0MnCO2ihTmfkSu26Ad0cLku002VHbn7lVo7346HN_xtzbgE6w-cOc\x26sig\x3dCg0ArKJSzDOYlphwAOCzEAE');</script><script>if (window.top && window.top.postMessage) {window.top.postMessage('{"googMsgType":"adpnt"}','*');}</script>
 </body></html>
