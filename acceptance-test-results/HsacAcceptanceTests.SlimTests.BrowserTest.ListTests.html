@@ -23,6 +23,20 @@
     &lt;li&gt;8th&lt;/li&gt;
     &lt;li&gt;&lt;span&gt;9th&lt;/span&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;ol id="multiline"&gt;
+    &lt;li&gt;&lt;span&gt; 10&lt;/span&gt;&lt;span&gt;th &lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;&lt;i&gt;&lt;/i&gt;
+            &lt;span&gt;11&lt;/span&gt;&lt;i&gt;&lt;/i&gt;
+            &lt;span&gt;th&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;&lt;span&gt;12&lt;/span&gt;&lt;br/&gt;th&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;br/&gt;&lt;span&gt;&amp;euro;&amp;nbsp;13&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span&gt;--&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div&gt;
+        &lt;span&gt;&amp;euro;&amp;nbsp;14&lt;/span&gt;,&lt;span&gt;-- &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;
 &lt;label for="s"&gt;Option to&amp;nbsp;choose&lt;/label&gt;
 &lt;select id="s"&gt;
     &lt;option value="1"&gt;Option 1&lt;/option&gt;
@@ -71,6 +85,20 @@
     &lt;li&gt;7th&lt;/li&gt;
     &lt;li&gt;8th&lt;/li&gt;
     &lt;li&gt;&lt;span&gt;9th&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol id="multiline"&gt;
+    &lt;li&gt;&lt;span&gt; 10&lt;/span&gt;&lt;span&gt;th &lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;&lt;i&gt;&lt;/i&gt;
+            &lt;span&gt;11&lt;/span&gt;&lt;i&gt;&lt;/i&gt;
+            &lt;span&gt;th&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;&lt;span&gt;12&lt;/span&gt;&lt;br/&gt;th&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;br/&gt;&lt;span&gt;&amp;euro;&amp;nbsp;13&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span&gt;--&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div&gt;
+        &lt;span&gt;&amp;euro;&amp;nbsp;14&lt;/span&gt;,&lt;span&gt;-- &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
 &lt;/ol&gt;
 &lt;label for="s"&gt;Option to&amp;nbsp;choose&lt;/label&gt;
 &lt;select id="s"&gt;
@@ -163,6 +191,62 @@
 		<td>$available&lt;-[<ol start="0"><li>Option 1</li><li>Option 3</li><li>Option 4</li></ol>]</td>
 		<td colspan="3">copy list</td>
 	</tr>
+	<tr class="slimRowColor7">
+		<td colspan="4">reset</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>add</td>
+		<td colspan="3">10th</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>add</td>
+		<td colspan="3">11 th</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>add</td>
+		<td colspan="3">12
+th</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>add</td>
+		<td colspan="3">€ 13,--</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>add</td>
+		<td colspan="3">€ 14,--</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$multiline&lt;-[<ol start="0"><li>10th</li><li>11 th</li><li>12
+th</li><li>€ 13,--</li><li>€ 14,--</li></ol>]</td>
+		<td colspan="3">copy list</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td colspan="4">reset</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>add</td>
+		<td colspan="3">10th</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>add</td>
+		<td colspan="3">11 th</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>add</td>
+		<td colspan="3">12 th</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>add</td>
+		<td colspan="3">€ 13,--</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>add</td>
+		<td colspan="3">€ 14,--</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$multiline2&lt;-[<ol start="0"><li>10th</li><li>11 th</li><li>12 th</li><li>€ 13,--</li><li>€ 14,--</li></ol>]</td>
+		<td colspan="3">copy list</td>
+	</tr>
 </table>
 <br/><table>
 	<tr class="slimRowTitle">
@@ -176,6 +260,19 @@
 	<tr class="slimRowColor7">
 		<td>seconds before timeout</td>
 		<td colspan="3">1</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>values of</td>
+		<td>id=multiline</td>
+		<td><span class="pass">$multiline-&gt;[<ol start="0"><li>10th</li><li>11 th</li><li>12
+th</li><li>€ 13,--</li><li>€ 14,--</li></ol>]</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>normalized values of</td>
+		<td>id=multiline</td>
+		<td><span class="pass">$multiline2-&gt;[<ol start="0"><li>10th</li><li>11 th</li><li>12 th</li><li>€ 13,--</li><li>€ 14,--</li></ol>]</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
