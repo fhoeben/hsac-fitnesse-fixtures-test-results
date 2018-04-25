@@ -1,0 +1,155 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta charset="utf-8">
+	<meta name="unit-size" content="width=300,height=250">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>State Farm YRYS 300x250</title>
+	
+	<!-- Fonts Included-->
+	
+		<!--
+			E.g. -> <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
+		-->
+		
+	<!-- End Fonts Included-->
+	<link rel="stylesheet" href="styles/style.css">
+	
+	<!-- Scripts Included-->
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	
+    <script type="text/javascript" id="EnablerJS" class="dcjs" src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+    
+	<script type="text/javascript" src="scripts/platform.js"></script>
+    
+	<!-- End Scripts Included-->
+	<script type="text/javascript">
+		var clickTag = "";
+	</script>
+	
+	
+	<script type="text/javascript">
+		
+		$(document).dispatch({	
+			//	Options are at the moment "DC" -> DoubleClick , "SK" -> Sizmek , "FT" -> FlashTalking , "" -> None		
+			$platform:"DC", 
+
+			//	If Platform is Doubleclick, Options are at the moment true -> Unit IS Going through DC Studio, false -> Unit Not DC Studio Unit	
+			$isDCS:false,
+
+			//	Option to Load External Animation Library or Not (Greensock {0 - None, 1 - "Max", or 2 - "Lite"}).  If None Chosen, will default to not loading the Tweening Engine.
+			//	The loaded URI is the CDN endpoint to the latest version of GS.
+			$loadGS: 1,
+
+			//	Select If the Unit is Dynamic or Static (Now ONLY Supports FlashTalking)
+			$dataType: "Static",
+
+			//	Select If the Unit Standard Display or Rich Media Unit ({ST - Standard, RM - Rich Media}) (Now ONLY Supports FlashTalking)
+			$unitType: "ST",
+
+			//	Size ([Width, Height]) of the collapsed state of the unit *If Not Rich, this is consists of the dimensions of the unit*
+			$size:	[300, 250],
+
+			//	The border color of the unit (If None Given in Options, will Default to Black
+			$borderColor: "#000",
+
+			//	The font included within the Unit (Especially Needed if Dynamic(Instant) Unit
+			$font: "'Arial', sans-serif",
+
+			//	Does the Unit have "Replay" Functionality
+			$replay: false
+		});
+		
+	</script>
+    
+<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script><script type="text/javascript" class="dcjs">var clicktag = "";</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" id="GsJS" class="anjs"></script></head>
+
+<body style="width: 300px; height: 250px; display: block;">
+
+	<script src="scripts/script.js"></script>
+	
+	<div id="unit-container" style="width: 298px; height: 248px; font-family: Arial, sans-serif; border: 1px solid rgb(0, 0, 0); opacity: 1;">
+		<div id="main-panel" style="width: 298px; height: 248px;">
+		
+			<!-- ************* Custom Code Here ************* -->
+			
+			<div id="logo" class="free nopoint">
+				<svg id="sf-white" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134.56 18.69"><defs><style>.cls-1{fill:#fff;}</style></defs><title>sf-white</title><path class="cls-1" d="M331,236.8l0-.06,0,.06a5,5,0,0,0-2.69-.69,5.68,5.68,0,0,0-4.87,2.65,9.82,9.82,0,0,0-1.54,5.34,5.85,5.85,0,0,0,1,3.58c.39.53,1.33,1.8,4.36,1.8a6.52,6.52,0,0,0,3.64-.86l.09-.12c.11-.46.46-2.56.61-3.09l-.11-.08a5.79,5.79,0,0,1-3.55,1.46,2.93,2.93,0,0,1-2-.61,2.22,2.22,0,0,1-.68-1.74c0-.27,0-.51,0-.79v-.06h.06c2.06-.05,3.11-.08,4.84-.08h2l.13-.1a13,13,0,0,0,.36-2.84A4.25,4.25,0,0,0,331,236.8m-1.37,4.38v.06l-2,0-2,0v-.1c0-.14.09-.29.14-.45a4.09,4.09,0,0,1,.68-1.35,2.49,2.49,0,0,1,1.78-1,1.46,1.46,0,0,1,1.18.53l.11.18a1.86,1.86,0,0,1,.23.7,2.62,2.62,0,0,1,0,.28A5.9,5.9,0,0,1,329.62,241.18Zm-7.84-2.27-.14.13-2,0-.92,4.34a18.63,18.63,0,0,0-.41,2.34,1,1,0,0,0,.37.85,1.13,1.13,0,0,0,.72.22,2.4,2.4,0,0,0,1.11-.29l.07.06-.49,2.5-.17.16a8.61,8.61,0,0,1-1.9.26c-1.85,0-3.19-.63-3.2-2.78a25.77,25.77,0,0,1,.71-4.22l.74-3.44-1.56,0-.1-.13.46-2.43.14-.08h1.59l.63-3.19.13-.14c1.59-.41,2-.6,3.49-1.08l.08.08-.48,2.06-.5,2.32,2-.06.05.11Zm24.53-4.1-.11.12H341l-.85,4.38,4.59-.14.07.11c-.38,1.26-.47,1.62-.72,2.72l-.12.11h-4.37l-.57,3-.73,3.94-.09.09-3.77.1,0-.1.65-3.36,1-4.74c.75-3.68,1-4.86,1.68-8.88l.11-.11h5.5l3.49-.09.07.09Zm7.42,2.13a6.26,6.26,0,0,0-3.5-.77,12.78,12.78,0,0,0-2.38.22c-.72.14-1.16.26-1.54.36l-.1.11-.52,2.65.17.11a14.1,14.1,0,0,1,1.46-.57,5.35,5.35,0,0,1,1.82-.35A4,4,0,0,1,351,239a1.49,1.49,0,0,1,.74,1.3c0,.13,0,.25,0,.36a.85.85,0,0,0,0,.22V241l-.54,0-.68.08c-.44,0-.94.1-1.38.18-1,.17-4,.64-4.91,2.63a4.5,4.5,0,0,0,.14,4.84,2.63,2.63,0,0,0,1.48.85h0l.16,0a5.26,5.26,0,0,0,4.4-1.85l-.27,1.38.11.1,2.89-.1.12-.1,1.69-8.53a4.76,4.76,0,0,0,.09-.63c0-.25,0-.45,0-.59A2.79,2.79,0,0,0,353.73,236.94Zm-3,8.53a4.18,4.18,0,0,1-1.69,1.47,1.66,1.66,0,0,1-2-.3,1.82,1.82,0,0,1,.19-2.33c.91-1.08,3.92-1.15,3.92-1.15Zm14-9.48-.71,3.67-.15.15a3.86,3.86,0,0,0-.76-.07,4.11,4.11,0,0,0-3.36,1.71h0l-1.45,7.61-.11.09-3.17.1-.08-.08,2.49-12.78.14-.13,3.14-.31.12.14-.36,1.85.15-.14a10.16,10.16,0,0,1,1.89-1.38,3.83,3.83,0,0,1,1.93-.55h.2Zm17,3.22a11.32,11.32,0,0,1-.35,2.35l-1.47,7.51-.11.09-3.32.12-.08-.12s1.7-8.3,1.7-8.71a1.29,1.29,0,0,0-1.25-1.38,3,3,0,0,0-1.69.84l-1.79,9.16-.11.09-1.43.05-1.28,0-.63,0,0-.05,0-.07s.26-1.26.57-2.82h0c.49-2.45,1.12-5.64,1.12-5.89a1.29,1.29,0,0,0-1.25-1.38,3,3,0,0,0-1.69.84l-1.79,9.16-.11.09-.51,0-2.83.1-.07-.12,2.49-12.76.12-.12,3.31-.32.13.14-.35,1.79a5.76,5.76,0,0,1,3.63-1.78,2.31,2.31,0,0,1,2.3,1.78s1.89-1.83,3.9-1.78A2.77,2.77,0,0,1,381.72,239.21Zm-69.24-2.27a6.22,6.22,0,0,0-3.49-.77,12.88,12.88,0,0,0-2.39.22c-.71.14-1.16.26-1.54.36l-.1.11-.52,2.65.17.11a13.56,13.56,0,0,1,1.47-.57,5.3,5.3,0,0,1,1.81-.35,4,4,0,0,1,1.83.33,1.48,1.48,0,0,1,.73,1.3,2,2,0,0,1,0,.36c0,.1,0,.18,0,.22V241l-.53,0-.68.08c-.44,0-.94.1-1.38.18-1.06.17-4,.64-4.92,2.63a4.51,4.51,0,0,0,.15,4.84,2.59,2.59,0,0,0,1.48.85h0l.15,0a5.27,5.27,0,0,0,4.41-1.85l-.28,1.38.12.1,2.88-.1.12-.1,1.7-8.53q0-.27.09-.63c0-.25,0-.45,0-.59A2.8,2.8,0,0,0,312.48,236.94Zm-3,8.53a4.19,4.19,0,0,1-1.68,1.47,1.67,1.67,0,0,1-2-.3,1.82,1.82,0,0,1,.2-2.33c.91-1.08,3.92-1.15,3.92-1.15Zm-6.95-6.56-.14.13-2,0-.92,4.34a17,17,0,0,0-.41,2.34,1,1,0,0,0,.37.85,1.12,1.12,0,0,0,.71.22,2.45,2.45,0,0,0,1.12-.29l.07.06-.49,2.5-.17.16a8.62,8.62,0,0,1-1.91.26c-1.84,0-3.18-.63-3.19-2.78a25.77,25.77,0,0,1,.71-4.22l.74-3.44-1.57,0-.09-.13.46-2.43.14-.08h1.58l.64-3.19.12-.14c1.59-.41,2.05-.6,3.5-1.08l.07.08-.48,2.06-.49,2.32,2-.06.06.11Zm-7.47-5.9-.61,3.12-.13,0a2.77,2.77,0,0,0-.72-.73,4.15,4.15,0,0,0-2.52-.9,2.48,2.48,0,0,0-1.7.59,1.94,1.94,0,0,0-.64,1.46c0,1.1.75,1.64,2.09,2.44l.52.29c1.11.74,2.85,1.86,2.85,4.42,0,2.9-1.86,5.81-6.32,5.82a9.2,9.2,0,0,1-3.2-.58,5.5,5.5,0,0,1-1.45-.81l0-.2.59-3,.13,0a4.34,4.34,0,0,0,1.11,1,4.65,4.65,0,0,0,2.55.8c1.57,0,2.81-.91,2.81-2.3s-1-1.88-2-2.49l-.72-.44c-1.12-.73-2.68-1.73-2.68-4.24a6,6,0,0,1,1.13-3.47,5.61,5.61,0,0,1,4.67-2,7.3,7.3,0,0,1,4.23,1.21Zm-32.26,5.48a7,7,0,0,0,3.61.92,7.08,7.08,0,0,0,3.62-.92,2.63,2.63,0,0,0,1.47-2.1,2.6,2.6,0,0,0-1.46-2.09,7.71,7.71,0,0,0-7.23,0,2.24,2.24,0,0,0,0,4.19Zm.23,4.31a7.71,7.71,0,0,0-7.23,0,2.56,2.56,0,0,0-1.44,2.08,2.61,2.61,0,0,0,1.43,2.11,7,7,0,0,0,3.61.91,7.09,7.09,0,0,0,3.63-.91,2.63,2.63,0,0,0,1.46-2.1A2.56,2.56,0,0,0,263.06,242.8Zm14,0a7.71,7.71,0,0,0-7.23,0,2.56,2.56,0,0,0-1.44,2.09,2.6,2.6,0,0,0,1.44,2.1,6.92,6.92,0,0,0,3.6.91A7.09,7.09,0,0,0,277,247a2.6,2.6,0,0,0,1.46-2.1A2.56,2.56,0,0,0,277,242.8Zm-3.64-3a10.29,10.29,0,0,0-1.86.17,4.47,4.47,0,0,0,2.09-3.6c0-2.82-3.2-5.07-7.19-5.07s-7.16,2.25-7.16,5.07a4.53,4.53,0,0,0,2.07,3.61,9.69,9.69,0,0,0-1.89-.18c-4,0-7.16,2.25-7.16,5.07s3.16,5.12,7.14,5.12c3.39,0,6.23-1.66,7-3.9.75,2.24,3.55,3.9,6.94,3.9,4,0,7.21-2.3,7.21-5.12S277.39,239.81,273.4,239.81Zm-12.82-3.43a3.28,3.28,0,0,1,1.54-2.53,7.46,7.46,0,0,1,4.32-1.24,7.66,7.66,0,0,1,4.35,1.24,3.29,3.29,0,0,1,1.55,2.53c0,2.12-2.74,3.81-5.91,3.82a7.44,7.44,0,0,1-4.31-1.26A3.24,3.24,0,0,1,260.58,236.38Zm-1.14,12.32a7.46,7.46,0,0,1-4.31-1.26,2.88,2.88,0,0,1,0-5.09,8.2,8.2,0,0,1,8.67,0,3.31,3.31,0,0,1,1.56,2.53C265.34,247,262.61,248.69,259.44,248.7Zm7-5a4.91,4.91,0,0,0-1.84-2.34,9.67,9.67,0,0,0,1.81.17,10.31,10.31,0,0,0,1.87-.18A4.88,4.88,0,0,0,266.45,243.67Zm6.94,5a7.44,7.44,0,0,1-4.31-1.26,3.24,3.24,0,0,1-1.54-2.56,3.31,3.31,0,0,1,1.54-2.53,7.54,7.54,0,0,1,4.32-1.24,7.66,7.66,0,0,1,4.35,1.24,3.3,3.3,0,0,1,1.55,2.53C279.28,247,276.56,248.69,273.39,248.7Z" transform="translate(-252.3 -231.31)"></path><path class="cls-1" d="M386.86,238.09a1.88,1.88,0,1,1-1.87-2,1.9,1.9,0,0,1,1.87,2m-3.52,0a1.64,1.64,0,1,0,3.27,0,1.86,1.86,0,0,0-.46-1.24,1.67,1.67,0,0,0-1.15-.49A1.65,1.65,0,0,0,383.34,238.08Zm1.55-1.12a1.43,1.43,0,0,1,.48.06.58.58,0,0,1,.39.56.59.59,0,0,1-.44.57l.46,1.07h-.32l-.42-1h-.47v1h-.28V237Zm0,1c.28,0,.39,0,.47-.09a.35.35,0,0,0,.14-.3.32.32,0,0,0-.21-.33,1.45,1.45,0,0,0-.45,0h-.25V238Z" transform="translate(-252.3 -231.31)"></path></svg>
+			</div>
+			
+			<div id="cta" class="free nopoint"></div>
+			
+			<div id="copy-hold" class="free nopoint">
+				<span id="copy1" class="copy bold"></span>
+				<span id="inner">
+					<span id="blank" style="width: 131px;"></span>
+					<span id="blank-fill" class="free" style="top: 19px; opacity: 1;"><img id="img_1" class="imgCopy" alt="copy block" src="images/c2b.png"></span>
+				</span>
+				<span id="copy2" class="copy bold"></span>
+			</div>
+			<div id="copy3" class="copy bold free">
+				<span id="blank2" class="free"></span>
+				<span id="c3l" class="free"></span>
+			</div>
+			<!-- Custom Code Here -->
+		
+		</div>	
+    </div>
+ 
+ 	<!-- External URLs Repo -->    
+	<!--    
+		<script class="extHC" type="text/javascript" src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+		<script class="extHC" type="text/javascript" src="https://secure-ds.serving-sys.com/BurstingScript/EBLoader.js"></script>
+		<script class="extHC" type="text/javascript" src="https://cdn.flashtalking.com/frameworks/js/api/2/9/html5API.js"></script>
+	-->
+   
+
+</body></html>
