@@ -1,1 +1,348 @@
-<html><head></head><body></body></html>
+<html><head>
+    	<meta name="ad.size" content="width=300,height=250">
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no"> 
+        <script>
+			var WIDTHS = new Object();
+            var HEIGHTS = new Object();
+			
+            WIDTHS['panel1'] = 300;
+			HEIGHTS['panel1'] = 250;
+            
+            var arrayLoadStarted= new Object();
+            var arrayLoadCompleted = new Object();
+            
+            var borderColor = "#000000";
+            
+            
+            var LOG_ALL = false;
+            var DD_LOCAL = ((window.location.href.indexOf('dragndrops.com') >=0 || window.location.href.indexOf('file:///') >=0 || window.location.href.indexOf('127.0.0.1') >=0) ? true : false);
+            var dd_loadLocation = '';
+			var animationComplete = false;
+			var animate = true;
+            var currentPanel = 'panel1';
+			var animationShouldStart = true;
+			var startTime;
+            
+            var IS_ATLAS = false;
+            var clickTag = 'http://www.google.com/';
+		</script>
+        <link rel="stylesheet" href="./style_min.css">
+		<style>
+            #legalHotspot{
+                width:50px;
+                height:30px;
+                left:auto;
+                right:0px;
+            }
+            #cta{
+                transform-origin:150px 130px;
+                -ms-transform-origin:150px 130px;
+                -webkit-transform-origin:150px 130px;
+            }
+		</style>
+	<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script><script type="text/javascript" src="CSSPlugin.min.js"></script><script type="text/javascript" src="EasePack.min.js"></script><script type="text/javascript" src="TweenLite.min.js"></script></head>
+	<body>
+		<!-- content -->
+		<div id="container">
+			<div id="media" style="visibility: visible; display: block; height: 250px; width: 300px;">
+                <a class="ad" id="container_clickthrough" href="javascript:window.open(window.clickTag); void 0;" style="position:absolute; width:100%; height:100%;"></a>
+			<div id="panel1" class="panel" style="display: block; visibility: visible;"><div id="bg" style="opacity: 1;"></div><div class="hotspot" id="clickthroughHotspot" style="cursor: pointer; visibility: visible;"></div><div class="hotspot" id="replayHotspot" style="cursor: pointer; visibility: visible;"></div><div class="hotspot" id="legalHotspot" style="cursor: pointer; visibility: hidden; display: none;"></div><img id="img1" src="JPG_Image1.jpg" style="opacity: 1; transform: translate3d(-252.381px, -387.032px, 0px) scale(0.876296, 0.876296);"><img id="logo" src="PNG_Logo.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><img id="txt1_1" src="PNG_Text1_1.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><img id="txt1_2" src="PNG_Text1_2.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><img id="resolveShadow" src="PNG_ResolveShadow.png"><img id="txt2_1" src="PNG_Text2_1.png"><img id="txt2_2" src="PNG_Text2_2.png"><img id="txt2_3" src="PNG_Text2_3.png"><img id="txt2_4" src="PNG_Text2_4.png"><img id="txt3_1" src="PNG_Text3_1.png"><img id="txt3_2" src="PNG_Text3_2.png"><img id="cta" src="PNG_CTA.png"><img id="ctaO" src="PNG_CTAOver.png"><img id="replay" src="./PNG_Replay.png"><img id="legal1" src="PNG_Legal1.png"><img id="legal2" src="PNG_Legal2.png"></div><canvas id="border" height="250" width="300" style="opacity: 1;"></canvas></div>
+		</div>
+        <script>
+            function initAd(){
+                dd_log('loading libraries');
+                loadLibraries();
+                if(DD_LOCAL){PREVENT_MENU=false;}
+            }
+        </script>
+        <!--script src="https://s0.2mdn.net/ads/studio/Enabler.js"> </script-->
+        <!--script src="./DFA.js"> </script-->
+        <script type="text/javascript" src="./dd_helpers_min.js"></script>
+		<script>
+			var frame = [];
+			var panel1Elements = [];
+			var panel1Subload1 = [];
+			
+			function defineAssets(){
+				panel1Elements = [];
+                
+				panel1Elements.push(createNewElement('div', 'bg'));
+                panel1Elements.push(createNewElement('div', 'clickthroughHotspot', 'hotspot'));
+				panel1Elements.push(createNewElement('div', 'replayHotspot', 'hotspot'));
+                panel1Elements.push(createNewElement('div', 'legalHotspot', 'hotspot'));
+                panel1Elements.push(createNewElement('img', 'img1', 'JPG_Image1.jpg'));
+                panel1Elements.push(createNewElement('img', 'logo', 'PNG_Logo.png'));
+                panel1Elements.push(createNewElement('img', 'txt1_1', 'PNG_Text1_1.png'));
+                panel1Elements.push(createNewElement('img', 'txt1_2', 'PNG_Text1_2.png'));
+                
+                panel1Subload1.push(createNewElement('img', 'resolveShadow', 'PNG_ResolveShadow.png'));
+                panel1Subload1.push(createNewElement('img', 'txt2_1', 'PNG_Text2_1.png'));
+                panel1Subload1.push(createNewElement('img', 'txt2_2', 'PNG_Text2_2.png'));
+                panel1Subload1.push(createNewElement('img', 'txt2_3', 'PNG_Text2_3.png'));
+                panel1Subload1.push(createNewElement('img', 'txt2_4', 'PNG_Text2_4.png'));
+                panel1Subload1.push(createNewElement('img', 'txt3_1', 'PNG_Text3_1.png'));
+                panel1Subload1.push(createNewElement('img', 'txt3_2', 'PNG_Text3_2.png'));
+                panel1Subload1.push(createNewElement('img', 'cta', 'PNG_CTA.png'));
+                panel1Subload1.push(createNewElement('img', 'ctaO', 'PNG_CTAOver.png'));
+                panel1Subload1.push(createNewElement('img', 'replay', './PNG_Replay.png'));
+                panel1Subload1.push(createNewElement('img', 'legal1', 'PNG_Legal1.png'));
+                panel1Subload1.push(createNewElement('img', 'legal2', 'PNG_Legal2.png'));
+			}
+            
+            var playDelay = .2;
+            
+            function play(p){
+                var frame = [];
+                var currentFrame = 0;
+                animationComplete=false;
+				startTime = new Date().getTime();
+                
+                if(p == 'panel1'){
+                    frame.push(function() {
+                        //dd_log(currentFrame);
+                        createBorder();
+                        TweenLite.set('#legalHotspot', {display:'none', visibility:'hidden'});
+
+                        beginSubload('panel1', 1);
+                        TweenLite.fromTo(['#bg', '#border'], .5, {opacity:0}, {opacity:1});
+                        TweenLite.fromTo(['#txt1_1', '#txt1_2'], .6, {opacity:0, x:0}, {opacity:1});
+                        TweenLite.fromTo(['#img1'], .6, {opacity:0, scale:1, x:-253, y:-461}, {opacity:1});
+                        TweenLite.fromTo(['#logo'], .3, {opacity:0, y:0}, {y:0, opacity:1, ease:Power2.easeOut});
+                        TweenLite.to(['#img1'], 11.5, {delay:.5, scale:.4, x:-250, ease:Linear.easeNone});
+                        TweenLite.to(['#img1'], 11.5, {delay:.5, y:-261, ease:Power1.easeOut});
+                        
+                        if(frame[++currentFrame])TweenLite.delayedCall(3, frame[currentFrame]);
+                    });
+                    frame.push(function() {
+                        //dd_log(currentFrame);
+                        if(arrayLoadCompleted['panel1Subload1']){
+                            TweenLite.to('#txt1_1', .6, {opacity:0, y:-20, ease:Power2.easeOut});
+                            TweenLite.to('#txt1_2', .6, {opacity:0, y:-20, ease:Power2.easeOut, delay:.1});
+                            TweenLite.fromTo('#txt2_1', .6, {opacity:0, y:20}, {y:0, opacity:1, ease:Power2.easeOut, delay:.2});
+                            TweenLite.fromTo('#txt2_2', .6, {opacity:0, y:20}, {y:0, opacity:1, ease:Power2.easeOut, delay:1});
+                            if(frame[++currentFrame])TweenLite.delayedCall(3.25, frame[currentFrame]);
+                        }else{
+                            TweenLite.delayedCall(.1, frame[currentFrame]);
+                        }
+                    });
+                    frame.push(function() {
+                        //dd_log(currentFrame);
+                        if(arrayLoadCompleted['panel1Subload1']){
+                            TweenLite.to('#txt2_1', .6, {opacity:0, y:-20, ease:Power2.easeOut});
+                            TweenLite.to('#txt2_2', .6, {opacity:0, y:-20, ease:Power2.easeOut});
+                            TweenLite.fromTo('#txt2_3', .6, {opacity:0, y:20}, {y:0, opacity:1, ease:Power2.easeOut, delay:.2});
+                            if(frame[++currentFrame])TweenLite.delayedCall(2.2, frame[currentFrame]);
+                        }else{
+                            TweenLite.delayedCall(.1, frame[currentFrame]);
+                        }
+                    });
+                    frame.push(function() {
+                        //dd_log(currentFrame);
+                        if(arrayLoadCompleted['panel1Subload1']){
+                            TweenLite.to('#txt2_3', .6, {opacity:0, y:-20, ease:Power2.easeOut});
+                            TweenLite.fromTo('#txt2_4', .6, {opacity:0, y:20}, {y:0, opacity:1, ease:Power2.easeOut, delay:.2});
+                            if(frame[++currentFrame])TweenLite.delayedCall(2.2, frame[currentFrame]);
+                        }else{
+                            TweenLite.delayedCall(.1, frame[currentFrame]);
+                        }
+                    });
+                    frame.push(function() {
+                        //dd_log(currentFrame);
+                        if(arrayLoadCompleted['panel1Subload1']){
+                            TweenLite.to(['#img1'], 2, {scale:.4, x:-250, y:-261, overwrite:true, ease:Power1.easeOut});
+                            TweenLite.fromTo('#resolveShadow', 2, {opacity:0}, {opacity:1, ease:Power1.easeInOut});
+                            TweenLite.to('#txt2_1', .6, {opacity:0, y:-20, ease:Power2.easeOut});
+                            TweenLite.to('#txt2_4', .6, {opacity:0, y:-20, ease:Power2.easeOut, delay:.1});
+                            TweenLite.fromTo('#txt3_1', .6, {opacity:0, y:20}, {y:0, opacity:1, ease:Power2.easeOut, delay:.2});
+                            TweenLite.fromTo('#txt3_2', .6, {opacity:0, y:20}, {y:0, opacity:1, ease:Power2.easeOut, delay:1.6});
+                            
+                            TweenLite.fromTo('#legal1', .8, {opacity:1, y:-50}, {y:0, ease:Power2.easeOut, delay:1.8, onComplete:function(){
+                                TweenLite.set('#legalHotspot', {display:'block', visibility:'visible'});
+                            }});
+                            
+                            TweenLite.fromTo(['#cta'], .5, {opacity:1, scale:0}, {scale:1, delay:1.8, ease:Power2.easeOut, onComplete:function(){
+                                animationIsComplete();
+                            }});
+                            TweenLite.fromTo('#replay', .5, {zIndex:4, opacity:'0', left:'6px', top:'5px', width:'12px', height:'14px'},{opacity:'1', delay:1.8, onComplete:function(){
+                                rotateReplay();
+                                TweenLite.set('#replayHotspot', {visibility:'visible', display:'block', left:'0px', width:'50px', height:'50px'});
+                            }});
+                            if(frame[++currentFrame])TweenLite.delayedCall(2, frame[currentFrame]);
+                        }else{
+                            TweenLite.delayedCall(.1, frame[currentFrame]);
+                        }
+                    });
+                }else if(p == 'panel2'){
+                    frame.push(function() {
+                        //dd_log(currentFrame);
+
+                        if(frame[++currentFrame])TweenLite.delayedCall(2, frame[currentFrame]);
+                    });
+                }
+                
+				initializeHotspots();
+                
+				TweenLite.delayedCall(playDelay, frame[0]);
+                playDelay = 0;
+            }
+            
+            function rotateReplay(evt){
+				TweenLite.set('#replay', {rotation:'0'});
+				TweenLite.from('#replay', .5, {overwrite:false, rotation:'360'});
+			}
+
+			function buttonClick(evt){
+				if(evt){
+					evt.stopPropagation();
+				}
+				var t = evt.target || evt.srcElement;
+				if(t == document.getElementById('clickthroughHotspot') || t == document.getElementById('legalHotspot')){
+                    
+                    document.getElementById('container_clickthrough').click();
+                    //document.getElementById('container_clickthrough').click();
+                    //Enabler.exit('Clickthrough_Exit');
+					//Enabler.counter('Replay_Clicked', true);
+				}else if(t == document.getElementById('replayHotspot')){
+                    resetPanel('panel1');
+                    showPanel('panel1');
+                }
+			}
+			
+			function buttonOver(evt){
+				if(evt){
+					evt.stopPropagation();
+				}
+				var t = evt.target || evt.srcElement;
+				if(t == document.getElementById('clickthroughHotspot')){
+					if(animationComplete){
+                        TweenLite.to('#ctaO', .3, {opacity:1, ease:Power3.easeOut});
+					}
+				}else if(t == document.getElementById('legalHotspot')){
+					TweenLite.set('#legalHotspot', {left:'0px', width:'100%'});
+                    TweenLite.to('#legal1', .5, {y:-50, ease:Power2.easeOut});
+                    TweenLite.fromTo('#legal2', .5, {y:-70, opacity:1, zIndex:5}, {y:0, ease:Power2.easeOut});
+				}else if(t == document.getElementById('replayHotspot')){
+					rotateReplay();
+				}
+			}
+			
+			function buttonOut(evt){
+				if(evt){
+					evt.stopPropagation();
+				}
+				var t = evt.target || evt.srcElement;
+				if(t == document.getElementById('clickthroughHotspot')){
+					if(animationComplete){
+                        TweenLite.to('#ctaO', .2, {opacity:0, ease:Power1.easeIn});
+					}
+				}else if(t == document.getElementById('legalHotspot')){
+					TweenLite.set('#legalHotspot', {left:'auto', width:'50px'});
+                    TweenLite.to('#legal1', .5, {y:0, ease:Power2.easeOut});
+                    TweenLite.to('#legal2', .5, {y:-70, ease:Power2.easeOut});
+				}
+			}
+			
+            function initializeAd(){
+                
+				defineAssets();
+				loadAssets('panel1');
+				
+				if(animate){
+					if(animationShouldStart){
+						startMedia();
+					}else{
+						var startCheck = setInterval(function(){
+							if(animationShouldStart){
+                                clearInterval(startCheck);
+                                startMedia();
+							}else{
+								//dd_log('do not start animation');
+							}
+						}, 50);
+					}
+				}
+			}
+			
+			function startMedia() {
+				if(DD_LOCAL){
+				    TweenLite.set(document.getElementsByTagName('body')[0],{'background-color':'#999999','width':WIDTHS['panel1'],'margin':'10px auto 10px auto'});
+				}
+                /*
+                if(!IS_ATLAS){
+                    var ct = document.getElementById('container_clickthrough');
+                    ct.setAttribute('href', "javascript:void(0)");
+                    ct.onclick = function(){window.open(window.clickTag)};
+                    ct.removeAttribute('target');
+                }*/
+                    
+                showPanel('panel1');
+				
+			}
+            
+            function showPanel(id){
+                var panels = document.getElementsByClassName('panel');
+                for(var i = 0; i < panels.length; i++){
+                    TweenLite.set(panels[i], {visibility:'hidden', display:'none'});
+                }
+                TweenLite.set('#'+id, {visibility:'visible', display:'block'});
+                TweenLite.set('#media', {width:WIDTHS[id], height:HEIGHTS[id], display:'block', visibility:'visible'});
+
+                currentPanel = id;
+                play(id);
+            }
+		</script>
+        <script>
+            window.onload = initAd;
+        </script>
+    
+
+</body></html>

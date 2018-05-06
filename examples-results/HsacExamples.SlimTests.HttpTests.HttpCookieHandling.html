@@ -1,12 +1,11 @@
-<html><head><title>HsacExamples.SlimTests.HttpTests.HttpCookieHandling</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.HttpTests.HttpCookieHandling</h2></header><article><br/>By default http test ignores 'Set-Cookie' headers (i.e. cookies received are not sent with subsequent requests). <br/><br/><span class="meta">variable defined: URL_THAT_SENDS_COOKIES=https://mail.live.com/default.aspx</span>
-<br/><br/><table>
+<html><head><title>HsacExamples.SlimTests.HttpTests.HttpCookieHandling</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.HttpTests.HttpCookieHandling</h2></header><article><br/>By default http test ignores 'Set-Cookie' headers (i.e. cookies received are not sent with subsequent requests).<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
 		<td colspan="3"><span class="pass">http test</span></td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">get from</span></td>
-		<td colspan="3"><a href="https://mail.live.com/default.aspx">https://mail.live.com/default.aspx</a></td>
+		<td colspan="3"><a href="https://outlook.live.com/owa/">https://outlook.live.com/owa/</a></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -35,15 +34,15 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Set-Cookie</td>
-		<td class="hash_value">[ClientId=29C0D3D6E0CB4F24BD15407591088EA7; expires=Mon, 06-May-2019 08:25:03 GMT; path=/; secure, ClientId=29C0D3D6E0CB4F24BD15407591088EA7; expires=Mon, 06-May-2019 08:25:03 GMT; path=/; secure, HostSwitchPrg=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure, OptInPrg=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure, logonLatency=LGN01=636611919030785588; domain=live.com; path=/; secure; HttpOnly, O365Consumer=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure]</td>
+		<td class="hash_value">[ClientId=6D0179DEE6144FF1AE00F8C12BCCAA29; expires=Mon, 06-May-2019 08:36:02 GMT; path=/; secure, ClientId=6D0179DEE6144FF1AE00F8C12BCCAA29; expires=Mon, 06-May-2019 08:36:02 GMT; path=/; secure, HostSwitchPrg=; expires=Fri, 06-May-1988 08:36:02 GMT; path=/; secure, OptInPrg=; expires=Fri, 06-May-1988 08:36:02 GMT; path=/; secure, logonLatency=LGN01=636611925629375201; domain=live.com; path=/; secure; HttpOnly, O365Consumer=; expires=Fri, 06-May-1988 08:36:02 GMT; path=/; secure]</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">request-id</td>
-		<td class="hash_value">4b9141fa-de8f-4df3-9962-0d88a8443ccb</td>
+		<td class="hash_value">106c9657-a641-40f0-a594-b299d29e8bf6</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-CalculatedFETarget</td>
-		<td class="hash_value">CO2PR04CU001.internal.outlook.com</td>
+		<td class="hash_value">CY1PR07CU001.internal.outlook.com</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BackEndHttpStatus</td>
@@ -51,11 +50,11 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-FEProxyInfo</td>
-		<td class="hash_value">CO2PR04CA0060.NAMPRD04.PROD.OUTLOOK.COM</td>
+		<td class="hash_value">CY1PR07CA0036.NAMPRD07.PROD.OUTLOOK.COM</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-CalculatedBETarget</td>
-		<td class="hash_value">MWHPR1201MB0173.namprd12.prod.outlook.com</td>
+		<td class="hash_value">CY4PR22MB1671.namprd22.prod.outlook.com</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-RUM-Validated</td>
@@ -71,19 +70,19 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BackEnd-Begin</td>
-		<td class="hash_value">2018-05-06T08:25:03.078</td>
+		<td class="hash_value">2018-05-06T08:36:02.937</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BackEnd-End</td>
-		<td class="hash_value">2018-05-06T08:25:03.094</td>
+		<td class="hash_value">2018-05-06T08:36:02.937</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-DiagInfo</td>
-		<td class="hash_value">MWHPR1201MB0173</td>
+		<td class="hash_value">CY4PR22MB1671</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BEServer</td>
-		<td class="hash_value">MWHPR1201MB0173</td>
+		<td class="hash_value">CY4PR22MB1671</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-UA-Compatible</td>
@@ -95,7 +94,7 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-FEServer</td>
-		<td class="hash_value">[CO2PR04CA0060, DM3PR12CA0093]</td>
+		<td class="hash_value">[CY1PR07CA0036, DM5PR2201CA0013]</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-Powered-By</td>
@@ -103,11 +102,11 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-MSEdge-Ref</td>
-		<td class="hash_value">Ref A: 684FE504CF824574BC0B3CF1FC56D4FC Ref B: CHGEDGE0618 Ref C: 2018-05-06T08:25:03Z</td>
+		<td class="hash_value">Ref A: 463B20E24CB54643BBEED223B91FAE4B Ref B: CHGEDGE0808 Ref C: 2018-05-06T08:36:02Z</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Date</td>
-		<td class="hash_value">Sun, 06 May 2018 08:25:02 GMT</td>
+		<td class="hash_value">Sun, 06 May 2018 08:36:02 GMT</td>
 	</tr>
 </table></td></tr>
 	<tr class="slimRowColor8">
@@ -117,11 +116,11 @@
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>cookie value</td>
-		<td>uaid</td>
+		<td>ClientId</td>
 		<td><span class="pass">null</span></td>
 	</tr>
 	<tr class="slimRowColor1">
-		<td>$setCookie&lt;-[[ClientId=29C0D3D6E0CB4F24BD15407591088EA7; expires=Mon, 06-May-2019 08:25:03 GMT; path=/; secure, ClientId=29C0D3D6E0CB4F24BD15407591088EA7; expires=Mon, 06-May-2019 08:25:03 GMT; path=/; secure, HostSwitchPrg=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure, OptInPrg=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure, logonLatency=LGN01=636611919030785588; domain=live.com; path=/; secure; HttpOnly, O365Consumer=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure]]</td>
+		<td>$setCookie&lt;-[[ClientId=6D0179DEE6144FF1AE00F8C12BCCAA29; expires=Mon, 06-May-2019 08:36:02 GMT; path=/; secure, ClientId=6D0179DEE6144FF1AE00F8C12BCCAA29; expires=Mon, 06-May-2019 08:36:02 GMT; path=/; secure, HostSwitchPrg=; expires=Fri, 06-May-1988 08:36:02 GMT; path=/; secure, OptInPrg=; expires=Fri, 06-May-1988 08:36:02 GMT; path=/; secure, logonLatency=LGN01=636611925629375201; domain=live.com; path=/; secure; HttpOnly, O365Consumer=; expires=Fri, 06-May-1988 08:36:02 GMT; path=/; secure]]</td>
 		<td>response header</td>
 		<td colspan="2">Set-Cookie</td>
 	</tr>
@@ -134,7 +133,7 @@
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>size of</td>
-		<td>$setCookie->[[ClientId=29C0D3D6E0CB4F24BD15407591088EA7; expires=Mon, 06-May-2019 08:25:03 GMT; path=/; secure, ClientId=29C0D3D6E0CB4F24BD15407591088EA7; expires=Mon, 06-May-2019 08:25:03 GMT; path=/; secure, HostSwitchPrg=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure, OptInPrg=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure, logonLatency=LGN01=636611919030785588; domain=live.com; path=/; secure; HttpOnly, O365Consumer=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure]]</td>
+		<td>$setCookie->[[ClientId=6D0179DEE6144FF1AE00F8C12BCCAA29; expires=Mon, 06-May-2019 08:36:02 GMT; path=/; secure, ClientId=6D0179DEE6144FF1AE00F8C12BCCAA29; expires=Mon, 06-May-2019 08:36:02 GMT; path=/; secure, HostSwitchPrg=; expires=Fri, 06-May-1988 08:36:02 GMT; path=/; secure, OptInPrg=; expires=Fri, 06-May-1988 08:36:02 GMT; path=/; secure, logonLatency=LGN01=636611925629375201; domain=live.com; path=/; secure; HttpOnly, O365Consumer=; expires=Fri, 06-May-1988 08:36:02 GMT; path=/; secure]]</td>
 		<td colspan="2"><span class="pass">6&gt;1</span></td>
 	</tr>
 	<tr class="slimRowColor9">
@@ -142,8 +141,8 @@
 		<td>value at</td>
 		<td>2</td>
 		<td>in</td>
-		<td>$setCookie->[[ClientId=29C0D3D6E0CB4F24BD15407591088EA7; expires=Mon, 06-May-2019 08:25:03 GMT; path=/; secure, ClientId=29C0D3D6E0CB4F24BD15407591088EA7; expires=Mon, 06-May-2019 08:25:03 GMT; path=/; secure, HostSwitchPrg=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure, OptInPrg=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure, logonLatency=LGN01=636611919030785588; domain=live.com; path=/; secure; HttpOnly, O365Consumer=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure]]</td>
-	<td>HostSwitchPrg=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure</td></tr>
+		<td>$setCookie->[[ClientId=6D0179DEE6144FF1AE00F8C12BCCAA29; expires=Mon, 06-May-2019 08:36:02 GMT; path=/; secure, ClientId=6D0179DEE6144FF1AE00F8C12BCCAA29; expires=Mon, 06-May-2019 08:36:02 GMT; path=/; secure, HostSwitchPrg=; expires=Fri, 06-May-1988 08:36:02 GMT; path=/; secure, OptInPrg=; expires=Fri, 06-May-1988 08:36:02 GMT; path=/; secure, logonLatency=LGN01=636611925629375201; domain=live.com; path=/; secure; HttpOnly, O365Consumer=; expires=Fri, 06-May-1988 08:36:02 GMT; path=/; secure]]</td>
+	<td>HostSwitchPrg=; expires=Fri, 06-May-1988 08:36:02 GMT; path=/; secure</td></tr>
 </table>
 <br/>By setting 'store cookies' to 'true' we can ensure cookies are stored, and sent with subsequent requests.<br/><br/><table>
 	<tr class="slimRowTitle">
@@ -156,7 +155,7 @@
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">get from</span></td>
-		<td colspan="5"><a href="https://mail.live.com/default.aspx">https://mail.live.com/default.aspx</a></td>
+		<td colspan="5"><a href="https://outlook.live.com/owa/">https://outlook.live.com/owa/</a></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -185,15 +184,15 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Set-Cookie</td>
-		<td class="hash_value">[ClientId=09D866C5CD44458182C310C6FEA4AB7B; expires=Mon, 06-May-2019 08:25:03 GMT; path=/; secure, ClientId=09D866C5CD44458182C310C6FEA4AB7B; expires=Mon, 06-May-2019 08:25:03 GMT; path=/; secure, HostSwitchPrg=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure, OptInPrg=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure, logonLatency=LGN01=636611919033445261; domain=live.com; path=/; secure; HttpOnly, O365Consumer=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure]</td>
+		<td class="hash_value">[ClientId=408938CFF1E148C7AB5125A3BA8D3035; expires=Mon, 06-May-2019 08:36:03 GMT; path=/; secure, ClientId=408938CFF1E148C7AB5125A3BA8D3035; expires=Mon, 06-May-2019 08:36:03 GMT; path=/; secure, HostSwitchPrg=; expires=Fri, 06-May-1988 08:36:03 GMT; path=/; secure, OptInPrg=; expires=Fri, 06-May-1988 08:36:03 GMT; path=/; secure, logonLatency=LGN01=636611925630590261; domain=live.com; path=/; secure; HttpOnly, O365Consumer=; expires=Fri, 06-May-1988 08:36:03 GMT; path=/; secure]</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">request-id</td>
-		<td class="hash_value">6a1be2e7-3bfd-4af5-9989-bad2118bfcca</td>
+		<td class="hash_value">9b33fade-f041-4a82-bbca-f39e7dbeeaee</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-CalculatedFETarget</td>
-		<td class="hash_value">BN3PR16CU001.internal.outlook.com</td>
+		<td class="hash_value">CY4PR0101CU001.internal.outlook.com</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BackEndHttpStatus</td>
@@ -201,11 +200,11 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-FEProxyInfo</td>
-		<td class="hash_value">BN3PR16CA0015.NAMPRD16.PROD.OUTLOOK.COM</td>
+		<td class="hash_value">CY4PR0101CA0017.PROD.EXCHANGELABS.COM</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-CalculatedBETarget</td>
-		<td class="hash_value">BN6PR21MB0691.namprd21.prod.outlook.com</td>
+		<td class="hash_value">CY4PR04MB0872.namprd04.prod.outlook.com</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-RUM-Validated</td>
@@ -221,19 +220,19 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BackEnd-Begin</td>
-		<td class="hash_value">2018-05-06T08:25:03.341</td>
+		<td class="hash_value">2018-05-06T08:36:03.059</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BackEnd-End</td>
-		<td class="hash_value">2018-05-06T08:25:03.348</td>
+		<td class="hash_value">2018-05-06T08:36:03.059</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-DiagInfo</td>
-		<td class="hash_value">BN6PR21MB0691</td>
+		<td class="hash_value">CY4PR04MB0872</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BEServer</td>
-		<td class="hash_value">BN6PR21MB0691</td>
+		<td class="hash_value">CY4PR04MB0872</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-UA-Compatible</td>
@@ -245,7 +244,7 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-FEServer</td>
-		<td class="hash_value">[BN3PR16CA0015, DM5PR21CA0031]</td>
+		<td class="hash_value">[CY4PR0101CA0017, DM5PR04CA0038]</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-Powered-By</td>
@@ -253,11 +252,11 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-MSEdge-Ref</td>
-		<td class="hash_value">Ref A: 139409FE5A8048A18EE858FBF72D9F83 Ref B: CHGEDGE0706 Ref C: 2018-05-06T08:25:03Z</td>
+		<td class="hash_value">Ref A: 92693BFCE97F441F910F538D283D9035 Ref B: CHGEDGE0608 Ref C: 2018-05-06T08:36:03Z</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Date</td>
-		<td class="hash_value">Sun, 06 May 2018 08:25:02 GMT</td>
+		<td class="hash_value">Sun, 06 May 2018 08:36:02 GMT</td>
 	</tr>
 </table></td></tr>
 	<tr class="slimRowColor9">
@@ -266,22 +265,22 @@
 	<td><table class="hash_table">
 	<tr class="hash_row">
 		<td class="hash_key">ClientId</td>
-		<td class="hash_value">09D866C5CD44458182C310C6FEA4AB7B</td>
+		<td class="hash_value">408938CFF1E148C7AB5125A3BA8D3035</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">logonLatency</td>
-		<td class="hash_value">LGN01=636611919033445261</td>
+		<td class="hash_value">LGN01=636611925630590261</td>
 	</tr>
 </table></td></tr>
 	<tr class="slimRowColor9">
 		<td>check not</td>
 		<td>cookie value</td>
-		<td>uaid</td>
-		<td colspan="3"><span class="fail">null</span></td>
+		<td>ClientId</td>
+		<td colspan="3"><span class="pass">null</span></td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">get from</span></td>
-		<td colspan="5"><a href="https://mail.live.com/default.aspx">https://mail.live.com/default.aspx</a></td>
+		<td colspan="5"><a href="https://outlook.live.com/owa/">https://outlook.live.com/owa/</a></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -310,15 +309,15 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Set-Cookie</td>
-		<td class="hash_value">[HostSwitchPrg=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure, OptInPrg=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure, logonLatency=LGN01=636611919037587553; domain=live.com; path=/; secure; HttpOnly, O365Consumer=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure]</td>
+		<td class="hash_value">[HostSwitchPrg=; expires=Fri, 06-May-1988 08:36:03 GMT; path=/; secure, OptInPrg=; expires=Fri, 06-May-1988 08:36:03 GMT; path=/; secure, logonLatency=LGN01=636611925632017345; domain=live.com; path=/; secure; HttpOnly, O365Consumer=; expires=Fri, 06-May-1988 08:36:03 GMT; path=/; secure]</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">request-id</td>
-		<td class="hash_value">a8f2bf46-c0d8-4eae-b888-a0a2e49553cf</td>
+		<td class="hash_value">148aa28c-fb65-41bf-bd73-bea219e5606e</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-CalculatedFETarget</td>
-		<td class="hash_value">CY4PR22CU003.internal.outlook.com</td>
+		<td class="hash_value">CY4PR12CU002.internal.outlook.com</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BackEndHttpStatus</td>
@@ -326,11 +325,11 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-FEProxyInfo</td>
-		<td class="hash_value">CY4PR22CA0051.NAMPRD22.PROD.OUTLOOK.COM</td>
+		<td class="hash_value">CY4PR12CA0039.NAMPRD12.PROD.OUTLOOK.COM</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-CalculatedBETarget</td>
-		<td class="hash_value">CY1PR0401MB1353.namprd04.prod.outlook.com</td>
+		<td class="hash_value">BN6PR22MB0755.namprd22.prod.outlook.com</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-RUM-Validated</td>
@@ -346,19 +345,19 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BackEnd-Begin</td>
-		<td class="hash_value">2018-05-06T08:25:03.758</td>
+		<td class="hash_value">2018-05-06T08:36:03.199</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BackEnd-End</td>
-		<td class="hash_value">2018-05-06T08:25:03.758</td>
+		<td class="hash_value">2018-05-06T08:36:03.213</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-DiagInfo</td>
-		<td class="hash_value">CY1PR0401MB1353</td>
+		<td class="hash_value">BN6PR22MB0755</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BEServer</td>
-		<td class="hash_value">CY1PR0401MB1353</td>
+		<td class="hash_value">BN6PR22MB0755</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-UA-Compatible</td>
@@ -370,7 +369,7 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-FEServer</td>
-		<td class="hash_value">[CY4PR22CA0051, DM5PR0401CA0074]</td>
+		<td class="hash_value">[CY4PR12CA0039, DM5PR2201CA0001]</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-Powered-By</td>
@@ -378,11 +377,11 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-MSEdge-Ref</td>
-		<td class="hash_value">Ref A: FF69EF8925CE4973BDC85DDC811351E8 Ref B: CHGEDGE0512 Ref C: 2018-05-06T08:25:03Z</td>
+		<td class="hash_value">Ref A: 2A66D01741AE423F84EC9932F2D7A85B Ref B: CHGEDGE0614 Ref C: 2018-05-06T08:36:03Z</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Date</td>
-		<td class="hash_value">Sun, 06 May 2018 08:25:03 GMT</td>
+		<td class="hash_value">Sun, 06 May 2018 08:36:03 GMT</td>
 	</tr>
 </table></td></tr>
 	<tr class="slimRowColor9">
@@ -391,25 +390,25 @@
 	<td><table class="hash_table">
 	<tr class="hash_row">
 		<td class="hash_key">ClientId</td>
-		<td class="hash_value">09D866C5CD44458182C310C6FEA4AB7B</td>
+		<td class="hash_value">408938CFF1E148C7AB5125A3BA8D3035</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">logonLatency</td>
-		<td class="hash_value">LGN01=636611919037587553</td>
+		<td class="hash_value">LGN01=636611925632017345</td>
 	</tr>
 </table></td></tr>
 	<tr class="slimRowColor9">
 		<td>check not</td>
 		<td>cookie value</td>
-		<td>uaid</td>
-		<td colspan="3"><span class="fail">null</span></td>
+		<td>ClientId</td>
+		<td colspan="3"><span class="pass">null</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td colspan="6">clear cookies</td>
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">get from</span></td>
-		<td colspan="5"><a href="https://mail.live.com/default.aspx">https://mail.live.com/default.aspx</a></td>
+		<td colspan="5"><a href="https://outlook.live.com/owa/">https://outlook.live.com/owa/</a></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -438,15 +437,15 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Set-Cookie</td>
-		<td class="hash_value">[ClientId=028D826E58F944E39E7810EC4CD03176; expires=Mon, 06-May-2019 08:25:03 GMT; path=/; secure, ClientId=028D826E58F944E39E7810EC4CD03176; expires=Mon, 06-May-2019 08:25:03 GMT; path=/; secure, HostSwitchPrg=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure, OptInPrg=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure, logonLatency=LGN01=636611919038417056; domain=live.com; path=/; secure; HttpOnly, O365Consumer=; expires=Fri, 06-May-1988 08:25:03 GMT; path=/; secure]</td>
+		<td class="hash_value">[ClientId=20CB309506FB4C10BC49443763AE8199; expires=Mon, 06-May-2019 08:36:03 GMT; path=/; secure, ClientId=20CB309506FB4C10BC49443763AE8199; expires=Mon, 06-May-2019 08:36:03 GMT; path=/; secure, HostSwitchPrg=; expires=Fri, 06-May-1988 08:36:03 GMT; path=/; secure, OptInPrg=; expires=Fri, 06-May-1988 08:36:03 GMT; path=/; secure, logonLatency=LGN01=636611925633745114; domain=live.com; path=/; secure; HttpOnly, O365Consumer=; expires=Fri, 06-May-1988 08:36:03 GMT; path=/; secure]</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">request-id</td>
-		<td class="hash_value">55dac39d-022e-4f94-98a8-a9167f2bddba</td>
+		<td class="hash_value">b2c6d887-0524-45cb-a8ec-ae627fc4fa99</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-CalculatedFETarget</td>
-		<td class="hash_value">DM5PR12CU001.internal.outlook.com</td>
+		<td class="hash_value">CY4PR06CU003.internal.outlook.com</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BackEndHttpStatus</td>
@@ -454,11 +453,11 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-FEProxyInfo</td>
-		<td class="hash_value">DM5PR12CA0007.NAMPRD12.PROD.OUTLOOK.COM</td>
+		<td class="hash_value">CY4PR06CA0049.NAMPRD06.PROD.OUTLOOK.COM</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-CalculatedBETarget</td>
-		<td class="hash_value">DM5PR12MB1244.namprd12.prod.outlook.com</td>
+		<td class="hash_value">CY1PR16MB0536.namprd16.prod.outlook.com</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-RUM-Validated</td>
@@ -474,19 +473,19 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BackEnd-Begin</td>
-		<td class="hash_value">2018-05-06T08:25:03.841</td>
+		<td class="hash_value">2018-05-06T08:36:03.374</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BackEnd-End</td>
-		<td class="hash_value">2018-05-06T08:25:03.841</td>
+		<td class="hash_value">2018-05-06T08:36:03.374</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-DiagInfo</td>
-		<td class="hash_value">DM5PR12MB1244</td>
+		<td class="hash_value">CY1PR16MB0536</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BEServer</td>
-		<td class="hash_value">DM5PR12MB1244</td>
+		<td class="hash_value">CY1PR16MB0536</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-UA-Compatible</td>
@@ -498,7 +497,7 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-FEServer</td>
-		<td class="hash_value">[DM5PR12CA0007, DM3PR12CA0108]</td>
+		<td class="hash_value">[CY4PR06CA0049, DM5PR16CA0028]</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-Powered-By</td>
@@ -506,11 +505,11 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-MSEdge-Ref</td>
-		<td class="hash_value">Ref A: 9E767241C6694DFC91363A3DF736F732 Ref B: CHGEDGE0806 Ref C: 2018-05-06T08:25:03Z</td>
+		<td class="hash_value">Ref A: F36286B193B64EEEA71A5C8D36DC6FD4 Ref B: CHGEDGE0808 Ref C: 2018-05-06T08:36:03Z</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Date</td>
-		<td class="hash_value">Sun, 06 May 2018 08:25:03 GMT</td>
+		<td class="hash_value">Sun, 06 May 2018 08:36:03 GMT</td>
 	</tr>
 </table></td></tr>
 	<tr class="slimRowColor9">
@@ -519,56 +518,56 @@
 	<td><table class="hash_table">
 	<tr class="hash_row">
 		<td class="hash_key">ClientId</td>
-		<td class="hash_value">028D826E58F944E39E7810EC4CD03176</td>
+		<td class="hash_value">20CB309506FB4C10BC49443763AE8199</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">logonLatency</td>
-		<td class="hash_value">LGN01=636611919038417056</td>
+		<td class="hash_value">LGN01=636611925633745114</td>
 	</tr>
 </table></td></tr>
 	<tr class="slimRowColor9">
 		<td>check not</td>
 		<td>cookie</td>
-		<td>uaid</td>
+		<td>ClientId</td>
 		<td>value</td>
-		<td colspan="2"><span class="fail">null</span></td>
+		<td colspan="2"><span class="pass">null</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>cookie</td>
-		<td>uaid</td>
+		<td>ClientId</td>
 		<td>domain</td>
-		<td colspan="2">[n<span class="diff">u</span>l<span class="diff">l</span>] <span class="fail">expected [</span><span class="diff">logi</span><span class="fail">n</span><span class="diff">.</span><span class="fail">l</span><span class="diff">ive.com</span><span class="fail">]</span></td>
+		<td colspan="2"><span class="pass">outlook.live.com</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>cookie</td>
-		<td>uaid</td>
+		<td>ClientId</td>
 		<td>path</td>
-		<td colspan="2">[<span class="diff">null</span>] <span class="fail">expected [</span><span class="diff">/</span><span class="fail">]</span></td>
+		<td colspan="2"><span class="pass">/</span></td>
 	</tr>
-	<tr class="slimRowColor7">
-		<td><span class="fail">reject</span></td>
+	<tr class="slimRowColor8">
+		<td><span class="pass">ensure</span></td>
 		<td>cookie</td>
-		<td>uaid</td>
+		<td>ClientId</td>
 		<td colspan="3">is persistent</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td><span class="fail">ensure</span></td>
+		<td><span class="pass">ensure</span></td>
 		<td>cookie</td>
-		<td>uaid</td>
+		<td>ClientId</td>
 		<td colspan="3">is secure</td>
 	</tr>
-	<tr class="slimRowColor8">
-		<td><span class="fail">ensure</span></td>
+	<tr class="slimRowColor7">
+		<td><span class="pass">reject</span></td>
 		<td>cookie</td>
-		<td>uaid</td>
+		<td>ClientId</td>
 		<td colspan="3">is http only</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>cookie</td>
-		<td>uaid</td>
+		<td>ClientId</td>
 		<td>attribute</td>
 		<td>HTTPOnly</td>
 		<td><span class="ignore">null</span></td>
@@ -576,7 +575,7 @@
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>cookie</td>
-		<td>uaid</td>
+		<td>ClientId</td>
 		<td>attribute</td>
 		<td>doesNotExist</td>
 		<td><span class="pass">null</span></td>
@@ -592,7 +591,7 @@
 	</tr>
 	<tr class="slimRowColor8">
 		<td><span class="pass">get from</span></td>
-		<td colspan="3"><a href="https://mail.live.com/default.aspx">https://mail.live.com/default.aspx</a></td>
+		<td colspan="3"><a href="https://outlook.live.com/owa/">https://outlook.live.com/owa/</a></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
@@ -621,15 +620,15 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Set-Cookie</td>
-		<td class="hash_value">[HostSwitchPrg=; expires=Fri, 06-May-1988 08:25:04 GMT; path=/; secure, OptInPrg=; expires=Fri, 06-May-1988 08:25:04 GMT; path=/; secure, logonLatency=LGN01=636611919040069330; domain=live.com; path=/; secure; HttpOnly, O365Consumer=; expires=Fri, 06-May-1988 08:25:04 GMT; path=/; secure]</td>
+		<td class="hash_value">[HostSwitchPrg=; expires=Fri, 06-May-1988 08:36:03 GMT; path=/; secure, OptInPrg=; expires=Fri, 06-May-1988 08:36:03 GMT; path=/; secure, logonLatency=LGN01=636611925635079120; domain=live.com; path=/; secure; HttpOnly, O365Consumer=; expires=Fri, 06-May-1988 08:36:03 GMT; path=/; secure]</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">request-id</td>
-		<td class="hash_value">00499021-fbd4-4e29-9302-14b885140ab6</td>
+		<td class="hash_value">c8e1220d-7a9f-4ae6-b213-f45b5e019bef</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-CalculatedFETarget</td>
-		<td class="hash_value">CY1PR03CU004.internal.outlook.com</td>
+		<td class="hash_value">BYAPR02CU001.internal.outlook.com</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BackEndHttpStatus</td>
@@ -637,11 +636,11 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-FEProxyInfo</td>
-		<td class="hash_value">CY1PR03CA0011.NAMPRD03.PROD.OUTLOOK.COM</td>
+		<td class="hash_value">BYAPR02CA0023.NAMPRD02.PROD.OUTLOOK.COM</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-CalculatedBETarget</td>
-		<td class="hash_value">CY1PR13MB0581.namprd13.prod.outlook.com</td>
+		<td class="hash_value">CO2PR20MB0138.namprd20.prod.outlook.com</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-RUM-Validated</td>
@@ -657,19 +656,19 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BackEnd-Begin</td>
-		<td class="hash_value">2018-05-06T08:25:04.005</td>
+		<td class="hash_value">2018-05-06T08:36:03.507</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BackEnd-End</td>
-		<td class="hash_value">2018-05-06T08:25:04.010</td>
+		<td class="hash_value">2018-05-06T08:36:03.523</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-DiagInfo</td>
-		<td class="hash_value">CY1PR13MB0581</td>
+		<td class="hash_value">CO2PR20MB0138</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-BEServer</td>
-		<td class="hash_value">CY1PR13MB0581</td>
+		<td class="hash_value">CO2PR20MB0138</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-UA-Compatible</td>
@@ -681,7 +680,7 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-FEServer</td>
-		<td class="hash_value">[CY1PR03CA0011, DM5PR13CA0035]</td>
+		<td class="hash_value">[BYAPR02CA0023, DM5PR20CA0023]</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-Powered-By</td>
@@ -689,17 +688,17 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-MSEdge-Ref</td>
-		<td class="hash_value">Ref A: 9C3B4AAE9FCC49D6A97F5A63657C2A46 Ref B: CHGEDGE0515 Ref C: 2018-05-06T08:25:04Z</td>
+		<td class="hash_value">Ref A: 2F84E0151A3F48DDA4EE1DA8B6B70282 Ref B: CHGEDGE0619 Ref C: 2018-05-06T08:36:03Z</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Date</td>
-		<td class="hash_value">Sun, 06 May 2018 08:25:03 GMT</td>
+		<td class="hash_value">Sun, 06 May 2018 08:36:02 GMT</td>
 	</tr>
 </table></td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>cookie value</td>
-		<td>uaid</td>
+		<td>ClientId</td>
 		<td><span class="pass">null</span></td>
 	</tr>
 </table>
