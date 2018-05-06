@@ -1,155 +1,28 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
-	<meta charset="utf-8">
-	<meta name="unit-size" content="width=300,height=250">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>State Farm YRYS 300x250</title>
-	
-	<!-- Fonts Included-->
-	
-		<!--
-			E.g. -> <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
-		-->
-		
-	<!-- End Fonts Included-->
-	<link rel="stylesheet" href="styles/style.css">
-	
-	<!-- Scripts Included-->
-
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	
-    <script type="text/javascript" id="EnablerJS" class="dcjs" src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
-    
-	<script type="text/javascript" src="scripts/platform.js"></script>
-    
-	<!-- End Scripts Included-->
-	<script type="text/javascript">
-		var clickTag = "";
-	</script>
-	
-	
-	<script type="text/javascript">
-		
-		$(document).dispatch({	
-			//	Options are at the moment "DC" -> DoubleClick , "SK" -> Sizmek , "FT" -> FlashTalking , "" -> None		
-			$platform:"DC", 
-
-			//	If Platform is Doubleclick, Options are at the moment true -> Unit IS Going through DC Studio, false -> Unit Not DC Studio Unit	
-			$isDCS:false,
-
-			//	Option to Load External Animation Library or Not (Greensock {0 - None, 1 - "Max", or 2 - "Lite"}).  If None Chosen, will default to not loading the Tweening Engine.
-			//	The loaded URI is the CDN endpoint to the latest version of GS.
-			$loadGS: 1,
-
-			//	Select If the Unit is Dynamic or Static (Now ONLY Supports FlashTalking)
-			$dataType: "Static",
-
-			//	Select If the Unit Standard Display or Rich Media Unit ({ST - Standard, RM - Rich Media}) (Now ONLY Supports FlashTalking)
-			$unitType: "ST",
-
-			//	Size ([Width, Height]) of the collapsed state of the unit *If Not Rich, this is consists of the dimensions of the unit*
-			$size:	[300, 250],
-
-			//	The border color of the unit (If None Given in Options, will Default to Black
-			$borderColor: "#000",
-
-			//	The font included within the Unit (Especially Needed if Dynamic(Instant) Unit
-			$font: "'Arial', sans-serif",
-
-			//	Does the Unit have "Replay" Functionality
-			$replay: false
-		});
-		
-	</script>
-    
-<script type="text/javascript">
-    
-      (function() {
-        var relegateNavigation = '';
-        var handleClickTagMessage = function(e) {
-          try {
-            var eventData = JSON.parse(e.data);
-          } catch (err) {
-            return;
-          }
-          if (eventData.isInitClickTag) {
-            if (eventData.clickTags) {
-              for (var i = 0; i < eventData.clickTags.length; i++) {
-                var clkTag = eventData.clickTags[i];
-                window[clkTag.name] = clkTag.url;
-              }
-            } else if (eventData.clickTag) {
-              window.clickTag = eventData.clickTag;
-            }
-            relegateNavigation = eventData.relegateNavigation;
-          }
-        };
-
-        if (open.call) {
-          window.open = function(open) {
-            return function(url, name, features) {
-              if (relegateNavigation === 'parent') {
-                var message = {'clickTag': url, 'isPostClickTag': true};
-                parent.postMessage(JSON.stringify(message), '*');
-              } else {
-                var args = [url, name];
-                if (features) {
-                  args.push(features);
-                }
-                open.apply(window, args);
-              }
-            };
-          }(window.open);
-        }
-
-        if (window.addEventListener) {
-          window.addEventListener(
-              'message', handleClickTagMessage, false);
-        } else {
-          window.attachEvent('onmessage', handleClickTagMessage);
-        }
-      })();
-    
-  </script><script type="text/javascript" class="dcjs">var clicktag = "";</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" id="GsJS" class="anjs"></script></head>
-
-<body style="width: 300px; height: 250px; display: block;">
-
-	<script src="scripts/script.js"></script>
-	
-	<div id="unit-container" style="width: 298px; height: 248px; font-family: Arial, sans-serif; border: 1px solid rgb(0, 0, 0); opacity: 1;">
-		<div id="main-panel" style="width: 298px; height: 248px;">
-		
-			<!-- ************* Custom Code Here ************* -->
-			
-			<div id="logo" class="free nopoint">
-				<svg id="sf-white" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134.56 18.69"><defs><style>.cls-1{fill:#fff;}</style></defs><title>sf-white</title><path class="cls-1" d="M331,236.8l0-.06,0,.06a5,5,0,0,0-2.69-.69,5.68,5.68,0,0,0-4.87,2.65,9.82,9.82,0,0,0-1.54,5.34,5.85,5.85,0,0,0,1,3.58c.39.53,1.33,1.8,4.36,1.8a6.52,6.52,0,0,0,3.64-.86l.09-.12c.11-.46.46-2.56.61-3.09l-.11-.08a5.79,5.79,0,0,1-3.55,1.46,2.93,2.93,0,0,1-2-.61,2.22,2.22,0,0,1-.68-1.74c0-.27,0-.51,0-.79v-.06h.06c2.06-.05,3.11-.08,4.84-.08h2l.13-.1a13,13,0,0,0,.36-2.84A4.25,4.25,0,0,0,331,236.8m-1.37,4.38v.06l-2,0-2,0v-.1c0-.14.09-.29.14-.45a4.09,4.09,0,0,1,.68-1.35,2.49,2.49,0,0,1,1.78-1,1.46,1.46,0,0,1,1.18.53l.11.18a1.86,1.86,0,0,1,.23.7,2.62,2.62,0,0,1,0,.28A5.9,5.9,0,0,1,329.62,241.18Zm-7.84-2.27-.14.13-2,0-.92,4.34a18.63,18.63,0,0,0-.41,2.34,1,1,0,0,0,.37.85,1.13,1.13,0,0,0,.72.22,2.4,2.4,0,0,0,1.11-.29l.07.06-.49,2.5-.17.16a8.61,8.61,0,0,1-1.9.26c-1.85,0-3.19-.63-3.2-2.78a25.77,25.77,0,0,1,.71-4.22l.74-3.44-1.56,0-.1-.13.46-2.43.14-.08h1.59l.63-3.19.13-.14c1.59-.41,2-.6,3.49-1.08l.08.08-.48,2.06-.5,2.32,2-.06.05.11Zm24.53-4.1-.11.12H341l-.85,4.38,4.59-.14.07.11c-.38,1.26-.47,1.62-.72,2.72l-.12.11h-4.37l-.57,3-.73,3.94-.09.09-3.77.1,0-.1.65-3.36,1-4.74c.75-3.68,1-4.86,1.68-8.88l.11-.11h5.5l3.49-.09.07.09Zm7.42,2.13a6.26,6.26,0,0,0-3.5-.77,12.78,12.78,0,0,0-2.38.22c-.72.14-1.16.26-1.54.36l-.1.11-.52,2.65.17.11a14.1,14.1,0,0,1,1.46-.57,5.35,5.35,0,0,1,1.82-.35A4,4,0,0,1,351,239a1.49,1.49,0,0,1,.74,1.3c0,.13,0,.25,0,.36a.85.85,0,0,0,0,.22V241l-.54,0-.68.08c-.44,0-.94.1-1.38.18-1,.17-4,.64-4.91,2.63a4.5,4.5,0,0,0,.14,4.84,2.63,2.63,0,0,0,1.48.85h0l.16,0a5.26,5.26,0,0,0,4.4-1.85l-.27,1.38.11.1,2.89-.1.12-.1,1.69-8.53a4.76,4.76,0,0,0,.09-.63c0-.25,0-.45,0-.59A2.79,2.79,0,0,0,353.73,236.94Zm-3,8.53a4.18,4.18,0,0,1-1.69,1.47,1.66,1.66,0,0,1-2-.3,1.82,1.82,0,0,1,.19-2.33c.91-1.08,3.92-1.15,3.92-1.15Zm14-9.48-.71,3.67-.15.15a3.86,3.86,0,0,0-.76-.07,4.11,4.11,0,0,0-3.36,1.71h0l-1.45,7.61-.11.09-3.17.1-.08-.08,2.49-12.78.14-.13,3.14-.31.12.14-.36,1.85.15-.14a10.16,10.16,0,0,1,1.89-1.38,3.83,3.83,0,0,1,1.93-.55h.2Zm17,3.22a11.32,11.32,0,0,1-.35,2.35l-1.47,7.51-.11.09-3.32.12-.08-.12s1.7-8.3,1.7-8.71a1.29,1.29,0,0,0-1.25-1.38,3,3,0,0,0-1.69.84l-1.79,9.16-.11.09-1.43.05-1.28,0-.63,0,0-.05,0-.07s.26-1.26.57-2.82h0c.49-2.45,1.12-5.64,1.12-5.89a1.29,1.29,0,0,0-1.25-1.38,3,3,0,0,0-1.69.84l-1.79,9.16-.11.09-.51,0-2.83.1-.07-.12,2.49-12.76.12-.12,3.31-.32.13.14-.35,1.79a5.76,5.76,0,0,1,3.63-1.78,2.31,2.31,0,0,1,2.3,1.78s1.89-1.83,3.9-1.78A2.77,2.77,0,0,1,381.72,239.21Zm-69.24-2.27a6.22,6.22,0,0,0-3.49-.77,12.88,12.88,0,0,0-2.39.22c-.71.14-1.16.26-1.54.36l-.1.11-.52,2.65.17.11a13.56,13.56,0,0,1,1.47-.57,5.3,5.3,0,0,1,1.81-.35,4,4,0,0,1,1.83.33,1.48,1.48,0,0,1,.73,1.3,2,2,0,0,1,0,.36c0,.1,0,.18,0,.22V241l-.53,0-.68.08c-.44,0-.94.1-1.38.18-1.06.17-4,.64-4.92,2.63a4.51,4.51,0,0,0,.15,4.84,2.59,2.59,0,0,0,1.48.85h0l.15,0a5.27,5.27,0,0,0,4.41-1.85l-.28,1.38.12.1,2.88-.1.12-.1,1.7-8.53q0-.27.09-.63c0-.25,0-.45,0-.59A2.8,2.8,0,0,0,312.48,236.94Zm-3,8.53a4.19,4.19,0,0,1-1.68,1.47,1.67,1.67,0,0,1-2-.3,1.82,1.82,0,0,1,.2-2.33c.91-1.08,3.92-1.15,3.92-1.15Zm-6.95-6.56-.14.13-2,0-.92,4.34a17,17,0,0,0-.41,2.34,1,1,0,0,0,.37.85,1.12,1.12,0,0,0,.71.22,2.45,2.45,0,0,0,1.12-.29l.07.06-.49,2.5-.17.16a8.62,8.62,0,0,1-1.91.26c-1.84,0-3.18-.63-3.19-2.78a25.77,25.77,0,0,1,.71-4.22l.74-3.44-1.57,0-.09-.13.46-2.43.14-.08h1.58l.64-3.19.12-.14c1.59-.41,2.05-.6,3.5-1.08l.07.08-.48,2.06-.49,2.32,2-.06.06.11Zm-7.47-5.9-.61,3.12-.13,0a2.77,2.77,0,0,0-.72-.73,4.15,4.15,0,0,0-2.52-.9,2.48,2.48,0,0,0-1.7.59,1.94,1.94,0,0,0-.64,1.46c0,1.1.75,1.64,2.09,2.44l.52.29c1.11.74,2.85,1.86,2.85,4.42,0,2.9-1.86,5.81-6.32,5.82a9.2,9.2,0,0,1-3.2-.58,5.5,5.5,0,0,1-1.45-.81l0-.2.59-3,.13,0a4.34,4.34,0,0,0,1.11,1,4.65,4.65,0,0,0,2.55.8c1.57,0,2.81-.91,2.81-2.3s-1-1.88-2-2.49l-.72-.44c-1.12-.73-2.68-1.73-2.68-4.24a6,6,0,0,1,1.13-3.47,5.61,5.61,0,0,1,4.67-2,7.3,7.3,0,0,1,4.23,1.21Zm-32.26,5.48a7,7,0,0,0,3.61.92,7.08,7.08,0,0,0,3.62-.92,2.63,2.63,0,0,0,1.47-2.1,2.6,2.6,0,0,0-1.46-2.09,7.71,7.71,0,0,0-7.23,0,2.24,2.24,0,0,0,0,4.19Zm.23,4.31a7.71,7.71,0,0,0-7.23,0,2.56,2.56,0,0,0-1.44,2.08,2.61,2.61,0,0,0,1.43,2.11,7,7,0,0,0,3.61.91,7.09,7.09,0,0,0,3.63-.91,2.63,2.63,0,0,0,1.46-2.1A2.56,2.56,0,0,0,263.06,242.8Zm14,0a7.71,7.71,0,0,0-7.23,0,2.56,2.56,0,0,0-1.44,2.09,2.6,2.6,0,0,0,1.44,2.1,6.92,6.92,0,0,0,3.6.91A7.09,7.09,0,0,0,277,247a2.6,2.6,0,0,0,1.46-2.1A2.56,2.56,0,0,0,277,242.8Zm-3.64-3a10.29,10.29,0,0,0-1.86.17,4.47,4.47,0,0,0,2.09-3.6c0-2.82-3.2-5.07-7.19-5.07s-7.16,2.25-7.16,5.07a4.53,4.53,0,0,0,2.07,3.61,9.69,9.69,0,0,0-1.89-.18c-4,0-7.16,2.25-7.16,5.07s3.16,5.12,7.14,5.12c3.39,0,6.23-1.66,7-3.9.75,2.24,3.55,3.9,6.94,3.9,4,0,7.21-2.3,7.21-5.12S277.39,239.81,273.4,239.81Zm-12.82-3.43a3.28,3.28,0,0,1,1.54-2.53,7.46,7.46,0,0,1,4.32-1.24,7.66,7.66,0,0,1,4.35,1.24,3.29,3.29,0,0,1,1.55,2.53c0,2.12-2.74,3.81-5.91,3.82a7.44,7.44,0,0,1-4.31-1.26A3.24,3.24,0,0,1,260.58,236.38Zm-1.14,12.32a7.46,7.46,0,0,1-4.31-1.26,2.88,2.88,0,0,1,0-5.09,8.2,8.2,0,0,1,8.67,0,3.31,3.31,0,0,1,1.56,2.53C265.34,247,262.61,248.69,259.44,248.7Zm7-5a4.91,4.91,0,0,0-1.84-2.34,9.67,9.67,0,0,0,1.81.17,10.31,10.31,0,0,0,1.87-.18A4.88,4.88,0,0,0,266.45,243.67Zm6.94,5a7.44,7.44,0,0,1-4.31-1.26,3.24,3.24,0,0,1-1.54-2.56,3.31,3.31,0,0,1,1.54-2.53,7.54,7.54,0,0,1,4.32-1.24,7.66,7.66,0,0,1,4.35,1.24,3.3,3.3,0,0,1,1.55,2.53C279.28,247,276.56,248.69,273.39,248.7Z" transform="translate(-252.3 -231.31)"></path><path class="cls-1" d="M386.86,238.09a1.88,1.88,0,1,1-1.87-2,1.9,1.9,0,0,1,1.87,2m-3.52,0a1.64,1.64,0,1,0,3.27,0,1.86,1.86,0,0,0-.46-1.24,1.67,1.67,0,0,0-1.15-.49A1.65,1.65,0,0,0,383.34,238.08Zm1.55-1.12a1.43,1.43,0,0,1,.48.06.58.58,0,0,1,.39.56.59.59,0,0,1-.44.57l.46,1.07h-.32l-.42-1h-.47v1h-.28V237Zm0,1c.28,0,.39,0,.47-.09a.35.35,0,0,0,.14-.3.32.32,0,0,0-.21-.33,1.45,1.45,0,0,0-.45,0h-.25V238Z" transform="translate(-252.3 -231.31)"></path></svg>
-			</div>
-			
-			<div id="cta" class="free nopoint"></div>
-			
-			<div id="copy-hold" class="free nopoint">
-				<span id="copy1" class="copy bold"></span>
-				<span id="inner">
-					<span id="blank" style="width: 176px;"></span>
-					<span id="blank-fill" class="free" style="top: 1px; opacity: 1;"><img id="img_1" class="imgCopy" alt="copy block" src="images/c2b.png"></span>
-				</span>
-				<span id="copy2" class="copy bold"></span>
-			</div>
-			<div id="copy3" class="copy bold free">
-				<span id="blank2" class="free"></span>
-				<span id="c3l" class="free"></span>
-			</div>
-			<!-- Custom Code Here -->
-		
-		</div>	
-    </div>
- 
- 	<!-- External URLs Repo -->    
-	<!--    
-		<script class="extHC" type="text/javascript" src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
-		<script class="extHC" type="text/javascript" src="https://secure-ds.serving-sys.com/BurstingScript/EBLoader.js"></script>
-		<script class="extHC" type="text/javascript" src="https://cdn.flashtalking.com/frameworks/js/api/2/9/html5API.js"></script>
-	-->
-   
-
+<!DOCTYPE html><html><head></head><body><script>
+(function(){var ba="function"==typeof Object.create?Object.create:function(a){var b=function(){};b.prototype=a;return new b},m;if("function"==typeof Object.setPrototypeOf)m=Object.setPrototypeOf;else{var n;a:{var ca={a:!0},da={};try{da.__proto__=ca;n=da.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}
+var ea=m,p=this,q=function(a){return"string"==typeof a},fa=function(a){var b=typeof a;if("object"==b)if(a){if(a instanceof Array)return"array";if(a instanceof Object)return b;var c=Object.prototype.toString.call(a);if("[object Window]"==c)return"object";if("[object Array]"==c||"number"==typeof a.length&&"undefined"!=typeof a.splice&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("splice"))return"array";if("[object Function]"==c||"undefined"!=typeof a.call&&"undefined"!=typeof a.propertyIsEnumerable&&
+!a.propertyIsEnumerable("call"))return"function"}else return"null";else if("function"==b&&"undefined"==typeof a.call)return"object";return b},ia=function(a,b){var c=Array.prototype.slice.call(arguments,1);return function(){var b=c.slice();b.push.apply(b,arguments);return a.apply(this,b)}},ja=Date.now||function(){return+new Date};var ka=Array.prototype.indexOf?function(a,b){return Array.prototype.indexOf.call(a,b,void 0)}:function(a,b){if(q(a))return q(b)&&1==b.length?a.indexOf(b,0):-1;for(var c=0;c<a.length;c++)if(c in a&&a[c]===b)return c;return-1},la=Array.prototype.forEach?function(a,b){Array.prototype.forEach.call(a,b,void 0)}:function(a,b){for(var c=a.length,d=q(a)?a.split(""):a,e=0;e<c;e++)e in d&&b.call(void 0,d[e],e,a)},ma=function(a,b){a:{for(var c=a.length,d=q(a)?a.split(""):a,e=0;e<c;e++)if(e in d&&b.call(void 0,
+d[e],e,a)){b=e;break a}b=-1}return 0>b?null:q(a)?a.charAt(b):a[b]};var na=String.prototype.trim?function(a){return a.trim()}:function(a){return/^[\s\xa0]*([\s\S]*?)[\s\xa0]*$/.exec(a)[1]},u=function(a,b){return a<b?-1:a>b?1:0};var v;a:{var oa=p.navigator;if(oa){var pa=oa.userAgent;if(pa){v=pa;break a}}v=""};var w=function(a){w[" "](a);return a};w[" "]=function(){};var ra=function(a,b){var c=qa;return Object.prototype.hasOwnProperty.call(c,a)?c[a]:c[a]=b(a)};var sa=-1!=v.indexOf("Opera"),x=-1!=v.indexOf("Trident")||-1!=v.indexOf("MSIE"),ta=-1!=v.indexOf("Edge"),ua=-1!=v.indexOf("Gecko")&&!(-1!=v.toLowerCase().indexOf("webkit")&&-1==v.indexOf("Edge"))&&!(-1!=v.indexOf("Trident")||-1!=v.indexOf("MSIE"))&&-1==v.indexOf("Edge"),y=-1!=v.toLowerCase().indexOf("webkit")&&-1==v.indexOf("Edge"),z;
+a:{var A="",B=function(){var a=v;if(ua)return/rv:([^\);]+)(\)|;)/.exec(a);if(ta)return/Edge\/([\d\.]+)/.exec(a);if(x)return/\b(?:MSIE|rv)[: ]([^\);]+)(\)|;)/.exec(a);if(y)return/WebKit\/(\S+)/.exec(a);if(sa)return/(?:Version)[ \/]?(\S+)/.exec(a)}();B&&(A=B?B[1]:"");if(x){var C,va=p.document;C=va?va.documentMode:void 0;if(null!=C&&C>parseFloat(A)){z=String(C);break a}}z=A}
+var wa=z,qa={},D=function(a){return ra(a,function(){for(var b=0,c=na(String(wa)).split("."),d=na(String(a)).split("."),e=Math.max(c.length,d.length),f=0;0==b&&f<e;f++){var h=c[f]||"",g=d[f]||"";do{h=/(\d*)(\D*)(.*)/.exec(h)||["","","",""];g=/(\d*)(\D*)(.*)/.exec(g)||["","","",""];if(0==h[0].length&&0==g[0].length)break;b=u(0==h[1].length?0:parseInt(h[1],10),0==g[1].length?0:parseInt(g[1],10))||u(0==h[2].length,0==g[2].length)||u(h[2],g[2]);h=h[3];g=g[3]}while(0==b)}return 0<=b})};var E=function(a){try{var b;if(b=!!a&&null!=a.location.href)a:{try{w(a.foo);b=!0;break a}catch(c){}b=!1}return b}catch(c){return!1}},G=function(a,b){var c=[p.top],d=[],e=0;b=b||1024;for(var f;f=c[e++];){a&&!E(f)||d.push(f);try{if(f.frames)for(var h=f.frames.length,g=0;g<h&&c.length<b;++g)c.push(f.frames[g])}catch(l){}}return d},xa=function(a,b){if(a)for(var c in a)Object.prototype.hasOwnProperty.call(a,c)&&b.call(void 0,a[c],c,a)};var H=null,ya=function(){if(!H)a:{for(var a=G(),b=0;b<a.length;b++)try{var c=a[b].frames.google_esf;if(c&&E(c)){H=c;break a}}catch(d){}H=null}return H},za=function(a){var b;if(b=ya()){var c=b.esf_propArray;c||(c=b.esf_propArray={});b=c}else b=null;a=b?b[a]:void 0;return a};var Aa=document,I=window;var Ba;Ba=/^true$/.test("false");var Ca=/#(R?S)-(.*)/,Da=/^(\d+)-(.*)/,Ea=/^(\d+)-(.*)/,Fa=/\.((google(|groups|mail|images|print))|gmail)\./;var J=function(a,b,c){a.addEventListener?a.addEventListener(b,c,void 0):a.attachEvent&&a.attachEvent("on"+b,c)},Ga=function(a,b,c){a.removeEventListener?a.removeEventListener(b,c,void 0):a.detachEvent&&a.detachEvent("on"+b,c)};var Ha=function(a,b){var c=!1,d=!1;d=void 0===d?!1:d;c=void 0===c?!1:c;p.google_image_requests||(p.google_image_requests=[]);var e=p.document.createElement("img");if(b||c){var f=function(a){b&&b(a);if(c){a=p.google_image_requests;var d=ka(a,e);0<=d&&Array.prototype.splice.call(a,d,1)}Ga(e,"load",f);Ga(e,"error",f)};J(e,"load",f);J(e,"error",f)}d&&(e.referrerPolicy="no-referrer");e.src=a;p.google_image_requests.push(e)};var Ia=Object.prototype.hasOwnProperty,Ja=function(a,b){for(var c in a)Ia.call(a,c)&&b.call(void 0,a[c],c,a)},Ka=function(a,b){for(var c=1,d=arguments.length;c<d;++c)a.push(arguments[c])},La=function(a,b){var c=b.slice(-1),d="?"===c||"#"===c?"":"&",e=[b];Ja(a,function(a,b){if(a||0===a||!1===a)"boolean"===typeof a&&(a=a?1:0),Ka(e,d,b,"=",encodeURIComponent(String(a))),d="&"});return e.join("")},Ma=!!window.google_async_iframe_id,K=Ma&&window.parent||window;var L=function(a,b,c){c=void 0===c?{}:c;this.error=a;this.context=b.context;this.line=b.line||-1;this.msg=b.message||"";this.file=b.file||"";this.id=b.id||"jserror";this.meta=c};var Na=/^https?:\/\/(\w|-)+\.cdn\.ampproject\.(net|org)(\?|\/|$)/,Oa=function(a,b){this.j=a;this.l=b},Pa=function(a,b){this.url=a;this.u=!!b;this.depth=null};var N=function(){this.m="&";this.o=!1;this.l={};this.s=0;this.j=[]},Qa=function(a,b){var c={};c[a]=b;return[c]},Sa=function(a,b,c,d,e){var f=[];xa(a,function(a,g){(a=Ra(a,b,c,d,e))&&f.push(g+"="+a)});return f.join(b)},Ra=function(a,b,c,d,e){if(null==a)return"";b=b||"&";c=c||",$";"string"==typeof c&&(c=c.split(""));if(a instanceof Array){if(d=d||0,d<c.length){for(var f=[],h=0;h<a.length;h++)f.push(Ra(a[h],b,c,d+1,e));return f.join(c[d])}}else if("object"==typeof a)return e=e||0,2>e?encodeURIComponent(Sa(a,
+b,c,d,e+1)):"...";return encodeURIComponent(String(a))},O=function(a,b,c,d){a.j.push(b);a.l[b]=Qa(c,d)},Ua=function(a,b,c,d){b=b+"//"+c+d;var e=Ta(a)-d.length;if(0>e)return"";a.j.sort(function(a,b){return a-b});d=null;c="";for(var f=0;f<a.j.length;f++)for(var h=a.j[f],g=a.l[h],l=0;l<g.length;l++){if(!e){d=null==d?h:d;break}var k=Sa(g[l],a.m,",$");if(k){k=c+k;if(e>=k.length){e-=k.length;b+=k;c=a.m;break}else a.o&&(c=e,k[c-1]==a.m&&--c,b+=k.substr(0,c),c=a.m,e=0);d=null==d?h:d}}a="";null!=d&&(a=c+"trn="+
+d);return b+a},Ta=function(a){var b=1,c;for(c in a.l)b=c.length>b?c.length:b;return 3997-b-a.m.length-1};var Va=function(a,b,c,d,e,f){if((d?a.s:Math.random())<(e||a.j))try{if(c instanceof N)var h=c;else h=new N,xa(c,function(a,b){var c=h,d=c.s++;a=Qa(b,a);c.j.push(d);c.l[d]=a});var g=Ua(h,a.o,a.l,a.m+b+"&");g&&("undefined"===typeof f?Ha(g,void 0):Ha(g,f))}catch(l){}};var P=null;var Wa=function(){var a=p.performance;return a&&a.now&&a.timing?Math.floor(a.now()+a.timing.navigationStart):ja()},Xa=function(){var a=void 0===a?p:a;return(a=a.performance)&&a.now?a.now():null};var Ya=function(a,b,c){this.label=a;this.type=b;this.value=c;this.duration=0;this.uniqueId=this.label+"_"+this.type+"_"+Math.random();this.slotId=void 0};var Q=p.performance,Za=!!(Q&&Q.mark&&Q.measure&&Q.clearMarks),R=function(a){var b=!1,c;return function(){b||(c=a(),b=!0);return c}}(function(){var a;if(a=Za){var b;if(null===P){P="";try{a="";try{a=p.top.location.hash}catch(c){a=p.location.hash}a&&(P=(b=a.match(/\bdeid=([\d,]+)/))?b[1]:"")}catch(c){}}b=P;a=!!b.indexOf&&0<=b.indexOf("1337")}return a}),$a=function(){var a=S;this.l=[];this.m=a||p;var b=null;a&&(a.google_js_reporting_queue=a.google_js_reporting_queue||[],this.l=a.google_js_reporting_queue,
+b=a.google_measure_js_timing);this.j=R()||(null!=b?b:1>Math.random())},ab=function(a){a&&Q&&R()&&(Q.clearMarks("goog_"+a.uniqueId+"_start"),Q.clearMarks("goog_"+a.uniqueId+"_end"))};$a.prototype.start=function(a,b){if(!this.j)return null;var c=Xa()||Wa();a=new Ya(a,b,c);b="goog_"+a.uniqueId+"_start";Q&&R()&&Q.mark(b);return a};var db=function(){var a=bb;this.o=cb;this.l=null;this.s=this.m;this.j=void 0===a?null:a},gb=function(a,b,c,d){try{if(a.j&&a.j.j){var e=a.j.start(b.toString(),3);var f=c();var h=a.j;c=e;if(h.j&&"number"==typeof c.value){var g=Xa()||Wa();c.duration=g-c.value;var l="goog_"+c.uniqueId+"_end";Q&&R()&&Q.mark(l);h.j&&h.l.push(c)}}else f=c()}catch(k){h=!0;try{ab(e),h=(d||a.s).call(a,b,new eb(fb(k),k.fileName,k.lineNumber),void 0,void 0)}catch(r){a.m(217,r)}if(!h)throw k;}return f},hb=function(a){var b=T;
+return function(c){for(var d=[],e=0;e<arguments.length;++e)d[e]=arguments[e];return gb(b,201,function(){return a.apply(void 0,d)},void 0)}};
+db.prototype.m=function(a,b,c,d,e){e=e||"jserror";try{var f=new N;f.o=!0;O(f,1,"context",a);b.error&&b.meta&&b.id||(b=new eb(fb(b),b.fileName,b.lineNumber));b.msg&&O(f,2,"msg",b.msg.substring(0,512));b.file&&O(f,3,"file",b.file);0<b.line&&O(f,4,"line",b.line);var h=b.meta||{};if(this.l)try{this.l(h)}catch(M){}if(d)try{d(h)}catch(M){}b=[h];f.j.push(5);f.l[5]=b;d=p;b=[];h=null;do{var g=d;if(E(g)){var l=g.location.href;h=g.document&&g.document.referrer||null}else l=h,h=null;b.push(new Pa(l||""));try{d=
+g.parent}catch(M){d=null}}while(d&&g!=d);l=0;for(var k=b.length-1;l<=k;++l)b[l].depth=k-l;g=p;if(g.location&&g.location.ancestorOrigins&&g.location.ancestorOrigins.length==b.length-1)for(k=1;k<b.length;++k){var r=b[k];r.url||(r.url=g.location.ancestorOrigins[k-1]||"",r.u=!0)}var aa=new Pa(p.location.href,!1);g=null;var ha=b.length-1;for(r=ha;0<=r;--r){var t=b[r];!g&&Na.test(t.url)&&(g=t);if(t.url&&!t.u){aa=t;break}}t=null;var yb=b.length&&b[ha].url;0!=aa.depth&&yb&&(t=b[ha]);var F=new Oa(aa,t);F.l&&
+O(f,6,"top",F.l.url||"");O(f,7,"url",F.j.url||"");Va(this.o,e,f,!1,c)}catch(M){try{Va(this.o,e,{context:"ecmserr",rctx:a,msg:fb(M),url:F&&F.j.url},!1,c)}catch(Kb){}}return!0};
+var fb=function(a){var b=a.toString();a.name&&-1==b.indexOf(a.name)&&(b+=": "+a.name);a.message&&-1==b.indexOf(a.message)&&(b+=": "+a.message);if(a.stack){a=a.stack;var c=b;try{-1==a.indexOf(c)&&(a=c+"\n"+a);for(var d;a!=d;)d=a,a=a.replace(/((https?:\/..*\/)[^\/:]*:\d+(?:.|\n)*)\2/,"$1");b=a.replace(/\n */g,"\n")}catch(e){b=c}}return b},eb=function(a,b,c){L.call(this,Error(a),{message:a,file:void 0===b?"":b,line:void 0===c?-1:c})},U=eb;U.prototype=ba(L.prototype);U.prototype.constructor=U;
+if(ea)ea(U,L);else for(var V in L)if("prototype"!=V)if(Object.defineProperties){var ib=Object.getOwnPropertyDescriptor(L,V);ib&&Object.defineProperty(U,V,ib)}else U[V]=L[V];U.v=L.prototype;var cb,T;if(Ma&&!E(K)){var W="."+Aa.domain;try{for(;2<W.split(".").length&&!E(K);)Aa.domain=W=W.substr(W.indexOf(".")+1),K=window.parent}catch(a){}E(K)||(K=window)}var S=K,bb=new $a,jb=function(){if(!S.google_measure_js_timing){var a=bb;a.j=!1;a.l!=a.m.google_js_reporting_queue&&(R()&&la(a.l,ab),a.l.length=0)}};cb=new function(){var a=void 0===a?I:a;this.o="http:"===a.location.protocol?"http:":"https:";this.l="pagead2.googlesyndication.com";this.m="/pagead/gen_204?id=";this.j=.01;this.s=Math.random()};
+T=new db;"complete"==S.document.readyState?jb():bb.j&&J(S,"load",function(){jb()});var kb=function(a){T.l=function(b){la(a,function(a){a(b)})}},lb=T.m,X=function(a,b,c){Va(cb,a,b,"jserror"!=a,c,void 0)};var mb=(new Date).getTime();var ob=function(a,b){var c={};c[void 0===b?"dtd":b]=nb();return La(c,a)},nb=function(){var a=(new Date).getTime()-mb;return 1E5<=a?"M":0<=a?a:"-M"};var pb=ua||y||x&&D(11)||ta,xb=function(a,b){var c=null;try{c=a.frameElement}catch(d){}c&&qb(c)?(a=c,rb?a.srcdoc=b:pb?(a=a.contentWindow)&&sb(a.document,b):tb(a,b)):pb?sb(a.document,b):(x&&D(7)&&!D(10)&&6>ub()&&vb(b)&&(b=wb(b)),a.goog_content=b,a.location.replace("javascript:window.goog_content"))},rb=y&&"srcdoc"in document.createElement("IFRAME"),sb=function(a,b){a.open("text/html","replace");a.write(b);a.close()},tb=function(a,b){x&&D(7)&&!D(10)&&6>ub()&&vb(b)&&(b=wb(b));var c=function(){var c=a.contentWindow;
+c&&(c.goog_content=b,c.location.replace("javascript:window.goog_content"))};x&&!qb(a)?zb(a,c):c()},ub=function(){var a=navigator.userAgent.match(/Trident\/([0-9]+.[0-9]+)/);return a?parseFloat(a[1]):0},qb=function(a){try{return E(a.contentWindow)}catch(b){return!1}},Ab=0,zb=function(a,b){var c="goog_rendering_callback"+Ab++;p[c]=b;a.src="javascript:'<script>(function() {document.domain = \""+document.domain+'";var continuation = window.parent.'+c+";window.parent."+c+" = null;continuation();})()\x3c/script>'"},
+vb=function(a){for(var b=0;b<a.length;++b)if(127<a.charCodeAt(b))return!0;return!1},wb=function(a){a=unescape(encodeURIComponent(a));for(var b=Math.floor(a.length/2),c=[],d=0;d<b;++d)c[d]=String.fromCharCode(256*a.charCodeAt(2*d+1)+a.charCodeAt(2*d));1==a.length%2&&(c[b]=a.charAt(a.length-1));return c.join("")};var Bb="ad_type adk adsafe adsense_enabled alt_color alternate_ad_url channel client color_bg color_border color_line color_link color_text color_url crui ea ecr f format frm fs ga_wpids h h_ch height hints hl host ifi ifk image_size kw kw_type max_radlink_len mtl num_ads num_radlinks oe output rafmt region rl_dest_url rl_rc slotname targeting tfs to tok w width xbf".split(" "),Cb=function(a){a=/^https?:\/\/([a-z0-9.-]*)\//.exec(a);return!!a&&("googleads.g.doubleclick.net"==a[1]||"pagead2.googlesyndication.com"==
+a[1])},Db=function(){var a=za(1);if("array"==fa(a))return a;a=G(!0,void 0);for(var b=0;b<a.length;b++)if("array"==fa(a[b].google_sra_responses))return a[b].google_sra_responses;return null};function Y(a,b){return(a=a[b]||"")&&parseInt(a,10)||a}
+var Eb=[80,160,240,320,400,480,560,640,800,960,1120,1280,1600,2400,3600,4800,6400],Fb=[10,20,30,40,50,60,70,80,90,100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,900,1E3,1100,1200,1300,1400,1500,3200,6400],Gb=function(a,b,c,d,e){if(!a[d])return!1;var f=+a[d],h=+b[d];if(isNaN(f)||isNaN(h))return c[d]={p:a[d],a:b[d]},!0;var g=ma(e,function(a){return a>f});e=ma(e,function(a){return a>h});return g!=e?(c[d]={p:a[d],a:b[d]},!0):!1},Ib=function(a,b,c){if(Cb(b)){a:if(c&&0<c.length){var d={};var e=
+b.split("?");e=e[e.length-1].split("&");for(var f=0;f<e.length;f++){var h=e[f].split("=");if(h[0])try{var g=h[0].toLowerCase();if(1<h.length){var l=h[1];var k=I.decodeURIComponent?decodeURIComponent(l.replace(/\+/g," ")):unescape(l)}else k="";d[g]=k}catch(r){}}for(g=0;g<c.length;g++)if(k=c[g].metadata,k.ifi==d.ifi&&k.adk==d.adk){for(l=0;l<Bb.length;l++)if(f=Bb[l],e=k[f],f=d[f],!e&&f||e&&e!=f){d=3;break a}l={};Gb(k,d,l,"adx",Eb)|Gb(k,d,l,"ady",Fb)&&X("sraLoc",l);c=Array.prototype.splice.call(c,g,1)[0].creative;
+d=JSON.stringify({override:!0,dt:Y(d,"dt"),bdt:Y(d,"bdt"),idt:Y(d,"idt"),odtd:Y(d,"dtd"),dtd:nb(),bpp:Y(d,"bpp"),zct:Y(d,"zct"),zst:Y(d,"zst")});d=c.replace("window.google_rum_values=","window.google_rum_values="+d+"||").replace('{"override":false}',d);xb(a,d);a.google_sra_responses||X("srafromesf",{});d=0;break a}d=4}else d=c?4:ya()?2:5;0!=d&&(1985<b.length&&(b=b.substring(0,1977),b=b.replace(/%\w?$/,""),b=b.replace(/&[^=]*=?$/,""),b+="&trunc=1"),a.location.replace(ob(Hb(b,d))))}},Hb=function(a,
+b){var c={};return La((c.sfr=b,c),a)};var Z=null,Jb=function(a,b){a.google_sra_callback=null;null!=Z&&(a.clearTimeout(Z),Z=null);Ib(a,b,a.google_sra_responses)};(function(a){try{var b=/\/(r\d+|dev)\/r\d+\/zrt_lookup\.html/.exec(a.location.pathname);b&&b[1]&&kb([function(a){a.shv=b[1]}])}catch(c){}})(window);
+gb(T,200,function(){try{var a=Fa.test(I.location.host);var b=!(!I.postMessage||!I.JSON||a&&!Ba)}catch(f){b=!1}if(b){if(a=(b=(a=Ca.exec(I.location.href))&&a[2])&&a[1],b)switch(b=decodeURIComponent(b),a){case "S":if(a=Da.exec(b)){if(b=+a[1],a=a[2],Cb(a)){var c;a:{if(a&&(c=a.match("dt=([^&]+)"))&&2==c.length){c=c[1];break a}c=""}mb=+c||0;a=ob(a,"zst");(c=Db())?Ib(I,a,c):(a=ia(Jb,I,a),Z=I.setTimeout(hb(a),b),I.google_sra_callback=a)}}else X("jserror",{context:202,params:b});break;case "RS":if(a=Ea.exec(b))if(a=
++a[1],!isNaN(a)){a:if(c=za(2))b=c[a];else{for(var d=G(!0,void 0),e=0;e<d.length;e++)if(c=d[e].google_reactive_sra_lookup){X("rsra",{context:"grsl",params:b},1);b=c[a];break a}b=null}b&&xb(I,b.creative)}}}else{try{c={pm:!!I.postMessage,js:!!I.JSON}}catch(f){c={ex:f.message}}X("zrt::unsup",c)}},lb);}).call(this);
+</script>
 </body></html>
