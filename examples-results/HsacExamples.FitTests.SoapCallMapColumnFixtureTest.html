@@ -1,4 +1,4 @@
-<html><head><title>HsacExamples.FitTests.SoapCallMapColumnFixtureTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.FitTests.SoapCallMapColumnFixtureTest</h2></header><article><br/>By extending SoapCallMapColumnFixture a Fit test can easily make SOAP calls. The request to send is created using a Freemarker template, all input column's values can be used in template, without requiring Java fields or properties in the fixture class. Output columns (columns whose name ends on a '?') require Java methods to be defined, generally performing a XPath expression on the service's response.<br/>This page outlines the main features of this class: <a href="#callService">calling a service</a>, <a href="#checkCall">performing an extra call to validate the result of the call</a>, <a href="#asyncService">dealing with asynchronous services</a> and <a href="#standardMethods">standard methods to access 'meta information' on the exchange</a>.<br/> <br/><a name="callService"> </a><br/><h2 id="CallService">Call Service</h2>
+<html><head><title>HsacExamples.FitTests.SoapCallMapColumnFixtureTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.FitTests.SoapCallMapColumnFixtureTest</h2></header><article><br/>By extending SoapCallMapColumnFixture a Fit test can easily make SOAP calls. The request to send is created using a Freemarker template, all input column's values can be used in template, without requiring Java fields or properties in the fixture class. Output columns (columns whose name ends on a '?') require Java methods to be defined, generally performing a XPath expression on the service's response.<br/>This page outlines the main features of this class: <a href="#callService">calling a service</a>, <a href="#checkCall">performing an extra call to validate the result of the call</a>, <a href="#asyncService">dealing with asynchronous services</a> and <a href="#standardMethods">standard methods to access 'meta information' on the exchange</a>.<br/><br/><a name="callService"> </a><br/><h2 id="CallService">Call Service</h2>
 The first example below calls a weather service, similar to <a href="HsacExamples.SlimTests.HttpTests.HttpPost3UsingFreemarkerTemplateTest">Slim HttpPost using Freemarker example</a>. On this page we use an instance of SymbolsFixture to configure the URL of the service to call. This is a best practice, allowing the url to be configured without changing Java code but not requiring it to be repeated for each table calling the same service. Normally the symbols fixture is placed on a SuiteSetup page, accessible to all tests in the suite.<br/><br/><table>
 	<tr>
 		<td colspan="2">Symbols</td>
@@ -8,62 +8,60 @@ The first example below calls a weather service, similar to <a href="HsacExample
 		<td class="pass">value</td>
 	</tr>
 	<tr>
-		<td>weatherUrl</td>
-		<td><a href="http://www.webservicex.com/globalweather.asmx">http://www.webservicex.com/globalweather.asmx</a></td>
+		<td>url</td>
+		<td><a href="http://www.crcind.com/csp/samples/SOAP.Demo.cls">http://www.crcind.com/csp/samples/SOAP.Demo.cls</a></td>
 	</tr>
 </table>
 <br/><table>
 	<tr>
-		<td colspan="3">Get Weather</td>
+		<td colspan="3">Add Integer</td>
 	</tr>
 	<tr>
-		<td>countryName</td>
-		<td>cityName</td>
-		<td>weatherResult?</td>
+		<td>arg1</td>
+		<td>arg2</td>
+		<td>result?</td>
 	</tr>
 	<tr>
-		<td>Canada</td>
-		<td>Vancouver International Air-Port, B. C.</td>
-		<td> <span class="fit_grey">error</span></td>
+		<td>10</td>
+		<td>12</td>
+		<td class="pass">22</td>
 	</tr>
 </table>
-<br/>The Java code for the 'Get Weather' fixture is a single class: <pre>
-public class GetWeatherFixture extends SoapCallMapColumnFixture&lt;XmlHttpResponse&gt; {
+<br/>The Java code for the 'Add Integer' fixture is a single class: <pre>
+public class AddIntegerFixture extends SoapCallMapColumnFixture&lt;XmlHttpResponse&gt; {
     static {
-        registerNs("wsX", "http://www.webserviceX.NET");
+        registerNs("tempuri", "http://tempuri.org");
     }
 
-    public GetWeatherFixture() {
+    /**
+     * Creates new.
+     */
+    public AddIntegerFixture() {
         super(XmlHttpResponse.class);
         setTemplateName("samplePost.ftl.xml");
     }
 
     @Override
     protected XmlHttpResponse callService() {
-        return callServiceImpl("weatherUrl", "http://www.webserviceX.NET/GetWeather");
+        return callServiceImpl("url", "http://tempuri.org/SOAP.Demo.AddInteger");
     }
 
-    public String weatherResult() {
-        String result = getRawResponse().getXPath("//wsX:GetWeatherResult/text()");
-        return xmlAsHtml(result);
+    public String result() {
+        return getRawResponse().getXPath("//tempuri:AddIntegerResult/text()");
     }
 }
 </pre>
 <br/><br/><a name="checkCall"> </a><br/><h2 id="CheckCall">Check Call</h2>
 Sometimes testing a SOAP service requires more than a single call the test needs to validate more than the call's response. SoapCallMapColumnFixture has a feature for this, allowing a second call to be made to validate the outcome of the first. An example usage would be a call to retrieve an account's details, to validate whether the call to the service to create the account has worked.<br/>To use this feature a couple of things need to be done: update the fixture class with some configuration logic to define how the 'check call' must be made, add a method that uses 'getRawCheckResponse()', and add a column to the test table in the wiki to call this method.<br/><br/><h3 id="ConfigureCheckCall">Configure Check Call</h3>
 To configure the check call one usually specifies which (Freemarker) template to use for the check call (the constructor is an obvious choice for a call to 'setCheckTemplateName()'). Furthermore one needs to override 'callCheckService()' to make the actual SOAP call to the check service, usually done by calling 'callCheckServiceImpl()'.<br/>Sometimes it is desirable to add one or more result values from the original service call to the current row's values so that the can be used in the check call (for instance the id of the account created). This can be done by overriding 'addResultsToValuesForCheck()'.<br/><br/><h3 id="TriggeringtheCheckCall">Triggering the Check Call</h3>
-Validating the check call gives the expected response is similar to checking the service's response. A method needs to be defined that extracts a value from the check call's response and the test table needs to be extended with an output column mapping to this method.<br/><b>Please note:</b> The check call is only executed when its response is needed (i.e. 'getRawCheckResponse()' is called), so if no output column refers to a method needing this response the call is not made. <br/><br/><h3 id="ExampleWithCheckCall">Example With Check Call</h3>
-<br/>In the example below we call a service offered by the Bank of Lithuania to check the exchange rate returned by a currency conversion web service, we ensure the two rates returned are within 10% (for US dollars) or 1% (for Euros).<br/><br/><table>
+Validating the check call gives the expected response is similar to checking the service's response. A method needs to be defined that extracts a value from the check call's response and the test table needs to be extended with an output column mapping to this method.<br/><b>Please note:</b> The check call is only executed when its response is needed (i.e. 'getRawCheckResponse()' is called), so if no output column refers to a method needing this response the call is not made.<br/><br/><h3 id="ExampleWithCheckCall">Example With Check Call</h3>
+<br/>In the example below we call a service offered by the Bank of Lithuania twice to check its own response (a bit useless but demonstrates the point).<br/><br/><table>
 	<tr>
 		<td colspan="2">Symbols</td>
 	</tr>
 	<tr>
 		<td class="pass">key</td>
 		<td class="pass">value</td>
-	</tr>
-	<tr>
-		<td>conversionUrl</td>
-		<td><a href="http://www.webservicex.net/CurrencyConvertor.asmx">http://www.webservicex.net/CurrencyConvertor.asmx</a></td>
 	</tr>
 	<tr>
 		<td>lbExchangeRateUrl</td>
@@ -76,115 +74,38 @@ Validating the check call gives the expected response is similar to checking the
 	</tr>
 	<tr>
 		<td>from</td>
-		<td>conversionRate?</td>
-		<td>exchangeRate?</td>
+		<td>exchangeRate1?</td>
+		<td>exchangeRate2?</td>
 		<td>margin?</td>
 	</tr>
 	<tr>
 		<td>USD</td>
-		<td> <span class="fit_grey">error</span></td>
 		<td> <span class="fit_grey">2.8387</span></td>
-		<td class="error">-0.50 &lt; _ &lt; 1.10<hr><pre><div class="fit_stacktrace">java.lang.RuntimeException: Server reported client error: 404
-	at nl.hsac.fitnesse.fixture.util.HttpResponse.validResponse(HttpResponse.java:32)
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.validResponse(XmlHttpResponse.java:24)
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getXPath(XmlHttpResponse.java:52)
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getXPathDouble(XmlHttpResponse.java:84)
-	at nl.hsac.fitnesse.sample.ToLithuanianLitaFixture.conversionRate(ToLithuanianLitaFixture.java:36)
-	at nl.hsac.fitnesse.sample.ToLithuanianLitaFixture.margin(ToLithuanianLitaFixture.java:32)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at fit.TypeAdapter.invoke(TypeAdapter.java:108)
-	at fit.TypeAdapter.get(TypeAdapter.java:97)
-	at fit.Fixture$CellComparator.compareCellToResult(Fixture.java:374)
-	at fit.Fixture$CellComparator.access$100(Fixture.java:360)
-	at fit.Fixture.compareCellToResult(Fixture.java:302)
-	at fit.Fixture.check(Fixture.java:298)
-	at fit.ColumnFixture.check(ColumnFixture.java:45)
-	at fit.Binding$QueryBinding.doCell(Binding.java:224)
-	at fit.ColumnFixture.doCell(ColumnFixture.java:32)
-	at fit.Fixture.doCells(Fixture.java:174)
-	at fit.Fixture.doRow(Fixture.java:168)
-	at fit.ColumnFixture.doRow(ColumnFixture.java:21)
-	at fit.Fixture.doRows(Fixture.java:162)
-	at fit.ColumnFixture.doRows(ColumnFixture.java:13)
-	at fit.Fixture.doTable(Fixture.java:156)
-	at fit.Fixture.interpretFollowingTables(Fixture.java:121)
-	at fit.Fixture.interpretTables(Fixture.java:107)
-	at fit.Fixture.doTables(Fixture.java:81)
-	at fit.FitServer.process(FitServer.java:81)
-	at fit.FitServer.run(FitServer.java:56)
-	at fit.FitServer.main(FitServer.java:41)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner$1.run(CommandRunningFitClient.java:257)
-	at java.lang.Thread.run(Thread.java:748)
-</div></pre></td>
+		<td> <span class="fit_grey">2.8387</span></td>
+		<td class="pass">0.99 < <b>1.0</b> < 1.01</td>
 	</tr>
 	<tr>
 		<td>EUR</td>
-		<td> <span class="fit_grey">error</span></td>
 		<td> <span class="fit_grey">3.4528</span></td>
-		<td class="error">-0.5 &lt; _ &lt; 1.01<hr><pre><div class="fit_stacktrace">java.lang.RuntimeException: Server reported client error: 404
-	at nl.hsac.fitnesse.fixture.util.HttpResponse.validResponse(HttpResponse.java:32)
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.validResponse(XmlHttpResponse.java:24)
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getXPath(XmlHttpResponse.java:52)
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getXPathDouble(XmlHttpResponse.java:84)
-	at nl.hsac.fitnesse.sample.ToLithuanianLitaFixture.conversionRate(ToLithuanianLitaFixture.java:36)
-	at nl.hsac.fitnesse.sample.ToLithuanianLitaFixture.margin(ToLithuanianLitaFixture.java:32)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at fit.TypeAdapter.invoke(TypeAdapter.java:108)
-	at fit.TypeAdapter.get(TypeAdapter.java:97)
-	at fit.Fixture$CellComparator.compareCellToResult(Fixture.java:374)
-	at fit.Fixture$CellComparator.access$100(Fixture.java:360)
-	at fit.Fixture.compareCellToResult(Fixture.java:302)
-	at fit.Fixture.check(Fixture.java:298)
-	at fit.ColumnFixture.check(ColumnFixture.java:45)
-	at fit.Binding$QueryBinding.doCell(Binding.java:224)
-	at fit.ColumnFixture.doCell(ColumnFixture.java:32)
-	at fit.Fixture.doCells(Fixture.java:174)
-	at fit.Fixture.doRow(Fixture.java:168)
-	at fit.ColumnFixture.doRow(ColumnFixture.java:21)
-	at fit.Fixture.doRows(Fixture.java:162)
-	at fit.ColumnFixture.doRows(ColumnFixture.java:13)
-	at fit.Fixture.doTable(Fixture.java:156)
-	at fit.Fixture.interpretFollowingTables(Fixture.java:121)
-	at fit.Fixture.interpretTables(Fixture.java:107)
-	at fit.Fixture.doTables(Fixture.java:81)
-	at fit.FitServer.process(FitServer.java:81)
-	at fit.FitServer.run(FitServer.java:56)
-	at fit.FitServer.main(FitServer.java:41)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at fitnesse.testsystems.fit.CommandRunningFitClient$InProcessCommandRunner$1.run(CommandRunningFitClient.java:257)
-	at java.lang.Thread.run(Thread.java:748)
-</div></pre></td>
+		<td> <span class="fit_grey">3.4528</span></td>
+		<td class="pass">0.99 < <b>1.0</b> < 1.01</td>
 	</tr>
 </table>
 <br/>The Java code for the 'To Lithuanian Lita' fixture is another single class: <pre>
 public class ToLithuanianLitaFixture extends SoapCallMapColumnFixture&lt;XmlHttpResponse&gt; {
     static {
-        registerNs("wsXCR", "http://www.webserviceX.NET/");
         registerNs("lbER", "http://webservices.lb.lt/ExchangeRates");
     }
 
     public ToLithuanianLitaFixture() {
         super(XmlHttpResponse.class);
-        setTemplateName("ConversionRate.ftl.xml");
+        setTemplateName("LBExchangeRate.ftl.xml");
         setCheckTemplateName("LBExchangeRate.ftl.xml");
     }
 
     @Override
     protected XmlHttpResponse callService() {
-        return callServiceImpl("conversionUrl", "http://www.webserviceX.NET/ConversionRate");
+        return callServiceImpl("lbExchangeRateUrl", "http://webservices.lb.lt/ExchangeRates/getExchangeRate");
     }
 
     @Override
@@ -193,20 +114,20 @@ public class ToLithuanianLitaFixture extends SoapCallMapColumnFixture&lt;XmlHttp
     }
 
     public Double margin() {
-        return conversionRate()/exchangeRate();
+        return exchangeRate1()/exchangeRate2();
     }
 
-    public Double conversionRate() {
-        return getRawResponse().getXPathDouble("//wsXCR:ConversionRateResult/text()");
+    public Double exchangeRate1() {
+        return getRawResponse().getXPathDouble("//lbER:getExchangeRateResult/text()");
     }
 
-    public Double exchangeRate() {
+    public Double exchangeRate2() {
         return getRawCheckResponse().getXPathDouble("//lbER:getExchangeRateResult/text()");
     }
 }
 </pre>
 <br/><br/><a name="asyncService"> </a><br/><h2 id="CheckingAsynchronousCalls">Checking Asynchronous Calls</h2>
-<br/>Some web services return a response to the caller before the call is fully processed. They are asynchronous as the processing continues without the caller having to wait for a response. Validating whether such a service calls has the expected result offers a bit of a challenge: how do you determine whether the expected result will never be reached, or it is just NOT YET reached? And even when you know a maximum amount of time it might take for the result to be reached, it would be nice that if the result is reached sooner the test suite continues without having to wait the maximum amount of time.<br/>SoapCallMapColumnFixture offers a mechanism to deal with this last problem. It allows the check call to be executed multiple times (with a configurable wait between the calls) until the response to the call indicates processing of the original call is completed, or until a (configurable) maximum amount of calls is completed. If the original call is fully processed quickly the test will continue to the next row in the table, when a longer wait is needed it will do so, but it will not wait indefinitely.<br/><br/>Configuring this retry behavior involves three things: how to determine whether the original call is fully processed, the maximum number of times the check call may be retried and (optionally) how long to wait between check calls. The first configuration is done in Java code, the latter two are done in the wiki using the test table's header.<br/>Whether another call to the check service is needed is defined by overriding the method 'isRetryDesirable()', which is passed the response from the last check call.<br/>Configuring the maximum number of calls and the wait time between calls is done using Fit's fixture parameter feature<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.ParametersInFixtures?edit&amp;nonExistent=true">[?]</a> (i.e. by adding cells to the first row of the table, after the fixture name). The first parameter is the maximum number of tries, the second is the wait time between calls (in milliseconds).<br/><br/>Below is an example table which uses a subclass of the 'To Lithuanian Lita' fixture which retries retrieving the rate from the central bank for at most 4 times, with a 100ms interval, until the two rates retrieved are identical. (This is a bit contrived, even non-sensical, example as we don't expect the result from the check call to change, but it shows the concept of the retry mechanism.) <br/><table>
+<br/>Some web services return a response to the caller before the call is fully processed. They are asynchronous as the processing continues without the caller having to wait for a response. Validating whether such a service calls has the expected result offers a bit of a challenge: how do you determine whether the expected result will never be reached, or it is just NOT YET reached? And even when you know a maximum amount of time it might take for the result to be reached, it would be nice that if the result is reached sooner the test suite continues without having to wait the maximum amount of time.<br/>SoapCallMapColumnFixture offers a mechanism to deal with this last problem. It allows the check call to be executed multiple times (with a configurable wait between the calls) until the response to the call indicates processing of the original call is completed, or until a (configurable) maximum amount of calls is completed. If the original call is fully processed quickly the test will continue to the next row in the table, when a longer wait is needed it will do so, but it will not wait indefinitely.<br/><br/>Configuring this retry behavior involves three things: how to determine whether the original call is fully processed, the maximum number of times the check call may be retried and (optionally) how long to wait between check calls. The first configuration is done in Java code, the latter two are done in the wiki using the test table's header.<br/>Whether another call to the check service is needed is defined by overriding the method 'isRetryDesirable()', which is passed the response from the last check call.<br/>Configuring the maximum number of calls and the wait time between calls is done using Fit's fixture parameter feature<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.FitFramework.ParametersInFixtures?edit&amp;nonExistent=true">[?]</a> (i.e. by adding cells to the first row of the table, after the fixture name). The first parameter is the maximum number of tries, the second is the wait time between calls (in milliseconds).<br/><br/>Below is an example table which uses a subclass of the 'To Lithuanian Lita' fixture which retries retrieving the rate from the central bank for at most 4 times, with a 100ms interval, until the two rates retrieved are identical. (This is a bit contrived, even non-sensical, example as we don't expect the result from the check call to change, but it shows the concept of the retry mechanism.)<br/><table>
 	<tr>
 		<td>To Lithuanian Lita Retrying</td>
 		<td>4</td>
@@ -214,25 +135,25 @@ public class ToLithuanianLitaFixture extends SoapCallMapColumnFixture&lt;XmlHttp
 	</tr>
 	<tr>
 		<td>from</td>
-		<td>conversionRate?</td>
-		<td>exchangeRate?</td>
+		<td>exchangeRate1?</td>
+		<td>exchangeRate2?</td>
 	</tr>
 	<tr>
 		<td>USD</td>
-		<td> <span class="fit_grey">error</span></td>
-		<td> <span class="fit_grey">error</span></td>
+		<td> <span class="fit_grey">2.8387</span></td>
+		<td> <span class="fit_grey">2.8387</span></td>
 	</tr>
 </table>
 <br/>The Java code for the 'To Lithuanian Lita Retrying' fixture is: <pre>
 public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
     @Override
     protected boolean isRetryDesirable() {
-        return !conversionRate().equals(exchangeRate());
+        return !exchangeRate1().equals(exchangeRate2());
     }
 }
 </pre>
 <br/><br/><a name="standardMethods"> </a><br/><h2 id="StandardMethods">Standard Methods</h2>
-<br/>SoapCallMapColumnFixture offers a set of methods to retrieve information on the SOAP exchange(s). Any fixture derived from this fixture also has these methods, so output columns displaying this information may be added to all tables using these fixtures, without custom Java code. <br/><br/>The table below shows some of this standard information in its output columns: the request sent, the time (in milliseconds) the call took, the full response sent by the server for both the service and check calls, and how often the check call was executed.<br/><table>
+<br/>SoapCallMapColumnFixture offers a set of methods to retrieve information on the SOAP exchange(s). Any fixture derived from this fixture also has these methods, so output columns displaying this information may be added to all tables using these fixtures, without custom Java code.<br/><br/>The table below shows some of this standard information in its output columns: the request sent, the time (in milliseconds) the call took, the full response sent by the server for both the service and check calls, and how often the check call was executed.<br/><table>
 	<tr>
 		<td>To Lithuanian Lita Retrying</td>
 		<td>4</td>
@@ -252,17 +173,14 @@ public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
 		<td>USD</td>
 		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
     &lt;soap:Body&gt;
-        &lt;ConversionRate xmlns=&quot;http://www.webserviceX.NET/&quot;&gt;
-            &lt;FromCurrency&gt;USD&lt;/FromCurrency&gt;
-            &lt;ToCurrency&gt;LTL&lt;/ToCurrency&gt;
-        &lt;/ConversionRate&gt;
+        &lt;getExchangeRate xmlns=&quot;http://webservices.lb.lt/ExchangeRates&quot;&gt;
+            &lt;Currency&gt;USD&lt;/Currency&gt;
+            &lt;Date&gt;2014-12-31&lt;/Date&gt;
+        &lt;/getExchangeRate&gt;
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></span></td>
-		<td> <span class="fit_grey">231</span></td>
-		<td> <span class="fit_grey">error</span></td>
-		<td> <span class="fit_grey">error</span></td>
-		<td> <span class="fit_grey">332</span></td>
+		<td> <span class="fit_grey">280</span></td>
 		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
     &lt;soap:Body&gt;
         &lt;getExchangeRateResponse xmlns=&quot;http://webservices.lb.lt/ExchangeRates&quot;&gt;
@@ -271,7 +189,25 @@ public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></span></td>
-		<td class="fail">4 <span class="fit_label">expected</span><hr>1 <span class="fit_label">actual</span></td>
+		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+    &lt;soap:Body&gt;
+        &lt;getExchangeRate xmlns=&quot;http://webservices.lb.lt/ExchangeRates&quot;&gt;
+            &lt;Currency&gt;USD&lt;/Currency&gt;
+            &lt;Date&gt;2014-12-31&lt;/Date&gt;
+        &lt;/getExchangeRate&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</pre></span></td>
+		<td> <span class="fit_grey">339</span></td>
+		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+    &lt;soap:Body&gt;
+        &lt;getExchangeRateResponse xmlns=&quot;http://webservices.lb.lt/ExchangeRates&quot;&gt;
+            &lt;getExchangeRateResult&gt;2.8387&lt;/getExchangeRateResult&gt;
+        &lt;/getExchangeRateResponse&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</pre></span></td>
+		<td class="pass">1</td>
 	</tr>
 </table>
 </article></body></html>

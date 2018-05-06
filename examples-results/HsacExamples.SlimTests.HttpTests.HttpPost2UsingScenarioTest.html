@@ -4,9 +4,10 @@
 	<div><span class="meta">variable defined: POST_BODY_2= {{{
 &lt;s11:Envelope xmlns:s11="http://schemas.xmlsoap.org/soap/envelope/"&gt;
   &lt;s11:Body&gt;
-    &lt;ns1:GetCityWeatherByZIP xmlns:ns1="http://ws.cdyne.com/WeatherWS/"&gt;
-      &lt;ns1:ZIP&gt;@{zip}&lt;/ns1:ZIP&gt;
-    &lt;/ns1:GetCityWeatherByZIP&gt;
+    &lt;ns1:AddInteger xmlns:ns1="http://tempuri.org"&gt;
+      &lt;ns1:Arg1&gt;@{arg1}&lt;/ns1:Arg1&gt;
+      &lt;ns1:Arg2&gt;@{arg2}&lt;/ns1:Arg2&gt;
+    &lt;/ns1:AddInteger&gt;
   &lt;/s11:Body&gt;
 &lt;/s11:Envelope&gt;
 }}} </span>
@@ -22,18 +23,25 @@
 		<td colspan="3">send request</td>
 	</tr>
 	<tr>
+		<td>set value</td>
+		<td><a href="http://tempuri.org/SOAP.Demo.AddInteger">http://tempuri.org/SOAP.Demo.AddInteger</a></td>
+		<td>for header</td>
+		<td>SOAPAction</td>
+	</tr>
+	<tr>
 		<td>post</td>
 		<td><pre>
 &lt;s11:Envelope xmlns:s11="http://schemas.xmlsoap.org/soap/envelope/"&gt;
   &lt;s11:Body&gt;
-    &lt;ns1:GetCityWeatherByZIP xmlns:ns1="http://ws.cdyne.com/WeatherWS/"&gt;
-      &lt;ns1:ZIP&gt;@{zip}&lt;/ns1:ZIP&gt;
-    &lt;/ns1:GetCityWeatherByZIP&gt;
+    &lt;ns1:AddInteger xmlns:ns1="http://tempuri.org"&gt;
+      &lt;ns1:Arg1&gt;@{arg1}&lt;/ns1:Arg1&gt;
+      &lt;ns1:Arg2&gt;@{arg2}&lt;/ns1:Arg2&gt;
+    &lt;/ns1:AddInteger&gt;
   &lt;/s11:Body&gt;
 &lt;/s11:Envelope&gt;
 </pre></td>
 		<td>to</td>
-		<td><a href="http://wsf.cdyne.com/WeatherWS/Weather.asmx">http://wsf.cdyne.com/WeatherWS/Weather.asmx</a></td>
+		<td>http://www.crcind.com/csp/samples/SOAP.Demo.cls</td>
 	</tr>
 	<tr>
 		<td>check</td>
@@ -46,321 +54,142 @@
 	</tr>
 	<tr>
 		<td>register prefix</td>
-		<td>weather</td>
+		<td>tempuri</td>
 		<td>for namespace</td>
-		<td><a href="http://ws.cdyne.com/WeatherWS/">http://ws.cdyne.com/WeatherWS/</a></td>
+		<td><a href="http://tempuri.org">http://tempuri.org</a></td>
 	</tr>
 	<tr>
-		<td>$City=</td>
+		<td>$result=</td>
 		<td>xPath</td>
-		<td colspan="2">//weather:City/text()</td>
+		<td colspan="2">//tempuri:AddIntegerResult/text()</td>
 	</tr>
 </table>
 </div>
 </div>
 <br/><table>
 	<tr>
-		<td colspan="2">send request</td>
+		<td colspan="3">send request</td>
 	</tr>
 	<tr>
-		<td>zip</td>
-		<td>City?</td>
+		<td>arg1</td>
+		<td>arg2</td>
+		<td>result?</td>
 	</tr>
 	<tr class="scenario closed">
-		<td class="fail">10007</td>
-		<td class="fail">New York <span class="ignore">Test not run</span></td>
-	</tr><tr class="scenario-detail closed-detail"><td colspan="2"><table>
+		<td>1</td>
+		<td>1</td>
+		<td><span class="pass">2</span></td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="3"><table>
 	<tr>
 		<td>table template</td>
 		<td colspan="3">send request</td>
 	</tr>
 	<tr>
-		<td><span class="fail">post</span></td>
+		<td>set value</td>
+		<td><a href="http://tempuri.org/SOAP.Demo.AddInteger">http://tempuri.org/SOAP.Demo.AddInteger</a></td>
+		<td>for header</td>
+		<td>SOAPAction</td>
+	</tr>
+	<tr>
+		<td><span class="pass">post</span></td>
 		<td><pre>
 &lt;s11:Envelope xmlns:s11="http://schemas.xmlsoap.org/soap/envelope/"&gt;
   &lt;s11:Body&gt;
-    &lt;ns1:GetCityWeatherByZIP xmlns:ns1="http://ws.cdyne.com/WeatherWS/"&gt;
-      &lt;ns1:ZIP&gt;10007&lt;/ns1:ZIP&gt;
-    &lt;/ns1:GetCityWeatherByZIP&gt;
+    &lt;ns1:AddInteger xmlns:ns1="http://tempuri.org"&gt;
+      &lt;ns1:Arg1&gt;1&lt;/ns1:Arg1&gt;
+      &lt;ns1:Arg2&gt;1&lt;/ns1:Arg2&gt;
+    &lt;/ns1:AddInteger&gt;
   &lt;/s11:Body&gt;
 &lt;/s11:Envelope&gt;
 </pre></td>
 		<td>to</td>
-		<td><a href="http://wsf.cdyne.com/WeatherWS/Weather.asmx">http://wsf.cdyne.com/WeatherWS/Weather.asmx</a></td>
+		<td>http://www.crcind.com/csp/samples/SOAP.Demo.cls</td>
 	</tr>
 	<tr>
 		<td>check</td>
 		<td>response status</td>
-		<td colspan="2">[<span class="diff">5</span>00] <span class="fail">expected [</span><span class="diff">2</span><span class="fail">00]</span></td>
+		<td colspan="2"><span class="pass">200</span></td>
 	</tr>
 	<tr>
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td>&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;Runtime Error&lt;/title&gt;
-        &lt;style&gt;
-         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
-         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
-         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
-         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
-         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
-         pre {font-family:"Lucida Console";font-size: .9em}
-         .marker {font-weight: bold; color: black;text-decoration: none;}
-         .version {color: gray;}
-         .error {margin-bottom: 10px;}
-         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
-        &lt;/style&gt;
-    &lt;/head&gt;
-
-    &lt;body bgcolor="white"&gt;
-
-            &lt;span&gt;&lt;H1&gt;Server Error in '/WeatherWS' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;
-
-            &lt;h2&gt; &lt;i&gt;Runtime Error&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;
-
-            &lt;font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif "&gt;
-
-            &lt;b&gt; Description: &lt;/b&gt;An application error occurred on the server. The current custom error settings for this application prevent the details of the application error from being viewed remotely (for security reasons). It could, however, be viewed by browsers running on the local server machine.
-            &lt;br&gt;&lt;br&gt;
-
-            &lt;b&gt;Details:&lt;/b&gt; To enable the details of this specific error message to be viewable on remote machines, please create a &amp;lt;customErrors&amp;gt; tag within a &amp;quot;web.config&amp;quot; configuration file located in the root directory of the current web application. This &amp;lt;customErrors&amp;gt; tag should then have its &amp;quot;mode&amp;quot; attribute set to &amp;quot;Off&amp;quot;.&lt;br&gt;&lt;br&gt;
-
-            &lt;table width=100% bgcolor="#ffffcc"&gt;
-               &lt;tr&gt;
-                  &lt;td&gt;
-                      &lt;code&gt;&lt;pre&gt;
-
-&amp;lt;!-- Web.Config Configuration File --&amp;gt;
-
-&amp;lt;configuration&amp;gt;
-    &amp;lt;system.web&amp;gt;
-        &amp;lt;customErrors mode=&amp;quot;Off&amp;quot;/&amp;gt;
-    &amp;lt;/system.web&amp;gt;
-&amp;lt;/configuration&amp;gt;&lt;/pre&gt;&lt;/code&gt;
-
-                  &lt;/td&gt;
-               &lt;/tr&gt;
-            &lt;/table&gt;
-
-            &lt;br&gt;
-
-            &lt;b&gt;Notes:&lt;/b&gt; The current error page you are seeing can be replaced by a custom error page by modifying the &amp;quot;defaultRedirect&amp;quot; attribute of the application's &amp;lt;customErrors&amp;gt; configuration tag to point to a custom error page URL.&lt;br&gt;&lt;br&gt;
-
-            &lt;table width=100% bgcolor="#ffffcc"&gt;
-               &lt;tr&gt;
-                  &lt;td&gt;
-                      &lt;code&gt;&lt;pre&gt;
-
-&amp;lt;!-- Web.Config Configuration File --&amp;gt;
-
-&amp;lt;configuration&amp;gt;
-    &amp;lt;system.web&amp;gt;
-        &amp;lt;customErrors mode=&amp;quot;RemoteOnly&amp;quot; defaultRedirect=&amp;quot;mycustompage.htm&amp;quot;/&amp;gt;
-    &amp;lt;/system.web&amp;gt;
-&amp;lt;/configuration&amp;gt;&lt;/pre&gt;&lt;/code&gt;
-
-                  &lt;/td&gt;
-               &lt;/tr&gt;
-            &lt;/table&gt;
-
-            &lt;br&gt;
-
-    &lt;/body&gt;
-&lt;/html&gt;
-</td></tr>
+	<td><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:s=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+    &lt;SOAP-ENV:Body&gt;
+        &lt;AddIntegerResponse xmlns=&quot;http://tempuri.org&quot;&gt;
+            &lt;AddIntegerResult&gt;2&lt;/AddIntegerResult&gt;
+        &lt;/AddIntegerResponse&gt;
+    &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</pre></td></tr>
 	<tr>
 		<td>register prefix</td>
-		<td>weather</td>
+		<td>tempuri</td>
 		<td>for namespace</td>
-		<td><a href="http://ws.cdyne.com/WeatherWS/">http://ws.cdyne.com/WeatherWS/</a></td>
+		<td><a href="http://tempuri.org">http://tempuri.org</a></td>
 	</tr>
-	<tr class="exception closed">
-		<td class="error">$City=</td>
-		<td class="error">xPath</td>
-		<td colspan="2" class="error">//weather:City/text()</td>
-	</tr><tr class="exception-detail closed-detail"><td colspan="4"><pre>__EXCEPTION__:java.lang.RuntimeException: Server error returned: 500
-	at nl.hsac.fitnesse.fixture.util.HttpResponse.validResponse(HttpResponse.java:29) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.validResponse(XmlHttpResponse.java:24) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getXPath(XmlHttpResponse.java:52) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.XmlHttpTest.xPath(XmlHttpTest.java:82) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.8.0_151]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) [rt.jar:1.8.0_151]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_151]
-	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_151]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:221) [fitnesse-20180127.jar:20180127]
-	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:54) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:34) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_151]
-	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_151]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:221) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.callMethod(DefaultInteraction.java:204) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.invokeMethod(DefaultInteraction.java:188) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.findAndInvoke(DefaultInteraction.java:166) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.StatementExecutor.callAndAssign(StatementExecutor.java:122) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.instructions.CallAndAssignInstruction.executeInternal(CallAndAssignInstruction.java:38) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
-	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:55) [fitnesse-20180127.jar:20180127]
-	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_151]</pre></td></tr>
+	<tr>
+		<td>$result&lt;-[2]</td>
+		<td>xPath</td>
+		<td colspan="2">//tempuri:AddIntegerResult/text()</td>
+	</tr>
 </table></td></tr>
 	<tr class="scenario closed">
-		<td class="fail">94102</td>
-		<td class="fail">San Francisco <span class="ignore">Test not run</span></td>
-	</tr><tr class="scenario-detail closed-detail"><td colspan="2"><table>
+		<td>34</td>
+		<td>16</td>
+		<td><span class="pass">50</span></td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="3"><table>
 	<tr>
 		<td>table template</td>
 		<td colspan="3">send request</td>
 	</tr>
 	<tr>
-		<td><span class="fail">post</span></td>
+		<td>set value</td>
+		<td><a href="http://tempuri.org/SOAP.Demo.AddInteger">http://tempuri.org/SOAP.Demo.AddInteger</a></td>
+		<td>for header</td>
+		<td>SOAPAction</td>
+	</tr>
+	<tr>
+		<td><span class="pass">post</span></td>
 		<td><pre>
 &lt;s11:Envelope xmlns:s11="http://schemas.xmlsoap.org/soap/envelope/"&gt;
   &lt;s11:Body&gt;
-    &lt;ns1:GetCityWeatherByZIP xmlns:ns1="http://ws.cdyne.com/WeatherWS/"&gt;
-      &lt;ns1:ZIP&gt;94102&lt;/ns1:ZIP&gt;
-    &lt;/ns1:GetCityWeatherByZIP&gt;
+    &lt;ns1:AddInteger xmlns:ns1="http://tempuri.org"&gt;
+      &lt;ns1:Arg1&gt;34&lt;/ns1:Arg1&gt;
+      &lt;ns1:Arg2&gt;16&lt;/ns1:Arg2&gt;
+    &lt;/ns1:AddInteger&gt;
   &lt;/s11:Body&gt;
 &lt;/s11:Envelope&gt;
 </pre></td>
 		<td>to</td>
-		<td><a href="http://wsf.cdyne.com/WeatherWS/Weather.asmx">http://wsf.cdyne.com/WeatherWS/Weather.asmx</a></td>
+		<td>http://www.crcind.com/csp/samples/SOAP.Demo.cls</td>
 	</tr>
 	<tr>
 		<td>check</td>
 		<td>response status</td>
-		<td colspan="2">[<span class="diff">5</span>00] <span class="fail">expected [</span><span class="diff">2</span><span class="fail">00]</span></td>
+		<td colspan="2"><span class="pass">200</span></td>
 	</tr>
 	<tr>
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td>&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;Runtime Error&lt;/title&gt;
-        &lt;style&gt;
-         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
-         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
-         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
-         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
-         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
-         pre {font-family:"Lucida Console";font-size: .9em}
-         .marker {font-weight: bold; color: black;text-decoration: none;}
-         .version {color: gray;}
-         .error {margin-bottom: 10px;}
-         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
-        &lt;/style&gt;
-    &lt;/head&gt;
-
-    &lt;body bgcolor="white"&gt;
-
-            &lt;span&gt;&lt;H1&gt;Server Error in '/WeatherWS' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;
-
-            &lt;h2&gt; &lt;i&gt;Runtime Error&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;
-
-            &lt;font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif "&gt;
-
-            &lt;b&gt; Description: &lt;/b&gt;An application error occurred on the server. The current custom error settings for this application prevent the details of the application error from being viewed remotely (for security reasons). It could, however, be viewed by browsers running on the local server machine.
-            &lt;br&gt;&lt;br&gt;
-
-            &lt;b&gt;Details:&lt;/b&gt; To enable the details of this specific error message to be viewable on remote machines, please create a &amp;lt;customErrors&amp;gt; tag within a &amp;quot;web.config&amp;quot; configuration file located in the root directory of the current web application. This &amp;lt;customErrors&amp;gt; tag should then have its &amp;quot;mode&amp;quot; attribute set to &amp;quot;Off&amp;quot;.&lt;br&gt;&lt;br&gt;
-
-            &lt;table width=100% bgcolor="#ffffcc"&gt;
-               &lt;tr&gt;
-                  &lt;td&gt;
-                      &lt;code&gt;&lt;pre&gt;
-
-&amp;lt;!-- Web.Config Configuration File --&amp;gt;
-
-&amp;lt;configuration&amp;gt;
-    &amp;lt;system.web&amp;gt;
-        &amp;lt;customErrors mode=&amp;quot;Off&amp;quot;/&amp;gt;
-    &amp;lt;/system.web&amp;gt;
-&amp;lt;/configuration&amp;gt;&lt;/pre&gt;&lt;/code&gt;
-
-                  &lt;/td&gt;
-               &lt;/tr&gt;
-            &lt;/table&gt;
-
-            &lt;br&gt;
-
-            &lt;b&gt;Notes:&lt;/b&gt; The current error page you are seeing can be replaced by a custom error page by modifying the &amp;quot;defaultRedirect&amp;quot; attribute of the application's &amp;lt;customErrors&amp;gt; configuration tag to point to a custom error page URL.&lt;br&gt;&lt;br&gt;
-
-            &lt;table width=100% bgcolor="#ffffcc"&gt;
-               &lt;tr&gt;
-                  &lt;td&gt;
-                      &lt;code&gt;&lt;pre&gt;
-
-&amp;lt;!-- Web.Config Configuration File --&amp;gt;
-
-&amp;lt;configuration&amp;gt;
-    &amp;lt;system.web&amp;gt;
-        &amp;lt;customErrors mode=&amp;quot;RemoteOnly&amp;quot; defaultRedirect=&amp;quot;mycustompage.htm&amp;quot;/&amp;gt;
-    &amp;lt;/system.web&amp;gt;
-&amp;lt;/configuration&amp;gt;&lt;/pre&gt;&lt;/code&gt;
-
-                  &lt;/td&gt;
-               &lt;/tr&gt;
-            &lt;/table&gt;
-
-            &lt;br&gt;
-
-    &lt;/body&gt;
-&lt;/html&gt;
-</td></tr>
+	<td><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:s=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+    &lt;SOAP-ENV:Body&gt;
+        &lt;AddIntegerResponse xmlns=&quot;http://tempuri.org&quot;&gt;
+            &lt;AddIntegerResult&gt;50&lt;/AddIntegerResult&gt;
+        &lt;/AddIntegerResponse&gt;
+    &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</pre></td></tr>
 	<tr>
 		<td>register prefix</td>
-		<td>weather</td>
+		<td>tempuri</td>
 		<td>for namespace</td>
-		<td><a href="http://ws.cdyne.com/WeatherWS/">http://ws.cdyne.com/WeatherWS/</a></td>
+		<td><a href="http://tempuri.org">http://tempuri.org</a></td>
 	</tr>
-	<tr class="exception closed">
-		<td class="error">$City=</td>
-		<td class="error">xPath</td>
-		<td colspan="2" class="error">//weather:City/text()</td>
-	</tr><tr class="exception-detail closed-detail"><td colspan="4"><pre>__EXCEPTION__:java.lang.RuntimeException: Server error returned: 500
-	at nl.hsac.fitnesse.fixture.util.HttpResponse.validResponse(HttpResponse.java:29) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.validResponse(XmlHttpResponse.java:24) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getXPath(XmlHttpResponse.java:52) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.XmlHttpTest.xPath(XmlHttpTest.java:82) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.8.0_151]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) [rt.jar:1.8.0_151]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_151]
-	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_151]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:221) [fitnesse-20180127.jar:20180127]
-	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:54) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:34) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_151]
-	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_151]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:221) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.callMethod(DefaultInteraction.java:204) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.invokeMethod(DefaultInteraction.java:188) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.findAndInvoke(DefaultInteraction.java:166) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.StatementExecutor.callAndAssign(StatementExecutor.java:122) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.instructions.CallAndAssignInstruction.executeInternal(CallAndAssignInstruction.java:38) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
-	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:55) [fitnesse-20180127.jar:20180127]
-	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_151]</pre></td></tr>
+	<tr>
+		<td>$result&lt;-[50]</td>
+		<td>xPath</td>
+		<td colspan="2">//tempuri:AddIntegerResult/text()</td>
+	</tr>
 </table></td></tr>
 </table>
 </article></body></html>

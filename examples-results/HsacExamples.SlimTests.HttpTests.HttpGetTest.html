@@ -6,143 +6,456 @@
 	</tr>
 	<tr class="slimRowColor5">
 		<td>set value</td>
-		<td>90210</td>
+		<td>1</td>
 		<td>for</td>
-		<td>ZIP</td>
+		<td>wsdl</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td><span class="fail">get from</span></td>
-		<td colspan="3"><a href="http://wsf.cdyne.com/WeatherWS/Weather.asmx">http://wsf.cdyne.com/WeatherWS/Weather.asmx</a>/GetCityWeatherByZIP</td>
+		<td><span class="pass">get from</span></td>
+		<td colspan="3">http://www.crcind.com/csp/samples/SOAP.Demo.cls</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>response status</td>
-		<td colspan="2">[<span class="diff">5</span>00] <span class="fail">expected [</span><span class="diff">2</span><span class="fail">00]</span></td>
+		<td colspan="2"><span class="pass">200</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">request</td>
-	<td>http://wsf.cdyne.com/WeatherWS/Weather.asmx/GetCityWeatherByZIP?ZIP=90210</td></tr>
+	<td>http://www.crcind.com/csp/samples/SOAP.Demo.cls?wsdl=1</td></tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td>&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;Runtime Error&lt;/title&gt;
-        &lt;style&gt;
-         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
-         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
-         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
-         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
-         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
-         pre {font-family:"Lucida Console";font-size: .9em}
-         .marker {font-weight: bold; color: black;text-decoration: none;}
-         .version {color: gray;}
-         .error {margin-bottom: 10px;}
-         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
-        &lt;/style&gt;
-    &lt;/head&gt;
-
-    &lt;body bgcolor="white"&gt;
-
-            &lt;span&gt;&lt;H1&gt;Server Error in '/WeatherWS' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;
-
-            &lt;h2&gt; &lt;i&gt;Runtime Error&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;
-
-            &lt;font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif "&gt;
-
-            &lt;b&gt; Description: &lt;/b&gt;An application error occurred on the server. The current custom error settings for this application prevent the details of the application error from being viewed remotely (for security reasons). It could, however, be viewed by browsers running on the local server machine.
-            &lt;br&gt;&lt;br&gt;
-
-            &lt;b&gt;Details:&lt;/b&gt; To enable the details of this specific error message to be viewable on remote machines, please create a &amp;lt;customErrors&amp;gt; tag within a &amp;quot;web.config&amp;quot; configuration file located in the root directory of the current web application. This &amp;lt;customErrors&amp;gt; tag should then have its &amp;quot;mode&amp;quot; attribute set to &amp;quot;Off&amp;quot;.&lt;br&gt;&lt;br&gt;
-
-            &lt;table width=100% bgcolor="#ffffcc"&gt;
-               &lt;tr&gt;
-                  &lt;td&gt;
-                      &lt;code&gt;&lt;pre&gt;
-
-&amp;lt;!-- Web.Config Configuration File --&amp;gt;
-
-&amp;lt;configuration&amp;gt;
-    &amp;lt;system.web&amp;gt;
-        &amp;lt;customErrors mode=&amp;quot;Off&amp;quot;/&amp;gt;
-    &amp;lt;/system.web&amp;gt;
-&amp;lt;/configuration&amp;gt;&lt;/pre&gt;&lt;/code&gt;
-
-                  &lt;/td&gt;
-               &lt;/tr&gt;
-            &lt;/table&gt;
-
-            &lt;br&gt;
-
-            &lt;b&gt;Notes:&lt;/b&gt; The current error page you are seeing can be replaced by a custom error page by modifying the &amp;quot;defaultRedirect&amp;quot; attribute of the application's &amp;lt;customErrors&amp;gt; configuration tag to point to a custom error page URL.&lt;br&gt;&lt;br&gt;
-
-            &lt;table width=100% bgcolor="#ffffcc"&gt;
-               &lt;tr&gt;
-                  &lt;td&gt;
-                      &lt;code&gt;&lt;pre&gt;
-
-&amp;lt;!-- Web.Config Configuration File --&amp;gt;
-
-&amp;lt;configuration&amp;gt;
-    &amp;lt;system.web&amp;gt;
-        &amp;lt;customErrors mode=&amp;quot;RemoteOnly&amp;quot; defaultRedirect=&amp;quot;mycustompage.htm&amp;quot;/&amp;gt;
-    &amp;lt;/system.web&amp;gt;
-&amp;lt;/configuration&amp;gt;&lt;/pre&gt;&lt;/code&gt;
-
-                  &lt;/td&gt;
-               &lt;/tr&gt;
-            &lt;/table&gt;
-
-            &lt;br&gt;
-
-    &lt;/body&gt;
-&lt;/html&gt;
-</td></tr>
+	<td><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;definitions xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot; xmlns:SOAP-ENC=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xmlns:mime=&quot;http://schemas.xmlsoap.org/wsdl/mime/&quot; xmlns:s=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:s0=&quot;http://tempuri.org&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; targetNamespace=&quot;http://tempuri.org&quot;&gt;
+    &lt;types&gt;
+        &lt;s:schema elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;http://tempuri.org&quot;&gt;
+            &lt;s:import namespace=&quot;http://tempuri.org/ByNameDataSet&quot; schemaLocation=&quot;http://www.crcind.com/csp/samples/SOAP.ByNameDataSet.cls?XSD&quot;/&gt;
+            &lt;s:import namespace=&quot;http://tempuri.org/QueryByName_DataSet&quot; schemaLocation=&quot;http://www.crcind.com/csp/samples/SOAP.Demo.QueryByName.DS.cls?XSD&quot;/&gt;
+            &lt;s:element name=&quot;AddInteger&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element minOccurs=&quot;0&quot; name=&quot;Arg1&quot; type=&quot;s:long&quot;/&gt;
+                        &lt;s:element minOccurs=&quot;0&quot; name=&quot;Arg2&quot; type=&quot;s:long&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:element name=&quot;AddIntegerResponse&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element name=&quot;AddIntegerResult&quot; type=&quot;s:long&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:element name=&quot;DivideInteger&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element minOccurs=&quot;0&quot; name=&quot;Arg1&quot; type=&quot;s:long&quot;/&gt;
+                        &lt;s:element minOccurs=&quot;0&quot; name=&quot;Arg2&quot; type=&quot;s:long&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:element name=&quot;DivideIntegerResponse&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element name=&quot;DivideIntegerResult&quot; type=&quot;s:long&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:element name=&quot;FindPerson&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element minOccurs=&quot;0&quot; name=&quot;id&quot; type=&quot;s:string&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:element name=&quot;FindPersonResponse&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element name=&quot;FindPersonResult&quot; type=&quot;s0:Person&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:complexType name=&quot;Employee&quot;&gt;
+                &lt;s:complexContent&gt;
+                    &lt;s:extension base=&quot;s0:Person&quot;&gt;
+                        &lt;s:sequence&gt;
+                            &lt;s:element minOccurs=&quot;0&quot; name=&quot;Title&quot;&gt;
+                                &lt;s:simpleType&gt;
+                                    &lt;s:restriction base=&quot;s:string&quot;&gt;
+                                        &lt;s:maxLength value=&quot;50&quot;/&gt;
+                                    &lt;/s:restriction&gt;
+                                &lt;/s:simpleType&gt;
+                            &lt;/s:element&gt;
+                            &lt;s:element minOccurs=&quot;0&quot; name=&quot;Salary&quot;&gt;
+                                &lt;s:simpleType&gt;
+                                    &lt;s:restriction base=&quot;s:long&quot;&gt;
+                                        &lt;s:maxInclusive value=&quot;100000&quot;/&gt;
+                                        &lt;s:minInclusive value=&quot;0&quot;/&gt;
+                                    &lt;/s:restriction&gt;
+                                &lt;/s:simpleType&gt;
+                            &lt;/s:element&gt;
+                            &lt;s:element minOccurs=&quot;0&quot; name=&quot;Notes&quot; type=&quot;s:string&quot;/&gt;
+                            &lt;s:element minOccurs=&quot;0&quot; name=&quot;Picture&quot; type=&quot;s:base64Binary&quot;/&gt;
+                        &lt;/s:sequence&gt;
+                    &lt;/s:extension&gt;
+                &lt;/s:complexContent&gt;
+            &lt;/s:complexType&gt;
+            &lt;s:complexType name=&quot;Person&quot;&gt;
+                &lt;s:sequence&gt;
+                    &lt;s:element name=&quot;Name&quot; type=&quot;s:string&quot;/&gt;
+                    &lt;s:element name=&quot;SSN&quot; type=&quot;s:string&quot;/&gt;
+                    &lt;s:element minOccurs=&quot;0&quot; name=&quot;DOB&quot; type=&quot;s:date&quot;/&gt;
+                    &lt;s:element minOccurs=&quot;0&quot; name=&quot;Home&quot; type=&quot;s0:Address&quot;/&gt;
+                    &lt;s:element minOccurs=&quot;0&quot; name=&quot;Office&quot; type=&quot;s0:Address&quot;/&gt;
+                    &lt;s:element minOccurs=&quot;0&quot; name=&quot;Spouse&quot; type=&quot;s0:Person&quot;/&gt;
+                    &lt;s:element minOccurs=&quot;0&quot; name=&quot;FavoriteColors&quot; type=&quot;s0:ArrayOfFavoriteColorsItemString&quot;/&gt;
+                    &lt;s:element minOccurs=&quot;0&quot; name=&quot;Age&quot; type=&quot;s:long&quot;/&gt;
+                &lt;/s:sequence&gt;
+            &lt;/s:complexType&gt;
+            &lt;s:complexType name=&quot;Address&quot;&gt;
+                &lt;s:sequence&gt;
+                    &lt;s:element minOccurs=&quot;0&quot; name=&quot;Street&quot;&gt;
+                        &lt;s:simpleType&gt;
+                            &lt;s:restriction base=&quot;s:string&quot;&gt;
+                                &lt;s:maxLength value=&quot;80&quot;/&gt;
+                            &lt;/s:restriction&gt;
+                        &lt;/s:simpleType&gt;
+                    &lt;/s:element&gt;
+                    &lt;s:element minOccurs=&quot;0&quot; name=&quot;City&quot;&gt;
+                        &lt;s:simpleType&gt;
+                            &lt;s:restriction base=&quot;s:string&quot;&gt;
+                                &lt;s:maxLength value=&quot;80&quot;/&gt;
+                            &lt;/s:restriction&gt;
+                        &lt;/s:simpleType&gt;
+                    &lt;/s:element&gt;
+                    &lt;s:element minOccurs=&quot;0&quot; name=&quot;State&quot;&gt;
+                        &lt;s:simpleType&gt;
+                            &lt;s:restriction base=&quot;s:string&quot;&gt;
+                                &lt;s:maxLength value=&quot;2&quot;/&gt;
+                            &lt;/s:restriction&gt;
+                        &lt;/s:simpleType&gt;
+                    &lt;/s:element&gt;
+                    &lt;s:element minOccurs=&quot;0&quot; name=&quot;Zip&quot;&gt;
+                        &lt;s:simpleType&gt;
+                            &lt;s:restriction base=&quot;s:string&quot;&gt;
+                                &lt;s:maxLength value=&quot;5&quot;/&gt;
+                            &lt;/s:restriction&gt;
+                        &lt;/s:simpleType&gt;
+                    &lt;/s:element&gt;
+                &lt;/s:sequence&gt;
+            &lt;/s:complexType&gt;
+            &lt;s:complexType name=&quot;ArrayOfFavoriteColorsItemString&quot;&gt;
+                &lt;s:sequence&gt;
+                    &lt;s:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;FavoriteColorsItem&quot; nillable=&quot;true&quot; type=&quot;s:string&quot;/&gt;
+                &lt;/s:sequence&gt;
+            &lt;/s:complexType&gt;
+            &lt;s:element name=&quot;GetByName&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element minOccurs=&quot;0&quot; name=&quot;name&quot; type=&quot;s:string&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:element name=&quot;GetByNameResponse&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element name=&quot;GetByNameResult&quot; type=&quot;s0:DataSet&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:complexType name=&quot;DataSet&quot;&gt;
+                &lt;s:sequence&gt;
+                    &lt;s:element ref=&quot;s:schema&quot;/&gt;
+                    &lt;s:any/&gt;
+                &lt;/s:sequence&gt;
+            &lt;/s:complexType&gt;
+            &lt;s:element name=&quot;GetDataSetByName&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element minOccurs=&quot;0&quot; name=&quot;name&quot; type=&quot;s:string&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:element name=&quot;GetDataSetByNameResponse&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element name=&quot;GetDataSetByNameResult&quot; type=&quot;s0:ByNameDataSet&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:complexType name=&quot;ByNameDataSet&quot;&gt;
+                &lt;s:sequence&gt;
+                    &lt;s:any namespace=&quot;http://tempuri.org/ByNameDataSet&quot;/&gt;
+                &lt;/s:sequence&gt;
+            &lt;/s:complexType&gt;
+            &lt;s:element name=&quot;GetListByName&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element minOccurs=&quot;0&quot; name=&quot;name&quot; type=&quot;s:string&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:element name=&quot;GetListByNameResponse&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element name=&quot;GetListByNameResult&quot; type=&quot;s0:ArrayOfPersonIdentificationPersonIdentification&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:complexType name=&quot;ArrayOfPersonIdentificationPersonIdentification&quot;&gt;
+                &lt;s:sequence&gt;
+                    &lt;s:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;PersonIdentification&quot; nillable=&quot;true&quot; type=&quot;s0:PersonIdentification&quot;/&gt;
+                &lt;/s:sequence&gt;
+            &lt;/s:complexType&gt;
+            &lt;s:complexType name=&quot;PersonIdentification&quot;&gt;
+                &lt;s:sequence&gt;
+                    &lt;s:element minOccurs=&quot;0&quot; name=&quot;ID&quot; type=&quot;s:string&quot;/&gt;
+                    &lt;s:element name=&quot;Name&quot; type=&quot;s:string&quot;/&gt;
+                    &lt;s:element name=&quot;SSN&quot; type=&quot;s:string&quot;/&gt;
+                    &lt;s:element minOccurs=&quot;0&quot; name=&quot;DOB&quot; type=&quot;s:date&quot;/&gt;
+                &lt;/s:sequence&gt;
+            &lt;/s:complexType&gt;
+            &lt;s:element name=&quot;LookupCity&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element minOccurs=&quot;0&quot; name=&quot;zip&quot; type=&quot;s:string&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:element name=&quot;LookupCityResponse&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element name=&quot;LookupCityResult&quot; type=&quot;s0:Address&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:element name=&quot;Mission&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence/&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:element name=&quot;MissionResponse&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element name=&quot;MissionResult&quot; type=&quot;s:string&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:element name=&quot;QueryByName&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element minOccurs=&quot;0&quot; name=&quot;name&quot; type=&quot;s:string&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:element name=&quot;QueryByNameResponse&quot;&gt;
+                &lt;s:complexType&gt;
+                    &lt;s:sequence&gt;
+                        &lt;s:element name=&quot;QueryByNameResult&quot; type=&quot;s0:QueryByName_DataSet&quot;/&gt;
+                    &lt;/s:sequence&gt;
+                &lt;/s:complexType&gt;
+            &lt;/s:element&gt;
+            &lt;s:complexType name=&quot;QueryByName_DataSet&quot;&gt;
+                &lt;s:sequence&gt;
+                    &lt;s:any namespace=&quot;http://tempuri.org/QueryByName_DataSet&quot;/&gt;
+                &lt;/s:sequence&gt;
+            &lt;/s:complexType&gt;
+        &lt;/s:schema&gt;
+    &lt;/types&gt;
+    &lt;message name=&quot;AddIntegerSoapIn&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:AddInteger&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;AddIntegerSoapOut&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:AddIntegerResponse&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;DivideIntegerSoapIn&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:DivideInteger&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;DivideIntegerSoapOut&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:DivideIntegerResponse&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;FindPersonSoapIn&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:FindPerson&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;FindPersonSoapOut&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:FindPersonResponse&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;GetByNameSoapIn&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:GetByName&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;GetByNameSoapOut&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:GetByNameResponse&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;GetDataSetByNameSoapIn&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:GetDataSetByName&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;GetDataSetByNameSoapOut&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:GetDataSetByNameResponse&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;GetListByNameSoapIn&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:GetListByName&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;GetListByNameSoapOut&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:GetListByNameResponse&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;LookupCitySoapIn&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:LookupCity&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;LookupCitySoapOut&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:LookupCityResponse&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;MissionSoapIn&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:Mission&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;MissionSoapOut&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:MissionResponse&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;QueryByNameSoapIn&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:QueryByName&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;QueryByNameSoapOut&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;s0:QueryByNameResponse&quot;/&gt;
+    &lt;/message&gt;
+    &lt;portType name=&quot;SOAPDemoSoap&quot;&gt;
+        &lt;operation name=&quot;AddInteger&quot;&gt;
+            &lt;input message=&quot;s0:AddIntegerSoapIn&quot;/&gt;
+            &lt;output message=&quot;s0:AddIntegerSoapOut&quot;/&gt;
+        &lt;/operation&gt;
+        &lt;operation name=&quot;DivideInteger&quot;&gt;
+            &lt;input message=&quot;s0:DivideIntegerSoapIn&quot;/&gt;
+            &lt;output message=&quot;s0:DivideIntegerSoapOut&quot;/&gt;
+        &lt;/operation&gt;
+        &lt;operation name=&quot;FindPerson&quot;&gt;
+            &lt;input message=&quot;s0:FindPersonSoapIn&quot;/&gt;
+            &lt;output message=&quot;s0:FindPersonSoapOut&quot;/&gt;
+        &lt;/operation&gt;
+        &lt;operation name=&quot;GetByName&quot;&gt;
+            &lt;input message=&quot;s0:GetByNameSoapIn&quot;/&gt;
+            &lt;output message=&quot;s0:GetByNameSoapOut&quot;/&gt;
+        &lt;/operation&gt;
+        &lt;operation name=&quot;GetDataSetByName&quot;&gt;
+            &lt;input message=&quot;s0:GetDataSetByNameSoapIn&quot;/&gt;
+            &lt;output message=&quot;s0:GetDataSetByNameSoapOut&quot;/&gt;
+        &lt;/operation&gt;
+        &lt;operation name=&quot;GetListByName&quot;&gt;
+            &lt;input message=&quot;s0:GetListByNameSoapIn&quot;/&gt;
+            &lt;output message=&quot;s0:GetListByNameSoapOut&quot;/&gt;
+        &lt;/operation&gt;
+        &lt;operation name=&quot;LookupCity&quot;&gt;
+            &lt;input message=&quot;s0:LookupCitySoapIn&quot;/&gt;
+            &lt;output message=&quot;s0:LookupCitySoapOut&quot;/&gt;
+        &lt;/operation&gt;
+        &lt;operation name=&quot;Mission&quot;&gt;
+            &lt;input message=&quot;s0:MissionSoapIn&quot;/&gt;
+            &lt;output message=&quot;s0:MissionSoapOut&quot;/&gt;
+        &lt;/operation&gt;
+        &lt;operation name=&quot;QueryByName&quot;&gt;
+            &lt;input message=&quot;s0:QueryByNameSoapIn&quot;/&gt;
+            &lt;output message=&quot;s0:QueryByNameSoapOut&quot;/&gt;
+        &lt;/operation&gt;
+    &lt;/portType&gt;
+    &lt;binding name=&quot;SOAPDemoSoap&quot; type=&quot;s0:SOAPDemoSoap&quot;&gt;
+        &lt;soap:binding transport=&quot;http://schemas.xmlsoap.org/soap/http&quot; style=&quot;document&quot;/&gt;
+        &lt;operation name=&quot;AddInteger&quot;&gt;
+            &lt;soap:operation soapAction=&quot;http://tempuri.org/SOAP.Demo.AddInteger&quot; style=&quot;document&quot;/&gt;
+            &lt;input&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/input&gt;
+            &lt;output&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/output&gt;
+        &lt;/operation&gt;
+        &lt;operation name=&quot;DivideInteger&quot;&gt;
+            &lt;soap:operation soapAction=&quot;http://tempuri.org/SOAP.Demo.DivideInteger&quot; style=&quot;document&quot;/&gt;
+            &lt;input&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/input&gt;
+            &lt;output&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/output&gt;
+        &lt;/operation&gt;
+        &lt;operation name=&quot;FindPerson&quot;&gt;
+            &lt;soap:operation soapAction=&quot;http://tempuri.org/SOAP.Demo.FindPerson&quot; style=&quot;document&quot;/&gt;
+            &lt;input&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/input&gt;
+            &lt;output&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/output&gt;
+        &lt;/operation&gt;
+        &lt;operation name=&quot;GetByName&quot;&gt;
+            &lt;soap:operation soapAction=&quot;http://tempuri.org/SOAP.Demo.GetByName&quot; style=&quot;document&quot;/&gt;
+            &lt;input&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/input&gt;
+            &lt;output&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/output&gt;
+        &lt;/operation&gt;
+        &lt;operation name=&quot;GetDataSetByName&quot;&gt;
+            &lt;soap:operation soapAction=&quot;http://tempuri.org/SOAP.Demo.GetDataSetByName&quot; style=&quot;document&quot;/&gt;
+            &lt;input&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/input&gt;
+            &lt;output&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/output&gt;
+        &lt;/operation&gt;
+        &lt;operation name=&quot;GetListByName&quot;&gt;
+            &lt;soap:operation soapAction=&quot;http://tempuri.org/SOAP.Demo.GetListByName&quot; style=&quot;document&quot;/&gt;
+            &lt;input&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/input&gt;
+            &lt;output&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/output&gt;
+        &lt;/operation&gt;
+        &lt;operation name=&quot;LookupCity&quot;&gt;
+            &lt;soap:operation soapAction=&quot;http://tempuri.org/SOAP.Demo.LookupCity&quot; style=&quot;document&quot;/&gt;
+            &lt;input&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/input&gt;
+            &lt;output&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/output&gt;
+        &lt;/operation&gt;
+        &lt;operation name=&quot;Mission&quot;&gt;
+            &lt;soap:operation soapAction=&quot;http://tempuri.org/SOAP.Demo.Mission&quot; style=&quot;document&quot;/&gt;
+            &lt;input&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/input&gt;
+            &lt;output&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/output&gt;
+        &lt;/operation&gt;
+        &lt;operation name=&quot;QueryByName&quot;&gt;
+            &lt;soap:operation soapAction=&quot;http://tempuri.org/SOAP.Demo.QueryByName&quot; style=&quot;document&quot;/&gt;
+            &lt;input&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/input&gt;
+            &lt;output&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+            &lt;/output&gt;
+        &lt;/operation&gt;
+    &lt;/binding&gt;
+    &lt;service name=&quot;SOAPDemo&quot;&gt;
+        &lt;port name=&quot;SOAPDemoSoap&quot; binding=&quot;s0:SOAPDemoSoap&quot;&gt;
+            &lt;soap:address location=&quot;http://www.crcind.com/csp/samples/SOAP.Demo.cls&quot;/&gt;
+        &lt;/port&gt;
+    &lt;/service&gt;
+&lt;/definitions&gt;
+</pre></td></tr>
 	<tr class="slimRowColor5">
 		<td>register prefix</td>
-		<td>weather</td>
+		<td>soap</td>
 		<td>for namespace</td>
-		<td><a href="http://ws.cdyne.com/WeatherWS/">http://ws.cdyne.com/WeatherWS/</a></td>
+		<td><a href="http://schemas.xmlsoap.org/wsdl/soap/">http://schemas.xmlsoap.org/wsdl/soap/</a></td>
 	</tr>
-	<tr class="exception closed">
-		<td class="error">check</td>
-		<td class="error">xPath</td>
-		<td class="error">//weather:City/text()</td>
-		<td class="error">Beverly Hills</td>
-	</tr><tr class="exception-detail closed-detail"><td colspan="4"><pre>__EXCEPTION__:java.lang.RuntimeException: Server error returned: 500
-	at nl.hsac.fitnesse.fixture.util.HttpResponse.validResponse(HttpResponse.java:29) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.validResponse(XmlHttpResponse.java:24) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.util.XmlHttpResponse.getXPath(XmlHttpResponse.java:52) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.XmlHttpTest.xPath(XmlHttpTest.java:82) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.8.0_151]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) [rt.jar:1.8.0_151]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_151]
-	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_151]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:221) [fitnesse-20180127.jar:20180127]
-	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:54) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:34) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_151]
-	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_151]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.methodInvoke(DefaultInteraction.java:221) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.callMethod(DefaultInteraction.java:204) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.invokeMethod(DefaultInteraction.java:188) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.fixtureInteraction.DefaultInteraction.findAndInvoke(DefaultInteraction.java:166) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.instructions.CallInstruction.executeInternal(CallInstruction.java:35) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20180127.jar:20180127]
-	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20180127.jar:20180127]
-	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:55) [fitnesse-20180127.jar:20180127]
-	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_151]</pre></td></tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>xPath</td>
+		<td>//soap:address/@location</td>
+		<td><span class="pass">http://www.crcind.com/csp/samples/SOAP.Demo.cls</span></td>
+	</tr>
 </table>
 </article></body></html>
