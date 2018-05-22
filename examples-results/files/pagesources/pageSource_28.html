@@ -1,88 +1,154 @@
 <!DOCTYPE html><html><head>
-  <title>Proxy</title>
-  <script async="" src="//cdn.krxd.net/ctjs/controltag.js.dc955599a3976b2e658d60927793d9ea"></script><script type="text/javascript" async="" src="//cdn.krxd.net/controltag/q1jglrva2.js"></script><script data-version="2">
-    window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]),Krux("proxy"),function(){var t=function(t){for(var r=t.split("&"),e={},n=0,c=r.length;c>n;++n){var i=r[n].split("=");e[i[0]]=i[1]}return e},r=/^[a-z0-9_-]+$/i,e=window.location.hash,n=t(e.slice(e.indexOf("!")+1));if(!n.kxcid||!r.test(n.kxcid))throw new Error("Invalid confid passed to proxy");n.kxcl&&r.test(n.kxcl)||(n.kxcl="cdn"),n.kxp&&/^[0-9]{1,5}$/.test(n.kxp)||(n.kxp="");var c=document.createElement("script");c.type="text/javascript",c.async=!0,c.src="//"+n.kxcl+".krxd.net"+(n.kxp?":"+n.kxp:"")+"/controltag/"+n.kxcid+".js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(c,i)}();
-  </script>
-<span class="kxtag kxinvisible" data-id="6"><script>
-(function() {
-  if (Krux('get', 'user') != null) {
-      new Image().src = 'https://usermatch.krxd.net/um/v2?partner=google';
+<meta charset="UTF-8">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>VFL.1064_fmm_GM_300x250_Travelocity-HPTO-Reponsize-Center-Middle-Creative1-01_eng_html5</title>
+<!-- write your code here -->
+<style>
+  #animation_container {
+	position:absolute;
+	margin:auto;
+	left:0;right:0;
   }
-})();
-</script></span><span class="kxtag kxinvisible" data-id="21"><script>
-(function(){
-  var kuid = Krux('get', 'user');
-  if (kuid) {
-      var liveramp_url = 'https://idsync.rlcdn.com/379708.gif?partner_uid=' + kuid;
-      var i = new Image();
-      i.src = liveramp_url;      
-  }
-})();
-</script></span><span class="kxtag kxinvisible" data-id="25"><script>
-(function(){
-  var kuid = Krux('get', 'user');
-  if (kuid) {
-    Krux('require:http').pixel({
-      url: "//loadm.exelator.com/load",
-      data: {
-          _kdpid: 'e4942ff0-4070-4896-a7ef-e6a5a30ce9f9',
-          buid: kuid,
-          p: '204',
-          g: '270',
-          j: '0'
-      }});
-  }
-  })();
-</script></span><span class="kxtag kxinvisible" data-id="45"><script>
-    (function() {
-        new Image().src = location.protocol + '//sync-tm.everesttech.net/upi/pid/NC4WTmcy?redir=' + encodeURIComponent('https://beacon.krxd.net/usermatch.gif?partner_id=cb276571-e0d9-4438-9fd4-80a1ff034b01&puid=${TM_USER_ID}');
-    })();
-</script></span><span class="kxtag kxinvisible" data-id="76"><script>
-(function(){
-  var kuid = Krux('get', 'user');
-  if (kuid) {
-      var liveramp_url = 'https://idsync.rlcdn.com/379708.gif?partner_uid=' + kuid;
-      var i = new Image();
-      i.src = liveramp_url;     
-  }
-})();
-</script></span><span class="kxtag kxinvisible" data-id="66"><script>
-(function(){
-  var prefix = window.location.protocol == 'https:' ? 'https' : 'http';
-  var partner_url = prefix +'://pix.impdesk.com/csync/krux';
-  new Image().src = partner_url;
-})();
-</script></span><span class="kxtag kxinvisible" data-id="55"><script>
-(function(){
-	var liveramp_url = '//s.acxiomapac.com/sci',
-	data = {
-		pid: 90010,
-		uid: Krux('get','user')
-	};
-	if(data.uid){
-		Krux('require:http').pixel({
-			url: liveramp_url,
-			data: data
-		});
+</style>
+<meta name="ad.size" content="width=300,height=250">
+<script type="text/javascript">
+var clickTag = "http://www.google.com"; </script>
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="VFL.1064_fmm_GM_300x250_Travelocity-HPTO-Reponsize-Center-Middle-Creative1-01_eng_html5.js"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("3BFFB30E37794A008756C69CC3DCF686");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
 	}
-})();
-</script></span><span class="kxtag kxinvisible" data-id="82"><script>
-    (function() {
-        var kuid = Krux('get', 'user');
-        if (kuid) {
-            var prefix = location.protocol == 'https:' ? "https:" : "http:";
-            var kurl_params = encodeURIComponent("_kuid=" + kuid + "&_kdpid=2dd640a6-6ebd-4d4f-af30-af8baa441a0d&dlxid=<na_id>&dlxdata=<na_da>");
-            var kurl = prefix + "//beacon.krxd.net/data.gif?" + kurl_params;
-            var dlx_url = '//r.nexac.com/e/getdata.xgi?dt=br&pkey=gpwn29rvapq62&ru=' + kurl;
-            var i = new Image();
-            i.src = dlx_url;
+	exportRoot = new lib.VFL1064_fmm_GM_300x250_TravelocityHPTOReponsizeCenterMiddleCreative101_eng_html5();
+	stage = new lib.Stage(canvas);
+	stage.enableMouseOver();	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
+			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;            
+			stage.tickOnUpdate = false;            
+			stage.update();            
+			stage.tickOnUpdate = true;		
+		}
+	}
+	makeResponsive(true,'both',false,1);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
         }
-    })();
-</script></span><span class="kxtag kxinvisible" data-id="85"><script>
-(function(){
-    var prefix = window.location.protocol == 'https:' ? 'https:' : 'http:';
-    new Image().src = prefix + '//kr.ixiaa.com/C726AB29-0470-440B-B8D2-D552CED3A3DC/a.gif';
-})();
-</script></span></head><body>
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+<body onload="init();" style="margin:0px;">
+	<a href="#" onclick="window.open(clickTag, '_blank')">
+	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:300px; height:250px">
+		<canvas id="canvas" width="300" height="250" style="position: absolute; display: block; background-color: rgb(255, 255, 255); width: 300px; height: 250px;"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:300px; height:250px; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
+</a>
 
 </body></html>
