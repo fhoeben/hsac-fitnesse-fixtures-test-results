@@ -1,7 +1,7 @@
 <!DOCTYPE html><html><head>
 <meta charset="UTF-8">
 <meta name="authoring-tool" content="Adobe_Animate_CC">
-<title>VFL.1064_fmm_GM_300x250_Travelocity-HPTO-Reponsize-Center-Middle-Creative1-01_eng_html5</title>
+<title>VFL.1066_getaways_Boomer_300x250_Dock-Firepit-01_eng_html5</title>
 <!-- write your code here -->
 <style>
   #animation_container {
@@ -14,7 +14,7 @@
 <script type="text/javascript">
 var clickTag = "http://www.google.com"; </script>
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="VFL.1064_fmm_GM_300x250_Travelocity-HPTO-Reponsize-Center-Middle-Creative1-01_eng_html5.js"></script>
+<script src="VFL.1066_getaways_Boomer_300x250_Dock-Firepit-01_eng_html5.js"></script>
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 function init() {
@@ -42,9 +42,8 @@ function handleComplete(evt,comp) {
 	for(i=0; i<ssMetadata.length; i++) {
 		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
 	}
-	exportRoot = new lib.VFL1064_fmm_GM_300x250_TravelocityHPTOReponsizeCenterMiddleCreative101_eng_html5();
-	stage = new lib.Stage(canvas);
-	stage.enableMouseOver();	
+	exportRoot = new lib.VFL1066_getaways_Boomer_300x250_DockFirepit01_eng_html5();
+	stage = new lib.Stage(canvas);	
 	//Registers the "tick" event listener.
 	fnStartAnimation = function() {
 		stage.addChild(exportRoot);
@@ -87,7 +86,7 @@ function handleComplete(evt,comp) {
 			stage.tickOnUpdate = true;		
 		}
 	}
-	makeResponsive(true,'both',false,1);	
+	makeResponsive(false,'both',false,1);	
 	AdobeAn.compositionLoaded(lib.properties.id);
 	fnStartAnimation();
 }
