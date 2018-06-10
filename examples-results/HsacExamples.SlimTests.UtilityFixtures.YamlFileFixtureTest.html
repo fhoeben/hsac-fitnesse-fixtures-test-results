@@ -9,7 +9,7 @@ In this sample we first create a .yml file, using FileFixture, and then read it.
 		<td colspan="4"><a href="files/test">http://files/test</a></td>
 	</tr>
 	<tr class="slimRowColor2">
-		<td>$yaml&lt;-[<a href="files/test/sample.yml">sample.yml</a>]</td>
+		<td>$yaml&lt;-[<a href="files/test/sample.yml" target="_blank">sample.yml</a>]</td>
 		<td>create</td>
 		<td>sample.yml</td>
 		<td>containing</td>
@@ -19,20 +19,20 @@ In this sample we first create a .yml file, using FileFixture, and then read it.
 		<td>append</td>
 		<td>#comment: ignored</td>
 		<td>to</td>
-		<td>$yaml->[<a href="files/test/sample.yml">sample.yml</a>]</td>
+		<td>$yaml->[<a href="files/test/sample.yml" target="_blank">sample.yml</a>]</td>
 		<td>on new line</td>
 	</tr>
 	<tr class="slimRowColor2">
 		<td>append</td>
 		<td>beer: "bad"</td>
 		<td>to</td>
-		<td>$yaml->[<a href="files/test/sample.yml">sample.yml</a>]</td>
+		<td>$yaml->[<a href="files/test/sample.yml" target="_blank">sample.yml</a>]</td>
 		<td>on new line</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td>content of</td>
-		<td colspan="3">$yaml->[<a href="files/test/sample.yml">sample.yml</a>]</td>
+		<td colspan="3">$yaml->[<a href="files/test/sample.yml" target="_blank">sample.yml</a>]</td>
 	<td><pre>wine: good
 #comment: ignored
 beer: &quot;bad&quot;</pre></td></tr>
@@ -44,7 +44,7 @@ beer: &quot;bad&quot;</pre></td></tr>
 	</tr>
 	<tr class="slimRowColor2">
 		<td><span class="pass">load values from</span></td>
-		<td colspan="3">$yaml->[<a href="files/test/sample.yml">sample.yml</a>]</td>
+		<td colspan="3">$yaml->[<a href="files/test/sample.yml" target="_blank">sample.yml</a>]</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -82,7 +82,7 @@ beer: &quot;bad&quot;</pre></td></tr>
 	</tr>
 	<tr class="slimRowColor7">
 		<td><span class="pass">delete</span></td>
-		<td colspan="3">$yaml->[<a href="files/test/sample.yml">sample.yml</a>]</td>
+		<td colspan="3">$yaml->[<a href="files/test/sample.yml" target="_blank">sample.yml</a>]</td>
 	</tr>
 </table>
 <br/><h2 id="Writing">Writing</h2>
@@ -114,7 +114,7 @@ We can also write in an easier way:<br/><br/><table>
 		<td>cola</td>
 	</tr>
 	<tr class="slimRowColor9">
-		<td>$sample2&lt;-[<a href="files/test/sample2.yml">sample2.yml</a>]</td>
+		<td>$sample2&lt;-[<a href="files/test/sample2.yml" target="_blank">sample2.yml</a>]</td>
 		<td>create</td>
 		<td>sample2.yml</td>
 		<td>containing values</td>
@@ -122,7 +122,7 @@ We can also write in an easier way:<br/><br/><table>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td>content of</td>
-		<td colspan="2">$sample2->[<a href="files/test/sample2.yml">sample2.yml</a>]</td>
+		<td colspan="2">$sample2->[<a href="files/test/sample2.yml" target="_blank">sample2.yml</a>]</td>
 	<td><pre>wine: bad
 beer: good
 cola: better
@@ -135,7 +135,7 @@ cola: better
 	</tr>
 	<tr class="slimRowColor2">
 		<td><span class="pass">load values from</span></td>
-		<td colspan="3">$sample2->[<a href="files/test/sample2.yml">sample2.yml</a>]</td>
+		<td colspan="3">$sample2->[<a href="files/test/sample2.yml" target="_blank">sample2.yml</a>]</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -179,7 +179,7 @@ cola: better
 	</tr>
 	<tr class="slimRowColor7">
 		<td><span class="pass">delete</span></td>
-		<td colspan="3">$sample2->[<a href="files/test/sample2.yml">sample2.yml</a>]</td>
+		<td colspan="3">$sample2->[<a href="files/test/sample2.yml" target="_blank">sample2.yml</a>]</td>
 	</tr>
 </table>
 <br/><h2 id="Readingarray">Reading array</h2>
@@ -193,7 +193,7 @@ The top level of a YAML file can be an array instead of a set of properties. In 
 		<td colspan="4"><a href="files/test">http://files/test</a></td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>$sample3&lt;-[<a href="files/test/sample3.yml">sample3.yml</a>]</td>
+		<td>$sample3&lt;-[<a href="files/test/sample3.yml" target="_blank">sample3.yml</a>]</td>
 		<td>create</td>
 		<td>sample3.yml</td>
 		<td>containing</td>
@@ -203,13 +203,13 @@ The top level of a YAML file can be an array instead of a set of properties. In 
 		<td>append</td>
 		<td>- beer</td>
 		<td>to</td>
-		<td>$sample3->[<a href="files/test/sample3.yml">sample3.yml</a>]</td>
+		<td>$sample3->[<a href="files/test/sample3.yml" target="_blank">sample3.yml</a>]</td>
 		<td>on new line</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td>content of</td>
-		<td colspan="3">$sample3->[<a href="files/test/sample3.yml">sample3.yml</a>]</td>
+		<td colspan="3">$sample3->[<a href="files/test/sample3.yml" target="_blank">sample3.yml</a>]</td>
 	<td><pre>- wine
 - beer</pre></td></tr>
 </table>
@@ -220,7 +220,7 @@ The top level of a YAML file can be an array instead of a set of properties. In 
 	</tr>
 	<tr class="slimRowColor2">
 		<td><span class="pass">load values from</span></td>
-		<td colspan="3">$sample3->[<a href="files/test/sample3.yml">sample3.yml</a>]</td>
+		<td colspan="3">$sample3->[<a href="files/test/sample3.yml" target="_blank">sample3.yml</a>]</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -250,7 +250,7 @@ The top level of a YAML file can be an array instead of a set of properties. In 
 	</tr>
 	<tr class="slimRowColor7">
 		<td><span class="pass">delete</span></td>
-		<td colspan="3">$sample3->[<a href="files/test/sample3.yml">sample3.yml</a>]</td>
+		<td colspan="3">$sample3->[<a href="files/test/sample3.yml" target="_blank">sample3.yml</a>]</td>
 	</tr>
 </table>
 <br/><h2 id="Writingnestedvalue">Writing nested value</h2>
@@ -282,7 +282,7 @@ The top level of a YAML file can be an array instead of a set of properties. In 
 		<td colspan="2">wine[2]</td>
 	</tr>
 	<tr class="slimRowColor1">
-		<td>$sample4&lt;-[<a href="files/test/sample4.yml">sample4.yml</a>]</td>
+		<td>$sample4&lt;-[<a href="files/test/sample4.yml" target="_blank">sample4.yml</a>]</td>
 		<td>create</td>
 		<td>sample4.yml</td>
 		<td>containing value</td>
@@ -291,7 +291,7 @@ The top level of a YAML file can be an array instead of a set of properties. In 
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td>content of</td>
-		<td colspan="3">$sample4->[<a href="files/test/sample4.yml">sample4.yml</a>]</td>
+		<td colspan="3">$sample4->[<a href="files/test/sample4.yml" target="_blank">sample4.yml</a>]</td>
 	<td><pre>- white
 - red
 - rose
@@ -304,7 +304,7 @@ The top level of a YAML file can be an array instead of a set of properties. In 
 	</tr>
 	<tr class="slimRowColor2">
 		<td><span class="pass">load values from</span></td>
-		<td colspan="3">$sample4->[<a href="files/test/sample4.yml">sample4.yml</a>]</td>
+		<td colspan="3">$sample4->[<a href="files/test/sample4.yml" target="_blank">sample4.yml</a>]</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -335,7 +335,7 @@ The top level of a YAML file can be an array instead of a set of properties. In 
 	</tr>
 	<tr class="slimRowColor7">
 		<td><span class="pass">delete</span></td>
-		<td colspan="3">$sample4->[<a href="files/test/sample4.yml">sample4.yml</a>]</td>
+		<td colspan="3">$sample4->[<a href="files/test/sample4.yml" target="_blank">sample4.yml</a>]</td>
 	</tr>
 </table>
 <br/><h2 id="Readingbinarycontent">Reading binary content</h2>
@@ -349,7 +349,7 @@ The top level of a YAML file can be an array instead of a set of properties. In 
 		<td colspan="4"><a href="files/test">http://files/test</a></td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>$bin&lt;-[<a href="files/test/sample-bin.yml">sample-bin.yml</a>]</td>
+		<td>$bin&lt;-[<a href="files/test/sample-bin.yml" target="_blank">sample-bin.yml</a>]</td>
 		<td>create</td>
 		<td>sample-bin.yml</td>
 		<td>containing</td>
@@ -369,7 +369,7 @@ description:
 	</tr>
 	<tr class="slimRowColor2">
 		<td><span class="pass">load values from</span></td>
-		<td colspan="4">$bin->[<a href="files/test/sample-bin.yml">sample-bin.yml</a>]</td>
+		<td colspan="4">$bin->[<a href="files/test/sample-bin.yml" target="_blank">sample-bin.yml</a>]</td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -391,14 +391,14 @@ description:
 		<td colspan="2"><span class="pass">The binary value above is a tiny arrow encoded as a gif image.</span></td>
 	</tr>
 	<tr class="slimRowColor3">
-		<td>$img1&lt;-[<a href="files/fileFixture/arrow1_1.gif">arrow1_1.gif</a>]</td>
+		<td>$img1&lt;-[<a href="files/fileFixture/arrow1_1.gif" target="_blank">arrow1_1.gif</a>]</td>
 		<td>create</td>
 		<td>arrow1.gif</td>
 		<td>containing base64 value</td>
 		<td>canonical</td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td>$img2&lt;-[<a href="files/fileFixture/arrow2_1.gif">arrow2_1.gif</a>]</td>
+		<td>$img2&lt;-[<a href="files/fileFixture/arrow2_1.gif" target="_blank">arrow2_1.gif</a>]</td>
 		<td>create</td>
 		<td>arrow2.gif</td>
 		<td>containing value</td>
@@ -406,7 +406,7 @@ description:
 	</tr>
 	<tr class="slimRowColor7">
 		<td><span class="pass">delete</span></td>
-		<td colspan="4">$bin->[<a href="files/test/sample-bin.yml">sample-bin.yml</a>]</td>
+		<td colspan="4">$bin->[<a href="files/test/sample-bin.yml" target="_blank">sample-bin.yml</a>]</td>
 	</tr>
 </table>
 <br/><h2 id="Writingbinarycontent">Writing binary content</h2>
@@ -417,13 +417,13 @@ description:
 	</tr>
 	<tr class="slimRowColor2">
 		<td>set content of</td>
-		<td>$img2->[<a href="files/fileFixture/arrow2_1.gif">arrow2_1.gif</a>]</td>
+		<td>$img2->[<a href="files/fileFixture/arrow2_1.gif" target="_blank">arrow2_1.gif</a>]</td>
 		<td>as value for</td>
 		<td>gif</td>
 	</tr>
 	<tr class="slimRowColor5">
 		<td>set base64 encoded content of</td>
-		<td>$img2->[<a href="files/fileFixture/arrow2_1.gif">arrow2_1.gif</a>]</td>
+		<td>$img2->[<a href="files/fileFixture/arrow2_1.gif" target="_blank">arrow2_1.gif</a>]</td>
 		<td>as value for</td>
 		<td>encoded-gif</td>
 	</tr>
@@ -434,7 +434,7 @@ description:
 		<td>description</td>
 	</tr>
 	<tr class="slimRowColor2">
-		<td>$sample5&lt;-[<a href="files/fileFixture/sample5.yml">sample5.yml</a>]</td>
+		<td>$sample5&lt;-[<a href="files/fileFixture/sample5.yml" target="_blank">sample5.yml</a>]</td>
 		<td>create</td>
 		<td>sample5.yml</td>
 		<td>containing values</td>
@@ -442,7 +442,7 @@ description:
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td>content of</td>
-		<td colspan="2">$sample5->[<a href="files/fileFixture/sample5.yml">sample5.yml</a>]</td>
+		<td colspan="2">$sample5->[<a href="files/fileFixture/sample5.yml" target="_blank">sample5.yml</a>]</td>
 	<td><pre>gif: !!binary |-
   R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=
 encoded-gif: R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLCAgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=
@@ -450,7 +450,7 @@ description: A small arrow image
 </pre></td></tr>
 	<tr class="slimRowColor7">
 		<td><span class="pass">delete</span></td>
-		<td colspan="3">$sample5->[<a href="files/fileFixture/sample5.yml">sample5.yml</a>]</td>
+		<td colspan="3">$sample5->[<a href="files/fileFixture/sample5.yml" target="_blank">sample5.yml</a>]</td>
 	</tr>
 </table>
 </article></body></html>
