@@ -5,7 +5,7 @@
     "nodes" : [ {
       "name" : "Layout check using: /home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/galenExamples/menuHighlight.gspec; including [usual]",
       "status" : "error",
-      "time" : 1538911166078,
+      "time" : 1538911356422,
       "includedTags" : [ "usual" ],
       "excludedTags" : [ ],
       "sections" : [ {
