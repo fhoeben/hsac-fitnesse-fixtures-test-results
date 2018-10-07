@@ -1,0 +1,279 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.ClickInLargeSelect1</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.ClickInLargeSelect1</h2></header><article><br/><br/>This test, when run in Firefox, shows <i>select for</i> failing because the &lt;select&gt; is scrolled under the position:fixed div.<br/>Tested to reproduce the bug with window sizes of 1366x768 and 1600x1200.<br/><br/><span class="meta">variable defined: HTML= {{{
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;div style="position: fixed; top: 0; left: 0; right: 0; height: 20vh; background-color: grey"&gt;&lt;/div&gt;
+
+&lt;div style="height: 90vh; padding-top: 20vh"&gt;
+	&lt;select&gt;
+		&lt;option&gt;1&lt;/option&gt;
+		&lt;option&gt;2&lt;/option&gt;
+		&lt;option&gt;3&lt;/option&gt;
+		&lt;option&gt;4&lt;/option&gt;
+		&lt;option&gt;5&lt;/option&gt;
+		&lt;option&gt;6&lt;/option&gt;
+		&lt;option&gt;7&lt;/option&gt;
+		&lt;option&gt;8&lt;/option&gt;
+		&lt;option&gt;9&lt;/option&gt;
+		&lt;option&gt;10&lt;/option&gt;
+		&lt;option&gt;11&lt;/option&gt;
+		&lt;option&gt;12&lt;/option&gt;
+		&lt;option&gt;13&lt;/option&gt;
+		&lt;option&gt;14&lt;/option&gt;
+		&lt;option&gt;15&lt;/option&gt;
+		&lt;option&gt;16&lt;/option&gt;
+		&lt;option&gt;17&lt;/option&gt;
+		&lt;option&gt;18&lt;/option&gt;
+		&lt;option&gt;19&lt;/option&gt;
+		&lt;option&gt;20&lt;/option&gt;
+		&lt;option&gt;21&lt;/option&gt;
+		&lt;option&gt;22&lt;/option&gt;
+		&lt;option&gt;23&lt;/option&gt;
+		&lt;option&gt;24&lt;/option&gt;
+		&lt;option&gt;25&lt;/option&gt;
+		&lt;option&gt;26&lt;/option&gt;
+		&lt;option&gt;27&lt;/option&gt;
+		&lt;option&gt;28&lt;/option&gt;
+		&lt;option&gt;29&lt;/option&gt;
+		&lt;option&gt;30&lt;/option&gt;
+		&lt;option&gt;31&lt;/option&gt;
+		&lt;option&gt;32&lt;/option&gt;
+		&lt;option&gt;33&lt;/option&gt;
+		&lt;option&gt;34&lt;/option&gt;
+		&lt;option&gt;35&lt;/option&gt;
+		&lt;option&gt;36&lt;/option&gt;
+		&lt;option&gt;37&lt;/option&gt;
+		&lt;option&gt;38&lt;/option&gt;
+		&lt;option&gt;39&lt;/option&gt;
+		&lt;option&gt;40&lt;/option&gt;
+		&lt;option&gt;41&lt;/option&gt;
+		&lt;option&gt;42&lt;/option&gt;
+		&lt;option&gt;43&lt;/option&gt;
+		&lt;option&gt;44&lt;/option&gt;
+		&lt;option&gt;45&lt;/option&gt;
+		&lt;option&gt;46&lt;/option&gt;
+		&lt;option&gt;47&lt;/option&gt;
+		&lt;option&gt;48&lt;/option&gt;
+		&lt;option&gt;49&lt;/option&gt;
+		&lt;option&gt;50&lt;/option&gt;
+		&lt;option&gt;51&lt;/option&gt;
+		&lt;option&gt;52&lt;/option&gt;
+		&lt;option&gt;53&lt;/option&gt;
+		&lt;option&gt;54&lt;/option&gt;
+		&lt;option&gt;55&lt;/option&gt;
+		&lt;option&gt;56&lt;/option&gt;
+		&lt;option&gt;57&lt;/option&gt;
+		&lt;option&gt;58&lt;/option&gt;
+		&lt;option&gt;59&lt;/option&gt;
+		&lt;option&gt;60&lt;/option&gt;
+		&lt;option&gt;61&lt;/option&gt;
+		&lt;option&gt;62&lt;/option&gt;
+		&lt;option&gt;63&lt;/option&gt;
+		&lt;option&gt;64&lt;/option&gt;
+		&lt;option&gt;65&lt;/option&gt;
+		&lt;option&gt;66&lt;/option&gt;
+		&lt;option&gt;67&lt;/option&gt;
+		&lt;option&gt;68&lt;/option&gt;
+		&lt;option&gt;69&lt;/option&gt;
+		&lt;option&gt;70&lt;/option&gt;
+		&lt;option&gt;71&lt;/option&gt;
+		&lt;option&gt;72&lt;/option&gt;
+		&lt;option&gt;73&lt;/option&gt;
+		&lt;option&gt;74&lt;/option&gt;
+		&lt;option&gt;75&lt;/option&gt;
+		&lt;option&gt;76&lt;/option&gt;
+		&lt;option&gt;77&lt;/option&gt;
+		&lt;option&gt;78&lt;/option&gt;
+		&lt;option&gt;79&lt;/option&gt;
+		&lt;option&gt;80&lt;/option&gt;
+		&lt;option&gt;81&lt;/option&gt;
+		&lt;option&gt;82&lt;/option&gt;
+		&lt;option&gt;83&lt;/option&gt;
+		&lt;option&gt;84&lt;/option&gt;
+		&lt;option&gt;85&lt;/option&gt;
+		&lt;option&gt;86&lt;/option&gt;
+		&lt;option&gt;87&lt;/option&gt;
+		&lt;option&gt;88&lt;/option&gt;
+		&lt;option&gt;89&lt;/option&gt;
+		&lt;option&gt;90&lt;/option&gt;
+		&lt;option&gt;91&lt;/option&gt;
+		&lt;option&gt;92&lt;/option&gt;
+		&lt;option&gt;93&lt;/option&gt;
+		&lt;option&gt;94&lt;/option&gt;
+		&lt;option&gt;95&lt;/option&gt;
+		&lt;option&gt;96&lt;/option&gt;
+		&lt;option&gt;97&lt;/option&gt;
+		&lt;option&gt;98&lt;/option&gt;
+		&lt;option&gt;99&lt;/option&gt;
+		&lt;option&gt;100&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;div style="position: fixed; top: 0; left: 0; right: 0; height: 20vh; background-color: grey"&gt;&lt;/div&gt;
+
+&lt;div style="height: 90vh; padding-top: 20vh"&gt;
+	&lt;select&gt;
+		&lt;option&gt;1&lt;/option&gt;
+		&lt;option&gt;2&lt;/option&gt;
+		&lt;option&gt;3&lt;/option&gt;
+		&lt;option&gt;4&lt;/option&gt;
+		&lt;option&gt;5&lt;/option&gt;
+		&lt;option&gt;6&lt;/option&gt;
+		&lt;option&gt;7&lt;/option&gt;
+		&lt;option&gt;8&lt;/option&gt;
+		&lt;option&gt;9&lt;/option&gt;
+		&lt;option&gt;10&lt;/option&gt;
+		&lt;option&gt;11&lt;/option&gt;
+		&lt;option&gt;12&lt;/option&gt;
+		&lt;option&gt;13&lt;/option&gt;
+		&lt;option&gt;14&lt;/option&gt;
+		&lt;option&gt;15&lt;/option&gt;
+		&lt;option&gt;16&lt;/option&gt;
+		&lt;option&gt;17&lt;/option&gt;
+		&lt;option&gt;18&lt;/option&gt;
+		&lt;option&gt;19&lt;/option&gt;
+		&lt;option&gt;20&lt;/option&gt;
+		&lt;option&gt;21&lt;/option&gt;
+		&lt;option&gt;22&lt;/option&gt;
+		&lt;option&gt;23&lt;/option&gt;
+		&lt;option&gt;24&lt;/option&gt;
+		&lt;option&gt;25&lt;/option&gt;
+		&lt;option&gt;26&lt;/option&gt;
+		&lt;option&gt;27&lt;/option&gt;
+		&lt;option&gt;28&lt;/option&gt;
+		&lt;option&gt;29&lt;/option&gt;
+		&lt;option&gt;30&lt;/option&gt;
+		&lt;option&gt;31&lt;/option&gt;
+		&lt;option&gt;32&lt;/option&gt;
+		&lt;option&gt;33&lt;/option&gt;
+		&lt;option&gt;34&lt;/option&gt;
+		&lt;option&gt;35&lt;/option&gt;
+		&lt;option&gt;36&lt;/option&gt;
+		&lt;option&gt;37&lt;/option&gt;
+		&lt;option&gt;38&lt;/option&gt;
+		&lt;option&gt;39&lt;/option&gt;
+		&lt;option&gt;40&lt;/option&gt;
+		&lt;option&gt;41&lt;/option&gt;
+		&lt;option&gt;42&lt;/option&gt;
+		&lt;option&gt;43&lt;/option&gt;
+		&lt;option&gt;44&lt;/option&gt;
+		&lt;option&gt;45&lt;/option&gt;
+		&lt;option&gt;46&lt;/option&gt;
+		&lt;option&gt;47&lt;/option&gt;
+		&lt;option&gt;48&lt;/option&gt;
+		&lt;option&gt;49&lt;/option&gt;
+		&lt;option&gt;50&lt;/option&gt;
+		&lt;option&gt;51&lt;/option&gt;
+		&lt;option&gt;52&lt;/option&gt;
+		&lt;option&gt;53&lt;/option&gt;
+		&lt;option&gt;54&lt;/option&gt;
+		&lt;option&gt;55&lt;/option&gt;
+		&lt;option&gt;56&lt;/option&gt;
+		&lt;option&gt;57&lt;/option&gt;
+		&lt;option&gt;58&lt;/option&gt;
+		&lt;option&gt;59&lt;/option&gt;
+		&lt;option&gt;60&lt;/option&gt;
+		&lt;option&gt;61&lt;/option&gt;
+		&lt;option&gt;62&lt;/option&gt;
+		&lt;option&gt;63&lt;/option&gt;
+		&lt;option&gt;64&lt;/option&gt;
+		&lt;option&gt;65&lt;/option&gt;
+		&lt;option&gt;66&lt;/option&gt;
+		&lt;option&gt;67&lt;/option&gt;
+		&lt;option&gt;68&lt;/option&gt;
+		&lt;option&gt;69&lt;/option&gt;
+		&lt;option&gt;70&lt;/option&gt;
+		&lt;option&gt;71&lt;/option&gt;
+		&lt;option&gt;72&lt;/option&gt;
+		&lt;option&gt;73&lt;/option&gt;
+		&lt;option&gt;74&lt;/option&gt;
+		&lt;option&gt;75&lt;/option&gt;
+		&lt;option&gt;76&lt;/option&gt;
+		&lt;option&gt;77&lt;/option&gt;
+		&lt;option&gt;78&lt;/option&gt;
+		&lt;option&gt;79&lt;/option&gt;
+		&lt;option&gt;80&lt;/option&gt;
+		&lt;option&gt;81&lt;/option&gt;
+		&lt;option&gt;82&lt;/option&gt;
+		&lt;option&gt;83&lt;/option&gt;
+		&lt;option&gt;84&lt;/option&gt;
+		&lt;option&gt;85&lt;/option&gt;
+		&lt;option&gt;86&lt;/option&gt;
+		&lt;option&gt;87&lt;/option&gt;
+		&lt;option&gt;88&lt;/option&gt;
+		&lt;option&gt;89&lt;/option&gt;
+		&lt;option&gt;90&lt;/option&gt;
+		&lt;option&gt;91&lt;/option&gt;
+		&lt;option&gt;92&lt;/option&gt;
+		&lt;option&gt;93&lt;/option&gt;
+		&lt;option&gt;94&lt;/option&gt;
+		&lt;option&gt;95&lt;/option&gt;
+		&lt;option&gt;96&lt;/option&gt;
+		&lt;option&gt;97&lt;/option&gt;
+		&lt;option&gt;98&lt;/option&gt;
+		&lt;option&gt;99&lt;/option&gt;
+		&lt;option&gt;100&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://127.0.1.1:8000/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="3"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>set browser size to</td>
+		<td>1366</td>
+		<td>by</td>
+		<td>768</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="3">$url->[http://127.0.1.1:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td>100</td>
+		<td>for</td>
+		<td>css=select</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>css=select</td>
+		<td><span class="pass">100</span></td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop</td>
+	</tr>
+</table>
+</article></body></html>
