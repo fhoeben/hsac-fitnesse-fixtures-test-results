@@ -51,6 +51,13 @@
     &lt;option value="3" selected&gt;Option 7&lt;/option&gt;
     &lt;option value="4"&gt;Option 8&lt;/option&gt;
 &lt;/select&gt;
+&lt;label for="s3"&gt;Option to choose with whitespace&lt;/label&gt;
+&lt;select id="s3"&gt;
+    &lt;option value="1"&gt;Option &amp;nbsp;1&lt;/option&gt;
+    &lt;option value="2" disabled&gt;Option 2&lt;/option&gt;
+    &lt;option value="3" selected&gt;Option 3&amp;nbsp;&lt;/option&gt;
+    &lt;option value="4"&gt; Option   4&lt;/option&gt;
+&lt;/select&gt;
 
 &lt;/body&gt;
 &lt;/html&gt;}}} </span>
@@ -113,6 +120,13 @@
     &lt;option value="2" selected&gt;Option 6&lt;/option&gt;
     &lt;option value="3" selected&gt;Option 7&lt;/option&gt;
     &lt;option value="4"&gt;Option 8&lt;/option&gt;
+&lt;/select&gt;
+&lt;label for="s3"&gt;Option to choose with whitespace&lt;/label&gt;
+&lt;select id="s3"&gt;
+    &lt;option value="1"&gt;Option &amp;nbsp;1&lt;/option&gt;
+    &lt;option value="2" disabled&gt;Option 2&lt;/option&gt;
+    &lt;option value="3" selected&gt;Option 3&amp;nbsp;&lt;/option&gt;
+    &lt;option value="4"&gt; Option   4&lt;/option&gt;
 &lt;/select&gt;
 
 &lt;/body&gt;
@@ -371,6 +385,12 @@ th</li><li>€ 13,--</li><li>€ 14,--</li></ol>]</span></td>
 		<td>check</td>
 		<td>available options for</td>
 		<td>Option to choose</td>
+		<td><span class="pass">$available-&gt;[<ol start="0"><li>Option 1</li><li>Option 3</li><li>Option 4</li></ol>]</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>normalized available options for</td>
+		<td>Option to choose with whitespace</td>
 		<td><span class="pass">$available-&gt;[<ol start="0"><li>Option 1</li><li>Option 3</li><li>Option 4</li></ol>]</span></td>
 	</tr>
 </table>
