@@ -1,109 +1,42 @@
-<!DOCTYPE html><html lang="en"><head><script type="text/javascript">
-    
-      (function() {
-        var relegateNavigation = '';
-        var handleClickTagMessage = function(e) {
-          try {
-            var eventData = JSON.parse(e.data);
-          } catch (err) {
-            return;
-          }
-          if (eventData.isInitClickTag) {
-            if (eventData.clickTags) {
-              for (var i = 0; i < eventData.clickTags.length; i++) {
-                var clkTag = eventData.clickTags[i];
-                window[clkTag.name] = clkTag.url;
-              }
-            } else if (eventData.clickTag) {
-              window.clickTag = eventData.clickTag;
+<html><head>
+<script>var inDapIF=true;</script>
+</head><body marginwidth="0" marginheight="0"><script>
+var adMetrics={adconfig:{orderId:"2405396532",lineItemId:"4865337350",creativeId:"138251794001",adUnitId:"56864537",activity:"",adlp:"",b:"",bk:"",cc:"",cmptst:"",d:"NYC",dta:"181",eapid:"",email:"",ete:"09-11-2019",ets:"09-08-2019",ff:"",ip:"",kid:"0",mc1:"5f60d0352d5f4927b27acceaa380b13a",numadults:"2",o:"AMS",p:"",pd:"NYC",pn:"",regionid:"",sb:"",ssl:"",td:"",tst:"",custtype:"",pref:"",sr:"",ac:"econ",cd:"",width:"728",height:"90"},name:"/23171577/expedia.us_en/packages/results/CM1",startTime:new Date()},markName="orderID="+adMetrics.adconfig.orderId+" lineItemID="+adMetrics.adconfig.lineItemId+" adUnitID="+adMetrics.adconfig.adUnitId+" creativeID="+adMetrics.adconfig.creativeId+" fully loaded";var getIndexExchangeCMCID=function(a){var d=function(){return NodeFilter.FILTER_ACCEPT};var g=[];try{var c=document.createNodeIterator(a,NodeFilter.SHOW_COMMENT,d,false);var b;while((b=c.nextNode())){var h=b.nodeValue;if(h.indexOf(" cmc ")>-1){g.push(b.nodeValue.trim().split(" ")[1])}}}catch(f){}return g};try{if(window&&window.performance&&typeof(window.performance.getEntriesByType)==="function"){var resourceList=window.performance.getEntriesByType("resource");if(resourceList){adMetrics.resourceList=JSON.stringify(resourceList)}}if(window&&window.addEventListener&&window.removeEventListener){var onLoadListener=function(){try{window.removeEventListener("load",onLoadListener);if(window&&window.top&&typeof(window.top.postMessage)==="function"){adMetrics.cmc=getIndexExchangeCMCID(document.body);if(typeof window.performance&&typeof window.performance.mark==="function"){window.performance.mark(markName);if(typeof window.performance.getEntriesByName==="function"){var a=window.performance.getEntriesByName(markName,"mark"),b;if(a&&a.length>0){b=a[0];if(b&&b.startTime){adMetrics.timeToLoadCreative=b.startTime}}}}window.top.postMessage(adMetrics,"*")}}catch(c){if(window&&window.top&&typeof(window.top.postMessage)==="function"){adMetrics.errorMsg=c.message;adMetrics.errorLine=c.lineNumber;adMetrics.errorUrl=c.fileName;adMetrics.error=true;window.top.postMessage(adMetrics,"*")}}};window.addEventListener("load",onLoadListener)}}catch(e){if(window&&window.top&&typeof(window.top.postMessage)==="function"){adMetrics.errorMsg=e.message;adMetrics.errorLine=e.lineNumber;adMetrics.errorUrl=e.fileName;adMetrics.error=true;window.top.postMessage(adMetrics,"*")}};
+</script><script>(function(){window.viewReq=[];window.vu=function(b){var a=new Image;a.src=b.replace("&amp;","&");viewReq.push(a)};}).call(this);</script><script>vu("https://securepubads.g.doubleclick.net/pcs/view?xai\u003dAKAOjsuf0XN1RVTVWI6rCVu3CaDuITpt-DprU3MZl3mBCa62UwDfM4qcIWNuWNhVYZI4kr8EVRSs5_rZJjyJ7PTXe8AdvnuyxwDboHu4Na6xhE7jOnxbjWx1YiufI3Z7s6FdEx-1NjxG_OXRG2WDfl2Wk070yAopeF3iHIlscg4YgLTFZBAG4oJ8VO5i0HjfZNFmYB4hVxwpeZDrwxOjTz9T1dR0Whbt-ID4Rm8txE8l4rKMtBlKSSL3SD4yFgV5a30vM8uPo2KlKXF28ETukEwggKKTDqSKHY-6Rj7e\u0026sai\u003dAMfl-YT9xM4FZvSHvm2NLlDa7adB_SYCgcAaLWRfXtMkNkUXFQ44rtBB7FByrAteLdSTR3PJ9HTAfBLbiw_r_B_Hxg1STTl54PosVcOCDpnbcgczJACs-IEjJ6lHGDMZ\u0026sig\u003dCg0ArKJSzNx1CnztjH2zEAE\u0026urlfix\u003d1\u0026adurl\u003d")</script><script type="text/javascript">
+    var sitePath="/23171577/expedia.us_en/packages/results/CM1";
+    var clickThroughUrl = "https://ad.doubleclick.net/ddm/clk/431632505;234209532;u?https://www.expedia.com/g/pt/ms-hotel-ihg-cybersale?langid=1033?cmpid=DFA:1002661:234209532:138251794001&glat=DISP&"
+    var site=["expedia.us_en","hotels.us_en","travelocity.us_en","hotwire.us_en","orbitz.us_en","cheaptickets.us_en","","","","","","","","",""];
+    var url=["https://ad.doubleclick.net/ddm/clk/431632505;234209532;u?https://www.expedia.com/g/pt/ms-hotel-ihg-cybersale?langid=1033?cmpid=DFA:1002661:234209532:138251794001&glat=DISP&","https://ad.doubleclick.net/ddm/clk/431632505;234209532;u?https://www.hotels.com/page/ihg-cybersale/?pos=HCOM_US&locale=en_US?cmpid=DFA:1002661:234209532:138251794001&glat=DISP&","https://ad.doubleclick.net/ddm/clk/431632505;234209532;u?https://www.travelocity.com/g/pt/ms-hotel-ihg-cybersale?langid=1033?cmpid=DFA:1002661:234209532:138251794001&glat=DISP&","https://ad.doubleclick.net/ddm/clk/431632505;234209532;u?https://www.expedia.com/g/pt/ms-hotel-ihg-cybersale?langid=1033?cmpid=DFA:1002661:234209532:138251794001&glat=DISP&","https://ad.doubleclick.net/ddm/clk/431632505;234209532;u?https://www.orbitz.com/g/pt/ms-hotel-ihg-cybersale?langid=1033?cmpid=DFA:1002661:234209532:138251794001&glat=DISP&","https://ad.doubleclick.net/ddm/clk/431632505;234209532;u?https://www.expedia.com/g/pt/ms-hotel-ihg-cybersale?langid=1033?cmpid=DFA:1002661:234209532:138251794001&glat=DISP&","","","","","","","","",""];
+    for(var i=0; i<15; i++) {
+        if(site[i] !== "") {
+            var regex = new RegExp(site[i]);
+            if(regex.test(sitePath))
+            {
+                clickThroughUrl = url[i];
+                break;
             }
-            relegateNavigation = eventData.relegateNavigation;
-          }
-        };
-
-        if (open.call) {
-          window.open = function(open) {
-            return function(url, name, features) {
-              if (relegateNavigation === 'parent') {
-                var message = {'clickTag': url, 'isPostClickTag': true};
-                parent.postMessage(JSON.stringify(message), '*');
-              } else {
-                var args = [url, name];
-                if (features) {
-                  args.push(features);
-                }
-                open.apply(window, args);
-              }
-            };
-          }(window.open);
         }
+    }
 
-        if (window.addEventListener) {
-          window.addEventListener(
-              'message', handleClickTagMessage, false);
-        } else {
-          window.attachEvent('onmessage', handleClickTagMessage);
-        }
-      })();
-    
-  </script>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <!-- Ad Banner information -->
-        <meta name="ad.size" content="width=728,height=90">
-        <meta name="viewport" content="width=160, initial-scale=1, maximum-scale=1, user-scalable=0">
-        <!-- ********************** DoubleClick Enabler ********************** -->
-        <!-- https://support.google.com/richmedia/answer/2672545 -->
-        <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
-        <!-- ***************************************************************** -->
-            <link rel="stylesheet" href="main.css">
-            </head>
-        <body>
-            <script type="text/javascript">
-                // ************** clickTag (ignored with DoubleClick) ************** //
-                var clickTag = "https://www.trumphotels.com/central-park";
-            </script>
-            <div id="ad__wrapper">
-                <div id="ad__content" style="display: block;">
-                    <!-- Your banner ad content goes here -->
-                     <div id="bg_1" style="transform: matrix(1, 0, 0, 1, 0, -160); opacity: 1;"></div>
-                   
-                
-                    
-                    <div id="ctaBox" style="opacity: 1;">
-                        
-                        <div id="ctaOver" class="sprite sprite-btn_2"></div>
-                        <div id="cta" class="sprite sprite-btn_1"></div>
-                        
-                    </div>
-                  
-                    <div id="frame_f3" style="display: block; opacity: 1;">
-                        
-                       <div id="text_3" class="sprite sprite-txt_3" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-                       <div id="logo_1" class="sprite sprite-logo" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-                        
-                    </div>
-                    
-                    
-                     <div id="frame_f2" style="display: block; opacity: 1;">
-                        
-                       <div id="text_2" class="sprite sprite-txt_2" style="opacity: 0; transform: matrix3d(-0.173648, 0, -0.984808, 0, 0, 1, 0, 0, 0.984808, 0, -0.173648, 0, 0, 0, 0, 1);"></div>
-                        
-                    </div>
-                 
-                    <div id="frame_f1" style="display: block; opacity: 1;">
-                        
-                          <div id="text_4" class="sprite sprite-txt_4" style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -10);"></div>
-                        <div id="text_1" class="sprite sprite-txt_1" style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -10);"></div>
-                       
-                    </div>
+var conversionClickTrackingURL =  "";
+var advertiserClickTrackingURL = "" ;
 
-            		<div id="hotSpot"></div>
-            	</div>
-            </div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenLite.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/easing/EasePack.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/CSSPlugin.min.js"></script>
-            <script src="main.js" type="text/javascript"></script>
-        
-        
+if(advertiserClickTrackingURL !== undefined && advertiserClickTrackingURL.indexOf("_topargetURL%") > 0) {
+clickThroughUrl = advertiserClickTrackingURL.replace("_topargetURL%", clickThroughUrl);
+}
+if(conversionClickTrackingURL !== undefined && conversionClickTrackingURL.indexOf("_topargetURL%") > 0) {
+clickThroughUrl = conversionClickTrackingURL.replace("_topargetURL%", clickThroughUrl );
+}
+
+    var linkCode = '<a href="https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjstQAoe8J_RIwUK3ic_q4palY3SetnsU0FVIngSGCBt3pfYsUHI_BMC-mTu-zeuuxT53egHQdm0z1JsCzzucc43yzz_OPoGCvNdpvZmwzuXqYT1RYG_TMnRWSG_4cL-hCjSth404x6Oy9KY-kvFf_ZAMwSFczNEwDHUXlmQO7PwYHbZk4hCRuq9jWBIsfqzfdQSo1Uz6iBelIfbWnprZZBvsNFaZv9CuGI12EakTAh6X1r2quoAciP0cx2ueH-2VZ5bnkD8KySmZjxMZOmGSfxY9XAbm%2526sai%253DAMfl-YTA-nLqYJX2AuyKMXoaFkfpM8d41HnHosMYYAcfso5YlEOT3_LBpjJmS6QDRtCCoYEegSql_oLmcSQr92sCTU27xv2baq7k-_K2omOu9AuPKbS0kW1CC_bf5P0h%2526sig%253DCg0ArKJSzMa0uH9N8WkfEAE%2526urlfix%253D1%2526adurl%253D' + clickThroughUrl + '" target="_blank"><img width="728" height="90" border="0" src="https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKDbka2VQxABGAEyCIGRlJ6ht3tt"></a>';
+    document.write(linkCode);
+</script><a href="https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjstQAoe8J_RIwUK3ic_q4palY3SetnsU0FVIngSGCBt3pfYsUHI_BMC-mTu-zeuuxT53egHQdm0z1JsCzzucc43yzz_OPoGCvNdpvZmwzuXqYT1RYG_TMnRWSG_4cL-hCjSth404x6Oy9KY-kvFf_ZAMwSFczNEwDHUXlmQO7PwYHbZk4hCRuq9jWBIsfqzfdQSo1Uz6iBelIfbWnprZZBvsNFaZv9CuGI12EakTAh6X1r2quoAciP0cx2ueH-2VZ5bnkD8KySmZjxMZOmGSfxY9XAbm%2526sai%253DAMfl-YTA-nLqYJX2AuyKMXoaFkfpM8d41HnHosMYYAcfso5YlEOT3_LBpjJmS6QDRtCCoYEegSql_oLmcSQr92sCTU27xv2baq7k-_K2omOu9AuPKbS0kW1CC_bf5P0h%2526sig%253DCg0ArKJSzMa0uH9N8WkfEAE%2526urlfix%253D1%2526adurl%253Dhttps://ad.doubleclick.net/ddm/clk/431632505;234209532;u?https://www.expedia.com/g/pt/ms-hotel-ihg-cybersale?langid=1033?cmpid=DFA:1002661:234209532:138251794001&amp;glat=DISP&amp;" target="_blank"><img width="728" height="90" border="0" src="https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKDbka2VQxABGAEyCIGRlJ6ht3tt"></a>
+<noscript><a href="https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjstQAoe8J_RIwUK3ic_q4palY3SetnsU0FVIngSGCBt3pfYsUHI_BMC-mTu-zeuuxT53egHQdm0z1JsCzzucc43yzz_OPoGCvNdpvZmwzuXqYT1RYG_TMnRWSG_4cL-hCjSth404x6Oy9KY-kvFf_ZAMwSFczNEwDHUXlmQO7PwYHbZk4hCRuq9jWBIsfqzfdQSo1Uz6iBelIfbWnprZZBvsNFaZv9CuGI12EakTAh6X1r2quoAciP0cx2ueH-2VZ5bnkD8KySmZjxMZOmGSfxY9XAbm%2526sai%253DAMfl-YTA-nLqYJX2AuyKMXoaFkfpM8d41HnHosMYYAcfso5YlEOT3_LBpjJmS6QDRtCCoYEegSql_oLmcSQr92sCTU27xv2baq7k-_K2omOu9AuPKbS0kW1CC_bf5P0h%2526sig%253DCg0ArKJSzMa0uH9N8WkfEAE%2526urlfix%253D1%2526adurl%253Dhttps://ad.doubleclick.net/ddm/clk/431632505;234209532;u?https://www.expedia.com/g/pt/ms-hotel-ihg-cybersale?langid=1033?cmpid=DFA:1002661:234209532:138251794001&glat=DISP&" target="_blank"><img width="728" height="90" border="0" src="https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKDbka2VQxABGAEyCIGRlJ6ht3tt"></a></noscript>
+<div style="position:absolute;top:0px;right:0px;width:1px;height:1px;visibility:hidden;border:none;"><script type="text/javascript">
+var trackingPixel="";if(trackingPixel.indexOf("http")==0)document.write('<iframe src="'+trackingPixel+'" height="1" width="1" style="width:1px !important;height 1px !important"></iframe>');
+var trackingPixel="";if(trackingPixel.indexOf("http")==0)document.write('<iframe src="'+trackingPixel+'" height="1" width="1" style="width:1px !important;height 1px !important"></iframe>');
+if("".indexOf("http")==0)document.write('<script type="text/javascript" src=""></scr'+'ipt>');
+if("none" && "none" !== "none")document.write('<script type="text/javascript" src="https://c.betrad.com/durly.js#;ad_w=728;ad_h=90;coid=510;nid=7888;position=none"></scr'+'ipt>');
+</script></div>
+<script src="https://tpc.googlesyndication.com/pagead/js/r20181107/r20110914/activeview/osd_listener.js"></script><script type="text/javascript">osdlfm(-1,'','BZsvS4rb5W-H5G7GFtOUPh6-WwAIAAAAAEAE4AcgBCcACAuACAOAEAaAGH9IIBQiAYRAB','',95414731,true,'ud\u003d1\u0026la\u003d0\u0026alp\u003dxai\u0026alh\u003d1793859138\u0026',3,'CAASEuRoD7RRA2OhK8PsQh05pXMNIA','https://pagead2.googlesyndication.com/pcs/activeview?xai\u003dAKAOjsuXEAr7CAIsu1GLPlXbE_djyiUvOonezh4Bz63GbZSY1ayt7AvR8Bwd4A85ARcvoRpr6XFQYCr14rdz2fyxs-a7j-lFHDChG2TNsc8\u0026sig\u003dCg0ArKJSzBzvYLLXDSJxEAE','');</script><script>if (window.top && window.top.postMessage) {window.top.postMessage('{"googMsgType":"adpnt"}','*');}</script><div style="bottom:0;right:0;width:728px;height:90px;background:initial !important;position:absolute !important;max-width:100% !important;max-height:100% !important;pointer-events:none !important;image-rendering:pixelated !important;z-index:2147483647;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAWBAMAAACrl3iAAAAABlBMVEUAAAD+AciWmZzWAAAAAnRSTlMAApidrBQAAAB7SURBVBjTbZGBEYAwCAPjBuw/rTYJED1pj4I+NCLwb5dMcWTFJ8W1GYnHo52yQxVZbWf7XufSmJro7bu9Qleb+NCNdi4SQ0wKoLDvNt7V/kA31maFNevMKHTojtoJhgy3tidWFr8cWnJMY2Zo6UN/8Pffaek7QVjFqbsBwAYGK2dH4hwAAAAASUVORK5CYII=') !important;"></div>
 </body></html>

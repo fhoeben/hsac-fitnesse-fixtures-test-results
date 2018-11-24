@@ -1,35 +1,112 @@
-<!DOCTYPE html><html><head>
-    <meta charset="UTF-8">
-    <title>SafeFrame Container</title>
-    <script>
-(function(){var e=this;var p=String.prototype.trim?function(a){return a.trim()}:function(a){return/^[\s\xa0]*([\s\S]*?)[\s\xa0]*$/.exec(a)[1]},q=function(a,c){return a<c?-1:a>c?1:0};var r;a:{var t=e.navigator;if(t){var u=t.userAgent;if(u){r=u;break a}}r=""};var w=function(a,c){var b=v;return Object.prototype.hasOwnProperty.call(b,a)?b[a]:b[a]=c(a)};var x=-1!=r.indexOf("Opera"),y=-1!=r.indexOf("Trident")||-1!=r.indexOf("MSIE"),z=-1!=r.indexOf("Edge"),A=-1!=r.indexOf("Gecko")&&!(-1!=r.toLowerCase().indexOf("webkit")&&-1==r.indexOf("Edge"))&&!(-1!=r.indexOf("Trident")||-1!=r.indexOf("MSIE"))&&-1==r.indexOf("Edge"),B=-1!=r.toLowerCase().indexOf("webkit")&&-1==r.indexOf("Edge"),C;a:{var D="",E=function(){var a=r;if(A)return/rv:([^\);]+)(\)|;)/.exec(a);if(z)return/Edge\/([\d\.]+)/.exec(a);if(y)return/\b(?:MSIE|rv)[: ]([^\);]+)(\)|;)/.exec(a);if(B)return/WebKit\/(\S+)/.exec(a);if(x)return/(?:Version)[ \/]?(\S+)/.exec(a)}();E&&(D=E?E[1]:"");if(y){var F,H=e.document;F=H?H.documentMode:void 0;if(null!=F&&F>parseFloat(D)){C=String(F);break a}}C=D}var I=C,v={},J=function(a){return w(a,function(){for(var c=0,b=p(String(I)).split("."),d=p(String(a)).split("."),f=Math.max(b.length,d.length),g=0;0==c&&g<f;g++){var h=b[g]||"",l=d[g]||"";do{h=/(\d*)(\D*)(.*)/.exec(h)||["","","",""];l=/(\d*)(\D*)(.*)/.exec(l)||["","","",""];if(0==h[0].length&&0==l[0].length)break;c=q(0==h[1].length?0:parseInt(h[1],10),0==l[1].length?0:parseInt(l[1],10))||q(0==h[2].length,0==l[2].length)||q(h[2],l[2]);h=h[3];l=l[3]}while(0==c)}return 0<=c})};var K=A||B||y&&J(11)||z;var L=/^([^;]+);(\d+);([\s\S]*)$/,M=function(){var a=L.exec(window.name);if(null===a)throw Error("Cannot parse serialized data");var c=+a[2],b=a[3];if(c>b.length)throw Error("Cannot parse serialized data");return{b:a[1],content:b.substr(0,c),a:b.substr(c)}};var N=function(){var a=window.location.hash;return a?(a=a.match(/[&#]eid=([\d,]+)/))?a[1].split(","):[]:[]};var O=function(a){var c=a.length,b=new ArrayBuffer(2*c);b=new Uint16Array(b);for(var d=0;d<c;d++)b[d]=a.charCodeAt(d);return b},P=function(a,c,b,d){var f=window.crypto;f&&f.subtle&&f.subtle.encrypt({name:"AES-CBC",iv:b},c,O(a)).then(function(g){f.subtle.decrypt({name:"AES-CBC",iv:b},c,g).then(function(a){d(String.fromCharCode.apply(null,new Uint16Array(a)))})["catch"](function(){d(a)})})["catch"](function(){d(a)})};(function(){try{var a=M(),c=N(),b=JSON.parse(a.a),d=function(g){try{K&&(window.name="");b.goog_safeframe_hlt&&(e.goog_safeframe_hlt=b.goog_safeframe_hlt);b._context&&(e.AMP_CONTEXT_DATA=b._context);e.sf_={v:a.b,exp:c,cfg:b};var h=window;if(K){var d=h.document;d.open("text/html","replace");d.write(g);d.close()}else{var k;if(k=y&&J(7)&&!J(10)){var f=navigator.userAgent.match(/Trident\/([0-9]+.[0-9]+)/);k=6>(f?parseFloat(f[1]):0)}var m;if(m=k)a:{for(k=0;k<g.length;++k)if(127<g.charCodeAt(k)){m=!0;break a}m=!1}if(m){var n=unescape(encodeURIComponent(g)),G=Math.floor(n.length/2);m=[];for(k=0;k<G;++k)m[k]=String.fromCharCode(256*n.charCodeAt(2*k+1)+n.charCodeAt(2*k));1==n.length%2&&(m[G]=n.charAt(n.length-1));g=m.join("")}h.goog_content=g;h.location.replace("javascript:window.goog_content")}}catch(Q){}},f=window.crypto;b.inFakeDecryptionExperiment&&f&&f.subtle?f.subtle.generateKey({name:"AES-CBC",length:128},!1,["encrypt","decrypt"]).then(function(b){var c=new Uint8Array(16);f.getRandomValues(c);P(a.content,b,c,d)})["catch"](function(){d(a.content)}):d(a.content)}catch(g){}})();}).call(this);
-    </script>
+<html><head></head><body>
+<script type="text/javascript">
+try {
+   /**/
+(function() {
+    metric = function(url, wait)
+    {
+        setTimeout(function() {
+                var e = document.createElement("img");
+                e.src = url;
+            }, wait);
+    }
+    var intervals = [0, 10];
+    var inlen = intervals.length;
+    for (var k = 0; k < inlen; ++k)
+        this.metric("https://pixel.mathtag.com/misc/img?mm_bnc&bcdv="+k, intervals[k] * 1000);
+})();
+(function() {
+    try {
+	var sync_4815162342 = function() {
+this.urls = [
+[0, "https://pixel.mathtag.com/misc/img?mop_seq=0:23&mt_cb=153734&mop_top="],
+[10000, "https://c212.net/c/sync?u=&pid=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51"],
+[4, "https://cm.g.doubleclick.net/pixel?google_nid=mediamath&google_cm&google_hm=UdFb-a4KTQCYFM0c9ToOUQ"],
+[9, "https://pixel.rubiconproject.com/tap.php?v=4222&nid=1512&put=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51&expires=28"],
+[13, "https://ib.adnxs.com/getuid?https://sync.mathtag.com/sync/img?mt_exid=13&mt_mminit=1&mt_exuid=$UID"],
+[3, "https://simage2.pubmatic.com/AdServer/Pug?vcode=bz0yJnR5cGU9MSZjb2RlPTM2MiZ0bD00MzIwMA==&piggybackCookie=uid:51d15bf9-ae0a-4d00-9814-cd1cf53a0e51"],
+[15, "https://dsum-sec.casalemedia.com/rum?cm_dsp_id=3&external_user_id=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51"],
+[5, "https://us-u.openx.net/w/1.0/sd?id=536872786&val=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51"],
+[10054, "https://idsync.reson8.com/sync/vendormm.gif?user_id=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51"],
+[10010, "https://stags.bluekai.com/site/4448?id=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51"],
+[46, "https://x.bidswitch.net/sync?dsp_id=80&user_id=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51&expires=30"],
+[0, "https://pixel.mathtag.com/misc/img?mop_seq=10:23&mt_cb=222936&mop_top=4:1543091743|9:1543091743|13:1543091743|3:1543091743|15:1543091743|5:1543091743|10054:1543091743|10010:1543091743|46:1543091743|"],
+[10074, "https://cm.g.doubleclick.net/pixel?google_nid=mediamath_dmp&google_cm"],
+[10072, "https://pixel.tapad.com/idsync/ex/receive?partner_id=2989&partner_device_id=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51"],
+[10008, "https://loadm.exelator.com/load/?p=204&g=101&buid=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51&j=0"],
+[21, "https://pixel.advertising.com/ups/55938/sync?uid=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51&_origin=1"],
+[10041, "https://uipus.semasio.net/mediamath/1/info?sType=sync&sExtCookieId=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51&sInitiator=external"],
+[31, "https://pixel.advertising.com/ups/55938/sync?uid=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51&_origin=1"],
+[16, "https://ad.360yield.com/match?publisher_dsp_id=5&external_user_id=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51"],
+[45, "https://cs.gssprt.jp/yie/ld/cs?dspid=tone&uid=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51"],
+[10042, "https://global.ib-ibi.com/image.sbxx?go=247256&pid=310&xid=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51"],
+[36, "https://i.liadm.com/s/37464?bidder_id=7156&bidder_uuid=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51"],
+[0, "https://pixel.mathtag.com/misc/img?mop_seq=20:23&mt_cb=991922&mop_top=4:1543091743|9:1543091743|13:1543091743|3:1543091743|15:1543091743|5:1543091743|10054:1543091743|10010:1543091743|46:1543091743|10074:1543091743|10072:1543091743|10008:1543091743|21:1543091743|10041:1543091743|31:1543091743|16:1543091743|45:1543091743|10042:1543091743|36:1543091743|"],
+[10040, "https://sync.crwdcntrl.net/map/c=4735/tp=MDMA/tpid=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51"],
+[10004, "https://dpm.demdex.net/ibs:dpid=269&dpuuid=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51"],
+[10050, "https://sync.navdmp.com/sync?img=1&mdia=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51"],
+[0, "https://pixel.mathtag.com/misc/img?mop_seq=23:23&mt_cb=914732&check=51d15bf9-ae0a-4d00-9814-cd1cf53a0e51&mop_top=4:1543091743|9:1543091743|13:1543091743|3:1543091743|15:1543091743|5:1543091743|10054:1543091743|10010:1543091743|46:1543091743|10074:1543091743|10072:1543091743|10008:1543091743|21:1543091743|10041:1543091743|31:1543091743|16:1543091743|45:1543091743|10042:1543091743|36:1543091743|10040:1543091743|10004:1543091743|10050:1543091743|"]
+]
+	    this.progress = 0;
+	    var self = this;
+	    var tims = "";
+	    var errs = "";
+	    this.sync = function(i)
+	    {
+		var e = document.createElement("img");
+		var now = new Date();
+		if (e.addEventListener)
+		{
+		    e.addEventListener('load', function() {
+			var temp = new Date().getTime() - now.getTime(); tims += self.urls[i][0]+':'+temp+"|";
+		    });
+		    e.addEventListener('error', function() {
+			var temp = new Date().getTime() - now.getTime(); errs += self.urls[i][0]+':'+temp+"|";
+		    });
+		}
+		e.src = self.urls[i][1];
+	    }
+	    this.batch = function()
+	    {
+		for (var i = self.progress; i < self.urls.length; ++i)
+		{
+		    self.sync(i);
+		}
+	    }
+	    this.final = function()
+	    {
+		var e = document.createElement("img");
+		e.src = self.urls[self.urls.length-1][1]+"&final&timings="+tims+"&errors="+errs;
+	    }
+	    this.some = function(howmany)
+	    {
+		var count = 0;
+		for (var i = self.progress; i < self.urls.length && count < howmany; ++i)
+		{
+		    self.sync(i);
+		    self.progress++;
+		    count++;
+		}
+	    }
+	}
+	var s_4815162342 = new sync_4815162342();
+	s_4815162342.some(1);
+	setTimeout(function(){s_4815162342.some(2);}, 1000);
+	setTimeout(s_4815162342.batch, 3000);
+	setTimeout(s_4815162342.final, 10000);
+    }
+    catch(ex)
+    {
+	document.createElement("img").src="//pixel.mathtag.com/error/img?error_domain=syncjs&what="+encodeURIComponent(ex.message);
+    }
+})();
 
-</head><body marginwidth="0" marginheight="0"><script>
-var adMetrics={adconfig:{orderId:"2100458079",lineItemId:"4354414308",creativeId:"138204903898",adUnitId:"21611878959",activity:"",adlp:"",b:"",bk:"",cc:"",cmptst:"",d:"",dta:"",eapid:"",email:"",ete:"",ets:"",ff:"",ip:"",kid:"0",mc1:"2e23d77811ee4d3490d4bebfbba61d49",numadults:"",o:"",p:"",pd:"",pn:"",regionid:"",sb:"",ssl:"",td:"",tst:"",custtype:"",pref:"",sr:"",ac:"",cd:"",width:"368",height:"301"},name:"/23171577/expedia.us_en/home/all/NT2",startTime:new Date()},markName="orderID="+adMetrics.adconfig.orderId+" lineItemID="+adMetrics.adconfig.lineItemId+" adUnitID="+adMetrics.adconfig.adUnitId+" creativeID="+adMetrics.adconfig.creativeId+" fully loaded";var getIndexExchangeCMCID=function(a){var d=function(){return NodeFilter.FILTER_ACCEPT};var g=[];try{var c=document.createNodeIterator(a,NodeFilter.SHOW_COMMENT,d,false);var b;while((b=c.nextNode())){var h=b.nodeValue;if(h.indexOf(" cmc ")>-1){g.push(b.nodeValue.trim().split(" ")[1])}}}catch(f){}return g};try{if(window&&window.performance&&typeof(window.performance.getEntriesByType)==="function"){var resourceList=window.performance.getEntriesByType("resource");if(resourceList){adMetrics.resourceList=JSON.stringify(resourceList)}}if(window&&window.addEventListener&&window.removeEventListener){var onLoadListener=function(){try{window.removeEventListener("load",onLoadListener);if(window&&window.top&&typeof(window.top.postMessage)==="function"){adMetrics.cmc=getIndexExchangeCMCID(document.body);if(typeof window.performance&&typeof window.performance.mark==="function"){window.performance.mark(markName);if(typeof window.performance.getEntriesByName==="function"){var a=window.performance.getEntriesByName(markName,"mark"),b;if(a&&a.length>0){b=a[0];if(b&&b.startTime){adMetrics.timeToLoadCreative=b.startTime}}}}window.top.postMessage(adMetrics,"*")}}catch(c){if(window&&window.top&&typeof(window.top.postMessage)==="function"){adMetrics.errorMsg=c.message;adMetrics.errorLine=c.lineNumber;adMetrics.errorUrl=c.fileName;adMetrics.error=true;window.top.postMessage(adMetrics,"*")}}};window.addEventListener("load",onLoadListener)}}catch(e){if(window&&window.top&&typeof(window.top.postMessage)==="function"){adMetrics.errorMsg=e.message;adMetrics.errorLine=e.lineNumber;adMetrics.errorUrl=e.fileName;adMetrics.error=true;window.top.postMessage(adMetrics,"*")}};
-</script><script src="https://tpc.googlesyndication.com/safeframe/1-0-30/js/ext.js"></script><script>(function(){window.viewReq=[];window.vu=function(b){var a=new Image;a.src=b.replace("&amp;","&");viewReq.push(a)};}).call(this);</script><script>vu("https://securepubads.g.doubleclick.net/pcs/view?xai\u003dAKAOjsu10BdwsXlhufSPFW6EOdLq4yVVrhTM5scO1kKBxRAAW58Ici-CNenV8QxF86r4JlxZeDzT_yaUUwrJecFibQ4kbGyGPXARCqAHBhIKgO1kAdybXG-XJbx-a3Rrzs-CyWetcSrBOqzdIulZ16Ra8JgffayuFRRvS7yASr9MJTwuFQEXx3dJBnDrd-TzO38LRk6vDwPoKNY5smTkFWT_79i3QNQ1ZpAxcOrjgmz4I_NIe2JIR2HVlbso_Lo8a2roBRU22KgT0DmniebaGKYwGg\u0026sai\u003dAMfl-YSHMRfGgFos4Dm_7soWzLfEDph1zPh_sxwIQQVixgyiDJ6QjVsvVDIe986rkB6a9keMeuVViwROAQh3zMSX6BYGRjRlZn7by42QSV-u4bH4z3Fymdm_w6j_ABM\u0026sig\u003dCg0ArKJSzHTNqbFUV9ZIEAE\u0026urlfix\u003d1\u0026adurl\u003d")</script><script>
-var impOne = "", impTwo = "";
-if (impOne.indexOf("http") === 0) { new Image(0,0).src = impOne + "597241512"; }
-if (impTwo.indexOf("http") === 0) { new Image(0,0).src = impTwo + "597241512"; }
-var config = {
-    "type": "ad-native-flex",
-    "adUnit": "/23171577/expedia.us_en/home/all/NT2",
-    "description": "A destination where children and grownups alike can enjoy once-in-a-lifetime experiences",
-    "backgroundUrl": "https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKCroIjvZxABGAEyCNIYZV3C5c_G",
-    "sponsoredText": "",
-    "clickThroughUrl": "https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjstZhpV9y-howv_LUEqGjnS4ffFZDiC2krvSqG2mB3AqZLIKNZnl-VOHF__rvJ42ZtTTvOtCFt7E3dBZdB9olsJSPv90K6WZ1ArGqDWGH-KOAUVGsrWFwVVlBkmB6mwVOlOBNGhkB71j9iP8jhEBqj8ioGd_EuJf8hcPF2tbjsKR3CrxUKAWVrV6aFmB1seFIwFOAeiRxxkmcxZ2Qd79CPbR3KSinYbXq9_9njcmzQU0hRoWWAKAAeKgJLPSqZq79rIQpGnyelraow%2526sai%253DAMfl-YTONTdph3k70s7Hov3-W3sMC2JZp_YPmK1VM68Wxwj9ZpyDDi5I51dw7Z3hIAY4PnOW-JvSDSG0lfh8DotVPr13f62UlHeSOzoUEodx8buZIgbseyMG-kto0qY%2526sig%253DCg0ArKJSzHTy6zaU-0tIEAE%2526urlfix%253D1%2526adurl%253Dhttps://www.expedia.com/lp/destinations/178294?MCICID=MSNTEUSORL",
-    "openInTab": "yes" === "yes",
-    "isHouseAd": "Revenue Ad" === "House Ad"
-};
-
-if (window && window.top && typeof window.top.postMessage === "function") {
-    window.top.postMessage(config, "*");
+}
+catch(ex)
+{
+   document.createElement("img").src="//pixel.mathtag.com/error/img?error_domain=wrap_iframe&what="+encodeURIComponent(ex.message);
 }
 </script>
-<script src="https://tpc.googlesyndication.com/pagead/js/r20181024/r20110914/activeview/osd_listener.js"></script><script type="text/javascript">osdlfm(-1,'','BJ1o6KnHYW7XxNdb5-QOS8LWoDQAAAAAQATgByAEJwAIC4AIA4AQBoAYf0ggFCIBhEAE','',2859815062,true,'ud\u003d1\u0026la\u003d0\u0026alp\u003dxai\u0026alh\u003d1864228214\u0026',3,'CAASEuRoWqex9lAR7PieZB61gPksNw','https://pagead2.googlesyndication.com/pcs/activeview?xai\u003dAKAOjsvnxKjxrFr-bTyGMPr_vy2Q7ZBHkkUchRDczPYA1UmSUz6h2osYK6GiBKnC-dorT7kplVABElb7Ii7SGXoDzhLUPG-2_Ud61ymKxuE\u0026sig\u003dCg0ArKJSzCsPHd09LtIKEAE','');</script><script>if (window.top && window.top.postMessage) {window.top.postMessage('{"googMsgType":"adpnt"}','*');}</script><div style="bottom:0;right:0;width:368px;height:301px;background:initial !important;position:absolute !important;max-width:100% !important;max-height:100% !important;pointer-events:none !important;image-rendering:pixelated !important;z-index:2147483647;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAWBAMAAACrl3iAAAAABlBMVEUAAAD+AciWmZzWAAAAAnRSTlMAApidrBQAAAB2SURBVBjTbVCBDcAwCMIP+P/apSJVt5HYhhQsCvwjBGRdBjBfmcXLrIPUZkdBlrpZv6tajXHe3k6CncTgwcgNJwn1h3sfFe2AeHzhpnWP5NFylHIGkYrydG6NpynxmrIMYycyVI2dZXg33xsM/7B3VyeJndnOBz/kBe4nG91yAAAAAElFTkSuQmCC') !important;"></div>
 
-  
-  
-  
 
 </body></html>
