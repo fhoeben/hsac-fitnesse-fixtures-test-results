@@ -1,4 +1,4 @@
-<html><head><title>HsacExamples.SlimTests.BrowserTests.CustomFixtureTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.BrowserTests.CustomFixtureTest</h2></header><article><br/><h1 id="Websitetestingusingcustomsubclassof">Website testing using custom subclass of BrowserTest</h1>
+<html><head><title>HsacExamples.SlimTests.BrowserTests.CustomFixtureTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.BrowserTests.CustomFixtureTest</h2></header><article><br/><h1 id="WebsitetestingusingcustomsubclassofBrowserTest">Website testing using custom subclass of BrowserTest</h1>
 <br/>On this page we test whether the birth date of Van Morrisson is listed correctly on <a href="https://www.allmusic.com">AllMusic</a>.<br/>We start by navigating to the artist's overview page on AllMusic and then perform the same check in different ways:<br/><ul>
 	<li>First with <i>plain BrowserTest</i>,</li>
 	<li>then with a <i>custom subclass, nl.hsac.fitnesse.sample.AllMusicTest</i>, and</li>
@@ -37,7 +37,7 @@ Navigating to the right page is done only once (all subsequent test approaches u
 		<td colspan="3">Album Highlights</td>
 	</tr>
 </table>
-<br/><h2 id="Using">Using BrowserTest</h2>
+<br/><h2 id="UsingBrowserTest">Using BrowserTest</h2>
 <br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
@@ -50,7 +50,7 @@ Navigating to the right page is done only once (all subsequent test approaches u
 		<td><span class="pass">August 31, 1945 in Belfast, Northern Ireland</span></td>
 	</tr>
 </table>
-<br/>Using a custom subclass, makes the check look like...<br/><br/><h2 id="Using">Using AllMusicTest</h2>
+<br/>Using a custom subclass, makes the check look like...<br/><br/><h2 id="UsingAllMusicTest">Using AllMusicTest</h2>
 <br/><br/>We need to indicate in which package our custom class can be found.<br/><table>
 	<tr class="slimRowTitle">
 		<td>import</td>

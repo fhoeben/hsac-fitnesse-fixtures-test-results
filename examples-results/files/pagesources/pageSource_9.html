@@ -1,1 +1,93 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head><title></title></head><body style="background-color: transparent"><img src="https://adservice.google.com/ddm/fls/z/dc_pre=CLnIuPjsot8CFcO8ZAodpUsOQw;src=2588783;type=nausc547;cat=naush134;ord=3980487531451;gtm=2oubc0;auiddc=*;u25=-1;u22=264;u24=-1;~oref=https%3A%2F%2Fwww.expedia.com%2F%3Frfrr%3DHeader.POSRedirect"></body></html>
+<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="ad.size" content="width=300, height=250">
+        <title>Nikon\</title>
+        <link rel="stylesheet" href="master.dist.css">
+        
+        <script type="text/javascript">
+        var clickTag1 = "http://www.google.com/";
+        </script>
+    <script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+    <body>
+        <a href="javascript:window.open(window.clickTag1)">
+            <div class="main_wrapper" style="display: block;">
+                
+                <!-- Intro -->
+                <div class="intro_bg" style="transform-origin: left top 0px; transform: matrix(1, 0, 0, 1, 0, 0);"><img src="images/intro_bg.jpg"></div>
+                <div class="copyright"><img src="images/copyright.svg"></div>
+                <div class="yellow_line" style="transform-origin: left top 0px; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                <div class="copy_1" style="visibility: inherit; opacity: 1; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1);"><img src="images/copy_1.svg"></div>
+
+                <!-- Resolve -->
+                <div class="resolve_bg" style="visibility: hidden; opacity: 0;"><img src="images/resolve_bg.jpg"></div>
+                <div class="copy_2" style="visibility: hidden; opacity: 0; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 0, 10, 0, 1);"><img src="images/copy_2.svg"></div>
+                <div class="camera" style="transform: matrix(1, 0, 0, 1, 200, 0);"><img src="images/camera.png"></div>
+                <div class="copy_3" style="visibility: hidden; opacity: 0; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 0, 10, 0, 1);"><img src="images/copy_3.svg"></div>
+                <div class="copy_4" style="visibility: hidden; opacity: 0; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 0, 10, 0, 1);"><img src="images/copy_4.svg"></div>
+                <div class="copy_5" style="visibility: hidden; opacity: 0; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 0, 10, 0, 1);"><img src="images/copy_5.svg"></div>
+                <div class="copy_6" style="visibility: hidden; opacity: 0; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 0, 10, 0, 1);"><img src="images/copy_6.svg"></div>
+                <div class="cta" style="visibility: hidden; opacity: 0; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 0, 10, 0, 1);"><img src="images/cta.png"></div>
+                
+                <!-- Globals -->
+                <div class="d3500_logo"><img src="images/d3500_logo.png"></div>
+                <div class="nikon_logo"><img src="images/nikon_logo.png"></div>
+            </div>
+        </a>
+
+        <div class="replay_btn" style="visibility: hidden; opacity: 0;"></div>
+        
+        <!-- Load Scripts -->
+        <script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.19.0_643d6911392a3398cb1607993edabfa7_min.js"></script>
+        <script src="master.dist.js"></script>
+    
+</body></html>
