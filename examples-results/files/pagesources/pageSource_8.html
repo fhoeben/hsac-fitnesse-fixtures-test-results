@@ -1,5 +1,99 @@
-<html><head><meta name="referrer" content="no-referrer"></head>
-<body style="background-color:transparent" marginwidth="0" marginheight="0">
-<iframe width="1" height="1" frameborder="0" marginwidth="0" marginheight="0" src="//ib.adnxs.com/getuid?https://s.amazon-adsystem.com/ecm3?id=$UID&amp;ex=appnexus.com" cd_frame_id_="0984ef6ae94f22bd047d71c51ddc5b28"></iframe>
+<!DOCTYPE html><html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script type="text/javascript" src="animation.js"></script>
+<script type="text/javascript">
+var clickTag = "http://www.someURL.com";
+
+function checkGreensockReady(){
+			if ( window.TimelineMax ){
+
+				startAd();
+			}else{
+			setTimeout( checkGreensockReady, 50 );
+			}
+			}
+window.onload = checkGreensockReady;
+
+</script>
+<title>Acquisition_Multiline_2016_Standard_2xPoints_300X250</title>
+<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+
+<body>
+        <div id="container">
+            <div id="ad" onclick="window.open(window.clickTag)">
+                <div id="banner" style="visibility: visible;">
+                    <div id="fog" style="left: -60px; transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 40, 0, 0.1, 1); opacity: 0;"></div>
+                    <div id="canoa_girl" style="opacity: 0;"></div>
+                    <div id="bg1" style="opacity: 0;"></div>
+                    <div id="bg2" style="opacity: 1;"></div>
+                    <div id="copy1" style="opacity: 0;"></div>
+                    <div id="copy2" style="opacity: 1; top: 36px;"></div>
+                    <div id="copy3" style="opacity: 1;"></div>
+                    <div id="copy4"></div>
+                    <div id="copy5" style="opacity: 1; left: 8px;"></div>
+                    
+                    <div id="logo"></div>
+                    <div id="terms_apply"></div>
+                
+                    <div id="cta" style="opacity: 1;">
+						<div id="ctaText"></div>
+                        <div id="shine" style="opacity: 0.8; left: -105px;"></div>
+                    </div>
+
+              </div>
+            </div>
+        </div>
+    
 
 </body></html>
