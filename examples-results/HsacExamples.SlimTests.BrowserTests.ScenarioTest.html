@@ -2,39 +2,32 @@
 <br/><br/>On this page we test retrieving record details using <a href="https://www.allmusic.com">AllMusic</a>.<br/>It uses a Slim scenario<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.ScenarioTable?edit&amp;nonExistent=true">[?]</a> to define a parameterized script.<br/>This is then invoked multiple times from a Decision table<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.DecisionTable?edit&amp;nonExistent=true">[?]</a>, once for each row.<br/><br/><br/>The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup<a title="create page" href="HsacExamples.SlimTests.BrowserTests.SuiteSetup?edit&amp;nonExistent=true">[?]</a>. Which allows this configuration to be shared between tests. Closing the browser is done in <a href="HsacExamples.SlimTests.BrowserTests.SuiteTearDown">SuiteTearDown</a>, which happens after all tests are completed.<br/><br/>First we go to the Discography page for Van Morrison.<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td colspan="3">browser test <span class="error">org.openqa.selenium.UnsupportedCommandException: The test with session id 2d84dee55c4e40ed832bbaa38fb47327 has already finished, and can't receive further commands.
-For help, please check https://wiki.saucelabs.com/display/DOCS/Common+Error+Messages
-Command duration or timeout: 104 milliseconds
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'travis-job-72f44de2-22ae-4d9f-9615-04dc05a086e2', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.0-101-generic', java.version: '1.8.0_151'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.44.609538 (b655c5a60b0b54..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49218}, handlesAlerts: true, hasMetadata: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.80, webStorageEnabled: true, webdriver.remote.sessionid: 2d84dee55c4e40ed832bbaa38fb...}
-Session ID: 2d84dee55c4e40ed832bbaa38fb47327</span></td>
+		<td colspan="3"><span class="pass">browser test</span></td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td>seconds before timeout <span class="error">Method secondsBeforeTimeout[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
+		<td>seconds before timeout</td>
 		<td colspan="3">60</td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td>open <span class="error">Method open[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
+		<td><span class="pass">open</span></td>
 		<td colspan="3"><a href="https://www.allmusic.com">https://www.allmusic.com</a></td>
 	</tr>
 	<tr class="slimRowColor2">
-		<td>enter <span class="error">Method enterAs[2] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
+		<td><span class="pass">enter</span></td>
 		<td>Van Morrison</td>
 		<td>as</td>
 		<td>Search</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td>press <span class="error">Method press[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
+		<td><span class="pass">press</span></td>
 		<td colspan="3">enter</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
+		<td><span class="pass">click</span></td>
 		<td colspan="3">Van Morrison</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td>click <span class="error">Method click[1] not found in nl.hsac.fitnesse.fixture.slim.web.LayoutTest.</span></td>
+		<td><span class="pass">click</span></td>
 		<td colspan="3">Discography</td>
 	</tr>
 </table>
