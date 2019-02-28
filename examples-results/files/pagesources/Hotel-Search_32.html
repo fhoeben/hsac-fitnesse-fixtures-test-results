@@ -1,0 +1,219 @@
+<!DOCTYPE html><html><head><script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script>
+<meta charset="UTF-8">
+<title>YMCTB_728x90_National_Park</title>
+    
+<script type="text/javascript" src="https://s0.2mdn.net/ads/studio/cached_libs/createjs_2015.11.26_54e1c3722102182bb133912ad4442e19_min.js"></script>
+<script type="text/javascript" src="YMCTB_728x90_National_Park.js"></script>
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+    
+<meta content="width=728,height=90" name="ad.size">
+    
+<script type="text/javascript">
+    var clickTag = "http://www.google.com";
+</script>
+
+ <style type="text/css">
+     
+     
+     body {
+         margin:0;padding:0;   
+         background-color: transparent;
+     }
+     
+     .dv {
+         position: absolute;
+         top: 0px;
+         left: 0px;
+         width: 728px;
+         height: 90px;
+     }
+     
+     #ad {
+         display: none;
+     }
+     
+     #clickthrough-button {
+         cursor: pointer;
+         background-color: white;
+         opacity: 0;
+     }
+     
+     #canvas {
+         display: inline;
+     }
+     
+     #banner_border {        
+         border: 1px solid #aaaaaa;
+         box-sizing: border-box;        
+         pointer-events: none;        
+     }     
+     
+    </style>
+
+</head>
+
+<body>
+    
+    
+    <div id="ad" class="dv" style="display: block;">
+        <canvas id="canvas" width="728" height="90" class="dv" style="width: 728px; height: 90px;"></canvas>
+        <div id="banner_border" class="dv"></div>
+        <div id="clickthrough-button" class="dv"></div>
+    </div>    
+    
+    
+<script>
+    
+window.addEventListener("load", startAd);
+    
+function startAd() {
+    
+    window.myHover = function() { };
+    window.myHout = function() { };    
+ 
+    document.getElementById("clickthrough-button").addEventListener("click", clickthrough);
+    document.getElementById('clickthrough-button').addEventListener('mouseover', function() {  window.myHover(); }, false);
+    document.getElementById('clickthrough-button').addEventListener('mouseout', function() {  window.myHout(); }, false);
+    
+    init();
+}
+    
+function clickthrough() {
+    
+    window.open(window.clickTag);
+    
+}
+    
+var canvas, stage, exportRoot;
+    
+function init() {
+	canvas = document.getElementById("canvas");
+	var comp=AdobeAn.getComposition("BE75E55D4609AF49AA023517F47228A6");
+	var lib=comp.getLibrary();
+    createjs.MotionGuidePlugin.install();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+    
+    if (comp.getLibrary().properties.manifest.length>0) loader.loadManifest(lib.properties.manifest);
+    else handleComplete({},comp);
+}
+    
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+    
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.YMCTB_728x90_National_Park();
+	stage = new lib.Stage(canvas);	
+	//Code to support hidpi screens and responsive scaling.
+	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = w*sRatio+'px';				
+			canvas.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;            
+			stage.tickOnUpdate = false;            
+			stage.update();            
+			stage.tickOnUpdate = true;		
+		}
+	}
+	makeResponsive(false,'both',false,1);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+
+    
+    stage.addChild(exportRoot);
+    createjs.Ticker.setFPS(lib.properties.fps);
+    createjs.Ticker.addEventListener("tick", stage);
+    
+    document.getElementById("ad").style.display = "block";
+    
+}     
+
+</script>    
+    
+
+</body></html>
