@@ -1,0 +1,147 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.AlertOptionalHandlingTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.AlertOptionalHandlingTest</h2></header><article><br/>This test ensures we can deal with alerts that may or may not exist.<br/><br/><span class="meta">variable defined: HTML= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;button onclick="confirm('Hello');"&gt;Open alert&lt;/button&gt;
+&lt;label&gt;Name&lt;input value="John"/&gt;&lt;/label&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;button onclick="confirm('Hello');"&gt;Open alert&lt;/button&gt;
+&lt;label&gt;Name&lt;input value="John"/&gt;&lt;/label&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://127.0.1.1:8000/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="2"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="2">$url->[http://127.0.1.1:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>seconds before timeout</td>
+		<td colspan="2">1</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="2">Open alert</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>alert text</td>
+		<td><span class="pass">Hello</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">ensure</span></td>
+		<td colspan="2">dismiss alert if available</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>alert text</td>
+		<td><span class="pass">null</span></td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">reject</span></td>
+		<td colspan="2">dismiss alert if available</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="2">Open alert</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>alert text</td>
+		<td><span class="pass">Hello</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">ensure</span></td>
+		<td colspan="2">confirm alert if available</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>alert text</td>
+		<td><span class="pass">null</span></td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">reject</span></td>
+		<td colspan="2">confirm alert if available</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="2">Open alert</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>alert text</td>
+		<td><span class="pass">Hello</span></td>
+	</tr>
+</table>
+<br/>Selenium cannot do anything with a browser window, except interact with the alert, when an alert is present.<br/>If a new instance of browser test is started we don't want it to be blocked, just because a previous test left open an alert.<br/>So the open alert should be closed automatically (by confirm).<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">browser test</span></td>
+		<td colspan="2">1</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>alert text</td>
+		<td colspan="2"><span class="pass">null</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Name</td>
+		<td><span class="pass">John</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="3">Open alert</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>alert text</td>
+		<td colspan="2"><span class="pass">Hello</span></td>
+	</tr>
+</table>
+<br/>But this automatic confirm can be disabled...<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">browser test</span></td>
+		<td>1</td>
+		<td>false</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>alert text</td>
+		<td colspan="2"><span class="pass">Hello</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td colspan="4"><span class="pass">confirm alert</span></td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop</td>
+	</tr>
+</table>
+<br/></article></body></html>

@@ -8,41 +8,17 @@
         <script src="galen-report.js"></script>
         <script type="text/javascript">
 var REPORT_DATA = {
-  "testId" : "2-usual-menu-highlight",
-  "name" : "Usual menu highlight",
+  "testId" : "3-fitnesselayouttest2",
+  "name" : "FitNesseLayoutTest2",
   "report" : {
     "nodes" : [ {
-      "name" : "Layout check using: /home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/galenExamples/menuHighlight.gspec; including [usual]",
-      "status" : "error",
-      "time" : 1552729213354,
-      "includedTags" : [ "usual" ],
+      "name" : "Layout check using: /home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/galenExamples/menuHighlight.gspec",
+      "status" : "info",
+      "time" : 1553425002840,
       "excludedTags" : [ ],
-      "sections" : [ {
-        "name" : "Menu highlight",
-        "place" : {
-          "filePath" : "/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/galenExamples/menuHighlight.gspec",
-          "lineNumber" : 5
-        },
-        "objects" : [ {
-          "name" : "menu_item-1",
-          "specs" : [ {
-            "status" : "error",
-            "place" : {
-              "filePath" : "/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/galenExamples/menuHighlight.gspec",
-              "lineNumber" : 8
-            },
-            "name" : "color-scheme 90 to 96 % #2d6ca2, 1 to 4 % white",
-            "errors" : [ "color #2d6ca2 on \"menu_item-1\" is 0% which is not in range of 90 to 96%", "color white on \"menu_item-1\" is 61% which is not in range of 1 to 4%" ],
-            "highlight" : [ "menu_item-1" ]
-          } ]
-        } ]
-      } ],
-      "objects" : {
-        "menu_item-1" : {
-          "area" : [ 48, 16, 39, 17 ]
-        }
-      },
-      "screenshot" : "layout-2-screenshot.png",
+      "sections" : [ ],
+      "objects" : { },
+      "screenshot" : "layout-3-screenshot.png",
       "type" : "layout"
     } ]
   }
@@ -257,10 +233,37 @@ var REPORT_DATA = {
                     v-bind:title="spec.place ? spec.place.filePath + ':' + spec.place.lineNumber : ''"
                     >{{spec.name}}</div>
                 <ul class="error-messages" v-if="isFailed">
+                    <li class="error-message" v-if="spec.imageComparison">
+                        <span class="link" v-on:click="imageComparisonShown = true">Show image comparison</span>
+                    </li>
                     <li class="error-message" v-for="error in spec.errors">{{error}}</li>
                 </ul>
                 <div v-if="spec.subLayout" class="sublayout">
                     <layout-section v-if="spec.subLayout.sections" v-for="section in spec.subLayout.sections" v-bind:section="section" v-bind:bus="bus" v-bind:layout="spec.subLayout"></layout-section>
+                </div>
+                <image-comparison-popup v-if="imageComparisonShown" v-on:close="imageComparisonShown = false" v-bind:imagedata="spec.imageComparison"/>
+            </div>
+        </template>
+
+
+        <template id="tpl-image-comparison-popup">
+            <div class="image-comparison-popup">
+                <div class="popup-shadow" v-on:click="$emit('close')"> </div>
+                <div class="popup-container" v-bind:style="{top: position.top + 'px', left: position.left + 'px', width: position.width + 'px', height: position.height + 'px'}">
+                    <div class="popup-body">
+                        <div class="image-layout">
+                            <h5>Actual Image</h5>
+                            <img v-bind:src="imagedata.actualImage"/>
+                        </div>
+                        <div class="image-layout">
+                            <h5>Expected Image</h5>
+                            <img v-bind:src="imagedata.expectedImage"/>
+                        </div>
+                        <div class="image-layout">
+                            <h5>Comparison Map</h5>
+                            <img v-bind:src="imagedata.comparisonMapImage"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </template>
