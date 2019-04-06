@@ -1,0 +1,95 @@
+<!DOCTYPE html><html><head>
+    <style></style><meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="ad.size" content="width=300, height=250">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/style.css"> -->
+
+
+<link rel="stylesheet" type="text/css" href="assets/style.css"></head>
+
+<body>
+    <div id="container" style="visibility: visible; cursor: pointer; opacity: 1; display: block;" class="xsb">
+
+    	<div id="setupBanner">
+	    	<ft-dynamic name="f1_active" id="f1_active">off</ft-dynamic>
+	    	<ft-dynamic name="f2_active" id="f2_active">off</ft-dynamic>	
+	    	<ft-dynamic name="unitColor" id="unitColor">1</ft-dynamic>	
+	    	<ft-dynamic name="AnimationType" id="AnimationType">2</ft-dynamic>	
+    	</div>
+    	
+         <div id="bg_color"></div>
+        <!-- <div id="guide"><img src="g2.jpg"></div>	 -->
+		<div id="frame1">
+			<ft-dynamic name="hf1" id="hf1"></ft-dynamic>	
+		</div>
+		<ft-dynamic name="img1" id="img1"><img src="https://cdn.flashtalking.com/98209/instantAssets/1x1.png"></ft-dynamic><!-- Variable -->
+		<div id="frame2">
+			<ft-dynamic name="hf2" id="hf2"></ft-dynamic>
+		</div>
+		<ft-dynamic name="img2" id="img2"><img src="https://cdn.flashtalking.com/98209/instantAssets/1x1.png"></ft-dynamic><!-- Variable -->
+		<div id="borders"></div>
+		<div id="endframe">
+			<div id="hEndHolder">
+				<ft-dynamic name="hEnd" id="hEnd" style="left: 0px;">CHOOSE ANY INTERNET</ft-dynamic>
+			</div>
+			
+			<div id="WhiteBorder"></div>
+			<ft-dynamic name="shEnd" id="shEnd" style="left: 0px;">THEN ADD PHONE + TV</ft-dynamic>
+			<div id="endOffer" style="transform-style: preserve-3d; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);">
+				<ft-dynamic name="priceIntro" id="priceIntro" style="opacity: 1;">Just</ft-dynamic>
+				<ft-dynamic name="currency" id="currency" class="shadowT" style="opacity: 1;">$</ft-dynamic>
+				<ft-dynamic name="price" id="price" class="shadowT" style="opacity: 0;">34</ft-dynamic>
+				<div id="leftContent">
+					<ft-dynamic name="cents" id="cents" class="shadowT">90</ft-dynamic>
+					<ft-dynamic name="priceFreq" id="priceFreq">more per<br>month</ft-dynamic>
+				</div>
+				<div id="price2" class="shadowT">34</div>
+			</div>
+
+
+		<ft-dynamic name="lastmsg" id="lastmsg" style="opacity: 1;"></ft-dynamic>
+		</div>
+		<!-- <div id="logo"></div> -->
+		<div id="logos">
+			<ft-dynamic name="logoC1" src="assets/logo.png" id="logoC1" style="opacity: 1;"><img src="https://cdn.flashtalking.com/98209/instantAssets/COMCAST_6671_300_250_logo.png"></ft-dynamic><!-- Variable IMG -->
+			<ft-dynamic name="logoBYC1" src="assets/BF_logo_BK.png" id="logoBYC1" style="opacity: 0;"><img src="https://cdn.flashtalking.com/98209/instantAssets/COMCAST_6671_300_250_BF_logo_BK.png"></ft-dynamic><!-- Variable IMG -->
+			<ft-dynamic name="logoC2" src="assets/logo.png" id="logoC2"><img src="https://cdn.flashtalking.com/98209/instantAssets/COMCAST_6671_300_250_logo2.png"></ft-dynamic><!-- Variable IMG -->
+			<ft-dynamic name="logoBYC2" src="assets/BF_logo_BK.png" id="logoBYC2"><img src="https://cdn.flashtalking.com/98209/instantAssets/COMCAST_6671_300_250_BF_logo_WT.png"></ft-dynamic><!-- Variable IMG -->
+			<ft-dynamic name="logoC3" src="assets/logo.png" id="logoC3"><img src="https://cdn.flashtalking.com/98209/instantAssets/COMCAST_6671_300_250_logo2.png"></ft-dynamic><!-- Variable IMG -->
+			<ft-dynamic name="logoBYC3" src="assets/BF_logo_BK.png" id="logoBYC3"><img src="https://cdn.flashtalking.com/98209/instantAssets/COMCAST_6671_300_250_BF_logo_WT.png"></ft-dynamic><!-- Variable IMG -->
+		</div>
+		<!-- <div id="logoBY"></div> -->
+		<div id="phoneContainer">
+			<div id="phoneIcon"></div>
+			<ft-dynamic name="phoneN" id="phoneN">(855) 971-2685</ft-dynamic>
+		</div>
+		<div id="ctaContainer">
+			<div id="ctaBorder"></div>
+			<div id="ctaBG" style="opacity: 1;"></div>
+			<div id="shine" style="left: -120px;"></div>
+			<ft-dynamic name="ctaDate" id="ctaDate" style="opacity: 0;">GET IT NOW</ft-dynamic>
+			<ft-dynamic name="ctaCopy" id="ctaCopy" style="opacity: 1;">GET IT NOW</ft-dynamic>
+		</div>
+        <button id="background_exit_dc"></button>
+        
+    </div>
+        <!-- Scripts -->
+        <script src="//cdn.flashtalking.com/frameworks/js/gsap/latest/TweenMax.min.js"></script>
+        <script src="//cdn.flashtalking.com/frameworks/js/api/2/10/html5API.js"></script>
+
+        
+        <script>
+        if(myFT.$('#container').length > 0){ var container = myFT.$('#container') } else if(myFT.$('.banner-wrapper').length > 0){ var container =  myFT.$('.banner-wrapper'); } else if(myFT.$('#animation_container').length > 0){ var container =  myFT.$('#animation_container'); } else if(myFT.$('#banner').length > 0){ var container =  myFT.$('#banner');} else if(myFT.$('#content').length > 0){ var container =  myFT.$('#content');} else if(myFT.$('#bg-exit').length > 0){ var container =  myFT.$('#bg-exit');};
+        </script>
+        <script>
+            myFT.on("instantads", function(){
+                myFT.require(["assets/script.js"], function(){
+                    if (typeof startAd !== "undefined") {startAd();}});
+                myFT.applyClickTag(container,1, myFT.instantAds.clickTag_URL+=myFT.instantAds.GA_info);
+            });
+
+        </script>
+
+
+
+</body></html>
