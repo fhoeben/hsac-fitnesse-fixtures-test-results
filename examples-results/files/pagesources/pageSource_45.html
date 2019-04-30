@@ -3,30 +3,51 @@
 try {
    /**/
 (function() {
+    metric = function(url, wait)
+    {
+        setTimeout(function() {
+                var e = document.createElement("img");
+                e.src = url;
+            }, wait);
+    }
+    var intervals = [0, 10];
+    var inlen = intervals.length;
+    for (var k = 0; k < inlen; ++k)
+        this.metric("https://pixel.mathtag.com/misc/img?mm_bnc&bcdv="+k, intervals[k] * 1000);
+})();
+(function() {
     try {
 	var sync_4815162342 = function() {
 this.urls = [
-[0, "https://pixel.mathtag.com/misc/img?mop_seq=0:18&mt_cb=677406&mop_top="],
-[10000, "https://c212.net/c/sync?u=&c=US&pid=22cb5ca8-f96a-4200-b213-7799453e1319"],
-[46, "https://x.bidswitch.net/sync?dsp_id=80&user_id=22cb5ca8-f96a-4200-b213-7799453e1319&expires=30"],
-[10090, "https://mediamath.digitru.st/sync/img?mt_exid=10090&mt_exuid=22cb5ca8-f96a-4200-b213-7799453e1319&foreign_sync&mt_van&mm_bct"],
+[0, "https://pixel.mathtag.com/misc/img?mop_seq=0:25&mt_cb=327017&mop_top="],
+[10000, "https://c212.net/c/sync?u=&c=US&pid=ac0a5cc7-e838-4a00-8e33-0919b6913485"],
+[9, "https://pixel.rubiconproject.com/tap.php?v=4222&nid=1512&put=ac0a5cc7-e838-4a00-8e33-0919b6913485&expires=28"],
+[13, "https://ib.adnxs.com/getuid?https://sync.mathtag.com/sync/img?mt_exid=13&mt_mminit=1&mt_exuid=$UID"],
+[3, "https://simage2.pubmatic.com/AdServer/Pug?vcode=bz0yJnR5cGU9MSZjb2RlPTM2MiZ0bD00MzIwMA==&piggybackCookie=uid:ac0a5cc7-e838-4a00-8e33-0919b6913485"],
+[15, "https://dsum-sec.casalemedia.com/rum?cm_dsp_id=3&external_user_id=ac0a5cc7-e838-4a00-8e33-0919b6913485"],
+[5, "https://us-u.openx.net/w/1.0/sd?id=536872786&val=ac0a5cc7-e838-4a00-8e33-0919b6913485"],
+[10054, "https://idsync.reson8.com/sync/vendormm.gif?user_id=ac0a5cc7-e838-4a00-8e33-0919b6913485"],
+[10010, "https://stags.bluekai.com/site/4448?id=ac0a5cc7-e838-4a00-8e33-0919b6913485"],
+[46, "https://x.bidswitch.net/sync?dsp_id=80&user_id=ac0a5cc7-e838-4a00-8e33-0919b6913485&expires=30"],
+[10090, "https://mediamath.digitru.st/sync/img?mt_exid=10090&mt_exuid=ac0a5cc7-e838-4a00-8e33-0919b6913485&foreign_sync&mt_van&mm_bct"],
+[0, "https://pixel.mathtag.com/misc/img?mop_seq=10:25&mt_cb=605929&mop_top=9:1556606302|13:1556606302|3:1556606302|15:1556606302|5:1556606302|10054:1556606302|10010:1556606302|46:1556606302|10090:1556606302|"],
 [10074, "https://cm.g.doubleclick.net/pixel?google_nid=mediamath_dmp&google_cm"],
-[10072, "https://pixel.tapad.com/idsync/ex/receive?partner_id=2989&partner_device_id=22cb5ca8-f96a-4200-b213-7799453e1319"],
-[10008, "https://loadm.exelator.com/load/?p=204&g=101&buid=22cb5ca8-f96a-4200-b213-7799453e1319&j=0"],
-[66, "https://px.powerlinks.com/user/sync/dsps?userId=22cb5ca8-f96a-4200-b213-7799453e1319&sourceId=aa4e7548-789b-4df8-a72f-d951a5b206eb"],
-[10011, "https://x.dlx.addthis.com/e/media_math_sync?na_exid=22cb5ca8-f96a-4200-b213-7799453e1319"],
-[21, "https://pixel.advertising.com/ups/55938/sync?uid=22cb5ca8-f96a-4200-b213-7799453e1319&_origin=1"],
-[10041, "https://uipus.semasio.net/mediamath/1/info?sType=sync&sExtCookieId=22cb5ca8-f96a-4200-b213-7799453e1319&sInitiator=external"],
-[0, "https://pixel.mathtag.com/misc/img?mop_seq=10:18&mt_cb=806297&mop_top=46:1554580151|10090:1554580151|10074:1554580151|10072:1554580151|10008:1554580151|66:1554580151|10011:1554580151|21:1554580151|10041:1554580151|"],
-[31, "https://pixel.advertising.com/ups/55938/sync?uid=22cb5ca8-f96a-4200-b213-7799453e1319&_origin=1"],
-[16, "https://ad.360yield.com/match?publisher_dsp_id=5&external_user_id=22cb5ca8-f96a-4200-b213-7799453e1319"],
-[45, "https://cs.gssprt.jp/yie/ld/cs?dspid=tone&uid=22cb5ca8-f96a-4200-b213-7799453e1319"],
-[10042, "https://global.ib-ibi.com/image.sbxx?go=247256&pid=310&xid=22cb5ca8-f96a-4200-b213-7799453e1319"],
-[36, "https://i.liadm.com/s/37464?bidder_id=7156&bidder_uuid=22cb5ca8-f96a-4200-b213-7799453e1319"],
-[10040, "https://sync.crwdcntrl.net/map/c=4735/tp=MDMA/tpid=22cb5ca8-f96a-4200-b213-7799453e1319"],
-[10004, "https://dpm.demdex.net/ibs:dpid=269&dpuuid=22cb5ca8-f96a-4200-b213-7799453e1319"],
-[10050, "https://sync.navdmp.com/sync?img=1&mdia=22cb5ca8-f96a-4200-b213-7799453e1319"],
-[0, "https://pixel.mathtag.com/misc/img?mop_seq=18:18&mt_cb=188989&check=22cb5ca8-f96a-4200-b213-7799453e1319&mop_top=46:1554580151|10090:1554580151|10074:1554580151|10072:1554580151|10008:1554580151|66:1554580151|10011:1554580151|21:1554580151|10041:1554580151|31:1554580151|16:1554580151|45:1554580151|10042:1554580151|36:1554580151|10040:1554580151|10004:1554580151|10050:1554580151|"]
+[10072, "https://pixel.tapad.com/idsync/ex/receive?partner_id=2989&partner_device_id=ac0a5cc7-e838-4a00-8e33-0919b6913485"],
+[10008, "https://loadm.exelator.com/load/?p=204&g=101&buid=ac0a5cc7-e838-4a00-8e33-0919b6913485&j=0"],
+[66, "https://px.powerlinks.com/user/sync/dsps?userId=ac0a5cc7-e838-4a00-8e33-0919b6913485&sourceId=aa4e7548-789b-4df8-a72f-d951a5b206eb"],
+[10011, "https://x.dlx.addthis.com/e/media_math_sync?na_exid=ac0a5cc7-e838-4a00-8e33-0919b6913485"],
+[21, "https://pixel.advertising.com/ups/55938/sync?uid=ac0a5cc7-e838-4a00-8e33-0919b6913485&_origin=1"],
+[10041, "https://uipus.semasio.net/mediamath/1/info?sType=sync&sExtCookieId=ac0a5cc7-e838-4a00-8e33-0919b6913485&sInitiator=external"],
+[31, "https://pixel.advertising.com/ups/55938/sync?uid=ac0a5cc7-e838-4a00-8e33-0919b6913485&_origin=1"],
+[16, "https://ad.360yield.com/match?publisher_dsp_id=5&external_user_id=ac0a5cc7-e838-4a00-8e33-0919b6913485"],
+[45, "https://cs.gssprt.jp/yie/ld/cs?dspid=tone&uid=ac0a5cc7-e838-4a00-8e33-0919b6913485"],
+[0, "https://pixel.mathtag.com/misc/img?mop_seq=20:25&mt_cb=504330&mop_top=9:1556606302|13:1556606302|3:1556606302|15:1556606302|5:1556606302|10054:1556606302|10010:1556606302|46:1556606302|10090:1556606302|10074:1556606302|10072:1556606302|10008:1556606302|66:1556606302|10011:1556606302|21:1556606302|10041:1556606302|31:1556606302|16:1556606302|45:1556606302|"],
+[10042, "https://global.ib-ibi.com/image.sbxx?go=247256&pid=310&xid=ac0a5cc7-e838-4a00-8e33-0919b6913485"],
+[36, "https://i.liadm.com/s/37464?bidder_id=7156&bidder_uuid=ac0a5cc7-e838-4a00-8e33-0919b6913485"],
+[10040, "https://sync.crwdcntrl.net/map/c=4735/tp=MDMA/tpid=ac0a5cc7-e838-4a00-8e33-0919b6913485"],
+[10004, "https://dpm.demdex.net/ibs:dpid=269&dpuuid=ac0a5cc7-e838-4a00-8e33-0919b6913485"],
+[10050, "https://sync.navdmp.com/sync?img=1&mdia=ac0a5cc7-e838-4a00-8e33-0919b6913485"],
+[0, "https://pixel.mathtag.com/misc/img?mop_seq=25:25&mt_cb=368978&check=ac0a5cc7-e838-4a00-8e33-0919b6913485&mop_top=9:1556606302|13:1556606302|3:1556606302|15:1556606302|5:1556606302|10054:1556606302|10010:1556606302|46:1556606302|10090:1556606302|10074:1556606302|10072:1556606302|10008:1556606302|66:1556606302|10011:1556606302|21:1556606302|10041:1556606302|31:1556606302|16:1556606302|45:1556606302|10042:1556606302|36:1556606302|10040:1556606302|10004:1556606302|10050:1556606302|"]
 ]
 	    this.progress = 0;
 	    var self = this;
