@@ -35,7 +35,7 @@
 	<tr class="slimRowTitle">
 		<td>scenario</td>
 		<td>album details _</td>
-		<td colspan="5">album, year, label</td>
+		<td colspan="5">album, year?, label?</td>
 	</tr>
 	<tr class="slimRowColor4">
 		<td>scroll to</td>
@@ -62,7 +62,7 @@
 </table>
 <br/><br/><table>
 	<tr>
-		<td colspan="3">album details <span class="error"><strong> album details: Bad table! The argument year is not an output of the scenario.</strong></span></td>
+		<td colspan="3">album details</td>
 	</tr>
 	<tr>
 		<td>album</td>
@@ -71,20 +71,20 @@
 	</tr>
 	<tr class="scenario closed">
 		<td>Astral Weeks</td>
-		<td>1968</td>
-		<td>Warner Bros.</td>
+		<td><span class="pass">1968</span></td>
+		<td><span class="pass">Warner Bros.</span></td>
 	</tr><tr class="scenario-detail closed-detail"><td colspan="3"><table>
 	<tr class="slimRowTitle">
 		<td>scenario</td>
 		<td>album details _</td>
-		<td colspan="5">album, year, label</td>
+		<td colspan="5">album, year?, label?</td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td>scroll to</td>
+		<td><span class="pass">scroll to</span></td>
 		<td colspan="6">Astral Weeks</td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>$year=</td>
+		<td>$year&lt;-[1968]</td>
 		<td>value of</td>
 		<td>Year</td>
 		<td>in row where</td>
@@ -93,7 +93,7 @@
 		<td>Astral Weeks</td>
 	</tr>
 	<tr class="slimRowColor9">
-		<td>$label=</td>
+		<td>$label&lt;-[Warner Bros.]</td>
 		<td>value of</td>
 		<td>Label</td>
 		<td>in row where</td>
@@ -102,10 +102,38 @@
 		<td>Astral Weeks</td>
 	</tr>
 </table></td></tr>
-	<tr>
+	<tr class="scenario closed">
 		<td>Moondance</td>
-		<td>1970</td>
-		<td>Rhino / Warner Bros.</td>
+		<td><span class="pass">1970</span></td>
+		<td><span class="pass">Rhino / Warner Bros.</span></td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="3"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>album details _</td>
+		<td colspan="5">album, year?, label?</td>
 	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">scroll to</span></td>
+		<td colspan="6">Moondance</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>$year&lt;-[1970]</td>
+		<td>value of</td>
+		<td>Year</td>
+		<td>in row where</td>
+		<td>Album</td>
+		<td>is</td>
+		<td>Moondance</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>$label&lt;-[Rhino / Warner Bros.]</td>
+		<td>value of</td>
+		<td>Label</td>
+		<td>in row where</td>
+		<td>Album</td>
+		<td>is</td>
+		<td>Moondance</td>
+	</tr>
+</table></td></tr>
 </table>
 <br/>Writing the scenario like this can become a bit cumbersome when many parameters are needed. They are repeated in: the scenario's first row, the scenario rows where they are used and the table headers where the scenario is invoked.<br/>Repeating the parameters in the first row of the scenario definition can be omitted using a custom extension to Slim. This is shown in <a href="HsacExamples.SlimTests.BrowserTests.TableTemplateTest">TableTemplateTest</a>.<br/></article></body></html>
