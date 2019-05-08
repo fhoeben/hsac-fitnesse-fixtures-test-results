@@ -1,8 +1,8 @@
 {
   "tests" : [ {
     "name" : "FitNesseLayoutTest0",
-    "startedAt" : 1557313815004,
-    "endedAt" : 1557313815004,
+    "startedAt" : 1557321580171,
+    "endedAt" : 1557321580171,
     "failed" : true,
     "statistic" : {
       "passed" : 0,
@@ -15,8 +15,8 @@
     "duration" : 0
   }, {
     "name" : "Usual menu highlight",
-    "startedAt" : 1557313816138,
-    "endedAt" : 1557313816138,
+    "startedAt" : 1557321581397,
+    "endedAt" : 1557321581397,
     "failed" : true,
     "statistic" : {
       "passed" : 0,
@@ -29,8 +29,8 @@
     "duration" : 0
   }, {
     "name" : "FitNesseLayoutTest2",
-    "startedAt" : 1557313816414,
-    "endedAt" : 1557313816414,
+    "startedAt" : 1557321581696,
+    "endedAt" : 1557321581696,
     "failed" : false,
     "statistic" : {
       "passed" : 0,
