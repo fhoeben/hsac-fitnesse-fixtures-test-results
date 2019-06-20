@@ -1,0 +1,101 @@
+<!DOCTYPE html><html><head>
+    <link rel="shortcut icon" href="">
+    <meta name="ad.size" content="width=728, height=90">
+
+    <script type="text/javascript">
+        var clickTag = "https://visitmendocino.com/";
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--    GreenSock cdn-->
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenlite_1.18.0_56fa823cfbbef1c2f4d4346f0f0e6c3c_min.js"></script>
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/timelinelite_1.18.0_dbe88c20554c170a56f44600f31a97d9_min.js"></script>
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/easepack_1.18.0_ed5816e732515f56d96a67f6a2a15ccb_min.js"></script>
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/cssplugin_1.18.0_71489205621d46cbe88348eeb8fe493f_min.js"></script>
+<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+
+<body>
+    <div id="banner" draggable="false" style="visibility: visible;">
+
+        <!-- Background -->
+        <div id="frame" class="blockElement">
+            <img id="background" class="blockElement" src="background.jpg" style="transform-origin: 40px 28px 0px; transform: matrix(1, 0, 0, 1, 0, 0);">
+        </div>
+        
+        <!-- CTA -->
+        <img id="cta" class="blockElement" src="learn-more.png" style="transform-origin: 520px 40px 0px; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); visibility: inherit;">
+        <img id="logo" class="blockElement" src="logo.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); visibility: inherit;">
+
+
+        <!-- Text -->
+        <img id="line-1" class="blockElement" src="line-1.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); visibility: inherit;">
+        <img id="line-2" class="blockElement" src="line-2.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); visibility: inherit;">
+        <img id="domain" class="blockElement" src="domain.png" style="opacity: 1; visibility: inherit;">
+
+        <!-- General -->
+        <div id="overlay" class="blockElement" style="visibility: hidden; opacity: 0;"></div>
+        <div id="border" class="blockElement"></div>
+        <div id="banner_exit" class="blockElement"></div>
+    </div>
+
+    <!--  !  -->
+    <script type="text/javascript" src="animation.js"></script>
+    <script>
+        document.onreadystatechange = function () {
+            if (document.readyState == "complete") {
+                initBanner();
+            }
+        }
+    </script>
+
+
+
+</body></html>
