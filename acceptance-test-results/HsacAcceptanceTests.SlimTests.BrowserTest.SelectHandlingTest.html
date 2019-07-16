@@ -17,6 +17,26 @@
     &lt;option value="4"&gt;example4@example.com&lt;/option&gt;
 &lt;/select&gt;
 
+&lt;label for="s3"&gt;Complex options to choose&lt;/label&gt;
+&lt;select id="s3"&gt;
+    &lt;option value="1"&gt;a mail to &lt;span&gt;example1@example.com&lt;/span&gt; is the &lt;span&gt;first&lt;/span&gt; option&lt;/option&gt;
+    &lt;option value="2" selected&gt;example2@example.com&lt;/option&gt;
+    &lt;option value="4"&gt;example4@example.com &lt;span&gt;is another&lt;/span&gt; to choose&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;label for="s4"&gt;Multiple text nodes in an option&lt;/label&gt;
+&lt;select id="s4"&gt;
+    &lt;option value="a"&gt;&lt;/option&gt;
+    &lt;option value="b"&gt;2nd option&lt;/option&gt;
+    &lt;option value="c" selected&gt;3rd option&lt;/option&gt;
+&lt;/select&gt;
+&lt;script type="text/javascript"&gt;
+    var whitespace = document.createTextNode(' ');
+    var optionText = document.createTextNode('Option text');
+    var option = document.querySelector('#s4 option');
+    option.appendChild(whitespace);
+    option.appendChild(optionText);
+&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;}}} </span>
 <br/><br/><table>
@@ -45,6 +65,26 @@
     &lt;option value="4"&gt;example4@example.com&lt;/option&gt;
 &lt;/select&gt;
 
+&lt;label for="s3"&gt;Complex options to choose&lt;/label&gt;
+&lt;select id="s3"&gt;
+    &lt;option value="1"&gt;a mail to &lt;span&gt;example1@example.com&lt;/span&gt; is the &lt;span&gt;first&lt;/span&gt; option&lt;/option&gt;
+    &lt;option value="2" selected&gt;example2@example.com&lt;/option&gt;
+    &lt;option value="4"&gt;example4@example.com &lt;span&gt;is another&lt;/span&gt; to choose&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;label for="s4"&gt;Multiple text nodes in an option&lt;/label&gt;
+&lt;select id="s4"&gt;
+    &lt;option value="a"&gt;&lt;/option&gt;
+    &lt;option value="b"&gt;2nd option&lt;/option&gt;
+    &lt;option value="c" selected&gt;3rd option&lt;/option&gt;
+&lt;/select&gt;
+&lt;script type="text/javascript"&gt;
+    var whitespace = document.createTextNode(' ');
+    var optionText = document.createTextNode('Option text');
+    var option = document.querySelector('#s4 option');
+    option.appendChild(whitespace);
+    option.appendChild(optionText);
+&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre></td>
 	</tr>
@@ -53,7 +93,7 @@
 		<td>get mock server url</td>
 	</tr>
 </table>
-<br/>Ensure we use our custom list formatting.<br/><br/><table>
+<br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
 		<td colspan="3"><span class="pass">browser test</span></td>
@@ -114,8 +154,74 @@
 		<td>Options to choose</td>
 		<td><span class="pass">example3@example.com</span></td>
 	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td><a href="mailto:example4@example.com">example4@example.com</a></td>
+		<td>for</td>
+		<td>Complex options to choose</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Complex options to choose</td>
+		<td><span class="pass">example4@example.com is another to choose</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td>first</td>
+		<td>for</td>
+		<td>Complex options to choose</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Complex options to choose</td>
+		<td><span class="pass">a mail to example1@example.com is the first option</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td>to choose</td>
+		<td>for</td>
+		<td>Complex options to choose</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Complex options to choose</td>
+		<td><span class="pass">example4@example.com is another to choose</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td>a mail to example1@example.com is the first option</td>
+		<td>for</td>
+		<td>Complex options to choose</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Complex options to choose</td>
+		<td><span class="pass">a mail to example1@example.com is the first option</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Multiple text nodes in an option</td>
+		<td><span class="pass">3rd option</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td>Option text</td>
+		<td>for</td>
+		<td>Multiple text nodes in an option</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Multiple text nodes in an option</td>
+		<td><span class="pass">Option text</span></td>
+	</tr>
 </table>
-<br/><br/><br/><table>
+<br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
 		<td><span class="pass">mock xml server setup</span></td>
