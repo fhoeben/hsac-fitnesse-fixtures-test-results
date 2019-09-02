@@ -328,7 +328,64 @@ second line</span></td>
 		<td colspan="4">$appended->[<a href="files/test/appended.txt" target="_blank">appended.txt</a>]</td>
 	</tr>
 </table>
-<br/>Table below shows how we can use a list of non-reusable data from a file:<br/><br/><table>
+<br/>Table below shows how we can work with zip files<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="5">script</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>$created&lt;-[<a href="files/test/bye1.txt" target="_blank">bye1.txt</a>]</td>
+		<td>create</td>
+		<td>bye1.txt</td>
+		<td>containing</td>
+		<td>Bye Bye 5</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$zip&lt;-[<a href="files/test/bye_1.zip" target="_blank">bye_1.zip</a>]</td>
+		<td>zip</td>
+		<td>$created->[<a href="files/test/bye1.txt" target="_blank">bye1.txt</a>]</td>
+		<td>as</td>
+		<td>bye.zip</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>number of files in zip</td>
+		<td>$zip->[<a href="files/test/bye_1.zip" target="_blank">bye_1.zip</a>]</td>
+		<td colspan="2"><span class="pass">1</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>names of files in zip</td>
+		<td>$zip->[<a href="files/test/bye_1.zip" target="_blank">bye_1.zip</a>]</td>
+		<td colspan="2"><span class="pass">[bye1.txt]</span></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$unzipped&lt;-[<a href="files/test/unzipped_1" target="_blank">unzipped_1</a>]</td>
+		<td>unzip</td>
+		<td>$zip->[<a href="files/test/bye_1.zip" target="_blank">bye_1.zip</a>]</td>
+		<td>as</td>
+		<td>unzipped</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>text in</td>
+		<td>$unzipped->[<a href="files/test/unzipped_1" target="_blank">unzipped_1</a>]/bye1.txt</td>
+		<td colspan="2"><span class="pass">Bye Bye 5</span></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$zip2&lt;-[<a href="files/test/zip2_1.zip" target="_blank">zip2_1.zip</a>]</td>
+		<td>zip</td>
+		<td>$unzipped->[<a href="files/test/unzipped_1" target="_blank">unzipped_1</a>]</td>
+		<td>as</td>
+		<td>zip2.zip</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>names of files in zip</td>
+		<td>$zip2->[<a href="files/test/zip2_1.zip" target="_blank">zip2_1.zip</a>]</td>
+		<td colspan="2"><span class="pass">[bye1.txt]</span></td>
+	</tr>
+</table>
+<br/><br/>Table below shows how we can use a list of non-reusable data from a file:<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td colspan="4">script</td>
 	</tr>
