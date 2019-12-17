@@ -1,0 +1,361 @@
+<html><head><title>HsacExamples.SlimTests.BrowserTests.MapTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.BrowserTests.MapTest</h2></header><article><br/><h1 id="IteractionwithmapsusingBrowserTest">Iteraction with maps using BrowserTest</h1>
+Sample test on <a href="https://www.google.com/maps">Google Maps</a>.<br/><br/><p class="note"><b>Note:</b> More about getting offsets in canvas maps <a href="https://developers.google.com/maps/documentation/javascript/reference/overlay-view#MapCanvasProjection">here.</a></p><br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">definitions</p>
+	<div><span class="meta">variable defined: mapUrl=!-https://www.google.com/maps/@51.7147561,11.342505,5.16z-!</span>
+<br/><span class="meta">variable defined: urlAfterZooming=!-https://www.google.com/maps/@51.7147561,11.342505,5.16z-!</span>
+<br/><span class="meta">variable defined: minimap=css=.widget-minimap-shim.widget-minimap-shim-button</span>
+<br/><span class="meta">variable defined: locationBottomPopup=css=div.widget-reveal-card-container</span>
+<br/><span class="meta">variable defined: pegman=css=[aria-label="Show Street View coverage"]</span>
+<br/><span class="meta">variable defined: streetviewTitleCard=css=[id="titlecard"]</span>
+<br/></div>
+</div>
+<div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">scenarios</p>
+	<div><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>open url</td>
+		<td colspan="2">url</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>set browser size to</td>
+		<td>1024</td>
+		<td>by</td>
+		<td>800</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td>open</td>
+		<td colspan="3">@url</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>wait for visible</td>
+		<td colspan="3">css=.widget-minimap-shim.widget-minimap-shim-button</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>click</td>
+		<td colspan="3">Remind me later</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>double zooming by double click at offset X</td>
+		<td>horizontalOffset</td>
+		<td>Y</td>
+		<td>verticalOffset</td>
+		<td>should change url to</td>
+		<td>urlAfterZooming</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>double click</td>
+		<td>Map</td>
+		<td>at offset X</td>
+		<td>@horizontalOffset</td>
+		<td>Y</td>
+		<td colspan="2">@verticalOffset</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>double click</td>
+		<td>Map</td>
+		<td>at offset X</td>
+		<td>@horizontalOffset</td>
+		<td>Y</td>
+		<td colspan="2">@verticalOffset</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>wait</td>
+		<td>500</td>
+		<td colspan="5">milliseconds</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>location</td>
+		<td colspan="5">@{urlAfterZooming}</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>"Whats' here?" after right click at offset X</td>
+		<td>horizontalOffset</td>
+		<td>Y</td>
+		<td>verticalOffset</td>
+		<td>should return city</td>
+		<td>city</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>right click</td>
+		<td>Map</td>
+		<td>at offset X</td>
+		<td>@horizontalOffset</td>
+		<td>Y</td>
+		<td colspan="2">@verticalOffset</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>click</td>
+		<td colspan="6">What's here?</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>wait for visible</td>
+		<td>@city</td>
+		<td>in</td>
+		<td colspan="4">css=div.widget-reveal-card-container</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>click at offset X</td>
+		<td>horizontalOffset</td>
+		<td>Y</td>
+		<td>verticalOffset</td>
+		<td>should return city</td>
+		<td>city</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>click</td>
+		<td>Map</td>
+		<td>at offset X</td>
+		<td>@horizontalOffset</td>
+		<td>Y</td>
+		<td colspan="2">@verticalOffset</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>wait</td>
+		<td>200</td>
+		<td colspan="5">milliseconds</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>click</td>
+		<td>Map</td>
+		<td>at offset X</td>
+		<td>@horizontalOffset</td>
+		<td>Y</td>
+		<td colspan="2">@verticalOffset</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>wait for visible</td>
+		<td>@city</td>
+		<td>in</td>
+		<td colspan="4">css=div.widget-reveal-card-container</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>dragging and dropping pegman to offset X</td>
+		<td>horizontalOffset</td>
+		<td>Y</td>
+		<td>verticalOffset</td>
+		<td>should open streetview of</td>
+		<td>title</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>drag and drop</td>
+		<td>css=[aria-label="Show Street View coverage"]</td>
+		<td>to offset X</td>
+		<td>@horizontalOffset</td>
+		<td>Y</td>
+		<td colspan="2">@verticalOffset</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>wait for visible</td>
+		<td>@title</td>
+		<td>in</td>
+		<td colspan="4">css=[id="titlecard"]</td>
+	</tr>
+</table>
+</div>
+</div>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="5"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="scenario closed">
+		<td class="error">open url</td>
+		<td colspan="5" class="error">https://www.google.com/maps/@51.7147561,11.342505,5.16z</td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="6"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>open url</td>
+		<td colspan="2">url</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>set browser size to</td>
+		<td>1024</td>
+		<td>by</td>
+		<td>800</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="3">https://www.google.com/maps/@51.7147561,11.342505,5.16z</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">wait for visible</span></td>
+		<td colspan="3">css=.widget-minimap-shim.widget-minimap-shim-button</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>click <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException.html" target="_blank">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout.png" target="_blank"><img src="files/screenshots/timeouts/BrowserTest/timeout.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout.png" height="200"/></a></div></div></span></td>
+		<td colspan="3">Remind me later</td>
+	</tr>
+</table></td></tr>
+	<tr class="scenario closed">
+		<td class="fail">double zooming by double click at offset X</td>
+		<td class="fail">294</td>
+		<td class="fail">Y</td>
+		<td class="fail">-200</td>
+		<td class="fail">should change url to</td>
+		<td class="fail">https://www.google.com/maps/@51.7147561,11.342505,5.16z</td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="6"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>double zooming by double click at offset X</td>
+		<td>horizontalOffset</td>
+		<td>Y</td>
+		<td>verticalOffset</td>
+		<td>should change url to</td>
+		<td>urlAfterZooming</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>double click</td>
+		<td>Map</td>
+		<td>at offset X</td>
+		<td>294</td>
+		<td>Y</td>
+		<td colspan="2">-200</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>double click</td>
+		<td>Map</td>
+		<td>at offset X</td>
+		<td>294</td>
+		<td>Y</td>
+		<td colspan="2">-200</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">wait</span></td>
+		<td>500</td>
+		<td colspan="5">milliseconds</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>location</td>
+		<td colspan="5">[https://www.google.com/maps/@51.7147561,11.342505,5z] <span class="fail">expected [https://www.google.com/maps/@51.7147561,11.342505,5<span class="diff">.16</span>z]</span></td>
+	</tr>
+</table></td></tr>
+	<tr class="scenario closed">
+		<td class="error">"Whats' here?" after right click at offset X</td>
+		<td class="error">279</td>
+		<td class="error">Y</td>
+		<td class="error">73</td>
+		<td class="error">should return city</td>
+		<td class="error">Vilnius</td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="6"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>"Whats' here?" after right click at offset X</td>
+		<td>horizontalOffset</td>
+		<td>Y</td>
+		<td>verticalOffset</td>
+		<td>should return city</td>
+		<td>city</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>right click</td>
+		<td>Map</td>
+		<td>at offset X</td>
+		<td>279</td>
+		<td>Y</td>
+		<td colspan="2">73</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>click <span class="error"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_1.html" target="_blank">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_1.png" target="_blank"><img src="files/screenshots/timeouts/BrowserTest/timeout_1.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_1.png" height="200"/></a></div></div></span></td>
+		<td colspan="6">What's here?</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>wait for visible <span class="fail"><div><div>Timed-out waiting (after 10s).</div><div><a href="files/pagesources/org.openqa.selenium.TimeoutException_2.html" target="_blank">Page content</a>:<a href="files/screenshots/timeouts/BrowserTest/timeout_2.png" target="_blank"><img src="files/screenshots/timeouts/BrowserTest/timeout_2.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/files/screenshots/timeouts/BrowserTest/timeout_2.png" height="200"/></a></div></div></span></td>
+		<td>Vilnius</td>
+		<td>in</td>
+		<td colspan="4">css=div.widget-reveal-card-container</td>
+	</tr>
+</table></td></tr>
+	<tr class="scenario closed">
+		<td class="ignore">click at offset X</td>
+		<td class="ignore">150</td>
+		<td class="ignore">Y</td>
+		<td class="ignore">43</td>
+		<td class="ignore">should return city</td>
+		<td class="ignore">Kaunas</td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="6"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>click at offset X</td>
+		<td>horizontalOffset</td>
+		<td>Y</td>
+		<td>verticalOffset</td>
+		<td>should return city</td>
+		<td>city</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>click <span class="ignore">Test not run</span></td>
+		<td>Map</td>
+		<td>at offset X</td>
+		<td>150</td>
+		<td>Y</td>
+		<td colspan="2">43</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>wait <span class="ignore">Test not run</span></td>
+		<td>200</td>
+		<td colspan="5">milliseconds</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>click <span class="ignore">Test not run</span></td>
+		<td>Map</td>
+		<td>at offset X</td>
+		<td>150</td>
+		<td>Y</td>
+		<td colspan="2">43</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>wait for visible <span class="ignore">Test not run</span></td>
+		<td>Kaunas</td>
+		<td>in</td>
+		<td colspan="4">css=div.widget-reveal-card-container</td>
+	</tr>
+</table></td></tr>
+	<tr class="scenario closed">
+		<td class="ignore">dragging and dropping pegman to offset X</td>
+		<td class="ignore">-80</td>
+		<td class="ignore">Y</td>
+		<td class="ignore">-250</td>
+		<td class="ignore">should open streetview of</td>
+		<td class="ignore">Vilnius University</td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="6"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>dragging and dropping pegman to offset X</td>
+		<td>horizontalOffset</td>
+		<td>Y</td>
+		<td>verticalOffset</td>
+		<td>should open streetview of</td>
+		<td>title</td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td>drag and drop <span class="ignore">Test not run</span></td>
+		<td>css=[aria-label="Show Street View coverage"]</td>
+		<td>to offset X</td>
+		<td>-80</td>
+		<td>Y</td>
+		<td colspan="2">-250</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>wait for visible <span class="ignore">Test not run</span></td>
+		<td>Vilnius University</td>
+		<td>in</td>
+		<td colspan="4">css=[id="titlecard"]</td>
+	</tr>
+</table></td></tr>
+</table>
+</article></body></html>
