@@ -1,1 +1,48 @@
-<html><head><script type="text/javascript" src="https://static.adsafeprotected.com/main.19.8.40.js"></script></head><body onload="window.__IntegralASUseFIF = true; var js = document.createElement('script');js.src = '//pixel.adsafeprotected.com/jload?anId=930141&amp;campId=320x51&amp;pubId=4748071655&amp;chanId=21809515602&amp;placementId=5201083600&amp;pubCreative=138294452675&amp;pubOrder=2615526848&amp;cb=2129458591&amp;adsafe_par&amp;impId=c78662c6-2630-11ea-92e1-00259035dba0&amp;custom2=tb';document.body.appendChild(js);"><script src="//pixel.adsafeprotected.com/jload?anId=930141&amp;campId=320x51&amp;pubId=4748071655&amp;chanId=21809515602&amp;placementId=5201083600&amp;pubCreative=138294452675&amp;pubOrder=2615526848&amp;cb=2129458591&amp;adsafe_par&amp;impId=c78662c6-2630-11ea-92e1-00259035dba0&amp;custom2=tb"></script></body></html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head></head><body>
+<script type="text/javascript">
+try {
+    var eventUrl = 'https://tps11004.doubleverify.com/event.gif?impid=993e73b3cb9344f1b1c0dca4d3f77000&rtcid=-1&ifbc=0';
+    var isadid = 0;
+    var isrtc = 0;
+    var isrtexist, lsid, isfbls;
+    var hasStorage = (function(){
+		try {
+			var testStr = 'dv-lsTest';
+			localStorage.setItem(testStr, testStr);
+			localStorage.removeItem(testStr);
+			return true;
+		} catch(e) {
+			return false;
+		}
+	})();
+
+    if (navigator.cookieEnabled)
+        eventUrl += '&isce=1';           
+    
+    if (hasStorage) {
+		try{
+			lsid = (localStorage.rt || '-1');
+			isfbls = localStorage.rt ? '1': '0';
+			eventUrl += '&islse=1&rtlsid=' + lsid + '&ifbls=' + isfbls;
+		}catch(e){}
+    }
+
+    if (isrtc || isfbls == '1' || isadid) {
+        var image = document.createElement('img');
+        image.src = eventUrl;
+        image.width = 0;
+        image.height = 0;
+        image.style.display = 'none';
+        document.body.insertBefore(image, document.body.firstChild);
+    }
+}catch (e) {
+    try {
+        var errUrl = window.location.protocol + '//tps30.doubleverify.com/visit.jpg?ctx=818052&cmp=1619415&dvtagver=6.1.src&jsver=0&dvp_isCfbcRes=1&dvp_jsErrMsg=' + encodeURIComponent(e);
+        (new Image()).src = errUrl;
+    }catch (ex)
+    {}
+}
+</script>
+
+
+</body></html>
