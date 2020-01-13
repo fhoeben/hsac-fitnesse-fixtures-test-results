@@ -29,8 +29,8 @@
 	<td><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;definitions xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot; xmlns:SOAP-ENC=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xmlns:mime=&quot;http://schemas.xmlsoap.org/wsdl/mime/&quot; xmlns:s=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:s0=&quot;http://tempuri.org&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; targetNamespace=&quot;http://tempuri.org&quot;&gt;
     &lt;types&gt;
         &lt;s:schema elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;http://tempuri.org&quot;&gt;
-            &lt;s:import namespace=&quot;http://tempuri.org/ByNameDataSet&quot; schemaLocation=&quot;http://www.crcind.com/csp/samples/SOAP.ByNameDataSet.cls?XSD&quot;/&gt;
-            &lt;s:import namespace=&quot;http://tempuri.org/QueryByName_DataSet&quot; schemaLocation=&quot;http://www.crcind.com/csp/samples/SOAP.Demo.QueryByName.DS.cls?XSD&quot;/&gt;
+            &lt;s:import namespace=&quot;http://tempuri.org/ByNameDataSet&quot; schemaLocation=&quot;https://www.crcind.com:443/csp/samples/SOAP.ByNameDataSet.cls?XSD&quot;/&gt;
+            &lt;s:import namespace=&quot;http://tempuri.org/QueryByName_DataSet&quot; schemaLocation=&quot;https://www.crcind.com:443/csp/samples/SOAP.Demo.QueryByName.DS.cls?XSD&quot;/&gt;
             &lt;s:element name=&quot;AddInteger&quot;&gt;
                 &lt;s:complexType&gt;
                     &lt;s:sequence&gt;
@@ -440,7 +440,7 @@
     &lt;/binding&gt;
     &lt;service name=&quot;SOAPDemo&quot;&gt;
         &lt;port name=&quot;SOAPDemoSoap&quot; binding=&quot;s0:SOAPDemoSoap&quot;&gt;
-            &lt;soap:address location=&quot;http://www.crcind.com/csp/samples/SOAP.Demo.cls&quot;/&gt;
+            &lt;soap:address location=&quot;https://www.crcind.com:443/csp/samples/SOAP.Demo.cls&quot;/&gt;
         &lt;/port&gt;
     &lt;/service&gt;
 &lt;/definitions&gt;
@@ -455,7 +455,7 @@
 		<td>check</td>
 		<td>xPath</td>
 		<td>//soap:address/@location</td>
-		<td><span class="pass">http://www.crcind.com/csp/samples/SOAP.Demo.cls</span></td>
+		<td>[http<span class="diff">s</span>://www.crcind.com<span class="diff">:443</span>/csp/samples/SOAP.Demo.cls] <span class="fail">expected [http://www.crcind.com/csp/samples/SOAP.Demo.cls]</span></td>
 	</tr>
 </table>
 </article></body></html>

@@ -24,7 +24,8 @@ The first example below calls a weather service, similar to <a href="HsacExample
 	<tr>
 		<td>10</td>
 		<td>12</td>
-		<td class="pass">22</td>
+		<td class="error">22<hr/> <span class="fit_label">Unable to check for SOAP fault, is the result XML? Response was:<pre>&lt;head&gt;&lt;title&gt;Document Moved&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;&lt;h1&gt;Object Moved&lt;/h1&gt;This document may be found &lt;a HREF=&quot;https://www.crcind.com/csp/samples/SOAP.Demo.cls&quot;&gt;here&lt;/a&gt;&lt;/body&gt;</pre></span></td>
 	</tr>
 </table>
 <br/>The Java code for the 'Add Integer' fixture is a single class: <pre>
@@ -180,7 +181,7 @@ public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></span></td>
-		<td> <span class="fit_grey">328</span></td>
+		<td> <span class="fit_grey">323</span></td>
 		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
     &lt;soap:Body&gt;
         &lt;getExchangeRateResponse xmlns=&quot;http://webservices.lb.lt/ExchangeRates&quot;&gt;
@@ -198,7 +199,7 @@ public class ToLithuanianLitaRetryingFixture extends ToLithuanianLitaFixture {
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </pre></span></td>
-		<td> <span class="fit_grey">384</span></td>
+		<td> <span class="fit_grey">371</span></td>
 		<td> <span class="fit_grey"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
     &lt;soap:Body&gt;
         &lt;getExchangeRateResponse xmlns=&quot;http://webservices.lb.lt/ExchangeRates&quot;&gt;

@@ -34,7 +34,7 @@
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>response status</td>
-		<td colspan="2"><span class="pass">400</span></td>
+		<td colspan="2">[<span class="diff">3</span>0<span class="diff">1</span>] <span class="fail">expected [<span class="diff">4</span>0<span class="diff">0</span>]</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -46,7 +46,8 @@
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td>Bad Request</td></tr>
+	<td>&lt;head&gt;&lt;title&gt;Document Moved&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;&lt;h1&gt;Object Moved&lt;/h1&gt;This document may be found &lt;a HREF="https://www.crcind.com/csp/samples/SOAP.Demo.cls"&gt;here&lt;/a&gt;&lt;/body&gt;</td></tr>
 </table>
 <br/><h3 id="Sendasecondargumentelementsuccess">Send a second argument element: success</h3>
 <br/>When a second argument value is set the enclosing element is sent by the Freemarker template (as visible in the shown request content below), and the SOAP call will succeed.<br/><br/><table>
@@ -77,13 +78,13 @@
 		<td>arg2</td>
 	</tr>
 	<tr class="slimRowColor5">
-		<td><span class="pass">post template to</span></td>
+		<td><span class="fail">post template to</span></td>
 		<td colspan="3">http://www.crcind.com/csp/samples/SOAP.Demo.cls</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>response status</td>
-		<td colspan="2"><span class="pass">200</span></td>
+		<td colspan="2">[<span class="diff">3</span>0<span class="diff">1</span>] <span class="fail">expected [<span class="diff">2</span>0<span class="diff">0</span>]</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
@@ -102,32 +103,16 @@
 		<td colspan="3">response headers</td>
 	<td><table class="hash_table">
 	<tr class="hash_row">
-		<td class="hash_key">Cache-Control</td>
-		<td class="hash_value">no-cache</td>
-	</tr>
-	<tr class="hash_row">
-		<td class="hash_key">Pragma</td>
-		<td class="hash_value">no-cache</td>
-	</tr>
-	<tr class="hash_row">
-		<td class="hash_key">Content-Length</td>
-		<td class="hash_value">382</td>
-	</tr>
-	<tr class="hash_row">
 		<td class="hash_key">Content-Type</td>
-		<td class="hash_value">text/xml; charset=UTF-8</td>
+		<td class="hash_value">text/html; charset=UTF-8</td>
 	</tr>
 	<tr class="hash_row">
-		<td class="hash_key">Expires</td>
-		<td class="hash_value">Thu, 29 Oct 1998 17:04:19 GMT</td>
+		<td class="hash_key">Location</td>
+		<td class="hash_value">https://www.crcind.com/csp/samples/SOAP.Demo.cls</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Server</td>
 		<td class="hash_value">Microsoft-IIS/7.5</td>
-	</tr>
-	<tr class="hash_row">
-		<td class="hash_key">Set-Cookie</td>
-		<td class="hash_value">[CSPSESSIONID-SP-80-UP-csp-samples-=003000010000ADcPLx5nM90000OO4vUtJ$_DNe$CCumx1a4w--; path=/csp/samples/;  httpOnly;, CSPWSERVERID=13bc9382e4d9f5d2fe110cb8300368dfebc5275b; path=/; httpOnly;]</td>
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">X-Powered-By</td>
@@ -135,20 +120,18 @@
 	</tr>
 	<tr class="hash_row">
 		<td class="hash_key">Date</td>
-		<td class="hash_value">Wed, 01 Jan 2020 21:19:38 GMT</td>
+		<td class="hash_value">Mon, 13 Jan 2020 08:13:09 GMT</td>
+	</tr>
+	<tr class="hash_row">
+		<td class="hash_key">Content-Length</td>
+		<td class="hash_value">171</td>
 	</tr>
 </table></td></tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:s=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
-    &lt;SOAP-ENV:Body&gt;
-        &lt;AddIntegerResponse xmlns=&quot;http://tempuri.org&quot;&gt;
-            &lt;AddIntegerResult&gt;40&lt;/AddIntegerResult&gt;
-        &lt;/AddIntegerResponse&gt;
-    &lt;/SOAP-ENV:Body&gt;
-&lt;/SOAP-ENV:Envelope&gt;
-</pre></td></tr>
+	<td>&lt;head&gt;&lt;title&gt;Document Moved&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;&lt;h1&gt;Object Moved&lt;/h1&gt;This document may be found &lt;a HREF="https://www.crcind.com/csp/samples/SOAP.Demo.cls"&gt;here&lt;/a&gt;&lt;/body&gt;</td></tr>
 	<tr class="slimRowColor5">
 		<td>register prefix</td>
 		<td>tempuri</td>
@@ -159,7 +142,7 @@
 		<td>check</td>
 		<td>xPath</td>
 		<td>//tempuri:AddIntegerResult/text()</td>
-		<td><span class="pass">40</span></td>
+		<td>40 <span class="error"><div>Unable to check for SOAP fault, is the result XML? Response was:<pre>&lt;head&gt;&lt;title&gt;Document Moved&lt;/title&gt;&lt;/head&gt;<br/>&lt;body&gt;&lt;h1&gt;Object Moved&lt;/h1&gt;This document may be found &lt;a HREF=&quot;https://www.crcind.com/csp/samples/SOAP.Demo.cls&quot;&gt;here&lt;/a&gt;&lt;/body&gt;</pre></div></span></td>
 	</tr>
 </table>
 </article></body></html>
