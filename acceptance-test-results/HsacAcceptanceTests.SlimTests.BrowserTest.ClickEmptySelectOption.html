@@ -1,0 +1,381 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.ClickEmptySelectOption</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.ClickEmptySelectOption</h2></header><article><br/><br/><span class="meta">variable defined: HTML= {{{
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;label&gt;Empty option
+	&lt;select id="1"&gt;
+		&lt;option&gt;&lt;/option&gt;
+		&lt;option&gt;2&lt;/option&gt;
+		&lt;option&gt;3&lt;/option&gt;
+		&lt;option&gt;4&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/label&gt;
+
+&lt;label&gt;Whitespace option
+	&lt;select id="2"&gt;
+		&lt;option&gt; &lt;/option&gt;
+		&lt;option&gt;2&lt;/option&gt;
+		&lt;option&gt;3&lt;/option&gt;
+		&lt;option&gt;4&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/label&gt;
+
+&lt;label&gt;Nested empty option
+	&lt;select id="3"&gt;
+		&lt;option&gt;&lt;span&gt;&lt;/span&gt;&lt;/option&gt;
+		&lt;option&gt;2&lt;/option&gt;
+		&lt;option&gt;3&lt;/option&gt;
+		&lt;option&gt;4&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/label&gt;
+
+&lt;label&gt;Nested whitespace option
+	&lt;select id="4"&gt;
+		&lt;option&gt;&lt;span&gt; &lt;/span&gt;&lt;/option&gt;
+		&lt;option&gt;2&lt;/option&gt;
+		&lt;option&gt;3&lt;/option&gt;
+		&lt;option&gt;4&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/label&gt;
+
+&lt;label&gt;Multiple nested whitespace options
+	&lt;select id="5"&gt;
+		&lt;option&gt;&lt;span&gt; &lt;span&gt; &lt;span&gt; &lt;/span&gt;&lt;/option&gt;
+		&lt;option&gt;2&lt;/option&gt;
+		&lt;option&gt;3&lt;/option&gt;
+		&lt;option&gt;4&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/label&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;label&gt;Empty option
+	&lt;select id="1"&gt;
+		&lt;option&gt;&lt;/option&gt;
+		&lt;option&gt;2&lt;/option&gt;
+		&lt;option&gt;3&lt;/option&gt;
+		&lt;option&gt;4&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/label&gt;
+
+&lt;label&gt;Whitespace option
+	&lt;select id="2"&gt;
+		&lt;option&gt; &lt;/option&gt;
+		&lt;option&gt;2&lt;/option&gt;
+		&lt;option&gt;3&lt;/option&gt;
+		&lt;option&gt;4&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/label&gt;
+
+&lt;label&gt;Nested empty option
+	&lt;select id="3"&gt;
+		&lt;option&gt;&lt;span&gt;&lt;/span&gt;&lt;/option&gt;
+		&lt;option&gt;2&lt;/option&gt;
+		&lt;option&gt;3&lt;/option&gt;
+		&lt;option&gt;4&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/label&gt;
+
+&lt;label&gt;Nested whitespace option
+	&lt;select id="4"&gt;
+		&lt;option&gt;&lt;span&gt; &lt;/span&gt;&lt;/option&gt;
+		&lt;option&gt;2&lt;/option&gt;
+		&lt;option&gt;3&lt;/option&gt;
+		&lt;option&gt;4&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/label&gt;
+
+&lt;label&gt;Multiple nested whitespace options
+	&lt;select id="5"&gt;
+		&lt;option&gt;&lt;span&gt; &lt;span&gt; &lt;span&gt; &lt;/span&gt;&lt;/option&gt;
+		&lt;option&gt;2&lt;/option&gt;
+		&lt;option&gt;3&lt;/option&gt;
+		&lt;option&gt;4&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/label&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://127.0.0.1:8000/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>check select</td>
+		<td>selector</td>
+		<td>with empty option</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>@{selector}</td>
+		<td>=~/^$/</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>select</td>
+		<td>3</td>
+		<td>for</td>
+		<td>@{selector}</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>@{selector}</td>
+		<td>3</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>select</td>
+		<td></td>
+		<td>for</td>
+		<td>@{selector}</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>@{selector}</td>
+		<td>=~/^$/</td>
+	</tr>
+</table>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="2"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="2">$url->[http://127.0.0.1:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="scenario closed">
+		<td class="pass">check select</td>
+		<td class="pass">id=1</td>
+		<td class="pass">with empty option</td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="3"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>check select</td>
+		<td>selector</td>
+		<td>with empty option</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=1</td>
+		<td><span class="pass">/^$/ found in: </span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td>3</td>
+		<td>for</td>
+		<td>id=1</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=1</td>
+		<td><span class="pass">3</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td></td>
+		<td>for</td>
+		<td>id=1</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=1</td>
+		<td><span class="pass">/^$/ found in: </span></td>
+	</tr>
+</table></td></tr>
+	<tr class="scenario closed">
+		<td class="pass">check select</td>
+		<td class="pass">id=2</td>
+		<td class="pass">with empty option</td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="3"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>check select</td>
+		<td>selector</td>
+		<td>with empty option</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=2</td>
+		<td><span class="pass">/^$/ found in: </span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td>3</td>
+		<td>for</td>
+		<td>id=2</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=2</td>
+		<td><span class="pass">3</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td></td>
+		<td>for</td>
+		<td>id=2</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=2</td>
+		<td><span class="pass">/^$/ found in: </span></td>
+	</tr>
+</table></td></tr>
+	<tr class="scenario closed">
+		<td class="pass">check select</td>
+		<td class="pass">id=3</td>
+		<td class="pass">with empty option</td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="3"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>check select</td>
+		<td>selector</td>
+		<td>with empty option</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=3</td>
+		<td><span class="pass">/^$/ found in: </span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td>3</td>
+		<td>for</td>
+		<td>id=3</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=3</td>
+		<td><span class="pass">3</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td></td>
+		<td>for</td>
+		<td>id=3</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=3</td>
+		<td><span class="pass">/^$/ found in: </span></td>
+	</tr>
+</table></td></tr>
+	<tr class="scenario closed">
+		<td class="pass">check select</td>
+		<td class="pass">id=4</td>
+		<td class="pass">with empty option</td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="3"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>check select</td>
+		<td>selector</td>
+		<td>with empty option</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=4</td>
+		<td><span class="pass">/^$/ found in: </span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td>3</td>
+		<td>for</td>
+		<td>id=4</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=4</td>
+		<td><span class="pass">3</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td></td>
+		<td>for</td>
+		<td>id=4</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=4</td>
+		<td><span class="pass">/^$/ found in: </span></td>
+	</tr>
+</table></td></tr>
+	<tr class="scenario closed">
+		<td class="pass">check select</td>
+		<td class="pass">id=5</td>
+		<td class="pass">with empty option</td>
+	</tr><tr class="scenario-detail closed-detail"><td colspan="3"><table>
+	<tr class="slimRowTitle">
+		<td>scenario</td>
+		<td>check select</td>
+		<td>selector</td>
+		<td>with empty option</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=5</td>
+		<td><span class="pass">/^$/ found in: </span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td>3</td>
+		<td>for</td>
+		<td>id=5</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=5</td>
+		<td><span class="pass">3</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td><span class="pass">select</span></td>
+		<td></td>
+		<td>for</td>
+		<td>id=5</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>id=5</td>
+		<td><span class="pass">/^$/ found in: </span></td>
+	</tr>
+</table></td></tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop</td>
+	</tr>
+</table>
+</article></body></html>
