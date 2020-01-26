@@ -76,9 +76,9 @@
 		<td>result?</td>
 	</tr>
 	<tr class="scenario closed">
-		<td class="fail">1</td>
-		<td class="fail">1</td>
-		<td class="fail">2 <span class="ignore">Test not run</span></td>
+		<td>1</td>
+		<td>1</td>
+		<td><span class="pass">2</span></td>
 	</tr><tr class="scenario-detail closed-detail"><td colspan="3"><table>
 	<tr>
 		<td>table template</td>
@@ -91,7 +91,7 @@
 		<td>SOAPAction</td>
 	</tr>
 	<tr>
-		<td><span class="fail">post</span></td>
+		<td><span class="pass">post</span></td>
 		<td><pre>
 &lt;s11:Envelope xmlns:s11="http://schemas.xmlsoap.org/soap/envelope/"&gt;
   &lt;s11:Body&gt;
@@ -108,13 +108,19 @@
 	<tr>
 		<td>check</td>
 		<td>response status</td>
-		<td colspan="2">[<span class="diff">3</span>0<span class="diff">1</span>] <span class="fail">expected [<span class="diff">2</span>0<span class="diff">0</span>]</span></td>
+		<td colspan="2"><span class="pass">200</span></td>
 	</tr>
 	<tr>
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td>&lt;head&gt;&lt;title&gt;Document Moved&lt;/title&gt;&lt;/head&gt;
-&lt;body&gt;&lt;h1&gt;Object Moved&lt;/h1&gt;This document may be found &lt;a HREF="https://www.crcind.com/csp/samples/SOAP.Demo.cls"&gt;here&lt;/a&gt;&lt;/body&gt;</td></tr>
+	<td><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:s=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+    &lt;SOAP-ENV:Body&gt;
+        &lt;AddIntegerResponse xmlns=&quot;http://tempuri.org&quot;&gt;
+            &lt;AddIntegerResult&gt;2&lt;/AddIntegerResult&gt;
+        &lt;/AddIntegerResponse&gt;
+    &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</pre></td></tr>
 	<tr>
 		<td>register prefix</td>
 		<td>tempuri</td>
@@ -122,15 +128,15 @@
 		<td><a href="http://tempuri.org">http://tempuri.org</a></td>
 	</tr>
 	<tr>
-		<td>$result= <span class="error"><div>Unable to check for SOAP fault, is the result XML? Response was:<pre>&lt;head&gt;&lt;title&gt;Document Moved&lt;/title&gt;&lt;/head&gt;<br/>&lt;body&gt;&lt;h1&gt;Object Moved&lt;/h1&gt;This document may be found &lt;a HREF=&quot;https://www.crcind.com/csp/samples/SOAP.Demo.cls&quot;&gt;here&lt;/a&gt;&lt;/body&gt;</pre></div></span></td>
+		<td>$result&lt;-[2]</td>
 		<td>xPath</td>
 		<td colspan="2">//tempuri:AddIntegerResult/text()</td>
 	</tr>
 </table></td></tr>
 	<tr class="scenario closed">
-		<td class="fail">34</td>
-		<td class="fail">16</td>
-		<td class="fail">50 <span class="ignore">Test not run</span></td>
+		<td>34</td>
+		<td>16</td>
+		<td><span class="pass">50</span></td>
 	</tr><tr class="scenario-detail closed-detail"><td colspan="3"><table>
 	<tr>
 		<td>table template</td>
@@ -143,7 +149,7 @@
 		<td>SOAPAction</td>
 	</tr>
 	<tr>
-		<td><span class="fail">post</span></td>
+		<td><span class="pass">post</span></td>
 		<td><pre>
 &lt;s11:Envelope xmlns:s11="http://schemas.xmlsoap.org/soap/envelope/"&gt;
   &lt;s11:Body&gt;
@@ -160,13 +166,19 @@
 	<tr>
 		<td>check</td>
 		<td>response status</td>
-		<td colspan="2">[<span class="diff">3</span>0<span class="diff">1</span>] <span class="fail">expected [<span class="diff">2</span>0<span class="diff">0</span>]</span></td>
+		<td colspan="2"><span class="pass">200</span></td>
 	</tr>
 	<tr>
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td>&lt;head&gt;&lt;title&gt;Document Moved&lt;/title&gt;&lt;/head&gt;
-&lt;body&gt;&lt;h1&gt;Object Moved&lt;/h1&gt;This document may be found &lt;a HREF="https://www.crcind.com/csp/samples/SOAP.Demo.cls"&gt;here&lt;/a&gt;&lt;/body&gt;</td></tr>
+	<td><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:s=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+    &lt;SOAP-ENV:Body&gt;
+        &lt;AddIntegerResponse xmlns=&quot;http://tempuri.org&quot;&gt;
+            &lt;AddIntegerResult&gt;50&lt;/AddIntegerResult&gt;
+        &lt;/AddIntegerResponse&gt;
+    &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</pre></td></tr>
 	<tr>
 		<td>register prefix</td>
 		<td>tempuri</td>
@@ -174,7 +186,7 @@
 		<td><a href="http://tempuri.org">http://tempuri.org</a></td>
 	</tr>
 	<tr>
-		<td>$result= <span class="error"><div>Unable to check for SOAP fault, is the result XML? Response was:<pre>&lt;head&gt;&lt;title&gt;Document Moved&lt;/title&gt;&lt;/head&gt;<br/>&lt;body&gt;&lt;h1&gt;Object Moved&lt;/h1&gt;This document may be found &lt;a HREF=&quot;https://www.crcind.com/csp/samples/SOAP.Demo.cls&quot;&gt;here&lt;/a&gt;&lt;/body&gt;</pre></div></span></td>
+		<td>$result&lt;-[50]</td>
 		<td>xPath</td>
 		<td colspan="2">//tempuri:AddIntegerResult/text()</td>
 	</tr>
