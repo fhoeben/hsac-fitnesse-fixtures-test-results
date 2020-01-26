@@ -1,8 +1,8 @@
 {
   "tests" : [ {
     "name" : "FitNesseLayoutTest0",
-    "startedAt" : 1580021439408,
-    "endedAt" : 1580021439408,
+    "startedAt" : 1580022267411,
+    "endedAt" : 1580022267411,
     "failed" : true,
     "statistic" : {
       "passed" : 0,
@@ -11,12 +11,12 @@
       "total" : 2
     },
     "testId" : "1-fitnesselayouttest0",
-    "failed" : true,
-    "duration" : 0
+    "duration" : 0,
+    "failed" : true
   }, {
     "name" : "Usual menu highlight",
-    "startedAt" : 1580021440705,
-    "endedAt" : 1580021440705,
+    "startedAt" : 1580022268579,
+    "endedAt" : 1580022268579,
     "failed" : true,
     "statistic" : {
       "passed" : 0,
@@ -25,12 +25,12 @@
       "total" : 1
     },
     "testId" : "2-usual-menu-highlight",
-    "failed" : true,
-    "duration" : 0
+    "duration" : 0,
+    "failed" : true
   }, {
     "name" : "FitNesseLayoutTest2",
-    "startedAt" : 1580021441178,
-    "endedAt" : 1580021441178,
+    "startedAt" : 1580022268959,
+    "endedAt" : 1580022268959,
     "failed" : false,
     "statistic" : {
       "passed" : 0,
@@ -39,7 +39,7 @@
       "total" : 0
     },
     "testId" : "3-fitnesselayouttest2",
-    "failed" : false,
-    "duration" : 0
+    "duration" : 0,
+    "failed" : false
   } ]
 }
