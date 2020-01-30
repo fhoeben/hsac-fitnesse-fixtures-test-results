@@ -2,37 +2,402 @@
 <br/><br/>On this page we test retrieving record details using <a href="https://www.allmusic.com">AllMusic</a>.<br/>It uses a Slim scenario<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.ScenarioTable?edit&amp;nonExistent=true">[?]</a> to define a parameterized script.<br/>This is then invoked multiple times from a Decision table<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.DecisionTable?edit&amp;nonExistent=true">[?]</a>, once for each row.<br/><br/><br/>The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup<a title="create page" href="HsacExamples.SlimTests.BrowserTests.SuiteSetup?edit&amp;nonExistent=true">[?]</a>. Which allows this configuration to be shared between tests. Closing the browser is done in <a href="HsacExamples.SlimTests.BrowserTests.SuiteTearDown">SuiteTearDown</a>, which happens after all tests are completed.<br/><br/>First we go to the Discography page for Van Morrison.<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td colspan="3"><span class="pass">browser test</span></td>
+		<td colspan="3">browser test <span class="error">org.openqa.selenium.UnsupportedCommandException: ERROR The test with session id 9c453ab7c7a64374af9562fc02143fcf has already finished, and can't receive further commands.
+You can learn more at https://app.saucelabs.com/tests/9c453ab7c7a64374af9562fc02143fcf
+For help, please check https://wiki.saucelabs.com/display/DOCS/Common+Error+Messages
+Command duration or timeout: 153 milliseconds
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'localhost', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-1050-gcp', java.version: '1.8.0_222'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49756}, handlesAlerts: true, hasMetadata: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 79.0.3945.79, webStorageEnabled: true, webdriver.remote.sessionid: 9c453ab7c7a64374af9562fc021...}
+Session ID: 9c453ab7c7a64374af9562fc02143fcf</span></td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td>seconds before timeout</td>
+		<td>seconds before timeout <span class="error">No Method secondsBeforeTimeout[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
+ Available methods:
+addValueTo(java.lang.Object, java.lang.String) -&gt; void
+aroundSlimInvoke(fitnesse.slim.fixtureInteraction.FixtureInteraction, java.lang.reflect.Method, java.lang.Object[]) -&gt; class java.lang.Object
+clearValue(java.lang.String) -&gt; boolean
+clearValues() -&gt; void
+copyValuesFrom(java.util.Map) -&gt; void
+equals(java.lang.Object) -&gt; boolean
+excludedTags() -&gt; interface java.util.List
+expandPeriodsInNamesToNestedMaps(boolean) -&gt; void
+expandsPeriodsInNamesToNestedMaps() -&gt; boolean
+getClass() -&gt; class java.lang.Class
+getMapHelper() -&gt; class nl.hsac.fitnesse.fixture.util.MapHelper
+getOverallReportLink() -&gt; class java.lang.String
+globalValue(java.lang.String) -&gt; class java.lang.String
+hashCode() -&gt; int
+includedTags() -&gt; interface java.util.List
+layoutCheckMessages() -&gt; class java.lang.Object
+notify() -&gt; void
+notifyAll() -&gt; void
+passedSpecCount() -&gt; int
+repeatAtMostTimes() -&gt; int
+repeatAtMostTimes(int) -&gt; void
+repeatCount() -&gt; int
+repeatInterval() -&gt; long
+reset() -&gt; void
+set(java.lang.String, java.lang.Object) -&gt; void
+setBase64EncodedContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setBooleanValueFor(boolean, java.lang.String) -&gt; void
+setContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setDoubleValueFor(double, java.lang.String) -&gt; void
+setExcludedTags(java.util.List) -&gt; void
+setGlobalValueTo(java.lang.String, java.lang.String) -&gt; void
+setIncludedTags(java.util.List) -&gt; void
+setIntValueFor(int, java.lang.String) -&gt; void
+setLayoutCheckName(java.lang.String) -&gt; void
+setMapHelper(nl.hsac.fitnesse.fixture.util.MapHelper) -&gt; void
+setRepeatIntervalToMilliseconds(int) -&gt; void
+setValueFor(java.lang.Object, java.lang.String) -&gt; void
+setValuesFor(java.lang.String, java.lang.String) -&gt; void
+specErrorCount() -&gt; int
+specWarningCount() -&gt; int
+timeSpentRepeating() -&gt; long
+toString() -&gt; class java.lang.String
+value(java.lang.String) -&gt; class java.lang.Object
+verifiedSpecCount() -&gt; int
+verifyLayoutUsing(java.lang.String) -&gt; class java.lang.String
+wait() -&gt; void
+wait(long) -&gt; void
+wait(long, int) -&gt; void
+waitMilliseconds(int) -&gt; boolean
+waitSeconds(int) -&gt; boolean</span></td>
 		<td colspan="3">60</td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td><span class="pass">open</span></td>
+		<td>open <span class="error">No Method open[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
+ Available methods:
+addValueTo(java.lang.Object, java.lang.String) -&gt; void
+aroundSlimInvoke(fitnesse.slim.fixtureInteraction.FixtureInteraction, java.lang.reflect.Method, java.lang.Object[]) -&gt; class java.lang.Object
+clearValue(java.lang.String) -&gt; boolean
+clearValues() -&gt; void
+copyValuesFrom(java.util.Map) -&gt; void
+equals(java.lang.Object) -&gt; boolean
+excludedTags() -&gt; interface java.util.List
+expandPeriodsInNamesToNestedMaps(boolean) -&gt; void
+expandsPeriodsInNamesToNestedMaps() -&gt; boolean
+getClass() -&gt; class java.lang.Class
+getMapHelper() -&gt; class nl.hsac.fitnesse.fixture.util.MapHelper
+getOverallReportLink() -&gt; class java.lang.String
+globalValue(java.lang.String) -&gt; class java.lang.String
+hashCode() -&gt; int
+includedTags() -&gt; interface java.util.List
+layoutCheckMessages() -&gt; class java.lang.Object
+notify() -&gt; void
+notifyAll() -&gt; void
+passedSpecCount() -&gt; int
+repeatAtMostTimes() -&gt; int
+repeatAtMostTimes(int) -&gt; void
+repeatCount() -&gt; int
+repeatInterval() -&gt; long
+reset() -&gt; void
+set(java.lang.String, java.lang.Object) -&gt; void
+setBase64EncodedContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setBooleanValueFor(boolean, java.lang.String) -&gt; void
+setContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setDoubleValueFor(double, java.lang.String) -&gt; void
+setExcludedTags(java.util.List) -&gt; void
+setGlobalValueTo(java.lang.String, java.lang.String) -&gt; void
+setIncludedTags(java.util.List) -&gt; void
+setIntValueFor(int, java.lang.String) -&gt; void
+setLayoutCheckName(java.lang.String) -&gt; void
+setMapHelper(nl.hsac.fitnesse.fixture.util.MapHelper) -&gt; void
+setRepeatIntervalToMilliseconds(int) -&gt; void
+setValueFor(java.lang.Object, java.lang.String) -&gt; void
+setValuesFor(java.lang.String, java.lang.String) -&gt; void
+specErrorCount() -&gt; int
+specWarningCount() -&gt; int
+timeSpentRepeating() -&gt; long
+toString() -&gt; class java.lang.String
+value(java.lang.String) -&gt; class java.lang.Object
+verifiedSpecCount() -&gt; int
+verifyLayoutUsing(java.lang.String) -&gt; class java.lang.String
+wait() -&gt; void
+wait(long) -&gt; void
+wait(long, int) -&gt; void
+waitMilliseconds(int) -&gt; boolean
+waitSeconds(int) -&gt; boolean</span></td>
 		<td colspan="3"><a href="https://www.allmusic.com">https://www.allmusic.com</a></td>
 	</tr>
 	<tr class="slimRowColor9">
-		<td>show</td>
+		<td>show <span class="error">No Method clickIfAvailable[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
+ Available methods:
+addValueTo(java.lang.Object, java.lang.String) -&gt; void
+aroundSlimInvoke(fitnesse.slim.fixtureInteraction.FixtureInteraction, java.lang.reflect.Method, java.lang.Object[]) -&gt; class java.lang.Object
+clearValue(java.lang.String) -&gt; boolean
+clearValues() -&gt; void
+copyValuesFrom(java.util.Map) -&gt; void
+equals(java.lang.Object) -&gt; boolean
+excludedTags() -&gt; interface java.util.List
+expandPeriodsInNamesToNestedMaps(boolean) -&gt; void
+expandsPeriodsInNamesToNestedMaps() -&gt; boolean
+getClass() -&gt; class java.lang.Class
+getMapHelper() -&gt; class nl.hsac.fitnesse.fixture.util.MapHelper
+getOverallReportLink() -&gt; class java.lang.String
+globalValue(java.lang.String) -&gt; class java.lang.String
+hashCode() -&gt; int
+includedTags() -&gt; interface java.util.List
+layoutCheckMessages() -&gt; class java.lang.Object
+notify() -&gt; void
+notifyAll() -&gt; void
+passedSpecCount() -&gt; int
+repeatAtMostTimes() -&gt; int
+repeatAtMostTimes(int) -&gt; void
+repeatCount() -&gt; int
+repeatInterval() -&gt; long
+reset() -&gt; void
+set(java.lang.String, java.lang.Object) -&gt; void
+setBase64EncodedContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setBooleanValueFor(boolean, java.lang.String) -&gt; void
+setContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setDoubleValueFor(double, java.lang.String) -&gt; void
+setExcludedTags(java.util.List) -&gt; void
+setGlobalValueTo(java.lang.String, java.lang.String) -&gt; void
+setIncludedTags(java.util.List) -&gt; void
+setIntValueFor(int, java.lang.String) -&gt; void
+setLayoutCheckName(java.lang.String) -&gt; void
+setMapHelper(nl.hsac.fitnesse.fixture.util.MapHelper) -&gt; void
+setRepeatIntervalToMilliseconds(int) -&gt; void
+setValueFor(java.lang.Object, java.lang.String) -&gt; void
+setValuesFor(java.lang.String, java.lang.String) -&gt; void
+specErrorCount() -&gt; int
+specWarningCount() -&gt; int
+timeSpentRepeating() -&gt; long
+toString() -&gt; class java.lang.String
+value(java.lang.String) -&gt; class java.lang.Object
+verifiedSpecCount() -&gt; int
+verifyLayoutUsing(java.lang.String) -&gt; class java.lang.String
+wait() -&gt; void
+wait(long) -&gt; void
+wait(long, int) -&gt; void
+waitMilliseconds(int) -&gt; boolean
+waitSeconds(int) -&gt; boolean</span></td>
 		<td>click if available</td>
 		<td colspan="2">I accept</td>
-	<td>false</td></tr>
+	</tr>
 	<tr class="slimRowColor2">
-		<td><span class="pass">enter</span></td>
+		<td>enter <span class="error">No Method enterAs[2] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
+ Available methods:
+addValueTo(java.lang.Object, java.lang.String) -&gt; void
+aroundSlimInvoke(fitnesse.slim.fixtureInteraction.FixtureInteraction, java.lang.reflect.Method, java.lang.Object[]) -&gt; class java.lang.Object
+clearValue(java.lang.String) -&gt; boolean
+clearValues() -&gt; void
+copyValuesFrom(java.util.Map) -&gt; void
+equals(java.lang.Object) -&gt; boolean
+excludedTags() -&gt; interface java.util.List
+expandPeriodsInNamesToNestedMaps(boolean) -&gt; void
+expandsPeriodsInNamesToNestedMaps() -&gt; boolean
+getClass() -&gt; class java.lang.Class
+getMapHelper() -&gt; class nl.hsac.fitnesse.fixture.util.MapHelper
+getOverallReportLink() -&gt; class java.lang.String
+globalValue(java.lang.String) -&gt; class java.lang.String
+hashCode() -&gt; int
+includedTags() -&gt; interface java.util.List
+layoutCheckMessages() -&gt; class java.lang.Object
+notify() -&gt; void
+notifyAll() -&gt; void
+passedSpecCount() -&gt; int
+repeatAtMostTimes() -&gt; int
+repeatAtMostTimes(int) -&gt; void
+repeatCount() -&gt; int
+repeatInterval() -&gt; long
+reset() -&gt; void
+set(java.lang.String, java.lang.Object) -&gt; void
+setBase64EncodedContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setBooleanValueFor(boolean, java.lang.String) -&gt; void
+setContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setDoubleValueFor(double, java.lang.String) -&gt; void
+setExcludedTags(java.util.List) -&gt; void
+setGlobalValueTo(java.lang.String, java.lang.String) -&gt; void
+setIncludedTags(java.util.List) -&gt; void
+setIntValueFor(int, java.lang.String) -&gt; void
+setLayoutCheckName(java.lang.String) -&gt; void
+setMapHelper(nl.hsac.fitnesse.fixture.util.MapHelper) -&gt; void
+setRepeatIntervalToMilliseconds(int) -&gt; void
+setValueFor(java.lang.Object, java.lang.String) -&gt; void
+setValuesFor(java.lang.String, java.lang.String) -&gt; void
+specErrorCount() -&gt; int
+specWarningCount() -&gt; int
+timeSpentRepeating() -&gt; long
+toString() -&gt; class java.lang.String
+value(java.lang.String) -&gt; class java.lang.Object
+verifiedSpecCount() -&gt; int
+verifyLayoutUsing(java.lang.String) -&gt; class java.lang.String
+wait() -&gt; void
+wait(long) -&gt; void
+wait(long, int) -&gt; void
+waitMilliseconds(int) -&gt; boolean
+waitSeconds(int) -&gt; boolean</span></td>
 		<td>Van Morrison</td>
 		<td>as</td>
 		<td>Search</td>
 	</tr>
 	<tr class="slimRowColor7">
-		<td><span class="pass">press</span></td>
+		<td>press <span class="error">No Method press[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
+ Available methods:
+addValueTo(java.lang.Object, java.lang.String) -&gt; void
+aroundSlimInvoke(fitnesse.slim.fixtureInteraction.FixtureInteraction, java.lang.reflect.Method, java.lang.Object[]) -&gt; class java.lang.Object
+clearValue(java.lang.String) -&gt; boolean
+clearValues() -&gt; void
+copyValuesFrom(java.util.Map) -&gt; void
+equals(java.lang.Object) -&gt; boolean
+excludedTags() -&gt; interface java.util.List
+expandPeriodsInNamesToNestedMaps(boolean) -&gt; void
+expandsPeriodsInNamesToNestedMaps() -&gt; boolean
+getClass() -&gt; class java.lang.Class
+getMapHelper() -&gt; class nl.hsac.fitnesse.fixture.util.MapHelper
+getOverallReportLink() -&gt; class java.lang.String
+globalValue(java.lang.String) -&gt; class java.lang.String
+hashCode() -&gt; int
+includedTags() -&gt; interface java.util.List
+layoutCheckMessages() -&gt; class java.lang.Object
+notify() -&gt; void
+notifyAll() -&gt; void
+passedSpecCount() -&gt; int
+repeatAtMostTimes() -&gt; int
+repeatAtMostTimes(int) -&gt; void
+repeatCount() -&gt; int
+repeatInterval() -&gt; long
+reset() -&gt; void
+set(java.lang.String, java.lang.Object) -&gt; void
+setBase64EncodedContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setBooleanValueFor(boolean, java.lang.String) -&gt; void
+setContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setDoubleValueFor(double, java.lang.String) -&gt; void
+setExcludedTags(java.util.List) -&gt; void
+setGlobalValueTo(java.lang.String, java.lang.String) -&gt; void
+setIncludedTags(java.util.List) -&gt; void
+setIntValueFor(int, java.lang.String) -&gt; void
+setLayoutCheckName(java.lang.String) -&gt; void
+setMapHelper(nl.hsac.fitnesse.fixture.util.MapHelper) -&gt; void
+setRepeatIntervalToMilliseconds(int) -&gt; void
+setValueFor(java.lang.Object, java.lang.String) -&gt; void
+setValuesFor(java.lang.String, java.lang.String) -&gt; void
+specErrorCount() -&gt; int
+specWarningCount() -&gt; int
+timeSpentRepeating() -&gt; long
+toString() -&gt; class java.lang.String
+value(java.lang.String) -&gt; class java.lang.Object
+verifiedSpecCount() -&gt; int
+verifyLayoutUsing(java.lang.String) -&gt; class java.lang.String
+wait() -&gt; void
+wait(long) -&gt; void
+wait(long, int) -&gt; void
+waitMilliseconds(int) -&gt; boolean
+waitSeconds(int) -&gt; boolean</span></td>
 		<td colspan="3">enter</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td><span class="pass">click</span></td>
+		<td>click <span class="error">No Method click[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
+ Available methods:
+addValueTo(java.lang.Object, java.lang.String) -&gt; void
+aroundSlimInvoke(fitnesse.slim.fixtureInteraction.FixtureInteraction, java.lang.reflect.Method, java.lang.Object[]) -&gt; class java.lang.Object
+clearValue(java.lang.String) -&gt; boolean
+clearValues() -&gt; void
+copyValuesFrom(java.util.Map) -&gt; void
+equals(java.lang.Object) -&gt; boolean
+excludedTags() -&gt; interface java.util.List
+expandPeriodsInNamesToNestedMaps(boolean) -&gt; void
+expandsPeriodsInNamesToNestedMaps() -&gt; boolean
+getClass() -&gt; class java.lang.Class
+getMapHelper() -&gt; class nl.hsac.fitnesse.fixture.util.MapHelper
+getOverallReportLink() -&gt; class java.lang.String
+globalValue(java.lang.String) -&gt; class java.lang.String
+hashCode() -&gt; int
+includedTags() -&gt; interface java.util.List
+layoutCheckMessages() -&gt; class java.lang.Object
+notify() -&gt; void
+notifyAll() -&gt; void
+passedSpecCount() -&gt; int
+repeatAtMostTimes() -&gt; int
+repeatAtMostTimes(int) -&gt; void
+repeatCount() -&gt; int
+repeatInterval() -&gt; long
+reset() -&gt; void
+set(java.lang.String, java.lang.Object) -&gt; void
+setBase64EncodedContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setBooleanValueFor(boolean, java.lang.String) -&gt; void
+setContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setDoubleValueFor(double, java.lang.String) -&gt; void
+setExcludedTags(java.util.List) -&gt; void
+setGlobalValueTo(java.lang.String, java.lang.String) -&gt; void
+setIncludedTags(java.util.List) -&gt; void
+setIntValueFor(int, java.lang.String) -&gt; void
+setLayoutCheckName(java.lang.String) -&gt; void
+setMapHelper(nl.hsac.fitnesse.fixture.util.MapHelper) -&gt; void
+setRepeatIntervalToMilliseconds(int) -&gt; void
+setValueFor(java.lang.Object, java.lang.String) -&gt; void
+setValuesFor(java.lang.String, java.lang.String) -&gt; void
+specErrorCount() -&gt; int
+specWarningCount() -&gt; int
+timeSpentRepeating() -&gt; long
+toString() -&gt; class java.lang.String
+value(java.lang.String) -&gt; class java.lang.Object
+verifiedSpecCount() -&gt; int
+verifyLayoutUsing(java.lang.String) -&gt; class java.lang.String
+wait() -&gt; void
+wait(long) -&gt; void
+wait(long, int) -&gt; void
+waitMilliseconds(int) -&gt; boolean
+waitSeconds(int) -&gt; boolean</span></td>
 		<td colspan="3">Van Morrison</td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td><span class="pass">click</span></td>
+		<td>click <span class="error">No Method click[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
+ Available methods:
+addValueTo(java.lang.Object, java.lang.String) -&gt; void
+aroundSlimInvoke(fitnesse.slim.fixtureInteraction.FixtureInteraction, java.lang.reflect.Method, java.lang.Object[]) -&gt; class java.lang.Object
+clearValue(java.lang.String) -&gt; boolean
+clearValues() -&gt; void
+copyValuesFrom(java.util.Map) -&gt; void
+equals(java.lang.Object) -&gt; boolean
+excludedTags() -&gt; interface java.util.List
+expandPeriodsInNamesToNestedMaps(boolean) -&gt; void
+expandsPeriodsInNamesToNestedMaps() -&gt; boolean
+getClass() -&gt; class java.lang.Class
+getMapHelper() -&gt; class nl.hsac.fitnesse.fixture.util.MapHelper
+getOverallReportLink() -&gt; class java.lang.String
+globalValue(java.lang.String) -&gt; class java.lang.String
+hashCode() -&gt; int
+includedTags() -&gt; interface java.util.List
+layoutCheckMessages() -&gt; class java.lang.Object
+notify() -&gt; void
+notifyAll() -&gt; void
+passedSpecCount() -&gt; int
+repeatAtMostTimes() -&gt; int
+repeatAtMostTimes(int) -&gt; void
+repeatCount() -&gt; int
+repeatInterval() -&gt; long
+reset() -&gt; void
+set(java.lang.String, java.lang.Object) -&gt; void
+setBase64EncodedContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setBooleanValueFor(boolean, java.lang.String) -&gt; void
+setContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setDoubleValueFor(double, java.lang.String) -&gt; void
+setExcludedTags(java.util.List) -&gt; void
+setGlobalValueTo(java.lang.String, java.lang.String) -&gt; void
+setIncludedTags(java.util.List) -&gt; void
+setIntValueFor(int, java.lang.String) -&gt; void
+setLayoutCheckName(java.lang.String) -&gt; void
+setMapHelper(nl.hsac.fitnesse.fixture.util.MapHelper) -&gt; void
+setRepeatIntervalToMilliseconds(int) -&gt; void
+setValueFor(java.lang.Object, java.lang.String) -&gt; void
+setValuesFor(java.lang.String, java.lang.String) -&gt; void
+specErrorCount() -&gt; int
+specWarningCount() -&gt; int
+timeSpentRepeating() -&gt; long
+toString() -&gt; class java.lang.String
+value(java.lang.String) -&gt; class java.lang.Object
+verifiedSpecCount() -&gt; int
+verifyLayoutUsing(java.lang.String) -&gt; class java.lang.String
+wait() -&gt; void
+wait(long) -&gt; void
+wait(long, int) -&gt; void
+waitMilliseconds(int) -&gt; boolean
+waitSeconds(int) -&gt; boolean</span></td>
 		<td colspan="3">Discography</td>
 	</tr>
 </table>
@@ -75,9 +440,9 @@
 		<td>label?</td>
 	</tr>
 	<tr class="scenario closed">
-		<td>Astral Weeks</td>
-		<td><span class="pass">1968</span></td>
-		<td><span class="pass">Warner Bros.</span></td>
+		<td class="error">Astral Weeks</td>
+		<td class="error">1968 <span class="ignore">Test not run</span></td>
+		<td class="error">Warner Bros. <span class="ignore">Test not run</span></td>
 	</tr><tr class="scenario-detail closed-detail"><td colspan="3"><table>
 	<tr class="slimRowTitle">
 		<td>scenario</td>
@@ -85,11 +450,113 @@
 		<td colspan="5">album, year?, label?</td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td><span class="pass">scroll to</span></td>
+		<td>scroll to <span class="error">No Method scrollTo[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
+ Available methods:
+addValueTo(java.lang.Object, java.lang.String) -&gt; void
+aroundSlimInvoke(fitnesse.slim.fixtureInteraction.FixtureInteraction, java.lang.reflect.Method, java.lang.Object[]) -&gt; class java.lang.Object
+clearValue(java.lang.String) -&gt; boolean
+clearValues() -&gt; void
+copyValuesFrom(java.util.Map) -&gt; void
+equals(java.lang.Object) -&gt; boolean
+excludedTags() -&gt; interface java.util.List
+expandPeriodsInNamesToNestedMaps(boolean) -&gt; void
+expandsPeriodsInNamesToNestedMaps() -&gt; boolean
+getClass() -&gt; class java.lang.Class
+getMapHelper() -&gt; class nl.hsac.fitnesse.fixture.util.MapHelper
+getOverallReportLink() -&gt; class java.lang.String
+globalValue(java.lang.String) -&gt; class java.lang.String
+hashCode() -&gt; int
+includedTags() -&gt; interface java.util.List
+layoutCheckMessages() -&gt; class java.lang.Object
+notify() -&gt; void
+notifyAll() -&gt; void
+passedSpecCount() -&gt; int
+repeatAtMostTimes() -&gt; int
+repeatAtMostTimes(int) -&gt; void
+repeatCount() -&gt; int
+repeatInterval() -&gt; long
+reset() -&gt; void
+set(java.lang.String, java.lang.Object) -&gt; void
+setBase64EncodedContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setBooleanValueFor(boolean, java.lang.String) -&gt; void
+setContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setDoubleValueFor(double, java.lang.String) -&gt; void
+setExcludedTags(java.util.List) -&gt; void
+setGlobalValueTo(java.lang.String, java.lang.String) -&gt; void
+setIncludedTags(java.util.List) -&gt; void
+setIntValueFor(int, java.lang.String) -&gt; void
+setLayoutCheckName(java.lang.String) -&gt; void
+setMapHelper(nl.hsac.fitnesse.fixture.util.MapHelper) -&gt; void
+setRepeatIntervalToMilliseconds(int) -&gt; void
+setValueFor(java.lang.Object, java.lang.String) -&gt; void
+setValuesFor(java.lang.String, java.lang.String) -&gt; void
+specErrorCount() -&gt; int
+specWarningCount() -&gt; int
+timeSpentRepeating() -&gt; long
+toString() -&gt; class java.lang.String
+value(java.lang.String) -&gt; class java.lang.Object
+verifiedSpecCount() -&gt; int
+verifyLayoutUsing(java.lang.String) -&gt; class java.lang.String
+wait() -&gt; void
+wait(long) -&gt; void
+wait(long, int) -&gt; void
+waitMilliseconds(int) -&gt; boolean
+waitSeconds(int) -&gt; boolean</span></td>
 		<td colspan="6">Astral Weeks</td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>$year&lt;-[1968]</td>
+		<td>$year= <span class="error">No Method valueOfInRowWhereIs[3] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
+ Available methods:
+addValueTo(java.lang.Object, java.lang.String) -&gt; void
+aroundSlimInvoke(fitnesse.slim.fixtureInteraction.FixtureInteraction, java.lang.reflect.Method, java.lang.Object[]) -&gt; class java.lang.Object
+clearValue(java.lang.String) -&gt; boolean
+clearValues() -&gt; void
+copyValuesFrom(java.util.Map) -&gt; void
+equals(java.lang.Object) -&gt; boolean
+excludedTags() -&gt; interface java.util.List
+expandPeriodsInNamesToNestedMaps(boolean) -&gt; void
+expandsPeriodsInNamesToNestedMaps() -&gt; boolean
+getClass() -&gt; class java.lang.Class
+getMapHelper() -&gt; class nl.hsac.fitnesse.fixture.util.MapHelper
+getOverallReportLink() -&gt; class java.lang.String
+globalValue(java.lang.String) -&gt; class java.lang.String
+hashCode() -&gt; int
+includedTags() -&gt; interface java.util.List
+layoutCheckMessages() -&gt; class java.lang.Object
+notify() -&gt; void
+notifyAll() -&gt; void
+passedSpecCount() -&gt; int
+repeatAtMostTimes() -&gt; int
+repeatAtMostTimes(int) -&gt; void
+repeatCount() -&gt; int
+repeatInterval() -&gt; long
+reset() -&gt; void
+set(java.lang.String, java.lang.Object) -&gt; void
+setBase64EncodedContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setBooleanValueFor(boolean, java.lang.String) -&gt; void
+setContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setDoubleValueFor(double, java.lang.String) -&gt; void
+setExcludedTags(java.util.List) -&gt; void
+setGlobalValueTo(java.lang.String, java.lang.String) -&gt; void
+setIncludedTags(java.util.List) -&gt; void
+setIntValueFor(int, java.lang.String) -&gt; void
+setLayoutCheckName(java.lang.String) -&gt; void
+setMapHelper(nl.hsac.fitnesse.fixture.util.MapHelper) -&gt; void
+setRepeatIntervalToMilliseconds(int) -&gt; void
+setValueFor(java.lang.Object, java.lang.String) -&gt; void
+setValuesFor(java.lang.String, java.lang.String) -&gt; void
+specErrorCount() -&gt; int
+specWarningCount() -&gt; int
+timeSpentRepeating() -&gt; long
+toString() -&gt; class java.lang.String
+value(java.lang.String) -&gt; class java.lang.Object
+verifiedSpecCount() -&gt; int
+verifyLayoutUsing(java.lang.String) -&gt; class java.lang.String
+wait() -&gt; void
+wait(long) -&gt; void
+wait(long, int) -&gt; void
+waitMilliseconds(int) -&gt; boolean
+waitSeconds(int) -&gt; boolean</span></td>
 		<td>value of</td>
 		<td>Year</td>
 		<td>in row where</td>
@@ -98,7 +565,58 @@
 		<td>Astral Weeks</td>
 	</tr>
 	<tr class="slimRowColor9">
-		<td>$label&lt;-[Warner Bros.]</td>
+		<td>$label= <span class="error">No Method valueOfInRowWhereIs[3] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
+ Available methods:
+addValueTo(java.lang.Object, java.lang.String) -&gt; void
+aroundSlimInvoke(fitnesse.slim.fixtureInteraction.FixtureInteraction, java.lang.reflect.Method, java.lang.Object[]) -&gt; class java.lang.Object
+clearValue(java.lang.String) -&gt; boolean
+clearValues() -&gt; void
+copyValuesFrom(java.util.Map) -&gt; void
+equals(java.lang.Object) -&gt; boolean
+excludedTags() -&gt; interface java.util.List
+expandPeriodsInNamesToNestedMaps(boolean) -&gt; void
+expandsPeriodsInNamesToNestedMaps() -&gt; boolean
+getClass() -&gt; class java.lang.Class
+getMapHelper() -&gt; class nl.hsac.fitnesse.fixture.util.MapHelper
+getOverallReportLink() -&gt; class java.lang.String
+globalValue(java.lang.String) -&gt; class java.lang.String
+hashCode() -&gt; int
+includedTags() -&gt; interface java.util.List
+layoutCheckMessages() -&gt; class java.lang.Object
+notify() -&gt; void
+notifyAll() -&gt; void
+passedSpecCount() -&gt; int
+repeatAtMostTimes() -&gt; int
+repeatAtMostTimes(int) -&gt; void
+repeatCount() -&gt; int
+repeatInterval() -&gt; long
+reset() -&gt; void
+set(java.lang.String, java.lang.Object) -&gt; void
+setBase64EncodedContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setBooleanValueFor(boolean, java.lang.String) -&gt; void
+setContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setDoubleValueFor(double, java.lang.String) -&gt; void
+setExcludedTags(java.util.List) -&gt; void
+setGlobalValueTo(java.lang.String, java.lang.String) -&gt; void
+setIncludedTags(java.util.List) -&gt; void
+setIntValueFor(int, java.lang.String) -&gt; void
+setLayoutCheckName(java.lang.String) -&gt; void
+setMapHelper(nl.hsac.fitnesse.fixture.util.MapHelper) -&gt; void
+setRepeatIntervalToMilliseconds(int) -&gt; void
+setValueFor(java.lang.Object, java.lang.String) -&gt; void
+setValuesFor(java.lang.String, java.lang.String) -&gt; void
+specErrorCount() -&gt; int
+specWarningCount() -&gt; int
+timeSpentRepeating() -&gt; long
+toString() -&gt; class java.lang.String
+value(java.lang.String) -&gt; class java.lang.Object
+verifiedSpecCount() -&gt; int
+verifyLayoutUsing(java.lang.String) -&gt; class java.lang.String
+wait() -&gt; void
+wait(long) -&gt; void
+wait(long, int) -&gt; void
+waitMilliseconds(int) -&gt; boolean
+waitSeconds(int) -&gt; boolean</span></td>
 		<td>value of</td>
 		<td>Label</td>
 		<td>in row where</td>
@@ -108,9 +626,9 @@
 	</tr>
 </table></td></tr>
 	<tr class="scenario closed">
-		<td>Moondance</td>
-		<td><span class="pass">1970</span></td>
-		<td><span class="pass">Rhino / Warner Bros.</span></td>
+		<td class="error">Moondance</td>
+		<td class="error">1970 <span class="ignore">Test not run</span></td>
+		<td class="error">Rhino / Warner Bros. <span class="ignore">Test not run</span></td>
 	</tr><tr class="scenario-detail closed-detail"><td colspan="3"><table>
 	<tr class="slimRowTitle">
 		<td>scenario</td>
@@ -118,11 +636,113 @@
 		<td colspan="5">album, year?, label?</td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td><span class="pass">scroll to</span></td>
+		<td>scroll to <span class="error">No Method scrollTo[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
+ Available methods:
+addValueTo(java.lang.Object, java.lang.String) -&gt; void
+aroundSlimInvoke(fitnesse.slim.fixtureInteraction.FixtureInteraction, java.lang.reflect.Method, java.lang.Object[]) -&gt; class java.lang.Object
+clearValue(java.lang.String) -&gt; boolean
+clearValues() -&gt; void
+copyValuesFrom(java.util.Map) -&gt; void
+equals(java.lang.Object) -&gt; boolean
+excludedTags() -&gt; interface java.util.List
+expandPeriodsInNamesToNestedMaps(boolean) -&gt; void
+expandsPeriodsInNamesToNestedMaps() -&gt; boolean
+getClass() -&gt; class java.lang.Class
+getMapHelper() -&gt; class nl.hsac.fitnesse.fixture.util.MapHelper
+getOverallReportLink() -&gt; class java.lang.String
+globalValue(java.lang.String) -&gt; class java.lang.String
+hashCode() -&gt; int
+includedTags() -&gt; interface java.util.List
+layoutCheckMessages() -&gt; class java.lang.Object
+notify() -&gt; void
+notifyAll() -&gt; void
+passedSpecCount() -&gt; int
+repeatAtMostTimes() -&gt; int
+repeatAtMostTimes(int) -&gt; void
+repeatCount() -&gt; int
+repeatInterval() -&gt; long
+reset() -&gt; void
+set(java.lang.String, java.lang.Object) -&gt; void
+setBase64EncodedContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setBooleanValueFor(boolean, java.lang.String) -&gt; void
+setContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setDoubleValueFor(double, java.lang.String) -&gt; void
+setExcludedTags(java.util.List) -&gt; void
+setGlobalValueTo(java.lang.String, java.lang.String) -&gt; void
+setIncludedTags(java.util.List) -&gt; void
+setIntValueFor(int, java.lang.String) -&gt; void
+setLayoutCheckName(java.lang.String) -&gt; void
+setMapHelper(nl.hsac.fitnesse.fixture.util.MapHelper) -&gt; void
+setRepeatIntervalToMilliseconds(int) -&gt; void
+setValueFor(java.lang.Object, java.lang.String) -&gt; void
+setValuesFor(java.lang.String, java.lang.String) -&gt; void
+specErrorCount() -&gt; int
+specWarningCount() -&gt; int
+timeSpentRepeating() -&gt; long
+toString() -&gt; class java.lang.String
+value(java.lang.String) -&gt; class java.lang.Object
+verifiedSpecCount() -&gt; int
+verifyLayoutUsing(java.lang.String) -&gt; class java.lang.String
+wait() -&gt; void
+wait(long) -&gt; void
+wait(long, int) -&gt; void
+waitMilliseconds(int) -&gt; boolean
+waitSeconds(int) -&gt; boolean</span></td>
 		<td colspan="6">Moondance</td>
 	</tr>
 	<tr class="slimRowColor0">
-		<td>$year&lt;-[1970]</td>
+		<td>$year= <span class="error">No Method valueOfInRowWhereIs[3] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
+ Available methods:
+addValueTo(java.lang.Object, java.lang.String) -&gt; void
+aroundSlimInvoke(fitnesse.slim.fixtureInteraction.FixtureInteraction, java.lang.reflect.Method, java.lang.Object[]) -&gt; class java.lang.Object
+clearValue(java.lang.String) -&gt; boolean
+clearValues() -&gt; void
+copyValuesFrom(java.util.Map) -&gt; void
+equals(java.lang.Object) -&gt; boolean
+excludedTags() -&gt; interface java.util.List
+expandPeriodsInNamesToNestedMaps(boolean) -&gt; void
+expandsPeriodsInNamesToNestedMaps() -&gt; boolean
+getClass() -&gt; class java.lang.Class
+getMapHelper() -&gt; class nl.hsac.fitnesse.fixture.util.MapHelper
+getOverallReportLink() -&gt; class java.lang.String
+globalValue(java.lang.String) -&gt; class java.lang.String
+hashCode() -&gt; int
+includedTags() -&gt; interface java.util.List
+layoutCheckMessages() -&gt; class java.lang.Object
+notify() -&gt; void
+notifyAll() -&gt; void
+passedSpecCount() -&gt; int
+repeatAtMostTimes() -&gt; int
+repeatAtMostTimes(int) -&gt; void
+repeatCount() -&gt; int
+repeatInterval() -&gt; long
+reset() -&gt; void
+set(java.lang.String, java.lang.Object) -&gt; void
+setBase64EncodedContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setBooleanValueFor(boolean, java.lang.String) -&gt; void
+setContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setDoubleValueFor(double, java.lang.String) -&gt; void
+setExcludedTags(java.util.List) -&gt; void
+setGlobalValueTo(java.lang.String, java.lang.String) -&gt; void
+setIncludedTags(java.util.List) -&gt; void
+setIntValueFor(int, java.lang.String) -&gt; void
+setLayoutCheckName(java.lang.String) -&gt; void
+setMapHelper(nl.hsac.fitnesse.fixture.util.MapHelper) -&gt; void
+setRepeatIntervalToMilliseconds(int) -&gt; void
+setValueFor(java.lang.Object, java.lang.String) -&gt; void
+setValuesFor(java.lang.String, java.lang.String) -&gt; void
+specErrorCount() -&gt; int
+specWarningCount() -&gt; int
+timeSpentRepeating() -&gt; long
+toString() -&gt; class java.lang.String
+value(java.lang.String) -&gt; class java.lang.Object
+verifiedSpecCount() -&gt; int
+verifyLayoutUsing(java.lang.String) -&gt; class java.lang.String
+wait() -&gt; void
+wait(long) -&gt; void
+wait(long, int) -&gt; void
+waitMilliseconds(int) -&gt; boolean
+waitSeconds(int) -&gt; boolean</span></td>
 		<td>value of</td>
 		<td>Year</td>
 		<td>in row where</td>
@@ -131,7 +751,58 @@
 		<td>Moondance</td>
 	</tr>
 	<tr class="slimRowColor9">
-		<td>$label&lt;-[Rhino / Warner Bros.]</td>
+		<td>$label= <span class="error">No Method valueOfInRowWhereIs[3] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
+ Available methods:
+addValueTo(java.lang.Object, java.lang.String) -&gt; void
+aroundSlimInvoke(fitnesse.slim.fixtureInteraction.FixtureInteraction, java.lang.reflect.Method, java.lang.Object[]) -&gt; class java.lang.Object
+clearValue(java.lang.String) -&gt; boolean
+clearValues() -&gt; void
+copyValuesFrom(java.util.Map) -&gt; void
+equals(java.lang.Object) -&gt; boolean
+excludedTags() -&gt; interface java.util.List
+expandPeriodsInNamesToNestedMaps(boolean) -&gt; void
+expandsPeriodsInNamesToNestedMaps() -&gt; boolean
+getClass() -&gt; class java.lang.Class
+getMapHelper() -&gt; class nl.hsac.fitnesse.fixture.util.MapHelper
+getOverallReportLink() -&gt; class java.lang.String
+globalValue(java.lang.String) -&gt; class java.lang.String
+hashCode() -&gt; int
+includedTags() -&gt; interface java.util.List
+layoutCheckMessages() -&gt; class java.lang.Object
+notify() -&gt; void
+notifyAll() -&gt; void
+passedSpecCount() -&gt; int
+repeatAtMostTimes() -&gt; int
+repeatAtMostTimes(int) -&gt; void
+repeatCount() -&gt; int
+repeatInterval() -&gt; long
+reset() -&gt; void
+set(java.lang.String, java.lang.Object) -&gt; void
+setBase64EncodedContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setBooleanValueFor(boolean, java.lang.String) -&gt; void
+setContentOfAsValueFor(java.lang.String, java.lang.String) -&gt; void
+setDoubleValueFor(double, java.lang.String) -&gt; void
+setExcludedTags(java.util.List) -&gt; void
+setGlobalValueTo(java.lang.String, java.lang.String) -&gt; void
+setIncludedTags(java.util.List) -&gt; void
+setIntValueFor(int, java.lang.String) -&gt; void
+setLayoutCheckName(java.lang.String) -&gt; void
+setMapHelper(nl.hsac.fitnesse.fixture.util.MapHelper) -&gt; void
+setRepeatIntervalToMilliseconds(int) -&gt; void
+setValueFor(java.lang.Object, java.lang.String) -&gt; void
+setValuesFor(java.lang.String, java.lang.String) -&gt; void
+specErrorCount() -&gt; int
+specWarningCount() -&gt; int
+timeSpentRepeating() -&gt; long
+toString() -&gt; class java.lang.String
+value(java.lang.String) -&gt; class java.lang.Object
+verifiedSpecCount() -&gt; int
+verifyLayoutUsing(java.lang.String) -&gt; class java.lang.String
+wait() -&gt; void
+wait(long) -&gt; void
+wait(long, int) -&gt; void
+waitMilliseconds(int) -&gt; boolean
+waitSeconds(int) -&gt; boolean</span></td>
 		<td>value of</td>
 		<td>Label</td>
 		<td>in row where</td>
