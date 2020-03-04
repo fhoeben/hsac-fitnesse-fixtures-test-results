@@ -1,0 +1,476 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.ShiftAndCtrlClick</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.ShiftAndCtrlClick</h2></header><article><br/>This test ensures that we can shift click and ctrl- (command- om mac) click on elements.<br/><br/>We use a mock server running to serve the HTML defined in this page<br/>(used <a href="https://stackoverflow.com/questions/17964108/select-multiple-html-table-rows-with-ctrlclick-and-shiftclick#17966381">https://stackoverflow.com/questions/17964108/select-multiple-html-table-rows-with-ctrlclick-and-shiftclick#17966381</a> for sample page).<br/><br/><br/><span class="meta">variable defined: HTML= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;table id="tableStudent" border="1"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;ID&lt;/th&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Selected&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr onmousedown="RowClick(this,false);"&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;John&lt;/td&gt;
+            &lt;td&gt;O&lt;/td&gt;
+        &lt;/tr&gt;
+         &lt;tr onmousedown="RowClick(this,false);"&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;Jack&lt;/td&gt;
+            &lt;td&gt;O&lt;/td&gt;
+        &lt;/tr&gt;
+         &lt;tr onmousedown="RowClick(this,false);"&gt;
+            &lt;td&gt;3&lt;/td&gt;
+            &lt;td&gt;Michel&lt;/td&gt;
+            &lt;td&gt;O&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr onmousedown="RowClick(this,false);"&gt;
+            &lt;td&gt;4&lt;/td&gt;
+            &lt;td&gt;Mike&lt;/td&gt;
+            &lt;td&gt;O&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr onmousedown="RowClick(this,false);"&gt;
+            &lt;td&gt;5&lt;/td&gt;
+            &lt;td&gt;Yke&lt;/td&gt;
+            &lt;td&gt;O&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;script&gt;
+var lastSelectedRow;
+var trs = document.getElementById('tableStudent').tBodies[0].getElementsByTagName('tr');
+
+// disable text selection
+document.onselectstart = function() {
+    return false;
+}
+
+function RowClick(currenttr, lock) {
+    if (window.event.ctrlKey) {
+        toggleRow(currenttr);
+    }
+
+    if (window.event.button === 0) {
+        if (!window.event.ctrlKey &amp;&amp; !window.event.shiftKey) {
+            clearAll();
+            toggleRow(currenttr);
+        }
+
+        if (window.event.shiftKey) {
+            selectRowsBetweenIndexes([lastSelectedRow.rowIndex, currenttr.rowIndex])
+        }
+    }
+}
+
+function toggleRow(row) {
+    if (row.className = row.className == 'selected') {
+    	row.className = '';
+        row.cells[2].textContent = 'O';
+    } else {
+    	row.className = 'selected';
+        row.cells[2].textContent = 'X';
+    }
+    lastSelectedRow = row;
+}
+
+function selectRowsBetweenIndexes(indexes) {
+    indexes.sort(function(a, b) {
+        return a - b;
+    });
+
+    for (var i = indexes[0]; i &lt;= indexes[1]; i++) {
+        trs[i-1].className = 'selected';
+		trs[i-1].cells[2].textContent = 'X';
+    }
+}
+
+function clearAll() {
+    for (var i = 0; i &lt; trs.length; i++) {
+        trs[i].className = '';
+        trs[i].cells[2].textContent = 'O';
+    }
+}
+&lt;/script&gt;
+&lt;style&gt;
+.selected {
+    background: lightBlue
+}
+&lt;/style&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;table id="tableStudent" border="1"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;ID&lt;/th&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Selected&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr onmousedown="RowClick(this,false);"&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;John&lt;/td&gt;
+            &lt;td&gt;O&lt;/td&gt;
+        &lt;/tr&gt;
+         &lt;tr onmousedown="RowClick(this,false);"&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;Jack&lt;/td&gt;
+            &lt;td&gt;O&lt;/td&gt;
+        &lt;/tr&gt;
+         &lt;tr onmousedown="RowClick(this,false);"&gt;
+            &lt;td&gt;3&lt;/td&gt;
+            &lt;td&gt;Michel&lt;/td&gt;
+            &lt;td&gt;O&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr onmousedown="RowClick(this,false);"&gt;
+            &lt;td&gt;4&lt;/td&gt;
+            &lt;td&gt;Mike&lt;/td&gt;
+            &lt;td&gt;O&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr onmousedown="RowClick(this,false);"&gt;
+            &lt;td&gt;5&lt;/td&gt;
+            &lt;td&gt;Yke&lt;/td&gt;
+            &lt;td&gt;O&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;script&gt;
+var lastSelectedRow;
+var trs = document.getElementById('tableStudent').tBodies[0].getElementsByTagName('tr');
+
+// disable text selection
+document.onselectstart = function() {
+    return false;
+}
+
+function RowClick(currenttr, lock) {
+    if (window.event.ctrlKey) {
+        toggleRow(currenttr);
+    }
+
+    if (window.event.button === 0) {
+        if (!window.event.ctrlKey &amp;&amp; !window.event.shiftKey) {
+            clearAll();
+            toggleRow(currenttr);
+        }
+
+        if (window.event.shiftKey) {
+            selectRowsBetweenIndexes([lastSelectedRow.rowIndex, currenttr.rowIndex])
+        }
+    }
+}
+
+function toggleRow(row) {
+    if (row.className = row.className == 'selected') {
+    	row.className = '';
+        row.cells[2].textContent = 'O';
+    } else {
+    	row.className = 'selected';
+        row.cells[2].textContent = 'X';
+    }
+    lastSelectedRow = row;
+}
+
+function selectRowsBetweenIndexes(indexes) {
+    indexes.sort(function(a, b) {
+        return a - b;
+    });
+
+    for (var i = indexes[0]; i &lt;= indexes[1]; i++) {
+        trs[i-1].className = 'selected';
+		trs[i-1].cells[2].textContent = 'X';
+    }
+}
+
+function clearAll() {
+    for (var i = 0; i &lt; trs.length; i++) {
+        trs[i].className = '';
+        trs[i].cells[2].textContent = 'O';
+    }
+}
+&lt;/script&gt;
+&lt;style&gt;
+.selected {
+    background: lightBlue
+}
+&lt;/style&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://127.0.0.1:8001/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td>$url->[http://127.0.0.1:8001/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">reject</span></td>
+		<td>send command for control on Mac</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>set send command for control on mac to</td>
+		<td>true</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">ensure</span></td>
+		<td>send command for control on Mac</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>set send command for control on mac to</td>
+		<td>false</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">reject</span></td>
+		<td>send command for control on Mac</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>seconds before timeout</td>
+		<td>1</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td colspan="8">script</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>John</td>
+		<td><span class="pass">O</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>Jack</td>
+		<td><span class="pass">O</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>Michel</td>
+		<td><span class="pass">O</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>Mike</td>
+		<td><span class="pass">O</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>Yke</td>
+		<td><span class="pass">O</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="7">Jack</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>John</td>
+		<td><span class="pass">O</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>Jack</td>
+		<td><span class="pass">X</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>Michel</td>
+		<td><span class="pass">O</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>Mike</td>
+		<td><span class="pass">O</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>Yke</td>
+		<td><span class="pass">O</span></td>
+	</tr>
+	<tr class="slimRowColor2">
+		<td><span class="pass">shift click</span></td>
+		<td colspan="7">Yke</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>John</td>
+		<td><span class="pass">O</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>Jack</td>
+		<td><span class="pass">X</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>Michel</td>
+		<td><span class="pass">X</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>Mike</td>
+		<td><span class="pass">X</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>Yke</td>
+		<td><span class="pass">X</span></td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td><span class="pass">control click</span></td>
+		<td colspan="7">Michel</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>John</td>
+		<td><span class="pass">O</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>Jack</td>
+		<td><span class="pass">X</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>Michel</td>
+		<td><span class="pass">O</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>Mike</td>
+		<td><span class="pass">X</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Selected</td>
+		<td>in row where</td>
+		<td>Name</td>
+		<td>is</td>
+		<td>Yke</td>
+		<td><span class="pass">X</span></td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop</td>
+	</tr>
+</table>
+<br/><br/></article></body></html>
