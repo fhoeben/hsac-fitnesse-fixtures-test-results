@@ -133,13 +133,19 @@ last one!-!</span>
 		<td>set directory</td>
 		<td colspan="4">.</td>
 	</tr>
-	<tr class="slimRowColor9">
-		<td>show</td>
+	<tr class="slimRowColor6">
+		<td>$created3&lt;-[<a href="file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/./bye.txt" target="_blank">bye.txt</a>]</td>
 		<td>create</td>
 		<td>bye.txt</td>
 		<td>containing</td>
 		<td>Bye Bye 3</td>
-	<td><a href="file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/./bye.txt" target="_blank">bye.txt</a></td></tr>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>filename of</td>
+		<td>$created3->[<a href="file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/./bye.txt" target="_blank">bye.txt</a>]</td>
+		<td colspan="2"><span class="pass">bye.txt</span></td>
+	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>size of</td>
@@ -328,60 +334,70 @@ second line</span></td>
 		<td colspan="4">$appended->[<a href="files/test/appended.txt" target="_blank">appended.txt</a>]</td>
 	</tr>
 </table>
-<br/>Table below shows how we can work with zip files<br/><br/><table>
+<br/>Table below shows how we can work with zip files<br/><br/>We ensure lists are rendered between brackets, and not numbered<br/><table>
 	<tr class="slimRowTitle">
-		<td colspan="5">script</td>
+		<td>script</td>
+		<td><span class="pass">list fixture</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td colspan="2">display lists standard</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="4"><span class="pass">file fixture</span></td>
 	</tr>
 	<tr class="slimRowColor5">
-		<td>$created&lt;-[<a href="files/test/bye1.txt" target="_blank">bye1.txt</a>]</td>
+		<td>$created&lt;-[<a href="files/fileFixture/bye1.txt" target="_blank">bye1.txt</a>]</td>
 		<td>create</td>
 		<td>bye1.txt</td>
 		<td>containing</td>
 		<td>Bye Bye 5</td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$zip&lt;-[<a href="files/test/bye_1.zip" target="_blank">bye_1.zip</a>]</td>
+		<td>$zip&lt;-[<a href="files/fileFixture/bye_1.zip" target="_blank">bye_1.zip</a>]</td>
 		<td>zip</td>
-		<td>$created->[<a href="files/test/bye1.txt" target="_blank">bye1.txt</a>]</td>
+		<td>$created->[<a href="files/fileFixture/bye1.txt" target="_blank">bye1.txt</a>]</td>
 		<td>as</td>
 		<td>bye.zip</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>number of files in zip</td>
-		<td>$zip->[<a href="files/test/bye_1.zip" target="_blank">bye_1.zip</a>]</td>
+		<td>$zip->[<a href="files/fileFixture/bye_1.zip" target="_blank">bye_1.zip</a>]</td>
 		<td colspan="2"><span class="pass">1</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>names of files in zip</td>
-		<td>$zip->[<a href="files/test/bye_1.zip" target="_blank">bye_1.zip</a>]</td>
+		<td>$zip->[<a href="files/fileFixture/bye_1.zip" target="_blank">bye_1.zip</a>]</td>
 		<td colspan="2"><span class="pass">[bye1.txt]</span></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$unzipped&lt;-[<a href="files/test/unzipped_1" target="_blank">unzipped_1</a>]</td>
+		<td>$unzipped&lt;-[<a href="files/fileFixture/unzipped_1" target="_blank">unzipped_1</a>]</td>
 		<td>unzip</td>
-		<td>$zip->[<a href="files/test/bye_1.zip" target="_blank">bye_1.zip</a>]</td>
+		<td>$zip->[<a href="files/fileFixture/bye_1.zip" target="_blank">bye_1.zip</a>]</td>
 		<td>as</td>
 		<td>unzipped</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>text in</td>
-		<td>$unzipped->[<a href="files/test/unzipped_1" target="_blank">unzipped_1</a>]/bye1.txt</td>
+		<td>$unzipped->[<a href="files/fileFixture/unzipped_1" target="_blank">unzipped_1</a>]/bye1.txt</td>
 		<td colspan="2"><span class="pass">Bye Bye 5</span></td>
 	</tr>
 	<tr class="slimRowColor6">
-		<td>$zip2&lt;-[<a href="files/test/zip2_1.zip" target="_blank">zip2_1.zip</a>]</td>
+		<td>$zip2&lt;-[<a href="files/fileFixture/zip2_1.zip" target="_blank">zip2_1.zip</a>]</td>
 		<td>zip</td>
-		<td>$unzipped->[<a href="files/test/unzipped_1" target="_blank">unzipped_1</a>]</td>
+		<td>$unzipped->[<a href="files/fileFixture/unzipped_1" target="_blank">unzipped_1</a>]</td>
 		<td>as</td>
 		<td>zip2.zip</td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>names of files in zip</td>
-		<td>$zip2->[<a href="files/test/zip2_1.zip" target="_blank">zip2_1.zip</a>]</td>
+		<td>$zip2->[<a href="files/fileFixture/zip2_1.zip" target="_blank">zip2_1.zip</a>]</td>
 		<td colspan="2"><span class="pass">[bye1.txt]</span></td>
 	</tr>
 </table>

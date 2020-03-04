@@ -4,27 +4,52 @@
 		<td colspan="3"><span class="pass">json http test</span></td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td><span class="pass">get from</span></td>
+		<td><span class="fail">get from</span></td>
 		<td colspan="3"><a href="http://echo.jsontest.com/key/value/one/two">http://echo.jsontest.com/key/value/one/two</a></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td><pre>{
-    &quot;one&quot;: &quot;two&quot;,
-    &quot;key&quot;: &quot;value&quot;
-}</pre></td></tr>
+	<td>
+&lt;html&gt;&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+&lt;title&gt;503 Over Quota&lt;/title&gt;
+&lt;style&gt;&lt;!--
+body {font-family: arial,sans-serif}
+div.nav {margin-top: 1ex}
+div.nav A {font-size: 10pt; font-family: arial,sans-serif}
+span.nav {font-size: 10pt; font-family: arial,sans-serif; font-weight: bold}
+div.nav A,span.big {font-size: 12pt; color: #0000cc}
+div.nav A {font-size: 10pt; color: black}
+A.l:link {color: #6f6f6f}
+A.u:link {color: green}
+//--&gt;&lt;/style&gt;
+
+&lt;/head&gt;
+&lt;body text=#000000 bgcolor=#ffffff&gt;
+&lt;table border=0 cellpadding=2 cellspacing=0 width=100%&gt;
+&lt;tr&gt;&lt;td bgcolor=#3366cc&gt;&lt;font face=arial,sans-serif color=#ffffff&gt;&lt;b&gt;Error&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;H1&gt;Over Quota&lt;/H1&gt;
+This application is temporarily over its serving quota.  Please try again later.
+
+&lt;p&gt;
+&lt;/blockquote&gt;
+&lt;table width=100% cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td bgcolor=#3366cc&gt;&lt;img alt="" width=1 height=4&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/body&gt;&lt;/html&gt;
+</td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>$.key</td>
-		<td><span class="pass">value</span></td>
+		<td>[<span class="diff">nu</span>l<span class="diff">l</span>] <span class="fail">expected [<span class="diff">va</span>l<span class="diff">ue</span>]</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>$.one</td>
-		<td><span class="pass">two</span></td>
+		<td>[<span class="diff">null</span>] <span class="fail">expected [<span class="diff">two</span>]</span></td>
 	</tr>
 </table>
 <br/><br/>Then a POST, showing the multiple notations of JsonPath expressions supported (notice that adding the '$.' prefix is not required).<br/><br/><span class="meta">variable defined: BAD_BODY= {{{
@@ -36,7 +61,7 @@ json={"key":"value"
 		<td colspan="3"><span class="pass">json http test</span></td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td><span class="pass">post</span></td>
+		<td><span class="fail">post</span></td>
 		<td><pre>
 json={"key":"value"
 </pre></td>
@@ -46,41 +71,64 @@ json={"key":"value"
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td><pre>{
-    &quot;error_info&quot;: &quot;This error came from the org.json reference parser.&quot;,
-    &quot;error&quot;: &quot;Expected a ',' or '}' at 15 [character 16 line 1]&quot;,
-    &quot;object_or_array&quot;: &quot;object&quot;,
-    &quot;validate&quot;: false
-}</pre></td></tr>
+	<td>
+&lt;html&gt;&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+&lt;title&gt;503 Over Quota&lt;/title&gt;
+&lt;style&gt;&lt;!--
+body {font-family: arial,sans-serif}
+div.nav {margin-top: 1ex}
+div.nav A {font-size: 10pt; font-family: arial,sans-serif}
+span.nav {font-size: 10pt; font-family: arial,sans-serif; font-weight: bold}
+div.nav A,span.big {font-size: 12pt; color: #0000cc}
+div.nav A {font-size: 10pt; color: black}
+A.l:link {color: #6f6f6f}
+A.u:link {color: green}
+//--&gt;&lt;/style&gt;
+
+&lt;/head&gt;
+&lt;body text=#000000 bgcolor=#ffffff&gt;
+&lt;table border=0 cellpadding=2 cellspacing=0 width=100%&gt;
+&lt;tr&gt;&lt;td bgcolor=#3366cc&gt;&lt;font face=arial,sans-serif color=#ffffff&gt;&lt;b&gt;Error&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;H1&gt;Over Quota&lt;/H1&gt;
+This application is temporarily over its serving quota.  Please try again later.
+
+&lt;p&gt;
+&lt;/blockquote&gt;
+&lt;table width=100% cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td bgcolor=#3366cc&gt;&lt;img alt="" width=1 height=4&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/body&gt;&lt;/html&gt;
+</td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>$.validate</td>
-		<td><span class="pass">false</span></td>
+		<td>[<span class="diff">nu</span>l<span class="diff">l</span>] <span class="fail">expected [<span class="diff">fa</span>l<span class="diff">se</span>]</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>validate</td>
-		<td><span class="pass">false</span></td>
+		<td>[<span class="diff">nu</span>l<span class="diff">l</span>] <span class="fail">expected [<span class="diff">fa</span>l<span class="diff">se</span>]</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>.validate</td>
-		<td><span class="pass">false</span></td>
+		<td>[<span class="diff">nu</span>l<span class="diff">l</span>] <span class="fail">expected [<span class="diff">fa</span>l<span class="diff">se</span>]</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>$['validate']</td>
-		<td><span class="pass">false</span></td>
+		<td>[<span class="diff">nu</span>l<span class="diff">l</span>] <span class="fail">expected [<span class="diff">fa</span>l<span class="diff">se</span>]</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>['validate']</td>
-		<td><span class="pass">false</span></td>
+		<td>[<span class="diff">nu</span>l<span class="diff">l</span>] <span class="fail">expected [<span class="diff">fa</span>l<span class="diff">se</span>]</span></td>
 	</tr>
 </table>
 <br/><br/>Next another POST, showing that expressions resulting in a boolean or integer value are recognized and can be used accordingly by the script table. Furthermore expressions returning more than a single member are supported.<br/><br/><span class="meta">variable defined: GOOD_BODY= {{{
@@ -92,7 +140,7 @@ json={"key":"value"}
 		<td colspan="5"><span class="pass">json http test</span></td>
 	</tr>
 	<tr class="slimRowColor4">
-		<td><span class="pass">post</span></td>
+		<td><span class="fail">post</span></td>
 		<td><pre>
 json={"key":"value"}
 </pre></td>
@@ -102,21 +150,43 @@ json={"key":"value"}
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="5">response</td>
-	<td><pre>{
-    &quot;size&quot;: 1,
-    &quot;parse_time_nanoseconds&quot;: 17438,
-    &quot;object_or_array&quot;: &quot;object&quot;,
-    &quot;validate&quot;: true,
-    &quot;empty&quot;: false
-}</pre></td></tr>
+	<td>
+&lt;html&gt;&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+&lt;title&gt;503 Over Quota&lt;/title&gt;
+&lt;style&gt;&lt;!--
+body {font-family: arial,sans-serif}
+div.nav {margin-top: 1ex}
+div.nav A {font-size: 10pt; font-family: arial,sans-serif}
+span.nav {font-size: 10pt; font-family: arial,sans-serif; font-weight: bold}
+div.nav A,span.big {font-size: 12pt; color: #0000cc}
+div.nav A {font-size: 10pt; color: black}
+A.l:link {color: #6f6f6f}
+A.u:link {color: green}
+//--&gt;&lt;/style&gt;
+
+&lt;/head&gt;
+&lt;body text=#000000 bgcolor=#ffffff&gt;
+&lt;table border=0 cellpadding=2 cellspacing=0 width=100%&gt;
+&lt;tr&gt;&lt;td bgcolor=#3366cc&gt;&lt;font face=arial,sans-serif color=#ffffff&gt;&lt;b&gt;Error&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;H1&gt;Over Quota&lt;/H1&gt;
+This application is temporarily over its serving quota.  Please try again later.
+
+&lt;p&gt;
+&lt;/blockquote&gt;
+&lt;table width=100% cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td bgcolor=#3366cc&gt;&lt;img alt="" width=1 height=4&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/body&gt;&lt;/html&gt;
+</td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>validate</td>
-		<td colspan="3"><span class="pass">true</span></td>
+		<td colspan="3">[<span class="diff">n</span>u<span class="diff">ll</span>] <span class="fail">expected [<span class="diff">tr</span>u<span class="diff">e</span>]</span></td>
 	</tr>
 	<tr class="slimRowColor8">
-		<td><span class="pass">ensure</span></td>
+		<td><span class="fail">ensure</span></td>
 		<td>json path</td>
 		<td colspan="4">validate</td>
 	</tr>
@@ -124,26 +194,58 @@ json={"key":"value"}
 		<td>check</td>
 		<td>json path</td>
 		<td>size</td>
-		<td colspan="3"><span class="pass">1&gt;0</span></td>
+		<td colspan="3">[<span class="diff">null</span>] <span class="fail">expected [<span class="diff">&gt;0</span>]</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path count</td>
 		<td>$.*</td>
-		<td colspan="3"><span class="pass">5&gt;=5</span></td>
+		<td colspan="3"><span class="fail">0&gt;=5</span></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td>all json path matches</td>
 		<td colspan="4">*</td>
-	<td><div><ul><li>1</li><li>17438</li><li>object</li><li>true</li><li>false</li></ul></div></td></tr>
+	<td>null</td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>element</td>
 		<td>1</td>
 		<td>of json path</td>
 		<td>$.*</td>
-		<td>[<span class="diff">17438</span>] <span class="fail">expected [<span class="diff">false</span>]</span></td>
+		<td><table><tr class="exception closed"><td> <span class="error">false</span></td></tr><tr class="exception-detail closed-detail"><td>__EXCEPTION__:java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657) [rt.jar:1.8.0_242]
+	at java.util.ArrayList.get(ArrayList.java:433) [rt.jar:1.8.0_242]
+	at nl.hsac.fitnesse.fixture.slim.JsonHttpTest.elementOfJsonPath(JsonHttpTest.java:91) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.8.0_242]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) [rt.jar:1.8.0_242]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_242]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_242]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.methodInvoke(SimpleInteraction.java:322) [fitnesse-20200304.jar:20200304]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:61) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:41) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_242]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_242]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.methodInvoke(SimpleInteraction.java:322) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.callMethod(SimpleInteraction.java:305) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.invokeMethod(SimpleInteraction.java:290) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.findAndInvoke(SimpleInteraction.java:217) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.instructions.CallAndOptionalAssignInstruction.executeInternal(CallAndOptionalAssignInstruction.java:30) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20200304.jar:20200304]
+	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:55) [fitnesse-20200304.jar:20200304]
+	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_242]</td</tr></table></td>
 	</tr>
 </table>
 <br/><br/>Next another POST, posting of url-enoded values defined in the wiki.<br/><br/><table>
@@ -158,24 +260,46 @@ json={"key":"value"}
 		<td>json</td>
 	</tr>
 	<tr class="slimRowColor1">
-		<td><span class="pass">post values to</span></td>
+		<td><span class="fail">post values to</span></td>
 		<td colspan="3"><a href="http://validate.jsontest.com/">http://validate.jsontest.com/</a></td>
 	</tr>
 	<tr class="slimRowColor9">
 		<td>show</td>
 		<td colspan="3">response</td>
-	<td><pre>{
-    &quot;size&quot;: 1,
-    &quot;parse_time_nanoseconds&quot;: 19005,
-    &quot;object_or_array&quot;: &quot;object&quot;,
-    &quot;validate&quot;: true,
-    &quot;empty&quot;: false
-}</pre></td></tr>
+	<td>
+&lt;html&gt;&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+&lt;title&gt;503 Over Quota&lt;/title&gt;
+&lt;style&gt;&lt;!--
+body {font-family: arial,sans-serif}
+div.nav {margin-top: 1ex}
+div.nav A {font-size: 10pt; font-family: arial,sans-serif}
+span.nav {font-size: 10pt; font-family: arial,sans-serif; font-weight: bold}
+div.nav A,span.big {font-size: 12pt; color: #0000cc}
+div.nav A {font-size: 10pt; color: black}
+A.l:link {color: #6f6f6f}
+A.u:link {color: green}
+//--&gt;&lt;/style&gt;
+
+&lt;/head&gt;
+&lt;body text=#000000 bgcolor=#ffffff&gt;
+&lt;table border=0 cellpadding=2 cellspacing=0 width=100%&gt;
+&lt;tr&gt;&lt;td bgcolor=#3366cc&gt;&lt;font face=arial,sans-serif color=#ffffff&gt;&lt;b&gt;Error&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;H1&gt;Over Quota&lt;/H1&gt;
+This application is temporarily over its serving quota.  Please try again later.
+
+&lt;p&gt;
+&lt;/blockquote&gt;
+&lt;table width=100% cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td bgcolor=#3366cc&gt;&lt;img alt="" width=1 height=4&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/body&gt;&lt;/html&gt;
+</td></tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>validate</td>
-		<td><span class="pass">true</span></td>
+		<td>[<span class="diff">n</span>u<span class="diff">ll</span>] <span class="fail">expected [<span class="diff">tr</span>u<span class="diff">e</span>]</span></td>
 	</tr>
 </table>
 <br/>Next another POST, posting of url-enoded array of values defined in the wiki.<br/><p class="note">We have to specify 'products\[]' as value name since the service requires a value called 'products[]' and the fixture interprets a value name ending on '[]' as an indicator the value is an array, and will normally not include that postfix in the name of the value sent to the service. By specifying '\[]' we indicate we <i>don't</i> want the brackets removed from the name.</p><br/><table>
@@ -190,31 +314,153 @@ json={"key":"value"}
 		<td>products\[]</td>
 	</tr>
 	<tr class="slimRowColor1">
-		<td><span class="pass">post values to</span></td>
+		<td><table><tr class="exception closed"><td> <span class="fail">post values to</span></td></tr><tr class="exception-detail closed-detail"><td>__EXCEPTION__:ABORT_SLIM_TEST:nl.hsac.fitnesse.fixture.slim.StopTestException: Unable to get response from POST to: https://thuis.t-mobile.nl/api/shoppingcart
+	at nl.hsac.fitnesse.fixture.slim.HttpTest.handleCallException(HttpTest.java:562) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.HttpTest.sendToImpl(HttpTest.java:289) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.HttpTest.postToImpl(HttpTest.java:254) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.HttpTest.postValuesTo(HttpTest.java:250) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.8.0_242]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) [rt.jar:1.8.0_242]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_242]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_242]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.methodInvoke(SimpleInteraction.java:322) [fitnesse-20200304.jar:20200304]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:61) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:41) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_242]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_242]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.methodInvoke(SimpleInteraction.java:322) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.callMethod(SimpleInteraction.java:305) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.invokeMethod(SimpleInteraction.java:290) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.findAndInvoke(SimpleInteraction.java:217) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.instructions.CallAndOptionalAssignInstruction.executeInternal(CallAndOptionalAssignInstruction.java:30) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20200304.jar:20200304]
+	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:55) [fitnesse-20200304.jar:20200304]
+	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_242]
+Caused by: java.lang.RuntimeException: Unable to get response from: https://thuis.t-mobile.nl/api/shoppingcart
+	at nl.hsac.fitnesse.fixture.util.HttpClient.getResponse(HttpClient.java:280) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.util.HttpClient.post(HttpClient.java:66) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.Environment.doHttpPost(Environment.java:289) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.HttpTest.sendToImpl(HttpTest.java:274) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.HttpTest.postToImpl(HttpTest.java:254) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.HttpTest.postValuesTo(HttpTest.java:250) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.8.0_242]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) [rt.jar:1.8.0_242]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_242]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_242]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.methodInvoke(SimpleInteraction.java:322) [fitnesse-20200304.jar:20200304]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:61) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:41) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_242]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_242]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.methodInvoke(SimpleInteraction.java:322) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.callMethod(SimpleInteraction.java:305) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.invokeMethod(SimpleInteraction.java:290) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.findAndInvoke(SimpleInteraction.java:217) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.instructions.CallAndOptionalAssignInstruction.executeInternal(CallAndOptionalAssignInstruction.java:30) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20200304.jar:20200304]
+	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:55) [fitnesse-20200304.jar:20200304]
+	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_242]
+Caused by: java.net.UnknownHostException: thuis.t-mobile.nl: Name or service not known
+	at java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method) [rt.jar:1.8.0_242]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) [rt.jar:1.8.0_242]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) [rt.jar:1.8.0_242]
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277) [rt.jar:1.8.0_242]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193) [rt.jar:1.8.0_242]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127) [rt.jar:1.8.0_242]
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45) [httpclient-4.5.11.jar:4.5.11]
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112) [httpclient-4.5.11.jar:4.5.11]
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) [httpclient-4.5.11.jar:4.5.11]
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) [httpclient-4.5.11.jar:4.5.11]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) [httpclient-4.5.11.jar:4.5.11]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) [httpclient-4.5.11.jar:4.5.11]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) [httpclient-4.5.11.jar:4.5.11]
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) [httpclient-4.5.11.jar:4.5.11]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) [httpclient-4.5.11.jar:4.5.11]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) [httpclient-4.5.11.jar:4.5.11]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) [httpclient-4.5.11.jar:4.5.11]
+	at nl.hsac.fitnesse.fixture.util.HttpClient.executeMethod(HttpClient.java:312) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.util.HttpClient.getResponse(HttpClient.java:275) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.util.HttpClient.post(HttpClient.java:66) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.Environment.doHttpPost(Environment.java:289) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.HttpTest.sendToImpl(HttpTest.java:274) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.HttpTest.postToImpl(HttpTest.java:254) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.HttpTest.postValuesTo(HttpTest.java:250) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.8.0_242]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) [rt.jar:1.8.0_242]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_242]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_242]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.methodInvoke(SimpleInteraction.java:322) [fitnesse-20200304.jar:20200304]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.invoke(SlimFixture.java:61) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:41) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_242]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_242]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.methodInvoke(SimpleInteraction.java:322) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.callMethod(SimpleInteraction.java:305) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.invokeMethod(SimpleInteraction.java:290) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.findAndInvoke(SimpleInteraction.java:217) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.instructions.CallAndOptionalAssignInstruction.executeInternal(CallAndOptionalAssignInstruction.java:30) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20200304.jar:20200304]
+	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:55) [fitnesse-20200304.jar:20200304]
+	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_242]</td</tr></table></td>
 		<td colspan="3"><a href="https://thuis.t-mobile.nl/api/shoppingcart">https://thuis.t-mobile.nl/api/shoppingcart</a></td>
 	</tr>
 	<tr class="slimRowColor9">
-		<td>show</td>
+		<td>show <span class="ignore">Test not run</span></td>
 		<td colspan="3">response</td>
-	<td>&lt;head&gt;&lt;title&gt;Document Moved&lt;/title&gt;&lt;/head&gt;
-&lt;body&gt;&lt;h1&gt;Object Moved&lt;/h1&gt;This document may be found &lt;a HREF="https://www.t-mobile.nl/thuis/shop/product/zelf-samenstellen"&gt;here&lt;/a&gt;&lt;/body&gt;</td></tr>
+	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>error</td>
-		<td>[<span class="diff">null</span>] <span class="fail">expected [<span class="diff">0</span>]</span></td>
+		<td>0 <span class="ignore">Test not run</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>$.fields.pricing_info.initial_onetime.pricing_info</td>
-		<td>[n<span class="diff">u</span>l<span class="diff">l</span>] <span class="fail">expected [<span class="diff">Ee</span>n<span class="diff">ma</span>l<span class="diff">ige kosten</span>]</span></td>
+		<td>Eenmalige kosten <span class="ignore">Test not run</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>$.fields.pricing_info.initial_monthly.pricing_info</td>
-		<td>[n<span class="diff">u</span>l<span class="diff">l</span>] <span class="fail">expected [<span class="diff">Maa</span>n<span class="diff">de</span>l<span class="diff">ijks</span>]</span></td>
+		<td>Maandelijks <span class="ignore">Test not run</span></td>
 	</tr>
 </table>
 <br/>Next a PUT example<br/><span class="meta">variable defined: PUT_BODY= {{{
@@ -226,10 +472,10 @@ json={"id": 1,
 <br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td colspan="3"><span class="pass">json http test</span></td>
+		<td colspan="3">json http test <span class="ignore">Test not run</span></td>
 	</tr>
 	<tr class="slimRowColor5">
-		<td><span class="pass">put</span></td>
+		<td>put <span class="ignore">Test not run</span></td>
 		<td><pre>
 json={"id": 1,
     "title": "foo",
@@ -240,31 +486,25 @@ json={"id": 1,
 		<td><a href="http://jsonplaceholder.typicode.com/posts/1/">http://jsonplaceholder.typicode.com/posts/1/</a></td>
 	</tr>
 	<tr class="slimRowColor9">
-		<td>show</td>
+		<td>show <span class="ignore">Test not run</span></td>
 		<td colspan="3">response</td>
-	<td><pre>{
-    &quot;json&quot;: &quot;{\&quot;id\&quot;: 1,\n    \&quot;title\&quot;: \&quot;foo\&quot;,\n    \&quot;body\&quot;: \&quot;bar\&quot;,\n    \&quot;userId\&quot;: 1}&quot;,
-    &quot;id&quot;: 1
-}</pre></td></tr>
+	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path</td>
 		<td>id</td>
-		<td><span class="pass">1&gt;0</span></td>
+		<td>&gt;0 <span class="ignore">Test not run</span></td>
 	</tr>
 	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>json path count</td>
 		<td>$.*</td>
-		<td><span class="pass">2&gt;=2</span></td>
+		<td>&gt;=2 <span class="ignore">Test not run</span></td>
 	</tr>
 	<tr class="slimRowColor9">
-		<td>show</td>
+		<td>show <span class="ignore">Test not run</span></td>
 		<td>all json path matches</td>
 		<td colspan="2">*</td>
-	<td><div><ul><li>{"id": 1,
-    "title": "foo",
-    "body": "bar",
-    "userId": 1}</li><li>1</li></ul></div></td></tr>
+	</tr>
 </table>
 </article></body></html>
