@@ -1,0 +1,148 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.ScrollToBehaviourTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.ScrollToBehaviourTest</h2></header><article><br/>This test ensures that setting scroll behaviour to center results in the element we serch for to become interactable<br/><br/><span class="meta">variable defined: HTML= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;div style="background-color: #fff; border: 1px solid black; position:fixed; top:0; width:100%; height:50px; z-index:100;"&gt;the div that obscures stuff&lt;/div&gt;
+&lt;p&gt;top&lt;/p&gt;&lt;br/&gt;
+&lt;div style="min-height:1000px;"&gt;&amp;nbsp;&lt;/div&gt;
+&lt;p&gt;halfway down&lt;/p&gt;&lt;br/&gt;
+&lt;div style="min-height:1000px;"&gt;&amp;nbsp;&lt;/div&gt;
+&lt;p&gt;bottom&lt;/p&gt;&lt;br/&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand</a></li><li><a href='#' class='collapseall'>Collapse</a></li></ul>
+	<p class="title">Mock server</p>
+	<div><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;div style="background-color: #fff; border: 1px solid black; position:fixed; top:0; width:100%; height:50px; z-index:100;"&gt;the div that obscures stuff&lt;/div&gt;
+&lt;p&gt;top&lt;/p&gt;&lt;br/&gt;
+&lt;div style="min-height:1000px;"&gt;&amp;nbsp;&lt;/div&gt;
+&lt;p&gt;halfway down&lt;/p&gt;&lt;br/&gt;
+&lt;div style="min-height:1000px;"&gt;&amp;nbsp;&lt;/div&gt;
+&lt;p&gt;bottom&lt;/p&gt;&lt;br/&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://127.0.0.1:8000/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+</div>
+</div>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">browser test</span></td>
+		<td colspan="2">1</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="3">$url->[http://127.0.0.1:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">reject</span></td>
+		<td colspan="3">scroll elements to center of viewport</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">scroll to</span></td>
+		<td colspan="3">halfway down</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>click</td>
+		<td>halfway down</td>
+		<td><span class="pass">/.*Timed-out waiting.*/ found in: __EXCEPTION__:nl.hsac.fitnesse.fixture.slim.SlimFixtureException: message:&lt;&lt;&lt;div&gt;&lt;div&gt;Timed-out waiting (after 1s).&lt;/div&gt;&lt;div&gt;&lt;a href="files/pagesources/org.openqa.selenium.TimeoutException.html" target="_blank"&gt;Page content&lt;/a&gt;:&lt;a href="files/screenshots/timeouts/BrowserTest/timeout.png" target="_blank"&gt;&lt;img src="files/screenshots/timeouts/BrowserTest/timeout.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/index1/files/screenshots/timeouts/BrowserTest/timeout.png" height="200"/&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&gt;&gt;
+	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.waitUntil(BrowserTest.java:2080) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invokedWrappedInWaitUntil(BrowserTest.java:137) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invoke(BrowserTest.java:93) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:41) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_242]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_242]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.methodInvoke(SimpleInteraction.java:322) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.callMethod(SimpleInteraction.java:305) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.invokeMethod(SimpleInteraction.java:290) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.findAndInvoke(SimpleInteraction.java:217) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.instructions.CallAndOptionalAssignInstruction.executeInternal(CallAndOptionalAssignInstruction.java:30) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20200304.jar:20200304]
+	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:55) [fitnesse-20200304.jar:20200304]
+	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_242]
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for nl.hsac.fitnesse.fixture.util.selenium.SeleniumHelper$$Lambda$305/753144507@55150840 (tried for 1 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'localhost', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-1055-gcp', java.version: '1.8.0_242'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.132, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /tmp/.com.google.Chrome.iSJn9T}, goog:chromeOptions: {debuggerAddress: localhost:37513}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore}
+Session ID: 03a5fb51e34d36cee376e613bc4ec44f
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95) [selenium-support-3.141.59.jar]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272) [selenium-support-3.141.59.jar]
+	at nl.hsac.fitnesse.fixture.util.selenium.SeleniumHelper.waitUntil(SeleniumHelper.java:956) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.waitUntilImpl(BrowserTest.java:2147) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.waitUntil(BrowserTest.java:2077) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invokedWrappedInWaitUntil(BrowserTest.java:137) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invoke(BrowserTest.java:93) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:41) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_242]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_242]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.methodInvoke(SimpleInteraction.java:322) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.callMethod(SimpleInteraction.java:305) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.invokeMethod(SimpleInteraction.java:290) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.findAndInvoke(SimpleInteraction.java:217) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.instructions.CallAndOptionalAssignInstruction.executeInternal(CallAndOptionalAssignInstruction.java:30) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-20200304.jar:20200304]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20200304.jar:20200304]
+	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:55) [fitnesse-20200304.jar:20200304]
+	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_242]</span></td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td><span class="pass">press</span></td>
+		<td colspan="3">HOME</td>
+	</tr>
+	<tr class="slimRowColor3">
+		<td>scroll elements to center of viewport</td>
+		<td colspan="3">true</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">ensure</span></td>
+		<td colspan="3">scroll elements to center of viewport</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">scroll to</span></td>
+		<td colspan="3">halfway down</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">ensure</span></td>
+		<td>click</td>
+		<td colspan="2">halfway down</td>
+	</tr>
+</table>
+</article></body></html>

@@ -1,0 +1,138 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.RepeatUntilTests.ExecuteJavascriptUntilIsTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.RepeatUntilTests.ExecuteJavascriptUntilIsTest</h2></header><article><br/>This test ensures that we can keep refreshing a page until a condition is met by one of its iframes.<br/><br/>We use a mock server running to serve the HTML defined in this page.<br/><br/><span class="meta">variable defined: HTML_MAIN1= {{{
+&lt;html&gt;
+&lt;title&gt;Start Page Title&lt;/title&gt;
+&lt;body&gt;
+&lt;iframe id="iframe1" src="1.html"&gt;&lt;/iframe&gt;
+&lt;iframe id="iframe2" src="2.html"&gt;&lt;/iframe&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><span class="meta">variable defined: HTML_FRAME1_1= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;input name="remove1" type="button" value="Remove1"&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><br/><span class="meta">variable defined: HTML_FRAME1_2a= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;label id="label" for="field"&gt;Teller&lt;/label&gt;
+&lt;input id="field" value="1"&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><span class="meta">variable defined: HTML_FRAME1_2b= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;label id="label" for="field"&gt;Teller&lt;/label&gt;
+&lt;input id="field" value="2"&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><span class="meta">variable defined: HTML_FRAME1_2c= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;label id="label" for="field"&gt;Teller&lt;/label&gt;
+&lt;input id="field" value="3"&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;title&gt;Start Page Title&lt;/title&gt;
+&lt;body&gt;
+&lt;iframe id="iframe1" src="1.html"&gt;&lt;/iframe&gt;
+&lt;iframe id="iframe2" src="2.html"&gt;&lt;/iframe&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;input name="remove1" type="button" value="Remove1"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;label id="label" for="field"&gt;Teller&lt;/label&gt;
+&lt;input id="field" value="1"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;label id="label" for="field"&gt;Teller&lt;/label&gt;
+&lt;input id="field" value="2"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;label id="label" for="field"&gt;Teller&lt;/label&gt;
+&lt;input id="field" value="3"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://127.0.0.1:8001/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="5"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="5">$url->[http://127.0.0.1:8001/FitNesseMock]/main.html</td>
+	</tr>
+	<tr class="slimRowColor5">
+		<td>set repeat interval to</td>
+		<td>1000</td>
+		<td colspan="4">milliseconds</td>
+	</tr>
+	<tr class="slimRowColor9">
+		<td>repeat at most</td>
+		<td>3</td>
+		<td colspan="4">times</td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td><span class="pass">execute javascript</span></td>
+		<td>this.document.getElementById('iframe2').contentWindow.location.reload()</td>
+		<td>until</td>
+		<td>Teller</td>
+		<td>is</td>
+		<td>3</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>repeat count</td>
+		<td colspan="4"><span class="pass">2</span></td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop</td>
+	</tr>
+</table>
+<br/></article></body></html>

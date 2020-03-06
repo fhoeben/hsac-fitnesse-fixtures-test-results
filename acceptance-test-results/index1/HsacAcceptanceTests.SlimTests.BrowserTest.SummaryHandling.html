@@ -1,0 +1,105 @@
+<html><head><title>HsacAcceptanceTests.SlimTests.BrowserTest.SummaryHandling</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacAcceptanceTests.SlimTests.BrowserTest.SummaryHandling</h2></header><article><br/>Summary elements can be clicked to expand/collapse their details section.<br/>They can also be used as container to select between multiple labels with same text on screen.<br/><br/>We use a mock server running to serve the HTML defined in this page.<br/><br/><br/><span class="meta">variable defined: HTML= {{{
+&lt;html&gt;
+&lt;body&gt;
+&lt;div&gt;
+
+&lt;label for="hi"&gt;*&lt;span&gt;&amp;euro;&amp;nbsp;3&lt;/span&gt;Hello4&lt;strong&gt;!&lt;/strong&gt;&lt;/label&gt;&lt;input id="hi" value="Shown"&gt;&lt;/label&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;span&gt;Initially hidden&lt;/span&gt;&lt;/summary&gt;
+&lt;label for="hi21"&gt;Hello4&lt;/label&gt;&lt;input id="hi21" value="Hidden"&gt;&lt;/label&gt;
+&lt;/details&gt;
+&lt;/body&gt;
+&lt;/html&gt;}}} </span>
+<br/><br/><br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td>add response</td>
+		<td><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;div&gt;
+
+&lt;label for="hi"&gt;*&lt;span&gt;&amp;euro;&amp;nbsp;3&lt;/span&gt;Hello4&lt;strong&gt;!&lt;/strong&gt;&lt;/label&gt;&lt;input id="hi" value="Shown"&gt;&lt;/label&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;span&gt;Initially hidden&lt;/span&gt;&lt;/summary&gt;
+&lt;label for="hi21"&gt;Hello4&lt;/label&gt;&lt;input id="hi21" value="Hidden"&gt;&lt;/label&gt;
+&lt;/details&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td>
+	</tr>
+	<tr class="slimRowColor6">
+		<td>$url&lt;-[http://127.0.0.1:8000/FitNesseMock]</td>
+		<td>get mock server url</td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td colspan="5"><span class="pass">browser test</span></td>
+	</tr>
+	<tr class="slimRowColor7">
+		<td>seconds before timeout</td>
+		<td colspan="5">1</td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td><span class="pass">open</span></td>
+		<td colspan="5">$url->[http://127.0.0.1:8000/FitNesseMock]</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello4</td>
+		<td colspan="3"><span class="pass">Shown</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>€ 3</td>
+		<td colspan="3"><span class="pass">Shown</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td colspan="5">exact match</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="5">Initially hidden</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello4</td>
+		<td>in</td>
+		<td>Initially hidden</td>
+		<td><span class="pass">Hidden</span></td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td></td>
+		<td colspan="5">partial match</td>
+	</tr>
+	<tr class="slimRowColor8">
+		<td><span class="pass">click</span></td>
+		<td colspan="5">hidden</td>
+	</tr>
+	<tr class="slimRowColor0">
+		<td>check</td>
+		<td>value of</td>
+		<td>Hello4</td>
+		<td>in</td>
+		<td>Initially</td>
+		<td><span class="pass">Hidden</span></td>
+	</tr>
+</table>
+<br/><table>
+	<tr class="slimRowTitle">
+		<td>script</td>
+		<td><span class="pass">mock xml server setup</span></td>
+	</tr>
+	<tr class="slimRowColor4">
+		<td colspan="2">stop</td>
+	</tr>
+</table>
+<br/><br/></article></body></html>
