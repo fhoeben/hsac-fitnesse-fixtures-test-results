@@ -1,6 +1,6 @@
 <html><head><title>HsacExamples.SlimTests.BrowserTests.StoryboardTest</title><meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/><link rel='stylesheet' type='text/css' href='css/fitnesse.css'/><script src='javascript/jquery-1.11.3.min.js' type='text/javascript'></script><script src='javascript/fitnesse.js' type='text/javascript'></script></head><body><header><h2>HsacExamples.SlimTests.BrowserTests.StoryboardTest</h2></header><article><br/><h1 id="WebsitetestingusingBrowserTestwithStoryboard">Website testing using BrowserTest with Storyboard</h1>
 <br/>On this page we compare the year of release of an album on two websites. We use a special version of Slim's ScriptTable, a storyboard, which will automatically take a screenshot after each action.<br/><br/>The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup<a title="create page" href="HsacExamples.SlimTests.BrowserTests.SuiteSetup?edit&amp;nonExistent=true">[?]</a>. Which allows this configuration to be shared between tests. Closing the browser is done in <a href="HsacExamples.SlimTests.BrowserTests.SuiteTearDown">SuiteTearDown</a>, which happens after all tests are completed.<br/><br/><table>
-	<tr>
+	<tr class="slimRowTitle">
 		<td>storyboard</td>
 		<td colspan="7">browser test <span class="error">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 0.000
   (Session info: chrome=80.0.3987.87)
@@ -9,10 +9,10 @@ Command duration or timeout: 0 milliseconds
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'localhost', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-1055-gcp', java.version: '1.8.0_242'
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 80.0.3987.16 (320f6526c1632..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49756}, handlesAlerts: true, hasMetadata: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 80.0.3987.87, webStorageEnabled: true, webdriver.remote.sessionid: aaa9d1f6379a4a769e2672f323c...}
-Session ID: aaa9d1f6379a4a769e2672f323c5c1d6</span></td>
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 80.0.3987.16 (320f6526c1632..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49757}, handlesAlerts: true, hasMetadata: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 80.0.3987.87, webStorageEnabled: true, webdriver.remote.sessionid: 2654c4c967654cc79f2dfc0cc97...}
+Session ID: 2654c4c967654cc79f2dfc0cc976e32a</span></td>
 	</tr>
-	<tr>
+	<tr class="slimRowColor4">
 		<td>open <span class="error">No Method open[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
  Available methods:
 addValueTo(java.lang.Object, java.lang.String) -&gt; void
@@ -118,7 +118,7 @@ wait(long) -&gt; void
 wait(long, int) -&gt; void
 waitMilliseconds(int) -&gt; boolean
 waitSeconds(int) -&gt; boolean</span></td></tr>
-	<tr>
+	<tr class="slimRowColor2">
 		<td>enter <span class="error">No Method enterAs[2] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
  Available methods:
 addValueTo(java.lang.Object, java.lang.String) -&gt; void
@@ -226,7 +226,7 @@ wait(long) -&gt; void
 wait(long, int) -&gt; void
 waitMilliseconds(int) -&gt; boolean
 waitSeconds(int) -&gt; boolean</span></td></tr>
-	<tr>
+	<tr class="slimRowColor7">
 		<td>press <span class="error">No Method press[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
  Available methods:
 addValueTo(java.lang.Object, java.lang.String) -&gt; void
@@ -332,7 +332,7 @@ wait(long) -&gt; void
 wait(long, int) -&gt; void
 waitMilliseconds(int) -&gt; boolean
 waitSeconds(int) -&gt; boolean</span></td></tr>
-	<tr>
+	<tr class="slimRowColor8">
 		<td>click <span class="error">No Method click[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
  Available methods:
 addValueTo(java.lang.Object, java.lang.String) -&gt; void
@@ -438,7 +438,7 @@ wait(long) -&gt; void
 wait(long, int) -&gt; void
 waitMilliseconds(int) -&gt; boolean
 waitSeconds(int) -&gt; boolean</span></td></tr>
-	<tr>
+	<tr class="slimRowColor9">
 		<td>check not</td>
 		<td>value of</td>
 		<td>Year</td>
@@ -550,7 +550,7 @@ wait(long) -&gt; void
 wait(long, int) -&gt; void
 waitMilliseconds(int) -&gt; boolean
 waitSeconds(int) -&gt; boolean</span></td></tr>
-	<tr>
+	<tr class="slimRowColor0">
 		<td>$year= <span class="error">No Method valueOfInRowWhereIs[3] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
  Available methods:
 addValueTo(java.lang.Object, java.lang.String) -&gt; void
@@ -610,7 +610,7 @@ waitSeconds(int) -&gt; boolean</span></td>
 		<td>is</td>
 		<td colspan="2">Astral Weeks</td>
 	</tr>
-	<tr>
+	<tr class="slimRowColor7">
 		<td>seconds before timeout <span class="error">No Method secondsBeforeTimeout[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
  Available methods:
 addValueTo(java.lang.Object, java.lang.String) -&gt; void
@@ -716,7 +716,7 @@ wait(long) -&gt; void
 wait(long, int) -&gt; void
 waitMilliseconds(int) -&gt; boolean
 waitSeconds(int) -&gt; boolean</span></td></tr>
-	<tr>
+	<tr class="slimRowColor4">
 		<td>open <span class="error">No Method open[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
  Available methods:
 addValueTo(java.lang.Object, java.lang.String) -&gt; void
@@ -822,7 +822,7 @@ wait(long) -&gt; void
 wait(long, int) -&gt; void
 waitMilliseconds(int) -&gt; boolean
 waitSeconds(int) -&gt; boolean</span></td></tr>
-	<tr>
+	<tr class="slimRowColor9">
 		<td>show <span class="error">No Method clickIfAvailable[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
  Available methods:
 addValueTo(java.lang.Object, java.lang.String) -&gt; void
@@ -929,7 +929,7 @@ wait(long) -&gt; void
 wait(long, int) -&gt; void
 waitMilliseconds(int) -&gt; boolean
 waitSeconds(int) -&gt; boolean</span></td></tr>
-	<tr>
+	<tr class="slimRowColor2">
 		<td>enter <span class="error">No Method enterAs[2] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
  Available methods:
 addValueTo(java.lang.Object, java.lang.String) -&gt; void
@@ -1037,7 +1037,7 @@ wait(long) -&gt; void
 wait(long, int) -&gt; void
 waitMilliseconds(int) -&gt; boolean
 waitSeconds(int) -&gt; boolean</span></td></tr>
-	<tr>
+	<tr class="slimRowColor7">
 		<td>press <span class="error">No Method press[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
  Available methods:
 addValueTo(java.lang.Object, java.lang.String) -&gt; void
@@ -1143,7 +1143,7 @@ wait(long) -&gt; void
 wait(long, int) -&gt; void
 waitMilliseconds(int) -&gt; boolean
 waitSeconds(int) -&gt; boolean</span></td></tr>
-	<tr>
+	<tr class="slimRowColor8">
 		<td>click <span class="error">No Method click[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
  Available methods:
 addValueTo(java.lang.Object, java.lang.String) -&gt; void
@@ -1249,7 +1249,7 @@ wait(long) -&gt; void
 wait(long, int) -&gt; void
 waitMilliseconds(int) -&gt; boolean
 waitSeconds(int) -&gt; boolean</span></td></tr>
-	<tr>
+	<tr class="slimRowColor8">
 		<td>click <span class="error">No Method click[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
  Available methods:
 addValueTo(java.lang.Object, java.lang.String) -&gt; void
@@ -1355,7 +1355,7 @@ wait(long) -&gt; void
 wait(long, int) -&gt; void
 waitMilliseconds(int) -&gt; boolean
 waitSeconds(int) -&gt; boolean</span></td></tr>
-	<tr>
+	<tr class="slimRowColor0">
 		<td>check</td>
 		<td>value of</td>
 		<td>Year</td>
