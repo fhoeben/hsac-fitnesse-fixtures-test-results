@@ -142,24 +142,24 @@ As seen in the table above Slim's default behavior is to show lists using Java's
 </table>
 <br/><a name="ddt"> </a><br/><br/><h3 id="DefineaListusingDynamicDecisionTable">Define a List using Dynamic Decision Table</h3>
 This examples show usage of the fixture in a dynamic decision table<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.DynamicDecisionTable?edit&amp;nonExistent=true">[?]</a>.<br/><br/>Here we define two lists (and store them in Slim variables) using a dynamic decision table. Any output column (header name ending on '?') will receive a copy of the list defined.<br/><table>
-	<tr>
+	<tr class="slimRowTitle">
 		<td colspan="5"><span class="pass">ddt: list fixture</span></td>
 	</tr>
-	<tr>
+	<tr class="slimRowTitle">
 		<td>0</td>
 		<td>1</td>
 		<td>3</td>
 		<td>4</td>
 		<td>list?</td>
 	</tr>
-	<tr>
+	<tr class="slimRowColor1">
 		<td>Jan</td>
 		<td><a href="mailto:github@hsac.nl">github@hsac.nl</a></td>
 		<td>Karel</td>
 		<td></td>
 		<td>$list3&lt;-[<ol start="0"><li>Jan</li><li>github@hsac.nl</li><li>null</li><li>Karel</li><li></li></ol>]</td>
 	</tr>
-	<tr>
+	<tr class="slimRowColor0">
 		<td>Karel</td>
 		<td>Piet</td>
 		<td></td>
