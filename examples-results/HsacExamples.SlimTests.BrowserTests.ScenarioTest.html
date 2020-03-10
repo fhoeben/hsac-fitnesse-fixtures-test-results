@@ -2,18 +2,18 @@
 <br/><br/>On this page we test retrieving record details using <a href="https://www.allmusic.com">AllMusic</a>.<br/>It uses a Slim scenario<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.ScenarioTable?edit&amp;nonExistent=true">[?]</a> to define a parameterized script.<br/>This is then invoked multiple times from a Decision table<a title="create page" href="FitNesse.UserGuide.WritingAcceptanceTests.SliM.DecisionTable?edit&amp;nonExistent=true">[?]</a>, once for each row.<br/><br/><br/>The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup<a title="create page" href="HsacExamples.SlimTests.BrowserTests.SuiteSetup?edit&amp;nonExistent=true">[?]</a>. Which allows this configuration to be shared between tests. Closing the browser is done in <a href="HsacExamples.SlimTests.BrowserTests.SuiteTearDown">SuiteTearDown</a>, which happens after all tests are completed.<br/><br/>First we go to the Discography page for Van Morrison.<br/><br/><table>
 	<tr class="slimRowTitle">
 		<td>script</td>
-		<td colspan="3">browser test <span class="error">org.openqa.selenium.UnsupportedCommandException: ERROR The test with session id e881037c6155457d8e58160135977047 has already finished, and can't receive further commands.
-You can learn more at https://app.saucelabs.com/tests/e881037c6155457d8e58160135977047
-For help, please check https://wiki.saucelabs.com/display/DOCS/Common+Error+Messages
-Command duration or timeout: 183 milliseconds
+		<td colspan="3">browser test <span class="error">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.001
+  (Session info: chrome=80.0.3987.87)
+  (Driver info: chromedriver=80.0.3987.16 (320f6526c1632ad4f205ebce69b99a062ed78647-refs/branch-heads/3987@{#185}),platform=Windows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'localhost', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-1055-gcp', java.version: '1.8.0_242'
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 80.0.3987.16 (320f6526c1632..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49761}, handlesAlerts: true, hasMetadata: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 80.0.3987.87, webStorageEnabled: true, webdriver.remote.sessionid: e881037c6155457d8e581601359...}
-Session ID: e881037c6155457d8e58160135977047</span></td>
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 80.0.3987.16 (320f6526c1632..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49766}, handlesAlerts: true, hasMetadata: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 80.0.3987.87, webStorageEnabled: true, webdriver.remote.sessionid: 0310405e14534ad7abcca79733b...}
+Session ID: 0310405e14534ad7abcca79733b88783</span></td>
 	</tr>
-	<tr class="slimRowColor7">
-		<td>seconds before timeout <span class="error">No Method secondsBeforeTimeout[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
+	<tr class="slimRowColor8">
+		<td>set continue if ready state interactive <span class="error">No Method setContinueIfReadyStateInteractive[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
  Available methods:
 addValueTo(java.lang.Object, java.lang.String) -&gt; void
 aroundSlimInvoke(fitnesse.slim.fixtureInteraction.FixtureInteraction, java.lang.reflect.Method, java.lang.Object[]) -&gt; class java.lang.Object
@@ -65,7 +65,7 @@ wait(long) -&gt; void
 wait(long, int) -&gt; void
 waitMilliseconds(int) -&gt; boolean
 waitSeconds(int) -&gt; boolean</span></td>
-		<td colspan="3">60</td>
+		<td colspan="3">true</td>
 	</tr>
 	<tr class="slimRowColor4">
 		<td>open <span class="error">No Method open[1] in class nl.hsac.fitnesse.fixture.slim.web.LayoutTest.
