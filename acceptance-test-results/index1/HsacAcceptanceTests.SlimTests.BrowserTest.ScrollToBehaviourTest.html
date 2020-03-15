@@ -60,9 +60,9 @@
 		<td>click</td>
 		<td>halfway down</td>
 		<td><span class="pass">/.*Timed-out waiting.*/ found in: __EXCEPTION__:nl.hsac.fitnesse.fixture.slim.SlimFixtureException: message:&lt;&lt;&lt;div&gt;&lt;div&gt;Timed-out waiting (after 1s).&lt;/div&gt;&lt;div&gt;&lt;a href="files/pagesources/org.openqa.selenium.TimeoutException.html" target="_blank"&gt;Page content&lt;/a&gt;:&lt;a href="files/screenshots/timeouts/BrowserTest/timeout.png" target="_blank"&gt;&lt;img src="files/screenshots/timeouts/BrowserTest/timeout.png" title="/home/travis/build/fhoeben/hsac-fitnesse-fixtures/target/fitnesse-results/index1/files/screenshots/timeouts/BrowserTest/timeout.png" height="200"/&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&gt;&gt;
-	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.waitUntil(BrowserTest.java:2088) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invokedWrappedInWaitUntil(BrowserTest.java:139) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invoke(BrowserTest.java:95) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.waitUntil(BrowserTest.java:2089) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invokedWrappedInWaitUntil(BrowserTest.java:138) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invoke(BrowserTest.java:94) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
 	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:41) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
 	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_242]
@@ -86,19 +86,19 @@
 	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-20200308.jar:20200308]
 	at fitnesse.testsystems.slim.InProcessSlimClient$1.run(InProcessSlimClient.java:55) [fitnesse-20200308.jar:20200308]
 	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_242]
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for nl.hsac.fitnesse.fixture.util.selenium.SeleniumHelper$$Lambda$305/1928209644@7441948e (tried for 1 second(s) with 500 milliseconds interval)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for nl.hsac.fitnesse.fixture.util.selenium.SeleniumHelper$$Lambda$305/1928209644@1d3caeb6 (tried for 1 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'localhost', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-1055-gcp', java.version: '1.8.0_242'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.132, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /tmp/.com.google.Chrome.BWa7AF}, goog:chromeOptions: {debuggerAddress: localhost:39365}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore}
-Session ID: 11b1520039c5e62c9970f7f8a10057b5
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.132, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /tmp/.com.google.Chrome.j6SFRc}, goog:chromeOptions: {debuggerAddress: localhost:44687}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore}
+Session ID: ff439436d42a46da4ff9b8359addf8b4
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95) [selenium-support-3.141.59.jar]
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272) [selenium-support-3.141.59.jar]
-	at nl.hsac.fitnesse.fixture.util.selenium.SeleniumHelper.waitUntil(SeleniumHelper.java:956) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.waitUntilImpl(BrowserTest.java:2155) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.waitUntil(BrowserTest.java:2085) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invokedWrappedInWaitUntil(BrowserTest.java:139) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
-	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invoke(BrowserTest.java:95) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.util.selenium.SeleniumHelper.waitUntil(SeleniumHelper.java:957) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.waitUntilImpl(BrowserTest.java:2156) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.waitUntil(BrowserTest.java:2086) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invokedWrappedInWaitUntil(BrowserTest.java:138) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
+	at nl.hsac.fitnesse.fixture.slim.web.BrowserTest.invoke(BrowserTest.java:94) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
 	at nl.hsac.fitnesse.fixture.slim.SlimFixture.aroundSlimInvoke(SlimFixture.java:41) [file:/home/travis/build/fhoeben/hsac-fitnesse-fixtures/wiki/fixtures/]
 	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source) [n/a]
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_242]
